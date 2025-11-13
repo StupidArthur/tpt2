@@ -1,0 +1,171 @@
+statistics:
+- json: '[{"id":"id1","tool":"PID","ability":"回路信息查询","dep":null},{"id":"id2","tool":"PID","ability":"回路数据有效性检测","dep":["id1"]},{"id":"id4","tool":"PID","ability":"基于专家经验的参数整定","dep":["id2"]},{"id":"id6","tool":"PID","ability":"控制回路性能评估及诊断","dep":["id2"]},{"id":"id7","tool":"PID","ability":"多策略自适应整定","dep":["id6"]},{"id":"id9","tool":"PID","ability":"基于回路波形判断的参数迭代整定","dep":["id6"]}]'
+  branch: '[{"from":"id2","to":"id4","expression":"Variable([String(\"valid\")]) Eq
+    false"},{"from":"id2","to":"id6","expression":"Variable([String(\"valid\")]) Eq
+    true"},{"from":"id6","to":"id7","expression":"Variable([String(\"isValveOscillate\")])
+    Eq false"},{"from":"id6","to":"id9","expression":"Variable([String(\"isValveOscillate\")])
+    Eq true"}]'
+  items:
+  - title: 帮我整定下FIC1001
+    confidence: 高
+  - title: 帮我整定下523FIC_0009
+    confidence: 高
+  - title: 整定反应釜温度
+    confidence: 高
+- json: '[{"id":"id1","tool":"PID","ability":"回路信息管理","dep":null}]'
+  branch: '[]'
+  items:
+  - title: 查看氯碱装置的回路详细信息
+    confidence: 高
+- json: '[{"id":"id1","tool":"PID","ability":"回路信息查询","dep":null}]'
+  branch: '[]'
+  items:
+  - title: 反应釜温度的PID参数是多少
+    confidence: 高
+  - title: 1_fb19_10的PID参数是多少
+    confidence: 高
+  - title: 请帮我新增FIC10001回路，回路描述为NaOH流量1
+    confidence: 高
+- json: '[{"id":"id1","tool":"PID","ability":"回路信息查询","dep":null},{"id":"id2","tool":"PID","ability":"基于专家经验的参数整定","dep":["id1"]}]'
+  branch: '[]'
+  items:
+  - title: 新回路FIC102将投用使用，给我一个初始参数
+    confidence: 高
+- json: '[{"id":"id1","tool":"IDX","ability":"查询请求分析","dep":null},{"id":"id2","tool":"IDX","ability":"执行查询与反馈","dep":["id1"]},{"id":"id4","tool":"IDX","ability":"上传数据与解析","dep":["id1"]},{"id":"id5","tool":"IDX","ability":"确认解析结果","dep":["id4"]},{"id":"id7","tool":"IDX","ability":"执行查询与反馈","dep":["id5"]}]'
+  branch: '[{"from":"id1","to":"id2","expression":"Variable([String(\"valid\")]) Eq
+    true"},{"from":"id5","to":"id7","expression":"Variable([String(\"valid\")]) Eq
+    true"}]'
+  items:
+  - title: 硫酸装置进料水的流量是多少
+    confidence: 高
+  - title: 甲烷装置出料常一线的流量是多少
+    confidence: 高
+  - title: 甲烷装置出料常一线的流量和温度分别是多少
+    confidence: 高
+  - title: 基于上传文件，评估设备监测有什么异常？
+    confidence: 低
+- json: '[{"id":"id1","tool":"IDX","ability":"查询请求分析","dep":null},{"id":"id2","tool":"IDX","ability":"上传数据与解析","dep":["id1"]},{"id":"id3","tool":"IDX","ability":"确认解析结果","dep":["id2"]},{"id":"id4","tool":"IDX","ability":"执行查询与反馈","dep":["id3"]}]'
+  branch: '[]'
+  items:
+  - title: 基于xlsx上传文件，帮我分析存在什么异常？
+    confidence: 低
+- json: '[{"id":"id1","tool":"IDX","ability":"查询请求分析","dep":null},{"id":"id2","tool":"IDX","ability":"上传数据与解析","dep":["id1"]},{"id":"id3","tool":"IDX","ability":"确认解析结果","dep":["id2"]},{"id":"id5","tool":"IDX","ability":"执行查询与反馈","dep":["id3"]}]'
+  branch: '[{"from":"id3","to":"id5","expression":"Variable([String(\"valid\")]) Eq
+    true"}]'
+  items:
+  - title: 基于pdf上传文件，帮我分析存在什么异常？
+    confidence: 低
+optimization:
+- json: '[{"id":"id1","tool":"PID","ability":"开车阶段参数批量整定","dep":null}]'
+  branch: '[]'
+  items:
+  - title: 帮我进行重整装置的开车批量预设
+    confidence: 高
+- json: '[{"id":"id1","tool":"boiler","ability":"确定锅炉类型","dep":null},{"id":"id2","tool":"boiler","ability":"选择锅炉数据获取方式","dep":["id1"]},{"id":"id3","tool":"boiler","ability":"系统运行历史数据选择","dep":["id2"]},{"id":"id5","tool":"boiler","ability":"确认被控变量信息","dep":["id3"]},{"id":"id6","tool":"boiler","ability":"确认操作变量信息","dep":["id5"]},{"id":"id7","tool":"boiler","ability":"确认其它干扰变量信息","dep":["id6"]},{"id":"id8","tool":"boiler","ability":"控制模型微调或加载","dep":["id7"]},{"id":"id9","tool":"boiler","ability":"控制效果评估","dep":["id8"]},{"id":"id11","tool":"boiler","ability":"上传位号信息表","dep":["id2"]},{"id":"id13","tool":"boiler","ability":"确认被控变量信息","dep":["id11"]},{"id":"id14","tool":"boiler","ability":"确认操作变量信息","dep":["id13"]},{"id":"id15","tool":"boiler","ability":"确认其它干扰变量信息","dep":["id14"]},{"id":"id16","tool":"boiler","ability":"控制模型加载","dep":["id15"]},{"id":"id17","tool":"boiler","ability":"控制算法执行","dep":["id16"]}]'
+  branch: '[{"from":"id2","to":"id3","expression":"Variable([String(\"run_mode\")])
+    Eq \"offline\""},{"from":"id3","to":"id5","expression":"Variable([String(\"is_upload_file\")])
+    Eq true"},{"from":"id2","to":"id11","expression":"Variable([String(\"run_mode\")])
+    Eq \"online\""},{"from":"id11","to":"id13","expression":"Variable([String(\"is_upload_file\")])
+    Eq true"}]'
+  items:
+  - title: 我想实现锅炉回路的自动运行调整，能否帮我设计控制方案?
+    confidence: ''
+- json: '[{"id":"id1","tool":"Redesign","ability":"上传数据与校验","dep":null},{"id":"id2","tool":"Redesign","ability":"选择改造目标","dep":["id1"]},{"id":"id3","tool":"Redesign","ability":"选择改造幅度","dep":["id2"]},{"id":"id4","tool":"Redesign","ability":"识别换热器瓶颈","dep":["id3"]},{"id":"id5","tool":"Redesign","ability":"换热器改造","dep":["id4"]},{"id":"id7","tool":"Redesign","ability":"指定现场限制条件","dep":["id3"]},{"id":"id8","tool":"Redesign","ability":"换热网络改造","dep":["id7"]},{"id":"id10","tool":"Redesign","ability":"校验限制条件","dep":["id7"]},{"id":"id11","tool":"Redesign","ability":"换热网络改造","dep":["id10"]}]'
+  branch: '[{"from":"id3","to":"id4","expression":"Variable([String(\"branch_result\")])
+    Eq 0"},{"from":"id3","to":"id7","expression":"Variable([String(\"branch_result\")])
+    Eq 1"},{"from":"id7","to":"id8","expression":"Variable([String(\"branch_result\")])
+    Eq 0"},{"from":"id7","to":"id10","expression":"Variable([String(\"branch_result\")])
+    Eq 1"}]'
+  items:
+  - title: 如何对常减压装置换热网络进行优化？
+    confidence: 高
+- json: '[{"id":"id1","tool":"RTO操作优化","ability":"补充信息","dep":null},{"id":"id2","tool":"RTO操作优化","ability":"上传数据","dep":["id1"]},{"id":"id3","tool":"RTO操作优化","ability":"确认建模信息","dep":["id2"]},{"id":"id4","tool":"RTO操作优化","ability":"TPT推理计算","dep":["id3"]},{"id":"id6","tool":"RTO操作优化","ability":"配置方案","dep":["id1"]},{"id":"id7","tool":"RTO操作优化","ability":"实时计算","dep":["id6"]}]'
+  branch: '[{"from":"id1","to":"id2","expression":"Variable([String(\"opt_model_selected\")])
+    Eq false"},{"from":"id2","to":"id3","expression":"Variable([String(\"is_contain_data\")])
+    Eq true"},{"from":"id1","to":"id6","expression":"Variable([String(\"opt_model_selected\")])
+    Eq true"}]'
+  items:
+  - title: 如果要提升气化炉有效气含量，该如何操作？
+    confidence: 高
+evaluation:
+- json: '[{"id":"id1","tool":"Redesign","ability":"确认关键变量","dep":null},{"id":"id2","tool":"Redesign","ability":"产品质量预测","dep":["id1"]},{"id":"id3","tool":"Redesign","ability":"动态操作路径规划","dep":["id2"]}]'
+  branch: '[]'
+  items:
+  - title: 我想调整常顶油终馏点，应该如何操作
+    confidence: 高
+- json: '[{"id":"id1","tool":"anomaly_detection","ability":"补充信息","dep":null},{"id":"id2","tool":"anomaly_detection","ability":"上传数据","dep":["id1"]},{"id":"id3","tool":"anomaly_detection","ability":"确认建模信息","dep":["id2"]},{"id":"id4","tool":"anomaly_detection","ability":"TPT模型微调","dep":["id3"]},{"id":"id5","tool":"anomaly_detection","ability":"TPT推理计算","dep":["id2","id4"]},{"id":"id7","tool":"anomaly_detection","ability":"上传高频数据","dep":["id5"]},{"id":"id8","tool":"anomaly_detection","ability":"故障诊断","dep":["id7"]}]'
+  branch: '[{"from":"id2","to":"id3","expression":"Variable([String(\"opt_model_selected\")])
+    Eq false And Variable([String(\"is_contain_data\")]) Eq true"},{"from":"id2","to":"id5","expression":"Variable([String(\"opt_model_selected\")])
+    Eq true And Variable([String(\"is_contain_data\")]) Eq true"},{"from":"id5","to":"id7","expression":"Variable([String(\"diagnosis_flag\")])
+    Eq true"}]'
+  items:
+  - title: 请帮我识别渣油泵是否有异常？
+    confidence: 高
+- json: '[{"id":"id1","tool":"anomaly_detection","ability":"上传离线数据","dep":null},{"id":"id2","tool":"anomaly_detection","ability":"执行检测算法","dep":["id1"]}]'
+  branch: '[]'
+  items:
+  - title: 请帮我识别盐水流量调节阀有什么异常？
+    confidence: 高
+- json: '[{"id":"id1","tool":"Redesign","ability":"节能降耗瓶颈分析","dep":null}]'
+  branch: '[]'
+  items:
+  - title: 常减压装置哪些设备和环节是用能的瓶颈？
+    confidence: 高
+prediction:
+- json: '[{"id":"id1","tool":"alarm_pred预测预警","ability":"补充信息","dep":null},{"id":"id2","tool":"alarm_pred预测预警","ability":"上传数据","dep":["id1"]},{"id":"id3","tool":"alarm_pred预测预警","ability":"确认建模信息","dep":["id2"]},{"id":"id4","tool":"alarm_pred预测预警","ability":"TPT推理计算","dep":["id3"]},{"id":"id6","tool":"alarm_pred预测预警","ability":"配置方案","dep":["id1"]},{"id":"id7","tool":"alarm_pred预测预警","ability":"实时计算","dep":["id6"]}]'
+  branch: '[{"from":"id1","to":"id2","expression":"Variable([String(\"opt_model_selected\")])
+    Eq false"},{"from":"id2","to":"id3","expression":"Variable([String(\"is_contain_data\")])
+    Eq true"},{"from":"id1","to":"id6","expression":"Variable([String(\"opt_model_selected\")])
+    Eq true"}]'
+  items:
+  - title: 二级硫冷凝器出口气体H2S浓度最近是否有异常，未来是否有超限风险？
+    confidence: 高
+  - title: 二级硫冷凝器出口气体H2S浓度最近是否有异常，未来是否有超限风险？
+    confidence: 高
+- json: '[{"id":"id1","tool":"离子膜寿命预测","ability":"补充信息","dep":null},{"id":"id2","tool":"离子膜寿命预测","ability":"上传数据","dep":["id1"]},{"id":"id3","tool":"离子膜寿命预测","ability":"离子膜寿命预测","dep":["id2"]}]'
+  branch: '[]'
+  items:
+  - title: 请帮我评估下1号电解槽什么时候更换离子膜经济效益最佳？
+    confidence: 高
+- json: '[{"id":"id1","tool":"自动建模预测","ability":"补充信息","dep":null},{"id":"id2","tool":"自动建模预测","ability":"上传数据","dep":["id1"]},{"id":"id3","tool":"自动建模预测","ability":"确认建模信息","dep":["id2"]},{"id":"id4","tool":"自动建模预测","ability":"TPT推理计算","dep":["id3"]},{"id":"id6","tool":"自动建模预测","ability":"配置方案","dep":["id1"]},{"id":"id7","tool":"自动建模预测","ability":"实时计算","dep":["id6"]}]'
+  branch: '[{"from":"id1","to":"id2","expression":"Variable([String(\"opt_model_selected\")])
+    Eq false"},{"from":"id2","to":"id3","expression":"Variable([String(\"is_contain_data\")])
+    Eq true"},{"from":"id1","to":"id6","expression":"Variable([String(\"opt_model_selected\")])
+    Eq true"}]'
+  items:
+  - title: 预测裂解炉未来10分钟的裂解气中C2H2的含量、乙烯收率
+    confidence: 高
+control:
+- json: '[{"id":"id1","tool":"APC","ability":"控制方案设计信息确认","dep":null},{"id":"id2","tool":"APC","ability":"控制方案检索生成","dep":["id1"]},{"id":"id4","tool":"APC","ability":"控制方案优化","dep":["id2"]},{"id":"id6","tool":"APC","ability":"辨识模型数据","dep":["id4"]}]'
+  branch: '[{"from":"id2","to":"id4","expression":"Variable([String(\"Isover\")])
+    Eq false"},{"from":"id4","to":"id6","expression":"Variable([String(\"Isover\")])
+    Eq false"}]'
+  items:
+  - title: 如何通过APC提高气化炉运行平稳性，降低操作频次
+    confidence: 高
+  - title: 针对电解槽槽温等关键指标波动，如何进一步提高运行平稳性，降低操作频次
+    confidence: 高
+- json: '[{"id":"id1","tool":"SPC","ability":"AI控制补充信息","dep":null},{"id":"id2","tool":"SPC","ability":"数据质量分析","dep":["id1"]},{"id":"id3","tool":"SPC","ability":"AI可控性评估","dep":["id2"]},{"id":"id4","tool":"SPC","ability":"关键影响因素分析","dep":["id3"]},{"id":"id5","tool":"SPC","ability":"工况识别与验证","dep":["id4"]},{"id":"id6","tool":"SPC","ability":"预测模型构建与验证","dep":["id5"]},{"id":"id7","tool":"SPC","ability":"控制器搭建及验证","dep":["id6"]},{"id":"id9","tool":"SPC","ability":"在线工况识别","dep":["id1"]},{"id":"id10","tool":"SPC","ability":"在线预测","dep":["id9"]},{"id":"id11","tool":"SPC","ability":"在线控制","dep":["id10"]}]'
+  branch: '[{"from":"id1","to":"id2","expression":"Variable([String(\"run_mode\")])
+    Eq \"offline\""},{"from":"id2","to":"id3","expression":"Variable([String(\"is_contain_data\")])
+    Eq true"},{"from":"id1","to":"id9","expression":"Variable([String(\"run_mode\")])
+    Eq \"online\""}]'
+  items:
+  - title: G_LT_13001.PV过程变量，大波动过程无法通过PID、APC实现自动化控制，如何实现智能控制
+    confidence: 高
+- json: '[{"id":"id1","tool":"SPC","ability":"AI自整定补充信息","dep":null},{"id":"id2","tool":"SPC","ability":"PID数据质量分析","dep":["id1"]},{"id":"id3","tool":"SPC","ability":"PID回路运行情况分析","dep":["id2"]},{"id":"id4","tool":"SPC","ability":"PID强化学习自整定","dep":["id3"]},{"id":"id6","tool":"SPC","ability":"PID-AI在线自整定","dep":["id1"]}]'
+  branch: '[{"from":"id1","to":"id2","expression":"Variable([String(\"run_mode\")])
+    Eq \"offline\""},{"from":"id2","to":"id3","expression":"Variable([String(\"is_contain_data\")])
+    Eq true"},{"from":"id1","to":"id6","expression":"Variable([String(\"run_mode\")])
+    Eq \"online\""}]'
+  items:
+  - title: FIC1101这个流量控制阀波动太大，PV值一直在±5%范围内晃，手动控制还行，切自动就震荡，该怎么调PID？
+    confidence: 高
+simulation:
+- json: '[{"id":"id1","tool":"OTS","ability":"生成工艺模型并执行","dep":null},{"id":"id2","tool":"OTS","ability":"模拟设备参数值","dep":["id1"]},{"id":"id3","tool":"OTS","ability":"加载工况","dep":["id2"]},{"id":"id4","tool":"OTS","ability":"模拟设备参数值","dep":["id3"]},{"id":"id5","tool":"OTS","ability":"查看流程图","dep":["id4"]}]'
+  branch: '[]'
+  items:
+  - title: 帮我模拟验证一下气化炉模型，在仿真状态下输出稳态工况验证结果
+    confidence: 高
+  - title: 帮我模拟验证一下加压精馏模型，在仿真状态下输出稳态工况验证结果
+    confidence: 高
