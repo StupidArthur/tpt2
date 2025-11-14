@@ -1,0 +1,338 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a81de-76f4-7251-9cff-9f7b32a9c992",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a81de-76f6-74e2-9993-1ff369131969",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您注意到TIC2006的温度控制不稳定，想通过调整PID参数来改善控制效果，使温度能够更平稳地维持在设定值附近。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a81de-7914-7a00-a966-0276def32975",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提到TIC2006温度控制不稳定，希望调整PID参数以改善这一状况。这可能是因为当前的PID参数设置不适宜，导致温度波动，用户期望通过优化参数来增强系统的稳定性。\n\n首先，我需要从回路信息查询中，获取该回路的描述、类型、PID参数、回路类型和量程信息。\n\n接着，利用回路数据有效性检测，确认数据是否存在且符合要求。\n\n如果回路数据有效性检测未通过，说明当前数据无效，无法采用常规的数据驱动整定方法。我将采用基于回路属性而非数据模型的参数整定方法，即基于专家经验的参数整定，提供优化后的PID参数。\n\n如果回路数据有效性检测通过，我将进行控制回路性能评估和诊断，检查阀门是否有卡涩现象，若阀门卡涩，则需谨慎对待参数优化。\n\n最后，进行多策略自适应整定。如果控制回路的阀门存在长期卡限等异常情况，不建议进行整定，我将无法为您提供参数。如果控制回路的MV或SV变化幅度过小，建议您选择合适的历史数据进行整定；在其他情况下，我将提供给您整定后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a81de-86a5-7b53-9b49-fcf6c06a5a03",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路数据有效性检测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a81de-9982-74b0-8daf-9ede2db567d1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a81de-9984-70b1-89fd-ca55e871d19a",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a81de-9987-7440-9fb6-7c336a3fbb52",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a81de-997d-7612-8c5a-81556f0d13f4",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "TIC2006 温度不稳，调下 PID 呗",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"groupPath\": [],\n  \"loopName\": [\n    \"TIC2006\"\n  ],\n  \"loopDesc\": [],\n  \"advanceLoopType\": null,\n  \"queryingLoop\": true,\n  \"queryingList\": false,\n  \"needTagValue\": true,\n  \"queryingCascade\": false\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路信息查询"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n我需要先查询系统是否存在名为TIC2006的回路。若存在则检查设定值（SV）、测量值（PV）、阀位值（MV）、量程以及PID等详细参数。不存在则核对名称后新增。\n"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:17:24.821",
+          "details": "开始获取所有分组信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:17:24.831",
+          "details": "{\"code\":\"00000\",\"content\":{\"id\":5661041536943904,\"idPath\":\"5661041536943904\",\"groupName\":\"氯碱装置\",\"groupPathName\":\"氯碱装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[{\"id\":5707052487004016,\"idPath\":\"5661041536943904|5707052487004016\",\"groupName\":\"某装置\",\"groupPathName\":\"氯碱装置/某装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]},{\"id\":5816966774999312,\"idPath\":\"5661041536943904|5816966774999312\",\"groupName\":\"双氧水装置\",\"groupPathName\":\"氯碱装置/双氧水装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5820057048893712,\"idPath\":\"5661041536943904|5820057048893712\",\"groupName\":\"乙烯装置\",\"groupPathName\":\"氯碱装置/乙烯装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5853106985190864,\"idPath\":\"5661041536943904|5853106985190864\",\"groupName\":\"氨轮装置\",\"groupPathName\":\"氯碱装置/氨轮装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5893558970633728,\"idPath\":\"5661041536943904|5893558970633728\",\"groupName\":\"某装置1\",\"groupPathName\":\"氯碱装置/某装置1\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5940817703423488,\"idPath\":\"5661041536943904|5940817703423488\",\"groupName\":\"水箱\",\"groupPathName\":\"氯碱装置/水箱\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]},{\"id\":5943821839158992,\"idPath\":\"5661041536943904|5943821839158992\",\"groupName\":\"常压塔装置\",\"groupPathName\":\"氯碱装置/常压塔装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]}]},\"isSuccess\":true,\"msg\":\"操作成功\",\"requestId\":null,\"success\":true}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:17:24.867",
+          "details": "loopList length: 0"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:17:24.899",
+          "details": "loopList length: 0"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:17:24.899",
+          "details": "params: {'groupPath': [], 'loopName': 'TIC2006', 'loopDesc': '', 'advanceLoopType': None, 'queryingLoop': True, 'queryingList': False, 'needTagValue': True, 'queryingCascade': False}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n当前系统中未检测到此回路，请再次确认回路相关信息，我将再一次进行匹配查找"
+      }
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "需要确认您指定的回路，请补充信息",
+          "content": "当前系统中未检测到此回路，请再次确认回路相关信息，我将再一次进行匹配查找",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ]
+]

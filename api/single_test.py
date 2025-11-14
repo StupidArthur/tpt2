@@ -8,7 +8,7 @@ import httpx
 import websockets
 
 
-async def test_login(username: str, pass64: str):
+async def i_login(username: str, pass64: str):
     """
     测试登录接口
     
@@ -83,7 +83,7 @@ async def test_login(username: str, pass64: str):
             raise
 
 
-async def test_create_conversation(token: str, title: str = "pid"):
+async def i_create_conversation(token: str, title: str = "pid"):
     """
     测试创建会话接口
     
@@ -181,7 +181,7 @@ async def test_create_conversation(token: str, title: str = "pid"):
             raise
 
 
-async def test_conversation_break(token: str, conversation_id: str):
+async def i_conversation_break(token: str, conversation_id: str):
     """
     结束会话的WebSocket连接
     
@@ -226,7 +226,7 @@ async def test_conversation_break(token: str, conversation_id: str):
             raise
 
 
-async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
+async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
     """
     测试WebSocket连接和消息发送
     
@@ -234,7 +234,12 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
         token: 登录后获取的token
         conversation_id: 会话ID
         text: 要发送的消息文本，默认为"pid"
+    
+    Returns:
+        包含完整消息流的数据结构（方案一：按消息组织）
     """
+    import time
+    
     # 打印输入参数
     print("=" * 50)
     print("test_websocket 输入参数:")
@@ -243,9 +248,23 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
     print(f"  text: {text}")
     print("=" * 50)
     
-    # 初始化返回结果
-    result_workflow = None
-    result_confident = None
+    # 初始化返回数据结构
+    result_data = {
+        "conversation_id": conversation_id,
+        "test_case": text,
+        "messages": {},  # 按 message_id 组织
+        "events": [],  # 所有事件的顺序列表
+        "extracted_info": {
+            "workflow": None,
+            "confidence": "",
+            "think_chain_name": ""
+        }
+    }
+    
+    # 状态跟踪
+    has_workflow = False
+    last_message_time = None
+    message_timeout = 10  # 10秒超时
     
     # WebSocket URL
     ws_url = f"wss://tpt.supcon.com/tpt-app/chat-tool-socket-work/api/conversation/{conversation_id}/stream"
@@ -258,10 +277,8 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
         "Cookie": cookie
     }
     
+    result_data = None
     try:
-        # print(f"\n正在连接WebSocket: {ws_url}")
-        # print(f"会话ID: {conversation_id}")
-        
         # 建立WebSocket连接
         async with websockets.connect(
             ws_url,
@@ -270,8 +287,6 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
             ping_timeout=10,
             close_timeout=10
         ) as ws:
-            # print("✓ WebSocket连接成功")
-            
             # 发送消息
             message_payload = {
                 "message": {
@@ -288,79 +303,109 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
                 "user_locale": "zh-CN"
             }
             
-            # print(f"\n正在发送消息: {json.dumps(message_payload, ensure_ascii=False, indent=2)}")
             await ws.send(json.dumps(message_payload))
-            # print("✓ 消息已发送")
             
-            # 持续接收消息
-            # print("\n开始接收服务器消息...")
-            # print("-" * 50)
-            
+            # 持续接收消息，带超时机制
+            last_path = '-'
+            result_data = []
+
             try:
-                async for message in ws:
+                while True:
+                    # 检查是否已收到 workflow
+                    if has_workflow:
+                        await asyncio.sleep(1)
+                        break
+                    
+                    # 检查超时
+                    if last_message_time:
+                        elapsed = time.time() - last_message_time
+                        if elapsed >= message_timeout:
+                            print(f"\n⚠ 10秒内未收到新消息，超时退出")
+                            break
+                    
                     try:
+                        # 接收消息，设置超时避免无限等待
+                        message = await asyncio.wait_for(ws.recv(), timeout=30)
+                    except asyncio.TimeoutError:
+                        # 超时后继续检查条件
+                        continue
+                    except websockets.exceptions.ConnectionClosed:
+                        print("\nWebSocket连接已关闭")
+                        break
+                    
+                    try:
+                        current_time = time.time()
+                        last_message_time = current_time
+                        
                         data = json.loads(message)
                         msg_type = data.get("type")
-                        
-                        if msg_type == "conversation_status_changed":
-                            # 打印status字段的值
-                            status = data.get("status")
-                            # print(f"\n[conversation_status_changed] status: {status}")
-                            pass
-                            
-                        elif msg_type in ["new_message", "message_content_delta"]:
-                            # 打印content字段的内容
-                            content = data.get("content")
-                            
-                            # 检查特殊逻辑：content是dict，且有type key，且type值为workflow
-                            if isinstance(content, dict) and content.get("type") == "workflow":
-                                # print(f"\n{'!' * 10}")
-                                # print(f"[{msg_type}] content (workflow):")
-                                # print(json.dumps(content, ensure_ascii=False, indent=2))
-                                # print(f"{'!' * 10}")
-                                result_workflow = content
-                                # 获取到result_workflow后，先调用break API，然后等待2秒，再跳出循环
-                                await test_conversation_break(token, conversation_id)
-                                await asyncio.sleep(2)
+
+                        """
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        对话管理
+                        """
+
+                        if "conversation_status_changed" == msg_type:
+                            print(f"[CONVERSATION_STATUS_CHANGED] <ONLY ONE> {data}")
+
+                        elif "new_message" == msg_type:
+                            # 一个conversation两个message 第一个是问 第二个是答，所以可以看到message_status_changed也会有两个，第一个是done，第二个是chat
+                            print(f"[NEW_MESSAGE] <TWICE> {data}")
+
+                        elif "message_status_changed" == msg_type:
+                            # done chat interaction
+                            if data.get('status') == "interaction":
                                 break
-                            elif isinstance(content, dict) and content.get("type") == "view" and isinstance(content.get("view", {}).get("content"), dict) and content.get("view", {}).get("content", {}).get("title") == "置信度":
-                                result_confident = content.get("view").get("content")
-                            else:
-                                # print(f"\n[{msg_type}] content:")
-                                # print(content, end='')
-                                pass
-                                
+                            print(f"[MESSAGE_STATUS_CHANGED] ({data.get('status')}) {data}")
+
+                        elif msg_type == "message_content_delta":
+                            # 主要逻辑在这里，所有回答(到交互之前)的内容都在这里
+                            path = data.get('path')
+                            operation = data.get('operation')
+
+                            if operation == "update":
+                                result_data.append([path, data.get('content')])
+                                # print(f"[UPDATE] {path} {data.get('content')}\n")
+                            elif operation == "append":
+                                if last_path != path:
+                                    result_data[-1].append(path)
+                                    result_data[-1].append("")
+                                    # print(f"[APPEND] [PATH] {path}\n")
+                                last_path = path
+                                result_data[-1][-1] += data.get('content')
+                                # print(data.get('content'), end="")
+
                         else:
-                            # 其他类型，打印完整消息
-                            # print(f"\n[{msg_type or 'unknown'}] 完整消息:")
-                            # print(json.dumps(data, ensure_ascii=False, indent=2))
-                            pass
+                            print("[NOT IMPLEMENT]", msg_type, data)
                             
                     except json.JSONDecodeError:
-                        # print(f"\n收到非JSON消息: {message}")
                         pass
                     except Exception as e:
-                        # print(f"\n处理消息异常: {str(e)}")
+                        print(f"\n处理消息异常: {str(e)}")
                         pass
+                
             except websockets.exceptions.ConnectionClosed:
-                # print("\nWebSocket连接已关闭")
-                pass
+                print("\nWebSocket连接已关闭")
             except KeyboardInterrupt:
-                # print("\n用户中断接收")
-                pass
-        
-        # 打印返回结果
-        print("\n" + "=" * 50)
-        print("test_websocket 返回结果:")
-        print(f"  result_workflow: {json.dumps(result_workflow, ensure_ascii=False, indent=2) if result_workflow else None}")
-        print(f"  result_confident: {json.dumps(result_confident, ensure_ascii=False, indent=2) if result_confident else None}")
-        print("=" * 50)
-        
-        return result_workflow, result_confident
+                print("\n用户中断接收")
+            except Exception as e:
+                print(f"\n处理消息时发生异常: {str(e)}")
+                raise
                 
     except Exception as e:
         print(f"\n✗ WebSocket连接异常: {str(e)}")
         raise
+    finally:
+        # 无论以何种方式退出，都调用 break API
+        try:
+            print(f"\n正在调用 break_conversation API...")
+            await i_conversation_break(token, conversation_id)
+            print(f"✓ break_conversation API 调用成功，等待2秒后退出...")
+            await asyncio.sleep(2)
+        except Exception as e:
+            print(f"\n⚠ 调用 break_conversation API 时发生异常: {str(e)}")
+    
+    return result_data
 
 
 async def main():
@@ -372,98 +417,25 @@ async def main():
     username = "15700078644"
     pass64 = "YXJ0aHVy"  # base64编码的密码
     
-    login_result = await test_login(username, pass64)
+    login_result = await i_login(username, pass64)
     
     # 如果登录成功，测试创建会话
     if login_result.get("isSuccess") or login_result.get("success"):
         token = login_result.get("content", {}).get("token")
         if token:
-            # 读取模板文件
-            template_file = os.path.join(os.path.dirname(__file__), "..", "template", "think_chain_template.yaml")
-            template_file = os.path.normpath(template_file)  # 规范化路径
-            print(f"读取模板文件: {template_file}")
-            with open(template_file, "r", encoding="utf-8") as f:
-                template_content = f.read()
-                # 移除 YAML 代码块标记（如果存在）
-                if "```yaml" in template_content:
-                    # 提取 YAML 代码块内容
-                    start_idx = template_content.find("```yaml") + 7
-                    end_idx = template_content.rfind("```")
-                    template_content = template_content[start_idx:end_idx].strip()
-                template = yaml.safe_load(template_content)
 
-            # 从 demo1.yaml 读取测试用例，每行一个
-            cases_file = os.path.join(os.path.dirname(__file__), "..", "test_data", "demo1.yaml")
-            cases_file = os.path.normpath(cases_file)
-            print(f"读取测试用例文件: {cases_file}")
-            with open(cases_file, "r", encoding="utf-8") as f:
-                test_cases = [line.strip() for line in f.readlines() if line.strip()]
+            title = "基于 OTS 多煤种模拟，整定乙烯装置 PIC14063 的 PID 参数，适配 DCS 动态调整"
 
-            # 存储测试结果
-            test_results = []
+            conv_result = await i_create_conversation(token, title=title)
 
-            for title in test_cases:
-                print(f"\n{'='*60}")
-                print(f"测试用例: {title}")
-                print(f"{'='*60}")
+            # 如果创建会话成功，测试WebSocket连接
+            if isinstance(conv_result, dict) and "conversation_id" in conv_result:
+                conversation_id = conv_result["conversation_id"]
+                result_data = await ws_conversation(token, conversation_id, text=title)
+                print(result_data)
+                # for line in result_data:
+                #     print(line)
 
-                conv_result = await test_create_conversation(token, title=title)
-                
-                # 如果创建会话成功，测试WebSocket连接
-                if isinstance(conv_result, dict) and "conversation_id" in conv_result:
-                    conversation_id = conv_result["conversation_id"]
-                    result_workflow, result_confident = await test_websocket(token, conversation_id, text=title)
-                    
-                    # 查找匹配的思维链名字
-                    think_chain_name = "未知"
-                    confidence = ""
-                    
-                    if result_workflow:
-                        catalog = result_workflow.get("catalog", "")
-                        json_str = result_workflow.get("json", "")
-                        branch_str = result_workflow.get("branch", "")
-                        confidence = result_confident.get("description", "") if result_confident else ""
-                        
-                        # 在模板中查找匹配的项
-                        if catalog in template:
-                            for item in template[catalog]:
-                                if (item.get("think_chain") == json_str and 
-                                    item.get("branch_rule") == branch_str):
-                                    think_chain_name = item.get("name", "未知")
-                                    print(f"✓ 匹配到思维链: {catalog} -> {think_chain_name}")
-                                    break
-                            else:
-                                print(f"⚠ 未找到匹配的模板项: catalog={catalog}")
-                        else:
-                            print(f"⚠ 未找到对应的 catalog: {catalog}")
-                    
-                    # 保存结果
-                    test_results.append({
-                        "title": title,
-                        "think_chain_name": think_chain_name,
-                        "confidence": confidence
-                    })
-                else:
-                    print(f"✗ 创建会话失败，跳过该测试用例")
-                    # 即使失败也记录，但标记为失败
-                    test_results.append({
-                        "title": title,
-                        "think_chain_name": "测试失败",
-                        "confidence": ""
-                    })
-
-            # 保存结果到文件，格式：测试用例 ---- 思维链名字 ---- 置信度
-            output_file = os.path.join(os.path.dirname(__file__), "..", "test_data", "demo1_results.yaml")
-            output_file = os.path.normpath(output_file)
-            with open(output_file, "w", encoding="utf-8") as f:
-                for result in test_results:
-                    line = f"{result['title']} ---- {result['think_chain_name']} ---- {result['confidence']}"
-                    f.write(line + "\n")
-            
-            print(f"\n{'='*60}")
-            print(f"测试完成，结果已保存到: {output_file}")
-            print(f"共测试 {len(test_results)} 个用例")
-            print(f"{'='*60}")
 
 if __name__ == "__main__":
     asyncio.run(main())
