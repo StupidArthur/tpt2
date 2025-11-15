@@ -40,5 +40,17 @@ for catalog, contents in tree.items():
             f.write("-" * BLANK_LINE_LENGTH + "\n")
             for item in items:
                 f.write(f"{item}\n")
-            f.write("=" * BLANK_LINE_LENGTH + "\n\n")
+            f.write("=" * BLANK_LINE_LENGTH + "\n")
+
+
+with open(os.path.join(DISPLAY_PATH, f"all.txt"), "w", encoding="utf-8") as f:
+    for catalog, contents in tree.items():
+        f.write('=' * BLANK_LINE_LENGTH + "\n")
+        for display, items in contents:
+            f.write(f"[{catalog}]\n")
+            f.write(f"{display}\n")
+            f.write("-" * BLANK_LINE_LENGTH + "\n")
+            for item in items:
+                f.write(f"{item}\n")
+            f.write("=" * BLANK_LINE_LENGTH + "\n")
 
