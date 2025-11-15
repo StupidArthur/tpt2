@@ -20,7 +20,7 @@ def sanitize_filename(filename: str) -> str:
     return sanitized
 
 
-cases_file = os.path.join(os.path.dirname(__file__), "..", "test_data", "demo1.yaml")
+cases_file = os.path.join(os.path.dirname(__file__), "..", "test_data", "demo2.yaml")
 cases_file = os.path.normpath(cases_file)
 print(f"读取测试用例文件: {cases_file}")
 with open(cases_file, "r", encoding="utf-8") as f:

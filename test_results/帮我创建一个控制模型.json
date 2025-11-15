@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a81fd-1398-7041-ab2f-32e2d44fdd58",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a81fd-139b-7f42-af31-1956f0c94ddf",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望创建一个用于工业过程控制的模型，可能是为了优化某个设备或系统的运行。这可能包括选择合适的控制策略、搭建数学模型或使用仿真工具进行设计和验证。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a81fd-15a1-7510-9fe0-bb3fecf0f27a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，为了创建控制模型，您需要提供以下信息：\n\n\n\n首先，确定模型矩阵的类型，我会指导您完成相应的操作。\n\n接着，基于您提供的位号数据，自动识别MV（操作变量）、DV（干扰变量）和CV（被控变量），形成模型矩阵。\n\n然后，我会检查位号的历史数据长度，分析历史数据以自动确定数据的时间范围，同时对选定的数据进行预处理，去除异常值和超限值。接着，系统将自动对数据进行切片处理，评估数据质量，挑选出质量最优的数据段进行系统辨识。如果数据质量不满足要求，系统将回溯一周的数据，重复上述步骤直到找到合适的数据。若尝试次数超过预设上限（若未设定，则使用默认值），则选择质量相对较高的数据段进行模型构建。\n\n随后，利用符合标准的数据进行模型辨识，采用子空间辨识算法来建立模型并获取模型的评价指标。之后，对模型矩阵执行仿真测试和质量评估，挑选性能最佳的模型进行优化，完成最终的控制模型构建。\n\n最后，更新并保存模型，展示新模型的详细信息，确保所有模型数据都妥善保存。\n\n\n\n现在，让我们开始第一步，确定模型矩阵的类型。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a81fd-23c9-7a60-8345-86a648b031ec",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a81fd-27b5-7551-9952-068d2e2445b1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a81fd-27b8-73b2-b07b-049fed03b6fb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a81fd-28a4-7c20-bd23-b57f38a370b6",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a81fd-28a7-76f3-b683-2b32c1b6f8c4",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a81fd-28a0-7ce3-86b5-90f0e0041a7a",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "帮我创建一个控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a81fd-28a0-7ce3-86b5-90f0e0041a7a"
+      }
+    }
+  ]
+]
