@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a95a3-735c-7f33-a75f-4032475f1fb8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a95a3-735d-74c2-a643-7214d1994afe",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望执行重整装置开工阶段的PID参数整定流程，通过分析历史数据来优化控制参数，确保装置启动过程安全、平稳并达到最佳控制效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a95a3-7567-76e3-b065-6d971bdd6064",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对重整装置的开工PID参数进行历史数据整定，这可能是因为当前的PID参数设置不适用于即将开始的生产过程，或者是为了优化装置的启动效率和稳定性，确保装置能够平稳、高效地进入正常运行状态。\n\n首先，我需要从回路信息查询中定位到重整装置，并获取该装置所有回路的位号信息。\n\n接着，将对这些回路进行运行实时状态的计算，检查重整装置所有控制回路的手自动状态，筛选出当前处于手动状态的回路。\n\n随后，对筛选出的手动回路进行基于历史数据的参数整定流程。具体操作是：对选定的回路提取历史数据，通过傅里叶变换分析数据中的频谱特征，利用得到的特征信息构建回路模型，最终根据模型计算出优化后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a95a3-7e6d-76b3-9c0b-d02a94863cbc",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路运行实时状态计算\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"基于历史数据的回路整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a95a3-8641-7a83-83a8-3cb2ea0ff615",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a95a3-8643-76b2-bd8d-545b32260a2e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--基于历史数据的回路整定-- 不存在于 --回路运行实时状态计算-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a95a3-8645-7f60-bfb5-937d492bf7b4",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a95a3-d3b8-7fb2-a65c-d33f3653e34c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a95a3-d3bb-7a70-90f9-334431193836",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"PID\\u6570\\u636e\\u8d28\\u91cf\\u5206\\u6790\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"PID\\u56de\\u8def\\u8fd0\\u884c\\u60c5\\u51b5\\u5206\\u6790\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"PID\\u5f3a\\u5316\\u5b66\\u4e60\\u5728\\u7ebf\\u81ea\\u6574\\u5b9a\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a95a3-d3bd-75a3-a07b-9cdbe0ba43cd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a95a3-d3bf-79d1-89ac-148054d568e5",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a95a3-d3c1-7b63-872d-c86e4b0551ed",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a95a3-d3b5-7bb3-a8af-b938dd11217c",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"PID数据质量分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"PID回路运行情况分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"PID强化学习在线自整定\",\"dep\":[\"id2\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"}]",
+      "name": "执行重整装置开工PID参数历史数据整定流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a95a3-d3b5-7bb3-a8af-b938dd11217c"
+      }
+    }
+  ]
+]

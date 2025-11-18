@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a968a-4165-7332-8efc-c79ff9d173a8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a968a-4167-7192-8723-07ffd9ad2321",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望检测H2S浓度是否存在异常，并基于近期数据判断是否出现异常趋势，同时预测未来是否有超出限值的风险。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a968a-4383-7fa0-b6ff-1ae1dfd0ed24",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对H2S浓度进行异常检测，包括对历史数据的分析以识别异常情况和预测未来可能出现的超限风险。这可能涉及到建立预警模型，通过页面提问的方式补充所需信息，如数据来源和具体需求等。\n\n首先，我会通过页面提问来获取用户问题中未明确的信息。接着，进入数据上传流程，推荐用户上传相关文件，并指导用户完成文件上传后的确立建模信息步骤。\n\n在确认建模信息阶段，我将生成预警方案，包括模型的输入位号、输出位号和配置建议。用户需要再次确认这些信息，确保配置无误。\n\n随后，进行TPT推理计算。根据用户上传的数据，我将先进行数据预处理，然后将处理后的数据输入自动化建模系统中进行模型微调训练。训练结果将以可视化形式展示，同时，利用训练完成的模型进行推理，分析历史异常情况及未来异常风险。若发现异常，我将提供原因分析及优化建议。\n\n最后，进入配置方案阶段。根据用户在生成方案时选择的模型，我将提取所有需要配置的位号，让用户在线完成配置，确保数据来源的准确性。\n\n完成配置方案后，进入实时计算阶段，根据用户选择的模型实时计算H2S浓度的异常检测和预测，最终输出检测和预测结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a968a-52f9-7f11-bcf9-b28a5167654e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"配置方案\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"实时计算\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a968a-604a-79e2-b076-c17180f91f5f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a968a-604d-7833-9b2c-a716953a4eb8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--配置方案-- 不存在于 --TPT推理计算-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a968a-60df-7c80-a283-46eee42f14e9",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a968a-d179-7203-af76-6e815037e067",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a968a-d17b-7402-be19-97cfc2e82d84",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u8b66\\u95ee\\u9898\\u5b9a\\u4e49\\u4e0e\\u6807\\u51c6\\u5316\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"alarm_pred\", \"ability\": \"\\u79bb\\u7ebf\\u9884\\u8b66\\u6570\\u636e\\u9009\\u62e9\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u6d4b\\u9884\\u8b66\\u65b9\\u6848\\u5236\\u5b9a\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u8b66\\u6a21\\u578b\\u5fae\\u8c03\\u8bad\\u7ec3\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u6d4b\\u9884\\u8b66\\u7b97\\u6cd5\\u6267\\u884c\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a968a-d17e-7521-85f9-286591b7a138",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a968a-d180-7c82-b5e9-2e425f3eb295",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a968a-d182-7922-87e7-3e59ba287d51",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a968a-d175-7af1-bf69-b0741a50875b",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"alarm_pred\",\"ability\":\"预警问题定义与标准化\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"alarm_pred\",\"ability\":\"离线预警数据选择\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"alarm_pred\",\"ability\":\"预测预警方案制定\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"alarm_pred\",\"ability\":\"预警模型微调训练\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"alarm_pred\",\"ability\":\"预测预警算法执行\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a968a-d175-7af1-bf69-b0741a50875b"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9493-48fd-7382-b601-7d84f1f7d33d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9493-48ff-7890-8072-032c56717c52",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解当前复杂控制回路的参数设置情况，但不包括通过AI智能控制构建的部分。这可能涉及查看PID参数、设定值、输出限制等传统控制配置。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9493-4b94-7f50-a6fe-63d2786eff64",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望了解当前复杂控制回路的具体参数设置情况，而非AI智能控制构建。这可能是因为用户需要验证当前设置是否符合工艺要求或 troubleshooting，需要获取该回路的比例、积分、微分（PID）参数等控制信息。\n\n首先，我需要从回路信息查询中查找出回路，并获取其控制回路的位号和复杂控制对应的模型名称信息。\n\n然后，与模型名称映射表进行匹配，查找对应的模型名称和复杂控制的位号。\n\n最后，输出复杂控制对应位号的模型名称及其实时的控制参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9493-50cf-74f3-8c2c-77f1ab63976b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9493-54a5-7c60-a7d3-8c92a7e3e8ff",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9493-553b-7c71-a8ae-90fe2dc9ca7f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9493-55c0-7260-a41b-67fa0064ed9a",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9493-55c3-7e23-82e1-2122274dba0b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9493-55bd-7b93-9a4e-08117d9dd803",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "查询复杂回路当前控制参数（非AI智能控制构建）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9493-55bd-7b93-9a4e-08117d9dd803"
+      }
+    }
+  ]
+]

@@ -305,7 +305,7 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
                         if msg_type == "conversation_status_changed":
                             # 打印status字段的值
                             status = data.get("status")
-                            # print(f"\n[conversation_status_changed] status: {status}")
+                            print(f"\n[conversation_status_changed] status: {status}")
                             pass
                             
                         elif msg_type in ["new_message", "message_content_delta"]:
@@ -314,10 +314,10 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
                             
                             # 检查特殊逻辑：content是dict，且有type key，且type值为workflow
                             if isinstance(content, dict) and content.get("type") == "workflow":
-                                # print(f"\n{'!' * 10}")
-                                # print(f"[{msg_type}] content (workflow):")
-                                # print(json.dumps(content, ensure_ascii=False, indent=2))
-                                # print(f"{'!' * 10}")
+                                print(f"\n{'!' * 10}")
+                                print(f"[{msg_type}] content (workflow):")
+                                print(json.dumps(content, ensure_ascii=False, indent=2))
+                                print(f"{'!' * 10}")
                                 result_workflow = content
                                 # 获取到result_workflow后，先调用break API，然后等待2秒，再跳出循环
                                 await test_conversation_break(token, conversation_id)
@@ -326,14 +326,14 @@ async def test_websocket(token: str, conversation_id: str, text: str = "pid"):
                             elif isinstance(content, dict) and content.get("type") == "view" and isinstance(content.get("view", {}).get("content"), dict) and content.get("view", {}).get("content", {}).get("title") == "置信度":
                                 result_confident = content.get("view").get("content")
                             else:
-                                # print(f"\n[{msg_type}] content:")
-                                # print(content, end='')
+                                print(f"\n[{msg_type}] content:")
+                                print(content, end='')
                                 pass
                                 
                         else:
                             # 其他类型，打印完整消息
-                            # print(f"\n[{msg_type or 'unknown'}] 完整消息:")
-                            # print(json.dumps(data, ensure_ascii=False, indent=2))
+                            print(f"\n[{msg_type or 'unknown'}] 完整消息:")
+                            print(json.dumps(data, ensure_ascii=False, indent=2))
                             pass
                             
                     except json.JSONDecodeError:

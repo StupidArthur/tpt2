@@ -6,6 +6,7 @@ from test_template.manager import template_manager
 from data_process.file_name_process import sanitize_filename
 from data_process.formatter import conversation_analyze, ConversationInfo
 from DEFINE import TEST_RESULT_PATH, TEMPLATE_PATH
+from test_data.ds.loader import all_sentences
 
 output = {
     "simulation": {},
@@ -19,16 +20,18 @@ output = {
 out_all = {}
 
 
-with open(template_manager.standard, "r", encoding="utf-8") as f:
-    out = [sanitize_filename(x.strip()) for x in f.readlines() if x]
-with open(template_manager.external, "r", encoding="utf-8") as f:
-    out.extend([sanitize_filename(x.strip()) for x in f.readlines() if x])
+# with open(template_manager.standard, "r", encoding="utf-8") as f:
+#     out = [sanitize_filename(x.strip()) for x in f.readlines() if x]
+# with open(template_manager.external, "r", encoding="utf-8") as f:
+#     out.extend([sanitize_filename(x.strip()) for x in f.readlines() if x])
 
 # print(out)
 
+out = all_sentences()
+
 result_files = os.listdir(TEST_RESULT_PATH)
 for item in out:
-    file = os.path.join(TEST_RESULT_PATH, f"{item}.json")
+    file = os.path.join(TEST_RESULT_PATH, "ds", f"{item}.json")
     try:
         with open(file, "r", encoding="utf-8") as f:
             raw = json.load(f)
@@ -55,6 +58,6 @@ for item in out:
 #     print(k, len(v))
 
 
-with open(os.path.join(TEMPLATE_PATH, "all.json"), "w", encoding="utf-8") as f:
+with open(os.path.join(TEMPLATE_PATH, "all_ds.json"), "w", encoding="utf-8") as f:
     json.dump(out_all, f, ensure_ascii=False, indent=4)
 

@@ -1,0 +1,206 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a81f8-9286-78b3-8dd0-0a2c3dac69da",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a81f8-9288-7c50-b3da-ce7cb388688a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过调整操作参数来提高重整装置产品的辛烷值，这可能包括改变反应温度、压力、空速或氢油比等关键变量，以优化催化反应效果，从而提升产品品质。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a81f8-94f7-7821-8a69-43f4c0cc1c93",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望调整重整装置产品的辛烷值。背后的原因可能在于原料性质变化频繁及下游需求的不确定性，这需要频繁操作切换工况。传统方法往往依赖人工经验来调节关键工艺参数，这种方法容易导致调整滞后、过度依赖操作人员的经验，存在过调或波动等问题，难以确保调整过程的高效与稳定。为了改善这一点，我将帮助您找到一条科学的操作路径，在保证装置运行安全与产品质量的前提下，指导您如何正确调节关键的工艺参数，提高工况调整的精准度、安全性和效率。\n\n首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成初始模板，再由用户根据装置实际情况，对相关变量进行确定与调整，后续用户基于此模板上传装置历史运行数据。\n\n在开始规划操作路径之前，需要先构建操作对产品质量影响的预测模型。我将利用TPT大模型的预测能力，结合生产过程中的时序数据以及质量分析数据，构建相关变量与产品质量的动态响应关系。这一方法不仅能显著减少对化验分析的依赖，有效降低成本；还能提前预警可能的质量偏差，帮助用户及时判断生产指标是否符合产品质量标准，避免产品不合格造成的经济损失。\n\n接下来，基于预测模型结果，我将根据您设定的目标控制范围，我将智能规划出关键工艺参数的调整路径，自动寻找关键调整参数阶段性调整的最短路径，确保从当前工况平稳过渡到目标工况。这种方法能够大幅降低对操作人员经验的依赖，缩短调整时间，减少操作波动，从而提高产品质量的稳定性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a81f8-a73a-7553-9eca-d0746be852ca",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认关键变量\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"产品质量预测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"动态操作路径规划\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a81f8-ae22-70f2-bf1b-8732840ca48d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a81f8-ae25-7390-a0d6-f9bba7edef60",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a81f8-ae27-7912-ba61-3d5f984c546f",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a81f8-ae1e-74c2-b8b8-2a923d635340",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"确认关键变量\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"产品质量预测\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"动态操作路径规划\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "我想调整重整装置产品的辛烷值，应该如何操作？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"industry\": \"石油化工\",\n  \"plant\": \"重整装置\",\n  \"device\": \"重整反应器\",\n  \"quality\": \"辛烷值\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "确认关键变量"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

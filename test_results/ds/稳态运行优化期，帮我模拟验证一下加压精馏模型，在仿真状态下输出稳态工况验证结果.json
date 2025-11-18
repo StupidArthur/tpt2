@@ -1,0 +1,974 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a956b-3b09-77a2-8f85-eba55d528b2e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a956b-3b0b-7941-acd8-dda7d8237893",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在稳态运行优化阶段，通过仿真验证加压精馏模型的准确性，并输出验证结果。这有助于确认模型能否真实反映装置在稳态下的行为，为后续优化或控制策略提供依据。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a956b-3d88-78d0-b901-4384b67eb3aa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，仿真建模加压精馏设备，需要考虑化工行业复杂的动力学传递，多相流动，热力学平衡等特性的耦合作用。\n\n我们将模拟生成一个通用的加压精馏动态工艺仿真模型，并运行模型进行模拟仿真计算，观察仿真计算过程中相关设备参数值的变化。\n\n模拟生成工艺模型仿真计算状态下瞬时工况。\n\n选择加载其中一个工况，观察对比设备参数值趋势变化。\n\n模拟生成设备装置流程图，查看流程图。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a956b-41df-7992-a95b-09888779c62f",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"加载工况\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a956b-4c5c-77d3-9057-716c02d7f164",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a956b-4c5f-7ac0-ae67-67eb29de4807",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a956b-4c61-7303-8142-b25da9d48402",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a956b-4c58-7c92-82a7-9565ee450721",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "稳态运行优化期，帮我模拟验证一下加压精馏模型，在仿真状态下输出稳态工况验证结果",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_model\": [\n    {\n      \"likemodel\": \"jyjl\"\n    },\n    {\n      \"likemodel\": \"jiayajingliu\"\n    }\n  ],\n  \"user_snapshot\": [\n    {\n      \"likesnapshot\": \"稳态0526\"\n    },\n    {\n      \"likesnapshot\": \"稳态0530\"\n    }\n  ],\n  \"running_model_tags\": [\n    {\n      \"running_model\": \"jyjl\",\n      \"tagsconfig\": [\n        {\n          \"name\": \"TI14125.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔顶温度\",\n          \"unit\": \"℃\",\n          \"index\": \"-15.23\"\n        },\n        {\n          \"name\": \"TI14120.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔釜温度\",\n          \"unit\": \"℃\",\n          \"index\": \"62.21\"\n        },\n        {\n          \"name\": \"AI140172.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔釜乙烷浓度\",\n          \"unit\": \"ppm\",\n          \"index\": \"226.33\"\n        },\n        {\n          \"name\": \"FI14036.PV\",\n          \"datatype\": 2,\n          \"desc\": \"回流量\",\n          \"unit\": \"kg/h\",\n          \"index\": \"42217.32\"\n        },\n        {\n          \"name\": \"ZDY.REALHLB\",\n          \"datatype\": 2,\n          \"desc\": \"回流比\",\n          \"unit\": \"%\",\n          \"index\": \"0.9788\"\n        },\n        {\n          \"name\": \"PI14037.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔顶压力\",\n          \"unit\": \"MPa\",\n          \"index\": \"2.456\"\n        }\n      ]\n    },\n    {\n      \"running_model\": \"jiayajingliu\",\n      \"tagsconfig\": [\n        {\n          \"name\": \"TI14125.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔顶温度\",\n          \"unit\": \"℃\",\n          \"index\": \"-15.23\"\n        },\n        {\n          \"name\": \"TI14120.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔釜温度\",\n          \"unit\": \"℃\",\n          \"index\": \"62.21\"\n        },\n        {\n          \"name\": \"AI140172.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔釜乙烷浓度\",\n          \"unit\": \"ppm\",\n          \"index\": \"226.33\"\n        },\n        {\n          \"name\": \"FI14036.PV\",\n          \"datatype\": 2,\n          \"desc\": \"回流量\",\n          \"unit\": \"kg/h\",\n          \"index\": \"42217.32\"\n        },\n        {\n          \"name\": \"ZDY.REALHLB\",\n          \"datatype\": 2,\n          \"desc\": \"回流比\",\n          \"unit\": \"%\",\n          \"index\": \"0.9788\"\n        },\n        {\n          \"name\": \"PI14037.PV\",\n          \"datatype\": 2,\n          \"desc\": \"脱乙烷塔塔顶压力\",\n          \"unit\": \"MPa\",\n          \"index\": \"2.456\"\n        }\n      ]\n    }\n  ],\n  \"extra_snapshot\": \"\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "生成工艺模型并执行"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请稍作等待，正在创建工艺模型",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "init_begin": "2025-11-18 13:24:14"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "init_end": "2025-11-18 13:24:14"
+        }
+      }
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "apply_result": {
+            "result": 1,
+            "full_url": "http://otsgateway.indu:8181/applyOTSResource",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "payload": {
+              "sessionId": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            }
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "",
+          "type": "tip",
+          "description": "创建工艺模型",
+          "content": "准备创建工艺模型",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请稍作等待，后续需要您进行相关信息确认",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "user_modelname": "jyjl"
+        }
+      }
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/getmodelinfo",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "result_state": 0,
+          "retry_count": 0
+        }
+      }
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### 已生成工艺模型，状态检测正常\r\n\r\n工艺模型已生成，状态检测正常，准备加载模型。"
+      }
+    }
+  ],
+  [
+    [
+      15
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### 正在加载模型\r\n\r\n正在加载模型，请稍后"
+      }
+    }
+  ],
+  [
+    [
+      16
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/getmodellist",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      17
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "from_server_model_list": [
+            {
+              "modelname": "jyjl"
+            },
+            {
+              "modelname": "qhl"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  [
+    [
+      18
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "user_modellist": [
+            {
+              "likemodel": "jyjl"
+            }
+          ],
+          "server_modellist": [
+            {
+              "modelname": "jyjl"
+            },
+            {
+              "modelname": "qhl"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  [
+    [
+      19
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "model_options": [
+            "jyjl"
+          ],
+          "default_model": "jyjl"
+        }
+      }
+    }
+  ],
+  [
+    [
+      20
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/loadmodel",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      21
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "begin load_modelname": "jyjl"
+        }
+      }
+    }
+  ],
+  [
+    [
+      22
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "end load_modelname": "jyjl",
+          " load model result": 0
+        }
+      }
+    }
+  ],
+  [
+    [
+      23
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### 正在运行模型\r\n\r\n正在运行模型，请稍后"
+      }
+    }
+  ],
+  [
+    [
+      24
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/startmodel",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      25
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "end running_modelname": "jyjl",
+          "running model result": 0
+        }
+      }
+    }
+  ],
+  [
+    [
+      26
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### 模型运行正常\r\n\r\n模型运行正常，现在可以模拟和观察仿真设备状态变化了。"
+      }
+    }
+  ],
+  [
+    [
+      27
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"state\": 0,\n  \"running_model\": \"jyjl\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 获取历史步骤的输出数据\n    id1_data = input.get('id1', {})\n    \n    # 从历史步骤中提取模型信息\n    running_model = id1_data.get('running_model', '')\n    \n    # 根据用户输入和上下文，确定要模拟验证的模型是加压精馏模型\n    # 用户明确提到了\"加压精馏模型\"，所以直接使用这个名称\n    target_model = \"加压精馏模型\"\n    \n    # 组装输出数据\n    output = {\n        'user_tagnames': [],\n        'user_duration': 0,\n        'loaded_snapshot': '',\n        'running_model_tags': [{\n            'running_model': target_model,\n            'tagsconfig': []\n        }],\n        'pre_tagsvalue': []\n    }\n    \n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_tagnames\": [],\n  \"user_duration\": 0,\n  \"loaded_snapshot\": \"\",\n  \"running_model_tags\": [\n    {\n      \"running_model\": \"加压精馏模型\",\n      \"tagsconfig\": []\n    }\n  ],\n  \"pre_tagsvalue\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "模拟设备参数值"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "user_duration": 0,
+          "loaded_snapshot": null
+        }
+      }
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/getmodelinfo",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n成功生成模型设备参数"
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n已成功生成模型设备参数信息，参数详情 请点击 设备参数信息表 进行查看。"
+      }
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "设备参数信息表",
+          "type": "card",
+          "details": "### 关键设备参数\n| 参数描述 | 参数名称 | 数据类型 | 单位 |\n|---|---|---|---|\n| 脱乙烷塔塔顶温度 | TI14125.PV | DOUBLE | ℃ |\n| 脱乙烷塔塔釜温度 | TI14120.PV | DOUBLE | ℃ |\n| 脱乙烷塔塔釜乙烷浓度 | AI140172.PV | DOUBLE | ppm |\n| 回流量 | FI14036.PV | DOUBLE | kg/h |\n| 回流比 | ZDY.REALHLB | DOUBLE | % |\n| 脱乙烷塔塔顶压力 | PI14037.PV | DOUBLE | MPa |\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/readvalue",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### 成功模拟设备仿真计算\r\n\r\n成功模拟设备仿真计算，模拟数据详情 请点击 设备模拟仿真数据表 进行查看。"
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "设备模拟仿真数据表",
+          "type": "card",
+          "details": "### 设备最新模拟仿真数据\n| 参数名称 | 数据类型 | 值 | 单位 |\n|---|---|---|---|\n| AI140172.PV | DOUBLE | 1083.817824 | ppm |\n| FI14036.PV | DOUBLE | 43487.142903 | kg/h |\n| PI14037.PV | DOUBLE | 2.396111 | MPa |\n| TI14120.PV | DOUBLE | 59.634595 | ℃ |\n| TI14125.PV | DOUBLE | -16.954113 | ℃ |\n| ZDY.REALHLB | DOUBLE | 1.372281 | % |\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "duration": 0,
+          "has_pre_tags": false
+        }
+      }
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"state\": 0,\n  \"running_model\": \"jyjl\",\n  \"tagsvalue\": [\n    {\n      \"tagName\": \"AI140172.PV\",\n      \"dataType\": 2,\n      \"value\": 1083.817823899713\n    },\n    {\n      \"tagName\": \"FI14036.PV\",\n      \"dataType\": 2,\n      \"value\": 43487.14290331217\n    },\n    {\n      \"tagName\": \"PI14037.PV\",\n      \"dataType\": 2,\n      \"value\": 2.3961114646435053\n    },\n    {\n      \"tagName\": \"TI14120.PV\",\n      \"dataType\": 2,\n      \"value\": 59.634594993081805\n    },\n    {\n      \"tagName\": \"TI14125.PV\",\n      \"dataType\": 2,\n      \"value\": -16.954113338822822\n    },\n    {\n      \"tagName\": \"ZDY.REALHLB\",\n      \"dataType\": 2,\n      \"value\": 1.3722811913902915\n    }\n  ]\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 获取历史步骤的输出数据\n    id1_data = input.get('id1', {})\n    id2_data = input.get('id2', {})\n\n    # 从历史数据中提取运行模型名称\n    running_model = id2_data.get('running_model', '')\n\n    # 组装输出数据\n    output = {\n        'user_snapshot': [],\n        'server_snapshotlist': [],\n        'running_model': running_model\n    }\n\n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_snapshot\": [],\n  \"server_snapshotlist\": [],\n  \"running_model\": \"jyjl\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "加载工况"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "http_message": {
+            "url": "http://otsgateway.indu:9999/api/getsnapshotlist",
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Routing-Header": "019a956b-39b8-7902-8d89-f5958fb7c001"
+            },
+            "payload": {}
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "from_server_snapshot_list": [
+            {
+              "desc": "0523",
+              "ftime": "20250523131551",
+              "id": "0281ED50-11C8-421E-AC79-349895CC0C96",
+              "lsourcetype": 3,
+              "ltime": 59000.0,
+              "ltype": 4,
+              "name": "冷态",
+              "scenename": "jyjl"
+            },
+            {
+              "desc": "",
+              "ftime": "20250529165230",
+              "id": "41910F36-0B66-4C13-8796-3B91B6461B9B",
+              "lsourcetype": 3,
+              "ltime": 160359000.0,
+              "ltype": 4,
+              "name": "稳态0530",
+              "scenename": "jyjl"
+            },
+            {
+              "desc": "",
+              "ftime": "20250526162705",
+              "id": "A9A5FF9A-D534-4CE8-9539-F18D9D666F70",
+              "lsourcetype": 1,
+              "ltime": 156795000.0,
+              "ltype": 4,
+              "name": "稳态0526",
+              "scenename": "jyjl"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "user_snapshots": [
+            {
+              "likesnapshot": "稳态0526"
+            },
+            {
+              "likesnapshot": "稳态0530"
+            }
+          ],
+          "extra_snapshot": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "已模拟生成多个可用工况，请选择一个工况加载",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n已模拟生成多个可用工况，请选择一个工况加载"
+      }
+    }
+  ]
+]

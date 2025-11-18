@@ -1,0 +1,197 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a8212-a9ab-7b20-b716-8a3441f9914a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a8212-a9ad-70b1-b29b-4621d27c4f59",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对整个换热网络进行优化改造，目标是在不考虑现场实际限制的情况下，使系统运行成本达到最低。这可能包括重新设计换热流程、调整设备配置或优化能量利用等。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a8212-ac20-7c42-9c3e-fa539f720a53",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户的提问指定了优化目标，希望对现有换热网络进行全面的全局改造，寻求突破性的能效提升方案。重构改造过程可能涉及新增/移除换热器、重组流股匹配关系等对换热网络进行深度改造，确保在满足工艺要求的前提下，实现系统性能的显著提升。\n\n首先，我需要通过用户交互界面，提示用户需要上传必要的数据信息，包括物流数据，换热器参数等。利用数据校验，检查数据的完整性、格式是否正确以及是否符合全面改造的基本要求。若数据校验不通过，我会在原上传文件中，高亮错误单元格并添加修正批注，需要用户根据提示修改数据并重新上传。\n\n若数据校验通过，则可直接进行换热网络优化。通过新增设备、流程重组等手段，生成包含以下内容的改造方案：(1) 优化后的网络拓扑图；(2) 改造前后运行成本对比；(3) 换热器利旧及新增清单。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a8212-b747-7461-89ad-d840ac2c21a6",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a8212-bc88-7730-b738-3bc797e85264",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a8212-bc8a-7d80-baf0-35d3de8444ba",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a8212-bc8c-7b62-ae51-fdce4995fe4a",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a8212-bc83-7e10-bbd2-82e67d636c51",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "请帮我对换热网络进行全局改造，改造的目标是运行成本最低，不考虑现场限制",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传数据与校验"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "这个环节会先检测用户是否已经上传过数据，如果用户没有上传数据，则需要根据模版进行上传，如果已经上传了，则可以选择是否需要更新数据。上传数据后，我会对数据进行处理，计算换热器、流股的性质，并校验上传的数据是否满足用户的需求。"
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？"
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ]
+]

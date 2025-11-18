@@ -1,0 +1,427 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a8203-369b-72d0-8e22-ff7bd520ec56",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a8203-369d-7b02-8ebc-57ac7f0a44da",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望尽快对523FIC_0009流量控制回路进行整定，以提升其控制效果。这可能包括调整PID参数，使控制更稳定、响应更迅速。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a8203-3928-74b3-b83a-81964517697f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对523FIC_0009控制回路进行整定，以优化其控制性能。这可能涉及到调整PID参数，确保控制回路在不同工况下都能稳定、准确地控制流量。\n\n首先，我需要从回路信息查询中，获取回路描述、类型、PID参数、回路类型和回路量程信息。\n\n利用回路数据有效性检测，检测数据是否存在且符合要求。\n\n若回路数据有效性检测不通过，则认为当前数据无效，则不能使用常规的基于数据进行整定的方法。我将采用不依赖于数据模型，仅基于回路相关属性进行参数整定的方法，即基于专家经验的参数整定，给出优化后的PID参数。\n\n若回路数据有效性检测通过，则进行控制回路性能评估及诊断，检测阀门是否卡涩，若存在阀门卡涩则需要您谨慎进行参数优化。\n\n最后进行多策略自适应整定，若控制回路的阀门存在长期卡限等异常情况，则不建议进行整定，我将无法为您提供参数。若控制回路的MV或SV变化幅度过小，则建议您挑选合适的历史数据再整定；其他情况下我将提供给您整定后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a8203-46d0-7611-9b72-ef4020035062",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路数据有效性检测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a8203-598d-7171-9a35-c31de41ebdd6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a8203-5990-7633-af3e-046fe155b9e7",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a8203-5992-7213-bd53-fe0e09c67ce4",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a8203-5988-7e92-8964-a9d145527b8a",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "你赶紧帮我整定一下523FIC_0009啊",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"groupPath\": [],\n  \"loopName\": [\n    \"523FIC_0009\"\n  ],\n  \"loopDesc\": [],\n  \"advanceLoopType\": null,\n  \"queryingLoop\": true,\n  \"queryingList\": false,\n  \"needTagValue\": true,\n  \"queryingCascade\": false\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路信息查询"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n我需要先查询系统是否存在名为523FIC_0009的回路。若存在则检查设定值（SV）、测量值（PV）、阀位值（MV）、量程以及PID等详细参数。不存在则核对名称后新增。\n"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:57:33.041",
+          "details": "开始获取所有分组信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:57:33.052",
+          "details": "{\"code\":\"00000\",\"content\":{\"id\":5661041536943904,\"idPath\":\"5661041536943904\",\"groupName\":\"氯碱装置\",\"groupPathName\":\"氯碱装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[{\"id\":5707052487004016,\"idPath\":\"5661041536943904|5707052487004016\",\"groupName\":\"某装置\",\"groupPathName\":\"氯碱装置/某装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]},{\"id\":5816966774999312,\"idPath\":\"5661041536943904|5816966774999312\",\"groupName\":\"双氧水装置\",\"groupPathName\":\"氯碱装置/双氧水装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5820057048893712,\"idPath\":\"5661041536943904|5820057048893712\",\"groupName\":\"乙烯装置\",\"groupPathName\":\"氯碱装置/乙烯装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5853106985190864,\"idPath\":\"5661041536943904|5853106985190864\",\"groupName\":\"氨轮装置\",\"groupPathName\":\"氯碱装置/氨轮装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5893558970633728,\"idPath\":\"5661041536943904|5893558970633728\",\"groupName\":\"某装置1\",\"groupPathName\":\"氯碱装置/某装置1\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5940817703423488,\"idPath\":\"5661041536943904|5940817703423488\",\"groupName\":\"水箱\",\"groupPathName\":\"氯碱装置/水箱\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]},{\"id\":5943821839158992,\"idPath\":\"5661041536943904|5943821839158992\",\"groupName\":\"常压塔装置\",\"groupPathName\":\"氯碱装置/常压塔装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]}]},\"isSuccess\":true,\"msg\":\"操作成功\",\"requestId\":null,\"success\":true}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:57:33.132",
+          "details": "loopList length: 1"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "回路位号信息详细数据",
+          "type": "card",
+          "description": "",
+          "details": "\n回路523FIC_0009 ，所属装置：氯碱装置/某装置\n\n\n## 回路位号实时值\n\n|参数名称|位号名|实时值|\n| :----: | :----: | :----: |\n|测量值|523FIC_0009.PV|-81.64|\n|设定值|523FIC_0009.SV|24.98|\n|阀位值|523FIC_0009.MV|-79.64|\n|比例|523FIC_0009.PB|0.00|\n|积分|523FIC_0009.TI|-72.30|\n|微分|523FIC_0009.TD|0.00|\n|阀位值量程上限|523FIC_0009.MVSCH|0.00|\n|阀位值量程下限|523FIC_0009.MVSCL|0.00|\n|设定值量程上限|523FIC_0009.SVSCH|0.00|\n|设定值量程下限|523FIC_0009.SVSCL|0.00|\n|是否串级|523FIC_0009.CAS|0|\n|控制模式|523FIC_0009.MODE|0|\n|正反作用|523FIC_0009.SWPN|0|\n|设定值限幅高限|523FIC_0009.MVH|0.00|\n|设定值限幅低限|523FIC_0009.MVL|0.00|\n|阀位值限幅高限|523FIC_0009.SVH|0.00|\n|阀位值限幅低限|523FIC_0009.SVL|0.00|\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n回路523FIC_0009为流量控制回路，所属装置为氯碱装置/某装置。您可查看其详细信息，包括设定值（SV）、测量值（PV）、阀位值（MV）、量程以及PID等参数。\n"
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"queryLoopWithTagValueSingleResult\": {\n    \"id\": 5740464603218928,\n    \"loopName\": \"523FIC_0009\",\n    \"loopDescription\": \"\",\n    \"loopType\": 0,\n    \"groupPath\": \"氯碱装置/某装置\",\n    \"groupName\": \"某装置\",\n    \"groupId\": 5707052487004016,\n    \"advanceLoopType\": 0,\n    \"cascadeLoopName\": null,\n    \"masterOrSlave\": false,\n    \"suggestTuningMethod\": 2,\n    \"currentPIDParam\": \"-/-72.30/-\",\n    \"tags\": [\n      \"523FIC_0009.PV\",\n      \"523FIC_0009.SV\",\n      \"523FIC_0009.MV\",\n      \"523FIC_0009.PB\",\n      \"523FIC_0009.TI\",\n      \"523FIC_0009.TD\",\n      \"523FIC_0009.MVSCH\",\n      \"523FIC_0009.MVSCL\",\n      \"523FIC_0009.SVSCH\",\n      \"523FIC_0009.SVSCL\",\n      \"523FIC_0009.CAS\",\n      \"523FIC_0009.MODE\",\n      \"523FIC_0009.SWPN\",\n      \"523FIC_0009.MVH\",\n      \"523FIC_0009.MVL\",\n      \"523FIC_0009.SVH\",\n      \"523FIC_0009.SVL\"\n    ],\n    \"tagValues\": [\n      -81.63999938964844,\n      24.979999542236328,\n      -79.63999938964844,\n      0,\n      -72.30000305175781,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    \"found\": null\n  },\n  \"resultField\": \"queryLoopWithTagValueSingleResult\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 获取历史步骤的输出数据\n    id1_data = input.get('id1', {})\n    \n    # 获取回路信息查询结果\n    query_result = id1_data.get('queryLoopWithTagValueSingleResult', {})\n    \n    # 提取回路ID\n    loop_id = query_result.get('id', 0)\n    if not isinstance(loop_id, int):\n        loop_id = int(loop_id)\n    \n    # 组装输出数据\n    output = {\n        'loopId': loop_id\n    }\n    \n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"loopId\": 5740464603218928\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路数据有效性检测"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "获取523FIC_0009基本信息后，检查其历史数据的完整性。",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n获取523FIC_0009基本信息后，检查其PV/SV/MV历史数据的完整性。数据完整则采用历史数据整定；无效则采用知识驱动（经验）提供初始PID参数。\n"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "历史曲线预览页面",
+          "type": "page",
+          "details": "/xpt-tpt-pid/echartshistory?loopId=5740464603218928&type=view&startTime=1755061896000&endTime=1755083496000"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n该控制回路基于历史数据进行了参数整定。\n上一次计算得到的PID参数为： 比例(P)：399.02比例度 积分时间(I)：19.07秒 微分时间(D)：0.00秒\n"
+      }
+    }
+  ]
+]

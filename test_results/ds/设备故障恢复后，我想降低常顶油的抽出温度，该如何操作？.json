@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a94ae-c416-7553-83bd-7ed25ac95f71",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a94ae-c418-7d01-909c-ce3f0a97a2a2",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在设备故障恢复后，通过调整操作参数来降低常顶油的抽出温度。这可能包括降低加热炉温度、调整回流量或改变塔内压力等手段，以达到控制抽出温度的目的。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a94ae-c683-7f11-b85a-87349c1c184f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望降低常顶油的抽出温度，可采取以下操作路径：\n\n首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成初始模板，再由用户根据装置实际情况，对相关变量进行确定与调整，后续用户基于此模板上传装置历史运行数据。\n\n在进行操作路径规划之前，需要先构建操作对质量影响的预测模型。通过TPT大模型的预测能力，分析生产过程中的时序数据以及质量分析数据，构建相关变量与产品质量的动态响应关系。这一方法不仅能显著减少用户对装置历史数据的依赖，解决传统方法中数据积累不足的问题；还能有效应对传统方法在多变量时序数据处理上的局限性，以及变量之间相互影响的复杂性。\n\n接着，基于预测模型结果，我会根据用户指定的目标控制范围，结合当前运行状态，自动寻找出关键调整变量分阶段调整的最短路径，指导用户从当前工况平滑过渡到目标工况。这种方法可以有效克服传统人工控制方式在非稳态过程中的缺点，大幅减少用户对专业知识的依赖，缩短调整周期，提高产品质量的稳定性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a94ae-d352-75a3-8d65-a3456988ddf9",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认关键变量\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"产品质量预测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"动态操作路径规划\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a94ae-da9b-70b0-8916-a74200a4be7c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a94ae-db5c-7711-900c-1f3eb99757ea",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a94ae-dc13-7633-b0a8-820da49b8cd4",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a94ae-dc15-7003-acaf-ad4d35ccdf5c",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a94ae-dc0f-77c2-ad41-8813b6e9f88a",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"确认关键变量\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"产品质量预测\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"动态操作路径规划\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "设备故障恢复后，我想降低常顶油的抽出温度，该如何操作？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a94ae-dc0f-77c2-ad41-8813b6e9f88a"
+      }
+    }
+  ]
+]

@@ -10,8 +10,16 @@ data1 = [[[0], {'type': 'text', 'text': ''}, [0, 'text'], '\n\n'], [[1], {'id': 
 
 
 def format_workflow_diagram(workflow_str: str, branch_rules_str: str = "") -> str:
-    """将 workflow 和 branch_rules 转换为文本流程图"""
+    """将 workflow 和 branch_rules 转换为文本流程图
+    
+    绘制策略：
+    1. 整体从上往下绘制流程图
+    2. 每个矩阵块有一个id{i}，序号一般是相连的
+    3. 若序号不相连（跳过了1个），说明这个矩阵块下面应该接一个end矩阵
+    4. 然后后面应该是另一个分支，另一个分支的绘制：从分支节点向右，然后继续向下，一直到end为止
+    """
     import json
+    import re
     
     try:
         workflow = json.loads(str(workflow_str)) if workflow_str else []
@@ -25,132 +33,117 @@ def format_workflow_diagram(workflow_str: str, branch_rules_str: str = "") -> st
     # 构建节点映射
     nodes = {node['id']: node for node in workflow}
     
-    # 构建依赖关系图（正向：从当前节点到后续节点）
-    next_map = {}
-    for node in workflow:
-        node_id = node['id']
-        deps = node.get('dep') or []
-        if isinstance(deps, str):
-            deps = [deps]
-        # 找到所有依赖当前节点的节点（即当前节点的后续节点）
-        next_nodes = []
-        for other_node in workflow:
-            other_deps = other_node.get('dep') or []
-            if isinstance(other_deps, str):
-                other_deps = [other_deps]
-            if node_id in other_deps:
-                next_nodes.append(other_node['id'])
-        next_map[node_id] = next_nodes
+    def extract_id_number(node_id: str) -> int:
+        """从id中提取数字，例如 'id1' -> 1, 'id10' -> 10"""
+        match = re.search(r'(\d+)', node_id)
+        return int(match.group(1)) if match else 0
     
-    # 构建分支规则映射
-    branch_map = {}
-    for rule in branch_rules:
-        from_id = rule.get('from')
-        to_id = rule.get('to')
-        expr = rule.get('expression', '')
-        # 简化表达式显示
-        if 'Eq true' in expr:
-            expr = expr.replace('Variable([String("', '').replace('")]) Eq true', ' = true')
-        elif 'Eq false' in expr:
-            expr = expr.replace('Variable([String("', '').replace('")]) Eq false', ' = false')
-        else:
-            expr = expr.replace('Variable([String("', '').replace('")])', '')
-        
-        if from_id not in branch_map:
-            branch_map[from_id] = []
-        branch_map[from_id].append({'to': to_id, 'expr': expr})
+    # 按照id序号排序节点
+    sorted_nodes = sorted(workflow, key=lambda x: extract_id_number(x['id']))
     
-    # 找到起始节点（没有依赖的节点）
-    start_nodes = [node_id for node_id in nodes.keys() if not nodes[node_id].get('dep')]
+    # 构建节点到索引的映射（用于快速查找）
+    node_to_index = {node['id']: i for i, node in enumerate(sorted_nodes)}
+    
+    # 检查节点是否是end节点
+    def is_end_node(node_id: str) -> bool:
+        node = nodes.get(node_id, {})
+        return node.get('ability', '').lower() == 'end' or node.get('tool', '').lower() == 'general_tool'
     
     lines = []
     
-    def format_node(node_id):
+    def format_node(node_id: str) -> str:
         """格式化节点显示"""
         node = nodes.get(node_id, {})
         ability = node.get('ability', node_id)
         return ability
     
-    def get_node_width(node_id):
-        """获取节点显示宽度"""
-        return len(format_node(node_id)) + 2
-    
-    def draw_flow(start_id, visited=None, indent=0):
-        """绘制流程图"""
-        if visited is None:
-            visited = set()
-        
-        if start_id in visited:
-            return []
-        
-        visited.add(start_id)
-        result_lines = []
+    def draw_node(node_id: str, indent: int = 0) -> list:
+        """绘制单个节点"""
         prefix = "  " * indent
-        
-        # 绘制当前节点
-        node_text = format_node(start_id)
-        result_lines.append(f"{prefix}% {node_text} %")
-        
-        # 获取后续节点
-        next_nodes = next_map.get(start_id, [])
-        
-        # 检查是否有分支规则
-        if start_id in branch_map:
-            branches = branch_map[start_id]
-            branch_targets = {b['to'] for b in branches}
-            # 合并分支目标和普通后续节点
-            all_next = list(set(next_nodes + list(branch_targets)))
-            
-            if all_next:
-                result_lines.append(f"{prefix}    │")
-                # 绘制分支
-                for i, branch in enumerate(branches):
-                    branch_id = branch['to']
-                    expr = branch.get('expr', '')
-                    is_last_branch = (i == len(branches) - 1) and all(nid in branch_targets for nid in next_nodes if nid not in branch_targets)
-                    
-                    if expr:
-                        connector = "└─→" if is_last_branch and i == len(branches) - 1 else "├─→"
-                        result_lines.append(f"{prefix}    {connector} [{expr}]")
-                    else:
-                        connector = "└─→" if is_last_branch and i == len(branches) - 1 else "├─→"
-                        result_lines.append(f"{prefix}    {connector}")
-                    
-                    # 递归绘制分支路径
-                    sub_lines = draw_flow(branch_id, visited.copy(), indent + 3)
-                    result_lines.extend(sub_lines)
-                    
-                    if i < len(branches) - 1 or any(nid not in branch_targets for nid in next_nodes):
-                        result_lines.append(f"{prefix}    │")
-                
-                # 绘制非分支的后续节点（通过 dep 关系，但不在分支规则中）
-                non_branch_next = [nid for nid in next_nodes if nid not in branch_targets]
-                for i, next_id in enumerate(non_branch_next):
-                    is_last = i == len(non_branch_next) - 1
-                    result_lines.append(f"{prefix}    {'└─→' if is_last else '├─→'}")
-                    sub_lines = draw_flow(next_id, visited.copy(), indent + 3)
-                    result_lines.extend(sub_lines)
-                    if not is_last:
-                        result_lines.append(f"{prefix}    │")
-        else:
-            # 没有分支，直接连接后续节点
-            if next_nodes:
-                result_lines.append(f"{prefix}    │")
-                for i, next_id in enumerate(next_nodes):
-                    is_last = i == len(next_nodes) - 1
-                    result_lines.append(f"{prefix}    {'└─→' if is_last else '├─→'}")
-                    sub_lines = draw_flow(next_id, visited.copy(), indent + 3)
-                    result_lines.extend(sub_lines)
-                    if not is_last:
-                        result_lines.append(f"{prefix}    │")
-        
-        return result_lines
+        node_text = format_node(node_id)
+        return [f"{prefix}% {node_text} %"]
     
-    # 从起始节点开始绘制
-    for start_id in start_nodes:
-        lines.extend(draw_flow(start_id))
-        if len(start_nodes) > 1:
-            lines.append("")
+    def draw_vertical_connector(indent: int = 0) -> list:
+        """绘制垂直连接线"""
+        prefix = "  " * indent
+        return [f"{prefix}    │"]
+    
+    def draw_horizontal_connector(indent: int = 0, is_last: bool = False) -> list:
+        """绘制水平连接线"""
+        prefix = "  " * indent
+        return [f"{prefix}    {'└─→' if is_last else '├─→'}"]
+    
+    def draw_right_then_down(start_indent: int, target_indent: int) -> list:
+        """绘制向右然后向下的连接线"""
+        result = []
+        prefix = "  " * start_indent
+        # 向右
+        result.append(f"{prefix}    ├─→")
+        # 向下到目标缩进
+        for i in range(start_indent + 1, target_indent):
+            p = "  " * i
+            result.append(f"{p}    │")
+        return result
+    
+    # 主绘制逻辑：按序号顺序从上往下绘制
+    # indent_level 表示当前的缩进层级（0为主流程，1为第一个分支，2为第二个分支，以此类推）
+    def draw_sequence(start_index: int, indent_level: int = 0) -> int:
+        """绘制从start_index开始的节点序列，返回处理到的索引位置"""
+        i = start_index
+        while i < len(sorted_nodes):
+            current_node = sorted_nodes[i]
+            current_id = current_node['id']
+            current_num = extract_id_number(current_id)
+            
+            # 绘制当前节点
+            lines.extend(draw_node(current_id, indent=indent_level))
+            
+            # 检查下一个节点
+            if i + 1 < len(sorted_nodes):
+                next_node = sorted_nodes[i + 1]
+                next_id = next_node['id']
+                next_num = extract_id_number(next_id)
+                
+                # 检查序号是否连续
+                if next_num == current_num + 1:
+                    # 序号连续，直接向下连接
+                    lines.extend(draw_vertical_connector(indent=indent_level))
+                    lines.extend(draw_horizontal_connector(indent=indent_level, is_last=True))
+                    i += 1
+                else:
+                    # 序号不连续，说明当前节点下面应该接end，然后开始新分支
+                    # 先绘制end节点（在同一缩进层级）
+                    lines.extend(draw_vertical_connector(indent=indent_level))
+                    lines.extend(draw_horizontal_connector(indent=indent_level, is_last=True))
+                    lines.extend(draw_node("end", indent=indent_level))
+                    
+                    # 如果还有下一个节点，开始新分支（向右绘制）
+                    if i + 1 < len(sorted_nodes):
+                        # 绘制向右的连接线（从end节点向右）
+                        prefix = "  " * indent_level
+                        lines.append(f"{prefix}    ├─→")
+                        
+                        # 新分支向右偏移一个缩进层级
+                        new_indent = indent_level + 1
+                        
+                        # 递归绘制新分支，从下一个节点开始（draw_sequence会绘制第一个节点）
+                        i = draw_sequence(i + 1, indent_level=new_indent)
+                    else:
+                        i += 1
+                    break
+            else:
+                # 最后一个节点，检查是否需要添加end
+                if not is_end_node(current_id):
+                    lines.extend(draw_vertical_connector(indent=indent_level))
+                    lines.extend(draw_horizontal_connector(indent=indent_level, is_last=True))
+                    lines.extend(draw_node("end", indent=indent_level))
+                i += 1
+                break
+        
+        return i
+    
+    # 从第一个节点开始绘制
+    draw_sequence(0, indent_level=0)
     
     return "\n".join(lines)
 

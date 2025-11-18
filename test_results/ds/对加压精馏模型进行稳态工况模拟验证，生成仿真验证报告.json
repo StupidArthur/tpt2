@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9560-aff3-7490-b330-2fd2d1b238d6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9560-aff5-76d3-b499-28acd5a64534",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过稳态工况模拟验证加压精馏模型的准确性，并生成相应的仿真验证报告，以便评估模型在实际工况下的表现和可靠性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9560-b212-7ef1-b622-6048bc688cd8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，仿真建模加压精馏设备，需要考虑化工行业复杂的动力学传递，多相流动，热力学平衡等特性的耦合作用。\n\n我们将创建一个通用的加压精馏动态工艺仿真模型，并运行该模型进行稳态工况模拟验证。（由于您未指定具体的操作条件和参数，这里将使用一些示例值。）\n\n首先，生成工艺模型并执行：设备参数值将根据设定值进行调整。在模拟过程中，观察仿真设备的参数值变化，确保其符合预期的趋势。\n\n接下来，模拟设备参数值：模拟生成的工艺模型中各设备的参数值。\n\n然后，加载工况：选择一个特定的工况，如“工况1”，进行加载操作。\n\n最后，查看流程图：打开流程图，进行查看。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9560-bab3-7d32-ab13-e1479db9dddf",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"加载工况\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9560-c3b1-73c0-85ef-80bdc3d40a89",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9560-c3b3-7d80-8fff-276df0d9a08c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--查看流程图-- 不存在于 --加载工况-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9560-c430-7553-ab01-b63a68ab216c",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9561-0d64-7f20-a927-485cfdb2d6b2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9561-0d67-7152-b6fd-0ef2e785c4f6",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"\\u751f\\u6210\\u5de5\\u827a\\u6a21\\u578b\\u5e76\\u6267\\u884c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"\\u52a0\\u8f7d\\u5de5\\u51b5\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"\\u67e5\\u770b\\u6d41\\u7a0b\\u56fe\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9561-0d69-76a2-bb77-664665cfef5e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9561-0d6b-7f90-9c76-4b92c8cab288",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9561-0d6d-72c1-b339-8a134f2e4f86",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9561-0d60-7f01-9f62-6a4a9c0b7a13",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "对加压精馏模型进行稳态工况模拟验证，生成仿真验证报告",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9561-0d60-7f01-9f62-6a4a9c0b7a13"
+      }
+    }
+  ]
+]

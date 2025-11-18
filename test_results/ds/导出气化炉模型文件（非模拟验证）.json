@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9565-e563-7462-a789-8ef62b79fc52",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9565-e565-72a1-8aac-380536f28f8e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望将气化炉的模型文件导出，用于实际应用或存档，而不是用于模拟验证。这可能是为了部署到控制系统、进行数据分析或与其他系统集成。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9565-e765-7cb1-b4ae-34d0f1e5db04",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望生成气化炉的模型文件，这些文件可能用于后续的仿真建模或系统识别，以帮助更好地分析和控制气化炉的运行状态。因此，我将生成一个通用的气化炉模型文件。\n\n首先，我会确定气化炉的模型矩阵，即模型中涉及的变量，包括MV（操作变量）、CV（控制变量）和DV（扰动变量），以及它们之间的关系。接着，我将检查相关位号的历史数据，确保位号的准确性，并校验历史数据，以确认数据的可用性。\n\n如果位号校验未能通过，我将提供一个位号错误列表，指出哪些位号无法被识别，以及哪些位号的数据时间范围不满足要求。如果数据校验未通过，我将提供另一个位号列表，列出哪些位号的数据量不足，以及哪些数据存在异常，如数值为零或波动过大。在这种情况下，用户需要调整位号或数据。\n\n如果位号校验和数据校验都通过，我将生成一个位号数据映射表，明确每个位号在模型矩阵中的对应关系。随后，我将基于这些数据生成气化炉的模型文件。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9565-f525-7350-b1ea-6a6a4d05f142",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9565-fab6-7231-b7a3-7c9f7075e05a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9565-fb69-7362-9990-523fb74667c5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9565-fc1f-7642-a146-ae06c06c4df1",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9565-fc21-7342-9b2c-816054dbd171",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9565-fc1b-7a21-9d25-36f0b0be758b",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "导出气化炉模型文件（非模拟验证）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9565-fc1b-7a21-9d25-36f0b0be758b"
+      }
+    }
+  ]
+]

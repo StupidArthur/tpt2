@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a968a-fa9c-7222-a468-870209baf737",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a968a-fa9e-7482-9187-42d71f853331",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对裂解炉裂解气中乙炔（C₂H₂）的含量以及乙烯的收率进行未来10分钟内的实时预测，以便及时调整操作参数，提高生产效率和产品质量。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a968a-fd0a-7850-af6e-19c7701bf25f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望预测裂解炉裂解气中C2H2含量及乙烯收率的变化趋势，以评估装置运行情况。鉴于用户未指定具体数据来源，我将通过TPT大模型推理计算，补充这一需求。\n\n首先，我会从历史数据库中提取最近1小时的装置关键数据，作为训练材料。接着，利用TPT推理计算能力，对这些数据进行自动化建模预测，计算出未来的10分钟内，裂解炉出口气体的C2H2含量及乙烯收率的变化趋势。完成计算后，将生成的预测趋势图呈现给用户。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a968b-0286-7c02-9d03-3f6c061e9c5e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"自动建模预测\", \"ability\": \"上传数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"自动建模预测\", \"ability\": \"确认建模信息\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"自动建模预测\", \"ability\": \"TPT推理计算\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a968b-0a98-7dc1-b833-3df71ed8e0a7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a968b-0b35-79c3-8f70-db3a23115388",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a968b-0bed-7663-8c5e-81ff1d4b9a83",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a968b-0bef-7f13-a8c6-87902cbd5488",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a968b-0be9-7f62-b2e5-6eb39c205f05",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"自动建模预测\",\"ability\":\"上传数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"自动建模预测\",\"ability\":\"确认建模信息\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"自动建模预测\",\"ability\":\"TPT推理计算\",\"dep\":[\"id2\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"}]",
+      "name": "C2H2含量及乙烯收率实时预测，时间范围未来10分钟，针对裂解炉裂解气",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a968b-0be9-7f62-b2e5-6eb39c205f05"
+      }
+    }
+  ]
+]

@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9489-3917-7d73-ad19-96e682247e91",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9489-3919-76b3-bb76-b37af97bb7a7",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对常减压装置的先进过程控制系统（APC）进行优化，以减少人工或系统频繁的操作调整，提高装置运行的平稳性和自动化水平。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9489-3b22-72e1-a757-107c1f124d84",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对常减压装置的APC（先进过程控制）进行优化，以降低操作频次，这可能涉及到调整控制策略、改进控制参数或升级控制硬件，目的是为了实现装置运行的自动化和智能化，从而减少人工操作的需要，提高生产效率和稳定性。\n\n首先，我需要确认常减压装置APC优化的适用范围，因为用户没有明确是想了解已有的解决方案还是进行一次新的优化尝试。\n\n如果用户是想了解已有的解决方案，那么我将从APC的应用案例库中检索相关的信息。首先，我会确认常减压装置APC应用案例的存在，如果这些案例存在，我将提供装置的优化建议；若案例中没有涉及特定的控制器，我将告知控制器不存在；如果用户想了解某个未包含的装置，我将说明该装置不存在。\n\n如果用户希望进行一次新的优化尝试，那么我需要收集一些关于常减压装置APC优化的基础信息，比如装置的工艺资料、控制变量和被控变量等。在收集这些信息的过程中，我会依赖于用户提供的资料，同时对用户未能提供的变量进行确认，确保所有信息的准确性。一旦收集到这些信息，我将生成一份优化的控制方案。\n\n随后，我将对生成的控制方案进行优化，以确保其满足工业现场的实际需求。在优化过程中，我将对控制器的类型进行选择，对变量的属性进行调整，并对相关的位号进行配置。在完成优化后，我将提供一份更新后的控制方案文档。\n\n最后，我将把优化后的控制方案上传到APC的运行环境中，进行控制器的加载和运行。在控制器运行一段时间后，我将收集其性能指标，评估优化的效果，并给出相应的结论。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9489-4fa0-7d62-b27e-5b174a733731",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案检索生成\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"控制方案优化\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"APC\", \"ability\": \"APC控制器在线应用\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"控制器实时指标数据查询\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9489-5c69-7f50-8842-89653b55b59f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9489-5c6b-7761-a412-4996eeff00d4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--APC控制器在线应用-- 不存在于 --控制方案优化-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9489-5cdb-7062-9ed8-3154bd9e1779",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9489-9be5-7b21-b418-ad700baa1607",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9489-9be8-7691-b84a-d10c0e058bd6",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u8bbe\\u8ba1\\u4fe1\\u606f\\u786e\\u8ba4\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u68c0\\u7d22\\u751f\\u6210\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u4f18\\u5316\", \"dep\": [\"id2\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"\\u8fa8\\u8bc6\\u6a21\\u578b\\u6570\\u636e\", \"dep\": [\"id4\"]}, {\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9489-9beb-70f2-a788-54c54b7d99a9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9489-9bed-70b1-ac87-f9890ab192af",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}, {\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9489-9bef-7fb1-94e7-44e36f1499f6",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9489-9be0-7011-bff0-d259964a2b1e",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id4\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "常减压装置APC优化，降低操作频次",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9489-9be0-7011-bff0-d259964a2b1e"
+      }
+    }
+  ]
+]

@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a94c2-5355-73d0-a302-5fb3de9d044a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a94c2-5357-7841-b6f6-342e7945c990",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望分析常减压装置中高能耗的原因，并找出可能的改进措施。这可能涉及对装置运行参数、设备效率、操作条件等方面进行系统评估，以识别能耗高的关键因素。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a94c2-55c6-7422-ac5e-241d508103d5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对常减压装置的高能耗原因进行分析，以找出能耗最高的用能环节，比如在该装置的换热系统中，可能是因为换热器的性能不理想导致的。首先，我将评估该装置的各单元设备，以确保没有设备因为能量利用不当而成为整个装置的能耗瓶颈。这可以通过检查每个设备的能源利用效率来实现，如果某个设备的效率明显低于其他设备，或者存在较大的能量损失，它就可能是导致装置能耗高的主要原因。\n\n接下来，我将使用夹点分析法来进一步识别换热网络中的瓶颈问题，这包括计算夹点温度，找出换热网络中不合理的换热器配置（例如，夹点温度以上不应有冷公用工程，夹点温度以下不应有热公用工程，不应有跨越夹点的传热过程），并确定装置中换热网络的最优节能潜力。\n\n最后，我将对换热器的性能进行全面评估，包括对比设计参数的热效率，查找设计效能不足的换热器；基于运行数据进行负荷和热效率分析，识别运行效率低下或超负荷的设备；同时，分析公用工程的传热路径，定位关键换热器。这一系列评估将帮助我生成一份详细的报告，报告中将列出设备的效率排名及改造的优先级，以实现最佳的节能效果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a94c2-6514-7aa2-820f-5ffef375b79e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a94c2-6ce2-7392-9f32-bca6d8cbf6b2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a94c2-6ce4-7380-bf22-57877c807b73",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--识别换热网络瓶颈-- 不存在于 --节能降耗瓶颈分析-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a94c2-6ce6-7ad1-add7-5df301cdfcc9",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a94c2-c713-7e63-9e3c-ea4192be3fe8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a94c2-c716-71b2-9bde-7c34a8b47c15",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u8282\\u80fd\\u964d\\u8017\\u74f6\\u9888\\u5206\\u6790\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\\u4e0e\\u6821\\u9a8c\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u7f51\\u7edc\\u74f6\\u9888\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u5668\\u74f6\\u9888\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a94c2-c718-78e3-919b-e02c346f9bd2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a94c2-c71a-7092-94cf-b48063dd3c19",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a94c2-c71c-7ef1-ad39-42c7461850a3",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a94c2-c70f-7692-81b7-ba20512de9da",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id3\"]}]",
+      "branch": "[]",
+      "name": "执行常减压装置高能耗原因分析流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a94c2-c70f-7692-81b7-ba20512de9da"
+      }
+    }
+  ]
+]

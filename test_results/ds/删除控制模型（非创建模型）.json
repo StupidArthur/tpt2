@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9552-6157-77d3-bfc5-798759bb85d6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9552-6159-7e83-b523-88e9ffd70535",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望删除一个已有的控制模型，而不是从零开始创建新的模型。这可能是因为该模型不再使用，或者需要替换为更合适的模型以提升控制效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9552-636c-7443-9f48-311646096900",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望删除现有的控制模型，而不是创建新的模型。这可能是因为需要调整模型配置，或是因为当前模型出现了问题，影响了正常的工作流程，所以选择删除以解决现有的困扰。\n\n首先，我会从系统中获取所有模型的列表，然后从中查找并确认要删除的模型名称。在进行删除操作前，我将再次提示您确认模型名称，确保无误，以防误删。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9552-66e5-7bd0-80fc-3937c7d0ef36",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"控制模型加载\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9552-6a55-70b0-b9ad-10f733e47b0c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9552-6a57-7ff1-84e1-7acc40f57910",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9552-6a5a-7201-81af-b7644ad08ee7",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9552-6a51-7021-9d1b-a4fbd1d6893d",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "删除控制模型（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9552-6a51-7021-9d1b-a4fbd1d6893d"
+      }
+    }
+  ]
+]

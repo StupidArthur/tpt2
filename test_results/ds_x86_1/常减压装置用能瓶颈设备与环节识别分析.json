@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a964e-b781-7743-9d29-8dde1f92dcdc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a964e-b959-7013-8bc8-37e404d3ccf5",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解常减压装置中哪些设备或环节存在用能效率低的问题，以便进行针对性优化。这可能包括加热炉、泵、压缩机、换热网络等关键耗能部位的分析。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a964e-c039-74d2-ad2a-1d7a16bc2f02",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户想确定常减压装置在能源利用方面的瓶颈设备和环节，首先，我需要评估各单元设备的能量利用效率，以识别出有效能损耗最大的关键设备。帮助用户定位能耗最高的用能环节和设备，便于用户后续通过操作、改造等方式进行针对性地优化。在此过程中，我需要注意的是：首先，要确保用户提供了必要的数据，如原油及各物料数据。若数据缺失，我将提示用户补充数据；其次，我会要求用户指定要评估的范围，例如，仅评估原油到汽油的过程。之后，我将通过计算，生成各单元设备的有效能利用情况报告，明确指出每个设备的有效能损失量和损失比例。最后，依据损失大小对所有设备进行排序，帮助用户确定装置中有效能损失的关键环节和设备，方便用户后续进行针对性地操作或改造优化。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a964e-db50-7ab3-92f1-755bea122ddf",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a964e-e6de-7911-b78f-ed78fb5903bf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a964e-e7df-7d93-bf62-673852e92ef5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a964e-ea53-7241-b896-5de2fa43b1e4",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a964e-ea53-7241-b896-5dfea463955f",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a964e-ea52-7d40-8531-f6d1f65f61bb",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "常减压装置用能瓶颈设备与环节识别分析",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a964e-ea52-7d40-8531-f6d1f65f61bb"
+      }
+    }
+  ]
+]

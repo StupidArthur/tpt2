@@ -1,0 +1,36 @@
+  think_chain: '[
+  {"id":"id1","tool":"PID","ability":"回路信息查询","dep":null},
+  {"id":"id2","tool":"PID","ability":"回路数据有效性检测","dep":["id1"]},
+  {"id":"id4","tool":"PID","ability":"基于专家经验的参数整定","dep":["id2"]},
+  {"id":"id6","tool":"PID","ability":"控制回路性能评估及诊断","dep":["id2"]},
+  {"id":"id7","tool":"PID","ability":"多策略自适应整定","dep":["id6"]},
+  {"id":"id9","tool":"PID","ability":"基于回路波形判断的参数迭代整定","dep":["id6"]}
+  
+  ]'
+  
+  branch_rule: '[{"from":"id2","to":"id4","expression":"Variable([String(\"valid\")])
+    Eq false"},{"from":"id2","to":"id6","expression":"Variable([String(\"valid\")])
+    Eq true"},{"from":"id6","to":"id7","expression":"Variable([String(\"isValveOscillate\")])
+    Eq false"},{"from":"id6","to":"id9","expression":"Variable([String(\"isValveOscillate\")])
+    Eq true"}]'
+	
+绘制逻辑介绍
+
+最终是一个二维的图
+
+从id1开始，往下绘制；如id2跟在id1后面，那么id2就应该画在id1下面
+
+若遇到跳过数字的情况，则补充一个end节点，如id2后面直接是id4，那么就在id2的正下方，画一个end（这时，id2增加了一个分支）
+
+出现2分支的情况，如id2后面有一个新增的end(id3)和id4，那么id4的分支应该从id2往右画一条向右，向下的直角线，id4和end并列
+
+出现3分支的情况，如id2后面有id3，id4，id6，那么在id4的基础上，id6应该是id2向右出来的线更长，然后再向下画直角。end，id4,id6,并行。
+
+按以上的规则，id4下面加一个end；
+
+id6下面是id7，下面是end
+
+id6向右向下直角线，是id9，下面是end
+
+按照以上绘制逻辑修改
+

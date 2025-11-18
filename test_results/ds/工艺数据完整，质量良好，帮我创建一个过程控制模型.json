@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a954a-653d-7412-a828-27ac910e2c55",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a954a-653f-77c3-8d6b-fc3f9f3b3b63",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望基于完整的高质量工艺数据建立一个过程控制模型，用于更精确地监控和控制生产过程。这可能包括选择合适的建模方法，如机理模型或数据驱动模型，并确保模型能准确反映实际工艺行为。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a954a-6821-7882-a781-ea378ceeca6c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，用户拥有完整的工艺数据和良好的数据质量，希望基于这些数据创建过程控制模型，以实现装置的高效自动运行。这可能涉及使用特定的建模工具，如AVEC，来进行模型的构建和配置。\n\n首先，我将根据用户提供的数据文件，自动识别出MV（操作变量）、DV（干扰变量）和CV（被控变量），并构建模型矩阵。\n\n随后，我将对数据进行预处理，排除异常值和超出限制的值，并对选取的数据进行切片处理，以确保数据的时间范围与预设的开发期一致。接着，进行数据的自动切片和特征的提取，评估数据质量，从高质量的数据中挑选出用于训练的最优数据。\n\n然后，利用这些优质数据进行模型的辨识，通过分批数据辨识和模型的组合，生成最终的模型及其评价报告。\n\n最后，我将对模型进行仿真测试和质量评估，选择性能最佳的模型进行整合，以构建最终的过程控制模型。完成这一流程后，提供模型的详细信息和模型文件。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a954a-7351-7940-aa1a-06def3e9ecda",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a954a-7a8d-71b2-bd3f-8b483450c702",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a954a-7b2f-7411-b088-e551aca00540",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a954a-7bb1-7153-8065-381a5e0b8774",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a954a-7bb4-7002-b2fc-95a94ca22f9d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a954a-7bad-78e1-80da-093c9cf080d4",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "工艺数据完整，质量良好，帮我创建一个过程控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a954a-7bad-78e1-80da-093c9cf080d4"
+      }
+    }
+  ]
+]

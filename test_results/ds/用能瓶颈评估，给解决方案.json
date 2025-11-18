@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a94bd-ce7c-7493-88d3-020e2086741f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a94bd-ce7f-7a72-809f-6ce8190aa1c8",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望评估当前生产过程中的用能瓶颈，并获取相应的优化解决方案，以提高能源利用效率、降低能耗成本。这可能包括分析设备能耗、工艺流程优化或能源回收利用等方面。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a94bd-d106-7041-946d-81e7cef338bb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "为了确定装置的能源消耗瓶颈，首先需要评估各单元设备的能量利用效率。这可以通过对比设计参数的热效率来识别设计效率低下的设备，以及分析运行数据以找出运行效率低下或存在故障的设备，从而锁定有效能损耗的关键环节，为后续的针对性优化提供依据。\n\n首先，我将通过用户交互界面，提示您上传必要的数据信息，如物料数据和单元设备参数。这些数据将经过校验，以确保其完整性、格式正确性，以及是否满足基本要求。如果数据校验未通过，我将在上传的文件中高亮显示错误的单元格，并附上修正建议，以便您根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将对氯碱装置的各单元设备进行瓶颈分析，计算每个设备的有效能利用效率及其损失比例。分析结束后，所有设备将根据其效率排名，以便于您识别出有效能损失最严重的部分，从而为制定操作优化或设备改造的策略提供明确的方向。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a94bd-db93-71d3-89a8-f03f9dc0cd67",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a94bd-df62-7520-bfef-8cc14fffb44a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a94bd-e013-7521-9d84-493e12239e42",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a94bd-e09f-74d1-a8d1-91847abd7eda",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a94bd-e0a1-7093-877d-5c40ac52e3c1",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a94bd-e09b-7fc0-ae56-733b2ff85523",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "用能瓶颈评估，给解决方案",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a94bd-e09b-7fc0-ae56-733b2ff85523"
+      }
+    }
+  ]
+]

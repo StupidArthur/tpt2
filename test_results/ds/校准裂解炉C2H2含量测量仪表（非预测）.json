@@ -1,0 +1,173 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9542-82c5-7073-a2f3-106d8bdf4a7f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9542-82c7-73a3-9114-2c7ec6ba3b46",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对裂解炉中乙炔（C2H2）含量的测量仪表进行校准，以确保其测量数据准确可靠。这可能涉及使用标准气体进行比对和调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9542-853a-7213-8a24-df7a21d96784",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望校准裂解炉中C2H2含量测量仪表，确保测量值的准确性。这可能是因为当前的测量值存在误差，影响了工艺控制和产品质量，需要通过校准来调整仪表的准确度。\n\n首先，我需要通过用户交互界面，提示您输入待校准仪表的历史测量值。同时，我会引导您使用便携式色谱分析仪或取样送实验室分析的方法，获取当前工况下的C2H2含量数据，作为校准的基础。\n\n接着，我会通过对比这些数据，计算出修正值，并将其应用于待校准仪表的测量值中，以实现测量值的准确校正。最后，我会建议您根据测量值的趋势，评估仪表性能的变化，确保工艺控制的稳定性和安全性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9542-8cfd-77c2-9499-6791db53f759",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9542-90cf-76d0-9ee7-96b17e18ece5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9542-90d1-7542-8bea-de36a4684f88",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9542-91bc-7671-9a60-87a0d7668388",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9542-91be-7810-b00b-f6231f6c57a9",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9542-91b8-78c0-b173-542361f15985",
+      "json": "[{\"id\":\"id1\",\"tool\":\"builtin\",\"ability\":\"用户交互界面\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "校准裂解炉C2H2含量测量仪表（非预测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9542-91b8-78c0-b173-542361f15985"
+      }
+    }
+  ]
+]

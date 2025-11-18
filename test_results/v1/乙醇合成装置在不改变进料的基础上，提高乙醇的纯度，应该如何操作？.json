@@ -1,0 +1,270 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a81f4-9fc7-7472-bf8e-3db09b2c7c28",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a81f4-9fc9-7692-8338-2f4d70214645",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在保持进料条件不变的情况下提高乙醇合成装置的产品纯度，可能需要优化反应条件（如温度、压力、催化剂活性）或改进分离工艺（如精馏塔的操作参数），以减少副产物生成并提高主反应的选择性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a81f4-a2a2-7dc3-9c19-fdf0393f2b13",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望提高乙醇纯度，实现装置工况的高效、平稳切换。用户需求的背后，可能是原料性质变化频繁和下游需求的不确定性，迫使用户需要频繁操作调整工况。传统的调整方法通常依赖人工经验，调节温度、压力、流量等关键工艺参数，这种方法可能会导致调整滞后、过度依赖操作人员的经验、容易出现过调或波动等问题，难以确保调整过程的快速与稳定。为了改善这一问题，我将提供一条可行的操作路径，在保证装置运行安全与产品质量的前提下，对关键工艺参数进行操作指导，缩短调整时间，增强工况调整的准确性、安全性和效率。\n\n首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成初始模板，再由用户根据装置实际情况，对相关变量进行确定与调整，后续用户基于此模板上传装置历史运行数据。\n\n在制定具体操作路径前，需要先构建操作对产品质量影响的预测模型。我将利用TPT大模型的预测能力，结合生产过程中的时序数据和质量分析数据，建立相关变量与产品质量的动态响应关系。这一方法不仅能够显著减少对化验分析的依赖，降低生产成本；还能提前预警可能的质量偏差，帮助用户及时判断生产指标是否符合产品质量标准，避免产品不合格造成的经济损失。\n\n接下来，基于预测模型结果，我将根据用户指定的目标控制范围，结合当前运行状态，进行工艺参数调整路径的只能规划，自动寻找关键调整变量分阶段调整的最短路径，指导用户从当前工况快速、平稳过渡到目标工况。这种方法可以有效克服传统人工控制方式在非稳态过程中的局限性，显著减少对操作人员经验的依赖，缩短调整周期，避免试凑操作，从而提高产品质量的稳定性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a81f4-b6fa-7892-8dc7-6a5c3e5c835a",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认关键变量\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"产品质量预测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"动态操作路径规划\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a81f4-bde1-7fd3-b25e-4ee9088033d8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a81f4-bde3-73f1-89e7-456242e0c9c8",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a81f4-bde5-7960-8df5-25fb3d262b02",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a81f4-bddc-7ec1-8d9e-e66e605c74ab",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"确认关键变量\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"产品质量预测\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"动态操作路径规划\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "乙醇合成装置在不改变进料的基础上，提高乙醇的纯度，应该如何操作？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"industry\": \"化工\",\n  \"plant\": \"乙醇合成装置\",\n  \"device\": \"\",\n  \"quality\": \"乙醇的纯度\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "自动重试中",
+          "type": "warn",
+          "description": "输入数据格式不符合要求，尝试重新生成",
+          "details": "```plaintext\nJSON Schema验证失败\n路径: /device\n模式: /properties/device/minLength\n详情: \"\" is shorter than 1 character\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 从用户输入中提取相关信息\n    user_question = \"乙醇合成装置在不改变进料的基础上，提高乙醇的纯度，应该如何操作？\"\n    \n    # 组装输出数据\n    output = {\n        'industry': '化工',\n        'plant': '乙醇合成装置',\n        'device': '反应器',  # 根据化工常识，乙醇合成主要设备是反应器\n        'quality': '乙醇的纯度'\n    }\n    \n    # 返回输出数据\n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"industry\": \"化工\",\n  \"plant\": \"乙醇合成装置\",\n  \"device\": \"反应器\",\n  \"quality\": \"乙醇的纯度\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "确认关键变量"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "为实现乙醇合成装置工况的平稳切换，保证“乙醇的纯度”产品质量指标达标，系统已为您找到与产品质量密切相关的关键变量。\n为方便建模与推理，将变量按照以下4种类型划分：\n固定变量：调整过程中，需保持不变的量。\n监控变量：调整过程中，需重点监控变化的量。\n操作变量：调整过程中，直接作为调节手段的量。\n产品质量：调整过程中，衡量质量合格性的指标。\n请您确认关键变量及类型，您可根据装置实际情况，增减变量及修改类型。"
+      }
+    }
+  ]
+]

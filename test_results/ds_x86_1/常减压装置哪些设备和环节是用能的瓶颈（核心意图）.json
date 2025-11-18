@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a964f-aa73-7350-8e26-e3a5774491be",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a964f-ab14-7b73-8b8f-dd88b9654790",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解常减压装置中哪些设备或操作环节是能源消耗的主要瓶颈，以便有针对性地进行节能优化。这可能涉及加热炉、泵、塔顶回流、减压系统等关键部位。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a964f-b233-70e3-9522-515327c3ecb8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户想确定常减压装置中哪些设备和环节是能耗最高的，以便后续通过操作、改造等方式进行针对性地优化。首先，我需要评估各单元设备的能量利用效率，识别出有效能损耗最大的关键设备。其次，从换热系统的角度，不仅要考虑单个换热器，还要分析换热网络的整体能量利用效率，以确定换热网络中能量利用的瓶颈。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，包括原油及各物料的数据。通过数据校验，确保数据的完整性、格式正确性以及符合基本要求。如果数据校验不通过，我会在上传文件中标记错误单元格，并给出修正建议，用户需根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将对常减压装置的各个单元设备进行瓶颈分析，计算每个设备的有效能利用效率及其损失比例。分析结束后，将根据能量损失的大小对所有设备进行排序，从而识别出装置中有效能损失最显著的关键环节，为用户提供后续优化的具体方向。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a964f-d672-7040-a274-5e32df6d9522",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a964f-e223-7d60-980d-ed4d1b0e7ff4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a964f-e330-7411-807b-dd2ad67fe909",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a964f-e57c-7843-99db-781734195ba6",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a964f-e57c-7843-99db-782a6b568951",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a964f-e57b-7d03-a29c-748aaa742f67",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "常减压装置哪些设备和环节是用能的瓶颈（核心意图）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a964f-e57b-7d03-a29c-748aaa742f67"
+      }
+    }
+  ]
+]

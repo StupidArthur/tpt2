@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a94ca-c316-7de2-9a1e-997d1f2095e2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a94ca-c318-7380-8ac5-4883f8e3ad0d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "你在重整装置开车前，希望对当前使用的PID参数进行批量备份，而不是使用预设值。这是为了确保在开车过程中或出现异常时，可以快速恢复到当前优化的控制参数设置。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a94ca-c617-70b1-8632-fbfc1848dd7c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在重整装置开车前对所有的PID参数进行批量备份，以确保在操作过程中能够快速恢复，避免因参数丢失或错误导致的生产问题。这可能是因为用户担心在装置运行期间PID参数会被修改或覆盖，影响装置的正常运行。\n\n首先，我会从回路信息查询中查找重整装置，并获取该装置的所有回路信息。\n\n接着，利用自动整定结果查询功能，对这些回路的PID参数进行批量备份。备份完成后，我会提供一个包含所有备份PID参数的文件。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a94ca-ca6a-7303-bbe1-d1d1cac9786f",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"自动整定结果查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a94ca-cff0-7c03-8db0-75934633b0a9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a94ca-d069-7111-b8ad-51cdd91b5533",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a94ca-d0ee-7f30-9108-f9327449273c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a94ca-d0f1-7cc2-ac28-23d4f59aa206",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a94ca-d0ea-7473-910b-11b48a71b786",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"自动整定结果查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "重整装置开车前，PID参数批量备份（非预设）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a94ca-d0ea-7473-910b-11b48a71b786"
+      }
+    }
+  ]
+]

@@ -1,0 +1,416 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a8201-761e-7960-9997-164f3c105420",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a8201-7620-7b12-82d2-a5dc71efb97a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "你需要评估当前系统或工艺中是否存在异常情况，可能包括数据波动、设备运行不正常或控制效果不佳等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a8201-77bf-7c33-935d-ca460ddbfbaf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对FIC102回路进行评估，以确定是否存在任何异常情况。这可能涉及到流量控制回路的稳定性、数据准确性、设备状态等多个方面，用户期望获得一个全面的评估结果，以便及时发现并解决潜在问题。\n\n首先，我需要从回路信息查询中找到FIC102回路。\n\n接下来，对FIC102回路进行控制回路性能评估和诊断，检查是否有阀门饱和、阀门卡涩或仪表噪声过大的问题。如果发现问题，会提供具体的运维建议，并建议您利用全设备智能感知平台PRIDE对设备进行更深入的检测。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a8201-7e95-7020-93e5-9e7a2c99c16c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a8201-8403-74d2-9ffb-c90c42e7580e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a8201-8405-71b2-98cb-e27db7e534f3",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a8201-8408-7f00-b7b0-bd0e5e709de5",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a8201-83ff-7ee3-a6dd-99223c669c22",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "帮我评估有什么异常?",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"groupPath\": [],\n  \"loopName\": [],\n  \"loopDesc\": [],\n  \"advanceLoopType\": null,\n  \"queryingLoop\": true,\n  \"queryingList\": true,\n  \"needTagValue\": false,\n  \"queryingCascade\": false\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路信息查询"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n我需要先查询系统是否存在名为[]的装置。若存在则检查设定值（SV）、测量值（PV）、阀位值（MV）、量程以及PID等详细参数。不存在则核对名称后新增。\n"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:55:32.779",
+          "details": "开始获取所有分组信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:55:32.788",
+          "details": "{\"code\":\"00000\",\"content\":{\"id\":5661041536943904,\"idPath\":\"5661041536943904\",\"groupName\":\"氯碱装置\",\"groupPathName\":\"氯碱装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[{\"id\":5707052487004016,\"idPath\":\"5661041536943904|5707052487004016\",\"groupName\":\"某装置\",\"groupPathName\":\"氯碱装置/某装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]},{\"id\":5816966774999312,\"idPath\":\"5661041536943904|5816966774999312\",\"groupName\":\"双氧水装置\",\"groupPathName\":\"氯碱装置/双氧水装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5820057048893712,\"idPath\":\"5661041536943904|5820057048893712\",\"groupName\":\"乙烯装置\",\"groupPathName\":\"氯碱装置/乙烯装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5853106985190864,\"idPath\":\"5661041536943904|5853106985190864\",\"groupName\":\"氨轮装置\",\"groupPathName\":\"氯碱装置/氨轮装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5893558970633728,\"idPath\":\"5661041536943904|5893558970633728\",\"groupName\":\"某装置1\",\"groupPathName\":\"氯碱装置/某装置1\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]},{\"id\":5940817703423488,\"idPath\":\"5661041536943904|5940817703423488\",\"groupName\":\"水箱\",\"groupPathName\":\"氯碱装置/水箱\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]},{\"id\":5943821839158992,\"idPath\":\"5661041536943904|5943821839158992\",\"groupName\":\"常压塔装置\",\"groupPathName\":\"氯碱装置/常压塔装置\",\"orderNum\":0,\"hasLoop\":false,\"children\":[]}]},\"isSuccess\":true,\"msg\":\"操作成功\",\"requestId\":null,\"success\":true}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-14T18:55:33.284",
+          "details": "loopList length: 18"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n已找到18条符合条件的回路。"
+      }
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"queryLoopWithTagValueListResult\": [\n    {\n      \"id\": 5955202448740624,\n      \"loopName\": \"1_FIC102_1\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"100.00/20.00/0.00\",\n      \"tags\": [\n        \"1_FIC102_1.PV\",\n        \"1_FIC102_1.SV\",\n        \"1_FIC102_1.MV\",\n        \"1_FIC102_1.PB\",\n        \"1_FIC102_1.TI\",\n        \"1_FIC102_1.TD\",\n        \"1_FIC102_1.MVSCH\",\n        \"1_FIC102_1.MVSCL\",\n        \"1_FIC102_1.SVSCH\",\n        \"1_FIC102_1.SVSCL\",\n        \"1_FIC102_1.CAS\",\n        \"1_FIC102_1.MODE\",\n        \"1_FIC102_1.SWPN\",\n        \"1_FIC102_1.MVH\",\n        \"1_FIC102_1.MVL\",\n        \"1_FIC102_1.SVH\",\n        \"1_FIC102_1.SVL\"\n      ],\n      \"tagValues\": [\n        0.004594114,\n        0.004594114,\n        0.0,\n        100.0,\n        20.0,\n        0.0,\n        100.0,\n        0.0,\n        2.4,\n        0.0,\n        0,\n        \"4\",\n        1,\n        100.0,\n        0.0,\n        2.4,\n        0.0\n      ]\n    },\n    {\n      \"id\": 5837614596605392,\n      \"loopName\": \"35FC324\",\n      \"loopDescription\": \"xx\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"35FC324.PV\",\n        \"35FC324.SV\",\n        \"35FC324.MV\",\n        \"35FC324.PB\",\n        \"35FC324.TI\",\n        \"35FC324.TD\",\n        \"35FC324.MVSCH\",\n        \"35FC324.MVSCL\",\n        \"35FC324.SVSCH\",\n        \"35FC324.SVSCL\",\n        \"35FC324.CAS\",\n        \"35FC324.MODE\",\n        \"35FC324.SWPN\",\n        \"35FC324.MVH\",\n        \"35FC324.MVL\",\n        \"35FC324.SVH\",\n        \"35FC324.SVL\"\n      ],\n      \"tagValues\": [\n        97.78379187,\n        100.0,\n        54.96823354,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5740094119625712,\n      \"loopName\": \"523FIC_0001\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"523FIC_0001.PV\",\n        \"523FIC_0001.SV\",\n        \"523FIC_0001.MV\",\n        \"523FIC_0001.PB\",\n        \"523FIC_0001.TI\",\n        \"523FIC_0001.TD\",\n        \"523FIC_0001.MVSCH\",\n        \"523FIC_0001.MVSCL\",\n        \"523FIC_0001.SVSCH\",\n        \"523FIC_0001.SVSCL\",\n        \"523FIC_0001.CAS\",\n        \"523FIC_0001.MODE\",\n        \"523FIC_0001.SWPN\",\n        \"523FIC_0001.MVH\",\n        \"523FIC_0001.MVL\",\n        \"523FIC_0001.SVH\",\n        \"523FIC_0001.SVL\"\n      ],\n      \"tagValues\": [\n        99.19999694824219,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5740464603218928,\n      \"loopName\": \"523FIC_0009\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-72.30/-\",\n      \"tags\": [\n        \"523FIC_0009.PV\",\n        \"523FIC_0009.SV\",\n        \"523FIC_0009.MV\",\n        \"523FIC_0009.PB\",\n        \"523FIC_0009.TI\",\n        \"523FIC_0009.TD\",\n        \"523FIC_0009.MVSCH\",\n        \"523FIC_0009.MVSCL\",\n        \"523FIC_0009.SVSCH\",\n        \"523FIC_0009.SVSCL\",\n        \"523FIC_0009.CAS\",\n        \"523FIC_0009.MODE\",\n        \"523FIC_0009.SWPN\",\n        \"523FIC_0009.MVH\",\n        \"523FIC_0009.MVL\",\n        \"523FIC_0009.SVH\",\n        \"523FIC_0009.SVL\"\n      ],\n      \"tagValues\": [\n        -81.63999938964844,\n        24.979999542236328,\n        -79.63999938964844,\n        null,\n        -72.30000305175781,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5797429972191904,\n      \"loopName\": \"803ALIC_0201A\",\n      \"loopDescription\": \"\",\n      \"loopType\": 2,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"803ALIC_0201A.PV\",\n        \"803ALIC_0201A.SV\",\n        \"803ALIC_0201A.MV\",\n        \"803ALIC_0201A.PB\",\n        \"803ALIC_0201A.TI\",\n        \"803ALIC_0201A.TD\",\n        \"803ALIC_0201A.MVSCH\",\n        \"803ALIC_0201A.MVSCL\",\n        \"803ALIC_0201A.SVSCH\",\n        \"803ALIC_0201A.SVSCL\",\n        \"803ALIC_0201A.CAS\",\n        \"803ALIC_0201A.MODE\",\n        \"803ALIC_0201A.SWPN\",\n        \"803ALIC_0201A.MVH\",\n        \"803ALIC_0201A.MVL\",\n        \"803ALIC_0201A.SVH\",\n        \"803ALIC_0201A.SVL\"\n      ],\n      \"tagValues\": [\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5932853380630800,\n      \"loopName\": \"807ALIC_0102B\",\n      \"loopDescription\": \"\",\n      \"loopType\": 2,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"807ALIC_0102B.PV\",\n        \"807ALIC_0102B.SV\",\n        \"807ALIC_0102B.MV\",\n        \"807ALIC_0102B.PB\",\n        \"807ALIC_0102B.TI\",\n        \"807ALIC_0102B.TD\",\n        \"807ALIC_0102B.MVSCH\",\n        \"807ALIC_0102B.MVSCL\",\n        \"807ALIC_0102B.SVSCH\",\n        \"807ALIC_0102B.SVSCL\",\n        \"807ALIC_0102B.CAS\",\n        \"807ALIC_0102B.MODE\",\n        \"807ALIC_0102B.SWPN\",\n        \"807ALIC_0102B.MVH\",\n        \"807ALIC_0102B.MVL\",\n        \"807ALIC_0102B.SVH\",\n        \"807ALIC_0102B.SVL\"\n      ],\n      \"tagValues\": [\n        1341.25,\n        1300.0,\n        59.57,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5725652987823088,\n      \"loopName\": \"FIC1001\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"FIC1001.PV\",\n        \"FIC1001.SV\",\n        \"FIC1001.MV\",\n        \"FIC1001.PB\",\n        \"FIC1001.TI\",\n        \"FIC1001.TD\",\n        \"FIC1001.MVSCH\",\n        \"FIC1001.MVSCL\",\n        \"FIC1001.SVSCH\",\n        \"FIC1001.SVSCL\",\n        \"FIC1001.CAS\",\n        \"FIC1001.MODE\",\n        \"FIC1001.SWPN\",\n        \"FIC1001.MVH\",\n        \"FIC1001.MVL\",\n        \"FIC1001.SVH\",\n        \"FIC1001.SVL\"\n      ],\n      \"tagValues\": [\n        32.3571264,\n        31.88067099,\n        39.59170908,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5816966774933776,\n      \"loopName\": \"FIC1101\",\n      \"loopDescription\": \"xx\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"400.00/-/-\",\n      \"tags\": [\n        \"FIC1101.PV\",\n        \"FIC1101.SV\",\n        \"FIC1101.MV\",\n        \"FIC1101.PB\",\n        \"FIC1101.TI\",\n        \"FIC1101.TD\",\n        \"FIC1101.MVSCH\",\n        \"FIC1101.MVSCL\",\n        \"FIC1101.SVSCH\",\n        \"FIC1101.SVSCL\",\n        \"FIC1101.CAS\",\n        \"FIC1101.MODE\",\n        \"FIC1101.SWPN\",\n        \"FIC1101.MVH\",\n        \"FIC1101.MVL\",\n        \"FIC1101.SVH\",\n        \"FIC1101.SVL\"\n      ],\n      \"tagValues\": [\n        405.6579861,\n        405.002151,\n        40.77934337,\n        400.0,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5751703574889104,\n      \"loopName\": \"FIC_55022\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"FIC_55022.PV\",\n        \"FIC_55022.SV\",\n        \"FIC_55022.MV\",\n        \"FIC_55022.PB\",\n        \"FIC_55022.TI\",\n        \"FIC_55022.TD\",\n        \"FIC_55022.MVSCH\",\n        \"FIC_55022.MVSCL\",\n        \"FIC_55022.SVSCH\",\n        \"FIC_55022.SVSCL\",\n        \"FIC_55022.CAS\",\n        \"FIC_55022.MODE\",\n        \"FIC_55022.SWPN\",\n        \"FIC_55022.MVH\",\n        \"FIC_55022.MVL\",\n        \"FIC_55022.SVH\",\n        \"FIC_55022.SVL\"\n      ],\n      \"tagValues\": [\n        32.3571264,\n        31.88067099,\n        39.59170908,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5708939958505136,\n      \"loopName\": \"LIC1102\",\n      \"loopDescription\": \"\",\n      \"loopType\": 2,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"LIC1102.PV\",\n        \"LIC1102.SV\",\n        \"LIC1102.MV\",\n        \"LIC1102.PB\",\n        \"LIC1102.TI\",\n        \"LIC1102.TD\",\n        \"LIC1102.MVSCH\",\n        \"LIC1102.MVSCL\",\n        \"LIC1102.SVSCH\",\n        \"LIC1102.SVSCL\",\n        \"LIC1102.CAS\",\n        \"LIC1102.MODE\",\n        \"LIC1102.SWPN\",\n        \"LIC1102.MVH\",\n        \"LIC1102.MVL\",\n        \"LIC1102.SVH\",\n        \"LIC1102.SVL\"\n      ],\n      \"tagValues\": [\n        57.36876137,\n        null,\n        31.0,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5740874384032752,\n      \"loopName\": \"LIC1104\",\n      \"loopDescription\": \"\",\n      \"loopType\": 2,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"LIC1104.PV\",\n        \"LIC1104.SV\",\n        \"LIC1104.MV\",\n        \"LIC1104.PB\",\n        \"LIC1104.TI\",\n        \"LIC1104.TD\",\n        \"LIC1104.MVSCH\",\n        \"LIC1104.MVSCL\",\n        \"LIC1104.SVSCH\",\n        \"LIC1104.SVSCL\",\n        \"LIC1104.CAS\",\n        \"LIC1104.MODE\",\n        \"LIC1104.SWPN\",\n        \"LIC1104.MVH\",\n        \"LIC1104.MVL\",\n        \"LIC1104.SVH\",\n        \"LIC1104.SVL\"\n      ],\n      \"tagValues\": [\n        40.233,\n        40.0,\n        50.022,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        \"1\",\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5760550164159696,\n      \"loopName\": \"LIC2030\",\n      \"loopDescription\": \"\",\n      \"loopType\": 2,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"LIC2030.PV\",\n        \"LIC2030.SV\",\n        \"LIC2030.MV\",\n        \"LIC2030.PB\",\n        \"LIC2030.TI\",\n        \"LIC2030.TD\",\n        \"LIC2030.MVSCH\",\n        \"LIC2030.MVSCL\",\n        \"LIC2030.SVSCH\",\n        \"LIC2030.SVSCL\",\n        \"LIC2030.CAS\",\n        \"LIC2030.MODE\",\n        \"LIC2030.SWPN\",\n        \"LIC2030.MVH\",\n        \"LIC2030.MVL\",\n        \"LIC2030.SVH\",\n        \"LIC2030.SVL\"\n      ],\n      \"tagValues\": [\n        63.87,\n        63.87,\n        60.0,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        \"0\",\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5941488610690512,\n      \"loopName\": \"LIC2031\",\n      \"loopDescription\": \"\",\n      \"loopType\": 2,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"LIC2031.PV\",\n        \"LIC2031.SV\",\n        \"LIC2031.MV\",\n        \"LIC2031.PB\",\n        \"LIC2031.TI\",\n        \"LIC2031.TD\",\n        \"LIC2031.MVSCH\",\n        \"LIC2031.MVSCL\",\n        \"LIC2031.SVSCH\",\n        \"LIC2031.SVSCL\",\n        \"LIC2031.CAS\",\n        \"LIC2031.MODE\",\n        \"LIC2031.SWPN\",\n        \"LIC2031.MVH\",\n        \"LIC2031.MVL\",\n        \"LIC2031.SVH\",\n        \"LIC2031.SVL\"\n      ],\n      \"tagValues\": [\n        68.249,\n        null,\n        60.0,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5802150963563168,\n      \"loopName\": \"TIC05131\",\n      \"loopDescription\": \"\",\n      \"loopType\": 3,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"TIC05131.DACA.PV\",\n        \"TIC05131.DACA.SP\",\n        \"TIC05131.DACA.OP\",\n        \"TIC05131.PIDA.K\",\n        \"TIC05131.PIDA.T1\",\n        \"TIC05131.PIDA.T2\",\n        \"TIC05131.PIDA.OPHILM\",\n        \"TIC05131.PIDA.OPLOLM\",\n        \"TIC05131.DACA.PVEUHILM\",\n        \"TIC05131.DACA.PVEULOLM\",\n        \"TIC05131.CAS\",\n        \"TIC05131.Mode\",\n        \"TIC05131.SWPN\",\n        \"TIC05131.MVH\",\n        \"TIC05131.MVL\",\n        \"TIC05131.SVH\",\n        \"TIC05131.SVL\"\n      ],\n      \"tagValues\": [\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5742775721837552,\n      \"loopName\": \"TIC1101\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"TIC1101.PV\",\n        \"TIC1101.SV\",\n        \"TIC1101.MV\",\n        \"TIC1101.PB\",\n        \"TIC1101.TI\",\n        \"TIC1101.TD\",\n        \"TIC1101.MVSCH\",\n        \"TIC1101.MVSCL\",\n        \"TIC1101.SVSCH\",\n        \"TIC1101.SVSCL\",\n        \"TIC1101.CAS\",\n        \"TIC1101.MODE\",\n        \"TIC1101.SWPN\",\n        \"TIC1101.MVH\",\n        \"TIC1101.MVL\",\n        \"TIC1101.SVH\",\n        \"TIC1101.SVL\"\n      ],\n      \"tagValues\": [\n        57.96602209,\n        58.0,\n        6.191984556,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        \"1\",\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5941481241890304,\n      \"loopName\": \"TIC1102\",\n      \"loopDescription\": \"\",\n      \"loopType\": 3,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"TIC1102.PV\",\n        \"TIC1102.SV\",\n        \"TIC1102.MV\",\n        \"TIC1102.PB\",\n        \"TIC1102.TI\",\n        \"TIC1102.TD\",\n        \"TIC1102.MVSCH\",\n        \"TIC1102.MVSCL\",\n        \"TIC1102.SVSCH\",\n        \"TIC1102.SVSCL\",\n        \"TIC1102.CAS\",\n        \"TIC1102.MODE\",\n        \"TIC1102.SWPN\",\n        \"TIC1102.MVH\",\n        \"TIC1102.MVL\",\n        \"TIC1102.SVH\",\n        \"TIC1102.SVL\"\n      ],\n      \"tagValues\": [\n        58.63618068,\n        60.0,\n        4.575461816,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5941494101624272,\n      \"loopName\": \"TIC1103\",\n      \"loopDescription\": \"\",\n      \"loopType\": 3,\n      \"groupPath\": \"氯碱装置/某装置\",\n      \"groupName\": \"某装置\",\n      \"groupId\": 5707052487004016,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"-/-/-\",\n      \"tags\": [\n        \"TIC1103.PV\",\n        \"TIC1103.SV\",\n        \"TIC1103.MV\",\n        \"TIC1103.PB\",\n        \"TIC1103.TI\",\n        \"TIC1103.TD\",\n        \"TIC1103.MVSCH\",\n        \"TIC1103.MVSCL\",\n        \"TIC1103.SVSCH\",\n        \"TIC1103.SVSCL\",\n        \"TIC1103.CAS\",\n        \"TIC1103.MODE\",\n        \"TIC1103.SWPN\",\n        \"TIC1103.MVH\",\n        \"TIC1103.MVL\",\n        \"TIC1103.SVH\",\n        \"TIC1103.SVL\"\n      ],\n      \"tagValues\": [\n        58.63618068,\n        60.0,\n        4.575461816,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    },\n    {\n      \"id\": 5955195895892016,\n      \"loopName\": \"1_FIC101_1\",\n      \"loopDescription\": \"\",\n      \"loopType\": 0,\n      \"groupPath\": \"氯碱装置/水箱\",\n      \"groupName\": \"水箱\",\n      \"groupId\": 5940817703423488,\n      \"advanceLoopType\": 0,\n      \"cascadeLoopName\": null,\n      \"masterOrSlave\": false,\n      \"suggestTuningMethod\": 2,\n      \"currentPIDParam\": \"100.00/20.00/0.00\",\n      \"tags\": [\n        \"1_FIC101_1.PV\",\n        \"1_FIC101_1.SV\",\n        \"1_FIC101_1.MV\",\n        \"1_FIC101_1.PB\",\n        \"1_FIC101_1.TI\",\n        \"1_FIC101_1.TD\",\n        \"1_FIC101_1.MVSCH\",\n        \"1_FIC101_1.MVSCL\",\n        \"1_FIC101_1.SVSCH\",\n        \"1_FIC101_1.SVSCL\",\n        \"1_FIC101_1.CAS\",\n        \"1_FIC101_1.MODE\",\n        \"1_FIC101_1.SWPN\",\n        \"1_FIC101_1.MVH\",\n        \"1_FIC101_1.MVL\",\n        \"1_FIC101_1.SVH\",\n        \"1_FIC101_1.SVL\"\n      ],\n      \"tagValues\": [\n        0.0,\n        0.0,\n        0.0,\n        100.0,\n        20.0,\n        0.0,\n        100.0,\n        0.0,\n        2.5,\n        0.0,\n        0,\n        \"4\",\n        1,\n        100.0,\n        0.0,\n        2.5,\n        0.0\n      ]\n    }\n  ],\n  \"resultField\": \"queryLoopWithTagValueListResult\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 获取历史步骤的输出数据\n    id1_data = input.get('id1', {})\n    \n    # 获取查询结果列表\n    query_result = id1_data.get('queryLoopWithTagValueListResult', [])\n    \n    # 如果没有查询结果，返回空对象\n    if not query_result:\n        return {}\n    \n    # 提取第一个回路的名称和组ID\n    loop_info = query_result[0]\n    loop_name = loop_info.get('loopName', '')\n    group_id = loop_info.get('groupId', 0)\n    \n    # 组装输出数据\n    output = {\n        'loopName': loop_name,\n        'groupId': group_id\n    }\n    \n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"loopName\": \"1_FIC102_1\",\n  \"groupId\": 5707052487004016\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "控制回路性能评估及诊断"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "感谢您对本任务信息的完善，我将全力执行任务。",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\nPID Agent未安装，跳过回路性能评估及诊断阶段。"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"isValveOscillate\": false\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a8201-840d-7193-9dcb-9bcf911c4c92",
+      "type": "workflow",
+      "workflow": "019a8201-83ff-7ee3-a6dd-99223c669c22",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "帮我评估有什么异常?",
+      "metadata": {
+        "can_be_agent": true
+      }
+    }
+  ]
+]

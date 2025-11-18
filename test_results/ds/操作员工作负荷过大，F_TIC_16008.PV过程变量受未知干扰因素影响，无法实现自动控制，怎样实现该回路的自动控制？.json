@@ -1,0 +1,171 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9495-9a79-7082-8941-18845b7165b7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9495-9a7b-7300-b7a7-3a69cf7b1f6e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望解决F_TIC_16008控制回路因未知干扰无法自动控制的问题，同时减轻操作员负担。可考虑排查干扰源、优化控制策略或增强控制器的抗扰能力，必要时切换为更适应复杂工况的控制模式。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9495-9dc0-7870-85ff-09073917fd44",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我需要让用户补充信息，选择离线模型建立还是在线预测控制。\n\n如果是离线模型建立，我需要通过查询关系数据库或上传的csv文件中，让用户确定数据集。\n\n再通过交互，让用户给出过程变量（PV）、操作变量（MV)、目标设定值(SV)，操作变量与过程变量的相关性（操作变量增加，过程变量是升高还是降低。正相关是1，负相关是-1）\n\n接下来进入数据质量分析模块，对数据集质量进行评价，如果数据质量不佳，返回需要建议补充数据。\n\n若数据质量满足要求，再进行AI可控性评估，会给出场景特征辨识，及数据漂移检测的结果。若是短时滞场景、非时变场景，推荐PID、APC使用，若用户想继续依然可以继续。\n\n若场景判断大时滞场景/时变场景，进入关键影响因素分析功能，会给出筛选出的所有位号的重要度排序, 若特征信息不足，返回增加上下游相关特征；\n\n接下来进入工况识别与验证环节，给出训练集与验证集的划分，会给出在验证集上的所有数据工况分类的精确度及图形展示，接下来用户在选择查看效果时间段时只能在验证集的时间段进行查看。若数据类别不平衡，返回增加数据多样性，类别不平衡，增加数据量；\n\n接下来进入预测模型构建与验证阶段，需要用户给出查看预测效果的时间段。该环节会给出模型的MSE，预测时长，预测效果展示 。给出能否进行闭环的判断，若不能则返回精确度不够的原因。\n\n接下来进入控制器搭建及验证阶段，给出单步控制预测效果，控制量、方向性判断验证结果是否合理。并询问是否进行模型部署及闭环配置。\n\n如果是在线预测控制，需要用户选择模型地址（clientId）；\n\n接下来进入在线工况识别，该环节会加载已有的模型，并通过在线获取数据，进行实时的工况识别\n\n接下来进入在线预测，该环节会加载工况识别结果和对应的模型，并通过在线获取数据，进行实时的趋势预测\n\n接下来进入在线控制，该环节会获取趋势预测结果，并通过在线获取数据，进行实时的控制输出\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9495-b6c1-7cb1-b014-e33097dd21b9",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI控制补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"AI可控性评估\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"SPC\", \"ability\": \"在线工况识别\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"在线预测\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"SPC\", \"ability\": \"在线控制\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9495-cd1c-75e2-a065-e912f16e640e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9495-cd1e-7cd0-9b33-1cf96113a5a6",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id1\", \"to\": \"id9\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9495-cd20-7c61-ae5a-abfe2b5377b8",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9495-cd17-7633-886e-eb0ea874fa17",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"AI控制补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"AI可控性评估\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"关键影响因素分析\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"SPC\",\"ability\":\"工况识别与验证\",\"dep\":[\"id4\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"预测模型构建与验证\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"SPC\",\"ability\":\"控制器搭建及验证\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"SPC\",\"ability\":\"在线工况识别\",\"dep\":[\"id1\"]},{\"id\":\"id10\",\"tool\":\"SPC\",\"ability\":\"在线预测\",\"dep\":[\"id9\"]},{\"id\":\"id11\",\"tool\":\"SPC\",\"ability\":\"在线控制\",\"dep\":[\"id10\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"}]",
+      "name": "操作员工作负荷过大，F_TIC_16008.PV过程变量受未知干扰因素影响，无法实现自动控制，怎样实现该回路的自动控制？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "AI控制补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "clientId",
+          "type": "string",
+          "details": "019a9495-9947-77c1-9280-ecfb1349b550"
+        }
+      }
+    }
+  ]
+]

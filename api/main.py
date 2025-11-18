@@ -20,11 +20,16 @@ def sanitize_filename(filename: str) -> str:
     return sanitized
 
 
-cases_file = os.path.join(os.path.dirname(__file__), "..", "test_data", "demo2.yaml")
-cases_file = os.path.normpath(cases_file)
-print(f"读取测试用例文件: {cases_file}")
-with open(cases_file, "r", encoding="utf-8") as f:
-    test_cases = [line.strip() for line in f.readlines() if line.strip()]
+# cases_file = os.path.join(os.path.dirname(__file__), "..", "test_data", "demo2.yaml")
+# cases_file = os.path.normpath(cases_file)
+# print(f"读取测试用例文件: {cases_file}")
+# with open(cases_file, "r", encoding="utf-8") as f:
+#     test_cases = [line.strip() for line in f.readlines() if line.strip()]
+
+# from test_data.ds.loader import all_sentences
+from display.all_workflow_pic_sentences import all_sentences
+
+test_cases = all_sentences()
 
 
 async def main():
@@ -43,6 +48,16 @@ async def main():
             # title = "基于 OTS 多煤种模拟，整定乙烯装置 PIC14063 的 PID 参数，适配 DCS 动态调整"
             for title in test_cases:
 
+                # 确保目录存在
+                output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_results", "ds_saas")
+                os.makedirs(output_dir, exist_ok=True)
+                # 清理文件名，移除不允许的字符
+                safe_filename = sanitize_filename(title)
+                output_file = os.path.join(output_dir, f"{safe_filename}.json")
+
+                # if os.path.exists(output_file):
+                #     continue
+
                 try:
 
                     conv_result = await i_create_conversation(token, title=title)
@@ -51,12 +66,6 @@ async def main():
                     if isinstance(conv_result, dict) and "conversation_id" in conv_result:
                         conversation_id = conv_result["conversation_id"]
                         result_data = await ws_conversation(token, conversation_id, text=title)
-                        # 确保目录存在
-                        output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_results")
-                        os.makedirs(output_dir, exist_ok=True)
-                        # 清理文件名，移除不允许的字符
-                        safe_filename = sanitize_filename(title)
-                        output_file = os.path.join(output_dir, f"{safe_filename}.json")
                         with open(output_file, "w", encoding="utf-8") as f:
                             json.dump(result_data, f, ensure_ascii=False, indent=2)
                         # for line in result_data:

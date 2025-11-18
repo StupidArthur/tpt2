@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a95a1-f340-7272-aba3-65b65a297edd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a95a1-f342-7c60-95fa-e228646b6135",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一份设备检测报告的PDF文件，并请我帮助分析其中是否存在异常情况。这可能包括设备运行状态、性能指标、故障记录等方面的异常判断与解读。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a95a1-f54c-7950-8376-2f4fffb61f52",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您的请求涉及使用自然语言处理（NLP）技术来分析设备检测报告中的异常情况。流程如下：\n\n1. **核心信息提取**\n\n   - 从您的问题中提取出关键要素，以便后续步骤能够准确执行，具体包括：\n\n     - 问题类型：分析设备检测报告异常\n\n     - 数据来源类型：PDF文件\n\n2. **数据校验与准备**\n\n   - 系统会提示您上传包含目标数据的PDF文件，通过解析这些文件来检查数据是否存在异常或不符合要求的情况。如果解析成功，系统将基于文件中的有效数据进行异常分析；若解析过程中发现异常，系统将提示您修正文件中的错误，并重新上传以确保数据的准确性。\n\n3. **异常分析与结果反馈**\n\n   - 如果数据解析无误，系统将对设备检测报告中的数据进行深入分析，以识别任何异常情况。一旦分析完成，系统会将发现的异常结果以结构化的方式呈现给您。如果未找到任何异常，系统将明确告知“未发现异常”。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a95a2-016b-7bc1-825a-d8fc21e965ea",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a95a2-0a89-77c1-9750-031b7f6dcd5a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a95a2-0af7-7461-8276-09563f2511ad",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a95a2-0b7b-7520-9feb-773c3c52794f",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a95a2-0b7d-7e22-b092-9367ec40d079",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a95a2-0b77-7793-9acb-c75d3a0bea1c",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"builtin\",\"ability\":\"上传数据与解析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"builtin\",\"ability\":\"确认解析结果\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id2\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "设备检测报告分析，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a95a2-0b77-7793-9acb-c75d3a0bea1c"
+      }
+    }
+  ]
+]
