@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b7-0a68-7192-8e20-ed36fa0706f1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b7-0b05-7480-939c-8e7435e6df3a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对新投运的控制回路进行评估，检查是否存在异常情况，如控制不稳定、响应迟缓或测量偏差等，以确保其正常运行和控制效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b7-0fff-7cd0-90bf-b8e32c15c9af",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对新回路的投运情况进行评估，以识别是否存在异常情况，如控制不稳定、参数设置不当或设备故障等问题，确保回路能够正常运行。\n\n首先，我需要从回路信息查询中定位到您所指定的回路。 \n\n接下来要对这个回路实施控制性能评估与诊断分析，重点检测该回路是否存在异常情况。为确保振荡检测的精准性，首先需对回路数据实施低通滤波处理以消除高频噪声干扰，随后通过傅里叶变换分析频谱特征来识别回路中是否呈现低频振荡现象。 \n\n除了振荡状态外，还需对回路进行阀门饱和度分析、阀门卡滞分析以及PID参数匹配度评估，最终综合以上分析结果形成针对该回路的评估诊断报告，包含综合性能评级建议以及后续优化操作的可行性指导。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b7-31a2-78a0-be91-d49f76a5e8ea",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b7-443c-7f73-b471-427069dd9a4d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b7-456d-75f3-8af6-3b7c67e20a1a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b7-4769-7240-a1db-df6833a62bb7",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b7-4769-7240-a1db-df778637dbcf",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b7-4768-7001-adae-375f3317d6fa",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "新回路投运评估，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b7-4768-7001-adae-375f3317d6fa"
+      }
+    }
+  ]
+]

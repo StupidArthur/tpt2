@@ -1,0 +1,213 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99ac-b3a2-7e63-8a2b-be785bac16cf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99ac-b40e-7653-b642-57b2e5acb8a0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您在重整装置开车前，需要对多个PID控制回路的参数进行集中修改，且这些修改不是系统预设的默认值。这通常是为了适应当前工艺条件或优化控制效果所做的个性化调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99ac-b8a4-7e12-bed8-f93bfd3514ab",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在重整装置开车前对PID参数进行批量修改，这可能是因为预设的PID参数不适用于当前的工况或设备状态，需要调整以确保装置能够平稳启动和运行。用户可能需要具体的参数调整建议或操作步骤。\n\n装置开车前，由于控制回路没有历史数据可供常规参数整定，因此无法使用标准整定方法获取PID参数。我将对开车阶段的数据进行批量整定分析，在完成相应计算后，会为您提供适合的初始PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99ac-e69b-7f92-acf6-38d298c504a7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99ad-0336-7361-aed6-4732cecbed27",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99ad-0337-7e91-b42c-1f36ec230bbc",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99ad-0338-7fd0-9f02-1d79a07ada42",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99ad-0335-73c0-a25d-05bb38f71491",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "重整装置开车前，PID参数批量修改（非预设）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "开车阶段参数批量整定"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99ad-0335-73c0-a25d-05bb38f71491",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "重整装置开车前，PID参数批量修改（非预设）",
+      "metadata": {
+        "can_be_background": false
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n获取开车阶段所有回路的类型、装置、工艺段信息。分类后匹配经验库中相似回路，提取其历史相似参数作为起点，实现快速稳定开车控制。\n"
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请按文件模板要求上传装置的回路列表数据。上传成功后，点击相应文件名即可查看数据。",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n请按照文件模板上传装置的回路列表数据。我将根据回路类型、工艺特性等信息与装置经验库中的历史数据进行匹配，为当前所有回路提供一个合理的参数起点"
+      }
+    }
+  ]
+]

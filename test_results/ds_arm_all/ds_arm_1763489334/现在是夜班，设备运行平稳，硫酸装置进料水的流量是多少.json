@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9895-7084-7733-8dd8-3264263e78a7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9895-70f0-7b80-8a68-4da0b88a71fb",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想知道当前夜班期间硫酸装置进料水的流量数值，以确认设备运行是否正常。这可能涉及到查看相关仪表或控制系统中的实时数据。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9895-75ba-7372-9500-b5cccf343c26",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提到当前是夜班，设备运行平稳，想了解硫酸装置进料水的流量。这表明用户希望获取硫酸装置在夜间运行时进料水的具体流量数据，以确认工艺参数是否正常或满足生产要求。\n\n用户想要了解的是硫酸装置进料水在当前时间点的实时流量，因此我需要获取该流量在当前时间点的瞬时数值。\n\n首先，我需要从回路信息查询中定位到硫酸装置，并查找该装置中进料水流量的设定值位号名称。\n\n随后，通过将该位号名称输入历史数据库查询系统，调取其最近两小时的全部数据，执行数据解析后生成相应的趋势分析图。\n\n最终，我将从趋势图中提取出当前时间点的流量数据，若未能成功捕获，则系统会提示位号数据缺失或存在异常。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9895-b1cf-7240-b8f3-62ba708008d1",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"执行查询与反馈\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9895-d40e-7313-a7bc-12e6d71e114c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9895-d40f-7581-90cc-f7f2ef7d60af",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--执行查询与反馈-- 不存在于 --回路信息查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9895-d40f-7581-90cc-f8072c62b626",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9896-5db9-7571-b571-72f8054d68e5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9896-5db9-7571-b571-730cb97ec0f6",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u63a7\\u5236\\u56de\\u8def\\u6027\\u80fd\\u8bc4\\u4f30\\u53ca\\u8bca\\u65ad\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9896-5dba-7111-bd8d-a11c7fc032f4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9896-5dbb-7991-97e3-f63ff074ab0e",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9896-5dbb-7991-97e3-f64e8ba58def",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9896-5db7-7ed2-a0c0-6d8890ac4279",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "现在是夜班，设备运行平稳，硫酸装置进料水的流量是多少",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9896-5db7-7ed2-a0c0-6d8890ac4279"
+      }
+    }
+  ]
+]

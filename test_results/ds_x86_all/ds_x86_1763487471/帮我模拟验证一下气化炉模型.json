@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9849-3ca7-7171-b50e-a9c2ea886df2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9849-3d12-7620-9653-2edd43ebc2ad",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想通过模拟来验证气化炉模型的准确性或性能，可能是为了优化操作参数、测试控制策略或分析模型行为。这通常涉及输入实际或假设的运行数据，观察模型输出是否符合预期。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9849-4476-7c21-a18a-f7c660d19d05",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，仿真建模气化炉设备，需要考虑化工行业复杂的动力学传递，多相流动，热力学平衡等特性的耦合作用。\n\n我们将模拟生成一个通用气化炉动态工艺仿真模型，并运行模型进行模拟仿真计算，观察仿真计算过程中相关设备参数值的变化。\n\n模拟生成工艺模型仿真计算中，需要观察设备相关的温度、压力、液位、流量等参数值趋势变化。\n\n模拟生成工艺模型仿真计算中，需要观察设备相关的温度、压力、液位、流量等参数值的变化。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9849-5470-77f0-88db-1ea640465583",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9849-65b5-7342-b85e-134364e276fa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9849-65b5-7342-b85e-1353420ea233",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9849-65b5-7342-b85e-13696c2e4118",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9849-65b4-7340-8eb0-7a61f7ae55f2",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "帮我模拟验证一下气化炉模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

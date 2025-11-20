@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9800-4407-7ab0-bb03-368792b37762",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9800-448a-7a52-8ae6-a3cc808b8bf1",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "你希望在装置即将开车时获得一套初始PID参数，以便顺利投用控制回路。这些参数将作为控制系统的起点，帮助实现稳定操作，后续可根据实际运行情况进行调整优化。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9800-4b03-73b0-8c4f-002428635019",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户即将开始启动装置，希望获得一组初始的PID参数以确保系统能够平稳运行。这些参数可能用于不同的控制回路，如温度、压力和流量控制，以帮助用户顺利进行装置的启动过程。\n\n首先，我需要从回路信息查询中查找出属于某个装置的所有回路，并从这些回路中筛选出回路结构为PID的控制回路。\n\n接着，利用基于专家经验的参数整定功能，对筛选出的回路进行基于专家经验的参数整定，从而得出优化后的PID参数。最后，我会输出属于该装置所有控制回路的位号及其对应的优化后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9800-60b6-7120-9e61-50b82673d92c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9800-72d9-72a2-a220-1dd407ff6b49",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9800-7405-7b43-859a-1a90fb9b150e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9800-761b-77f0-bdd7-7d877d31399c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9800-761b-77f0-bdd7-7db2a28e2293",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9800-761a-7ed3-a846-689c58ceb498",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "装置快开车了，给我一批初始的PID参数，让我投运吧",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9800-761a-7ed3-a846-689c58ceb498"
+      }
+    }
+  ]
+]

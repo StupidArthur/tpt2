@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9904-8e6b-7470-b1d6-194f4fdfdc84",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9904-8ed0-7e31-9043-58db5114275d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对PID控制回路的设备进行日常维护，可能包括检查传感器、执行器、接线等硬件部分，确保设备正常运行和控制信号的准确传递。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9904-95b2-7092-a107-ea57ca75a2d5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户需要对非性能评估的PID回路设备进行维护，这可能涉及设备的定期检查、校准、清洁或更换，以确保其正常运行和安全性能，同时可能需要调整PID参数或处理设备故障，以提高控制系统的稳定性和效率。\n\n首先，我需要从回路信息查询中查找出PID回路设备，然后输出需要维护的设备。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9904-a02e-7473-89f3-d6c3563fc2c3",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9904-abc4-7582-89ec-b9d5bc9dd392",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9904-acd5-7500-8442-7d5dc3476be0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9904-aec8-7540-9aa1-dcf1c588e4c4",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9904-aec8-7540-9aa1-dd09c316e181",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9904-aec7-70a1-906f-826c389e9d89",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "维护PID回路设备（非性能评估）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9904-aec7-70a1-906f-826c389e9d89"
+      }
+    }
+  ]
+]

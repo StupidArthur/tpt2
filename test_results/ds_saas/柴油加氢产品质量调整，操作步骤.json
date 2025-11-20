@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96c8-a5a3-7880-8df2-1280dd4fd03d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96c8-a5a5-7aa2-89a5-c247b29d3031",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过调整操作参数来改善柴油加氢产品的质量，可能包括调节反应温度、压力、氢油比或空速等参数，以达到所需的硫含量、饱和度或其他质量指标。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96c8-a89f-7d42-aba3-df06034b179e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望调整柴油加氢的产品质量，确保产品质量符合要求。鉴于调整可能面临原料性质变化和下游需求波动的问题，通常需要一个操作指南来规范操作过程，以提高产品质量的适应性和灵活性。因此，我将提供一条操作路径，该路径不仅考虑了关键工艺参数的调整，还结合了生产实际情况和产品质量要求的变化。\n\n首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成操作路径模板。\n\n接着，将根据操作路径模板，结合生产实际情况和质量要求的变化，进行工艺参数调整步骤的智能规划，输出具体的操作步骤和调整周期。这将帮助用户准确掌握每次调整的参数和调整幅度，确保产品质量的稳定性和灵活性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96c8-af71-7531-8f8c-be6a179d8286",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认关键变量\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"动态操作路径规划\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96c8-b4f8-7731-8546-fb71badc9e02",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96c8-b4fb-70d2-aeed-903ced04b8c5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--动态操作路径规划-- 不存在于 --确认关键变量-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96c8-b4fd-7363-9ada-5c5f235b1903",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96c9-1696-7ed1-ad4a-4b33d4711131",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96c9-1698-7080-80b1-0c9a81bbb3d1",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u8bbe\\u8ba1\\u4fe1\\u606f\\u786e\\u8ba4\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u68c0\\u7d22\\u751f\\u6210\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u4f18\\u5316\", \"dep\": [\"id2\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"\\u8fa8\\u8bc6\\u6a21\\u578b\\u6570\\u636e\", \"dep\": [\"id4\"]}, {\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96c9-169b-7051-ad59-f68d56b862a8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96c9-169d-7f82-8528-7214a373ad81",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}, {\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96c9-169e-7da1-ba66-b3b8862021c1",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96c9-1691-7db3-b341-f438ee9405bf",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id4\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "柴油加氢产品质量调整，操作步骤",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96c9-1691-7db3-b341-f438ee9405bf"
+      }
+    }
+  ]
+]

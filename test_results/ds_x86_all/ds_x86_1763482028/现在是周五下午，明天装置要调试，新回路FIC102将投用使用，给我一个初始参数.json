@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9801-6186-7401-9c73-88ebc085e842",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9801-61eb-7303-9780-db995d2672e0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要为即将在明天调试中投用的新流量控制回路FIC102设置一组初始PID参数。建议从比例（P）主导的保守参数开始，例如P=2.0、I=0.1、D=0，再根据实际运行情况逐步优化调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9801-6ced-73a1-85de-9141ba1b76be",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望为即将投用的新回路FIC102提供一组初始的控制参数，这可能包括PID控制器的初始设置值，以确保回路在启动时能够平稳运行，避免出现不稳定或过度振荡的情况。\n\n首先，我需要从回路信息查询中查找出FIC102回路，并记录控制回路的回路描述、回路类型、优化前PID参数。\n\n然后利用基于专家经验的参数整定功能，对FIC102进行整定，得出整定后的PID参数。最后输出控制回路名称、描述、优化前PID参数、优化后PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9801-7daf-7540-ae3a-ed5fa5456165",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9801-8f50-73f1-a713-f7113ccd06c6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9801-8f50-73f1-a713-f728e3539d29",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9801-8f51-7ac3-827e-31f7873711ab",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9801-8f4f-7bd0-9723-776c688af3f7",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "现在是周五下午，明天装置要调试，新回路FIC102将投用使用，给我一个初始参数",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a61-9fc8-7973-9a8c-68adbb6af7ae",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a61-a03e-7ef1-b92b-6866bd25f31e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过矩阵辨识技术建立一个控制模型，用于更准确地描述和预测工业过程的行为，从而提升控制系统的性能和响应效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a61-a306-7ac3-ba97-3f61c8930984",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户希望采用矩阵辨识技术来创建控制模型，以确保模型既准确又具有鲁棒性。这一过程可能涉及到对模型矩阵的识别与调整，以提升模型的质量。\n\n首先，我将基于用户提供的位号数据信息，自动识别出MV（操作变量）、DV（干扰变量）和CV（被控变量），并构建起模型矩阵。\n\n接着，我会对位号的历史数据长度进行校验，通过解析历史数据自动确定数据的时间范围，同时对选定的数据进行预处理，去除异常值和超限值。随后，系统将自动对数据进行切片，评估数据质量，选取质量最优的数据段进行系统辨识。如果数据质量不满足要求，系统将向前追溯一周，重新选取数据段，重复这一过程直至找到符合标准的数据。如果尝试次数超过预设值（若未设定，则使用默认上限），则会选择质量相对较高的数据段来使用。\n\n然后，利用符合要求的数据进行模型辨识，将采用子空间辨识算法，得到模型以及模型的评价指标。之后，系统会将模型矩阵中的其他模型也通过相同的方法辨识出来。\n\n最后，对辨识出的模型进行仿真测试和质量评估，选择性能更优的模型进行整合，构建最终的控制模型。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a62-16bf-7290-869c-84de30d42f99",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a62-43a2-79b0-bf50-2ee2f77b0297",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a62-4479-7761-b0bd-7f6cecdc3939",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a62-45f4-7c00-994f-1424f37f5cad",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9a62-45f6-7dc0-8fc7-35361d841c8c",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a62-45f2-71e3-9953-fe9e96afd5d5",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "控制模型创建，采用矩阵辨识技术构建基础模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9a62-45f2-71e3-9953-fe9e96afd5d5"
+      }
+    }
+  ]
+]

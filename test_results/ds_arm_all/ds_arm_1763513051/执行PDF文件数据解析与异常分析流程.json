@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a02-d184-7eb3-8e92-c471c8f85391",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a02-d1eb-7e33-b118-b446855c8c0e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望执行一个流程，用于解析PDF文件中的数据并进行异常分析，以发现数据中的异常或不符合预期的部分。这可能包括提取关键参数、识别趋势变化或异常点，并为后续处理提供依据。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a02-d696-73e1-a44a-23e10b728a34",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，首先，我需要让用户上传包含目标数据的文件，并将文件上传至指定位置。之后，我将对上传的文件进行数据解析，检查数据是否存在异常。如果解析过程中发现异常，如数据超出合理范围、数值缺失或格式错误，我将在解析结果中高亮显示异常数据，并提供修正建议。用户需根据解析结果和建议修改数据文件，然后重新上传。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a02-f82e-7062-ae10-e175bec60955",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a03-0d4f-7173-beca-ce86908e7ea6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a03-0e1d-75a3-9540-08e298f79eec",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a03-0f71-7150-b83a-c6143c64bfe2",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9a03-0f73-7a22-af2d-04fd5d3e5928",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a03-0f70-7e10-a23c-749cfc1653a7",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "执行PDF文件数据解析与异常分析流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9a03-0f70-7e10-a23c-749cfc1653a7"
+      }
+    }
+  ]
+]

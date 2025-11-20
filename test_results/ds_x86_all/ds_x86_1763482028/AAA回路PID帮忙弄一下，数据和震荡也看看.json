@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97fb-f24a-7872-ab4f-8a72447099d1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97fb-f2c5-73f3-86cd-e07d220b3985",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对AAA控制回路的PID参数进行调整，并希望查看相关数据和回路是否存在震荡现象，以改善控制效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97fb-f70c-73a2-b734-f0853772284b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对AAA回路的PID参数进行整定，并且关注回路的数据情况以及震荡问题，意图提升控制回路的稳定性和效率。\n\n首先，我需要从回路信息查询中，获取回路描述、类型、PID参数、回路类型和回路量程的信息。\n\n接着，通过控制回路性能评估及诊断，提取回路的运行性能综合评估报告，重点标注出该回路的综合评级、震荡情况、阀门健康状态及优化建议。\n\n若检测到震荡，将进一步通过基于回路波形判断的参数迭代整定，该方法利用AI智能分析技术，模拟人工整定的思维逻辑，能有效快速地消除震荡。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97fc-10a1-7d22-b9d9-cad57f8e0b66",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97fc-305e-74a0-9a1a-d60623a7dfeb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97fc-3193-76f1-8186-3e087cd2301b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": false,\n    \"reason\": [\n        {\n            \"constraint\": \"用户问题出现'振荡'、'调整太快'、'超调'、'调整太慢'关键词的约束\",\n            \"violation\": \"用户问题中包含'震荡'关键词，但工作流中没有包含'闭环回路的参数迭代整定'能力。\"\n        },\n        {\n            \"constraint\": \"回路运行实时状态计算\"和\"控制回路性能评估及诊断\"依赖性约束,\n            \"violation\": \"'基于回路波形判断的参数迭代整定'和'控制回路性能评估及诊断'都直接依赖'回路信息查询'，这违反了不能同时直接依赖'回路信息查询'的约束条件。\"\n        }\n    ]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97fc-4a5b-7fe3-874e-6765c7333fd6",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97fc-4a5b-7fe3-874e-67792dc78596",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97fc-4a5a-7b13-bd8f-d683c120b825",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id2\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "AAA回路PID帮忙弄一下，数据和震荡也看看",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97fc-4a5a-7b13-bd8f-d683c120b825"
+      }
+    }
+  ]
+]

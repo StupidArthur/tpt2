@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9818-bb4c-7681-b214-0fc6fad4d238",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9818-bbb2-77b0-bc50-098f798aad81",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望为即将投用的FIC102流量控制回路预设PID参数的初始值，包括比例（P）、积分（I）、微分（D）的基准设置，以便后续投用时能快速调试并实现稳定控制。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9818-c12d-7d71-9c5d-b712f7fb8096",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望为即将投用的新回路FIC102提供一组预设的PID初始参数，包括比例、积分和微分的基准值，以确保回路在启动时能够平稳运行，避免出现不稳定或过度振荡的情况。\n\n首先，我需要从回路信息查询中查找出FIC102回路，并记录控制回路的回路描述、回路类型、优化前PID参数。\n\n然后利用基于专家经验的参数整定功能，对FIC102进行整定，得出整定后的PID参数。最后输出控制回路名称、描述、优化前PID参数、优化后PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9818-f6a3-7211-8afd-07284fe096d8",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9819-1b5a-75b3-a0c7-56bd39f96315",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9819-1b5b-72f3-9cf6-30dc30a3922e",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9819-1b5b-72f3-9cf6-30e9950258c8",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9819-1b59-7251-9068-78b54d9b7dc8",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "新回路FIC102即将投用，请求预设PID初始参数（含P/I/D基准值）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

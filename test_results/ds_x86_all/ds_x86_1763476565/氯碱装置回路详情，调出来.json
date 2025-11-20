@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97aa-7501-72f3-ad6f-6c742b9ff947",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97aa-75a2-7d41-92c5-957f0c4d6a93",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想查看氯碱装置中某个控制回路的详细信息，并将其调出进行分析或调整。这可能包括回路的参数设置、运行状态、历史趋势等信息。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97aa-7afa-7f52-8e37-e21e155641fb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户希望查看氯碱装置的回路详情，可能是为了了解装置运行状态、排查问题或进行维护等，需要获取该装置各回路的具体参数、连接情况及运行状况等信息。\n\n您可以通过回路信息管理界面点击相应回路查看回路详情。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97aa-830c-7bf0-ad45-ef7ef2582e4d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息管理\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97aa-8de4-7011-9c08-1f532351d1aa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97aa-8de5-71f0-ad38-ae8fb14b7405",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97aa-8de5-71f0-ad38-ae977702e1c6",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97aa-8de4-7011-9c08-1f49d885f733",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息管理\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "氯碱装置回路详情，调出来",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

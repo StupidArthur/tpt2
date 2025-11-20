@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9902-fa1b-7933-b3d1-f0b729637b6b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9902-fa91-72f2-beaf-b680ba589798",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您正在准备启动重整装置，并希望对其中的PID参数进行整定，以确保控制系统在开车过程中稳定运行、响应快速且控制精度高。这通常包括对温度、压力、流量等关键参数的控制回路进行优化调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9903-0195-70d0-b1d3-d4eb8b576aee",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户即将启动重整装置，需要对PID参数进行整定，以确保装置运行平稳且效益最大化。这涉及到对装置关键工艺参数的控制回路进行PID优化，以提高其控制性能，缩短调整时间，减少波动，从而为后续操作奠定良好基础。\n\n由于重整装置正处于开车阶段，控制回路没有历史数据可供常规参数整定使用，因此无法使用标准整定方法获取PID参数。我将对开车阶段的数据进行批量整定分析，在完成相应计算后，会为您提供适合的初始PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9903-11d4-7f01-a704-af7959a51810",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9903-1d4c-77a3-a3aa-af5843855aa1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9903-1e77-7ae2-9ca0-d400050b136a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9903-2094-7b30-9df5-e44cd39f9298",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9903-2095-7b52-8384-43a994d26675",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9903-2093-78c1-b72d-7c5ca0b0967c",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "重整装置要开了，PID参数整定",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9903-2093-78c1-b72d-7c5ca0b0967c"
+      }
+    }
+  ]
+]

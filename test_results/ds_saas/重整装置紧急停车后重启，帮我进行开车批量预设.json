@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96ec-a892-7713-9dbd-7bb3fba2821d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96ec-a894-7183-b0c1-015d43a7ca4e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望重整装置在紧急停车后重新启动时，能够快速、安全地完成开车操作，因此需要进行开车批量预设，这通常包括设定关键参数、恢复控制逻辑和准备操作步骤。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96ec-ab6d-7070-95b9-f49cb42a2a16",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在重整装置紧急停车后重启过程中，能够高效准确地完成开车阶段的参数设置，以确保装置能够平稳运行。这涉及到多个控制回路的初始参数选择，用户可能没有时间或资源逐一进行人工整定，因此需要一种方法来批量预设这些参数。\n\n装置开工阶段控制回路与正常运行时存在较大差异，因此不能使用标准整定方法获取PID参数。我需要获取装置开工阶段控制回路的特征信息，然后通过专门的开车阶段PID参数数据库，得出控制回路的PID参数，从而保障控制回路的稳定运行。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96ec-b0b2-7571-b3a8-7dbd8fd73681",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96ec-b4a6-7790-82e6-56a857802245",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96ec-b52f-7861-bc89-ea8c059ae352",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96ec-b5eb-7531-9ac0-e26c94834521",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96ec-b5ed-7d43-baaf-91f028806bee",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96ec-b5e7-7e83-8664-a5255c4fdc09",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "重整装置紧急停车后重启，帮我进行开车批量预设",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96ec-b5e7-7e83-8664-a5255c4fdc09"
+      }
+    }
+  ]
+]

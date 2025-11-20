@@ -26,11 +26,23 @@ def sanitize_filename(filename: str) -> str:
 # with open(cases_file, "r", encoding="utf-8") as f:
 #     test_cases = [line.strip() for line in f.readlines() if line.strip()]
 
-# from test_data.ds.loader import all_sentences
-from display.all_workflow_pic_sentences import all_sentences
+from test_data.ds.loader import all_sentences
+# from display.all_workflow_pic_sentences import all_sentences
 
-test_cases = all_sentences()
-
+# test_cases = all_sentences()
+test_cases = [
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+]
 
 async def main():
     """主函数"""
@@ -66,8 +78,9 @@ async def main():
                     if isinstance(conv_result, dict) and "conversation_id" in conv_result:
                         conversation_id = conv_result["conversation_id"]
                         result_data = await ws_conversation(token, conversation_id, text=title)
-                        with open(output_file, "w", encoding="utf-8") as f:
-                            json.dump(result_data, f, ensure_ascii=False, indent=2)
+                        print(result_data)
+                        # with open(output_file, "w", encoding="utf-8") as f:
+                        #     json.dump(result_data, f, ensure_ascii=False, indent=2)
                         # for line in result_data:
                         #     print(line)
                         #

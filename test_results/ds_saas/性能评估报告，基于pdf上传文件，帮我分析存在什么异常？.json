@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97be-f959-7ca1-a2fb-1f71f45187bb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97be-f95c-7433-8181-7d26c487524f",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一份PDF格式的性能评估报告，并让TPT帮助分析其中是否存在异常情况。这可能包括识别数据偏差、设备性能下降、控制回路不稳定等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97be-fbe7-72b0-8866-ee794734490b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我需要让用户上传数据文件，并点击提交。页面会先进行数据解析，如果解析成功，则引导用户进行下一步操作；如果解析失败，则在原上传文件中高亮错误单元格，并添加修正建议，用户需根据提示修改数据后重新上传。\n\n如果数据解析无误，我需要根据上传的文件类型，对控制回路进行性能评估和故障诊断。最终将生成的评估报告和诊断结果以可视化形式呈现，包括综合性能评分、回路等级、优化建议及异常回路分析等关键信息。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97bf-00f8-7003-96d5-22c1013ae170",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97bf-082f-7eb0-b87d-463ea03d5ff7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97bf-0832-7d92-b955-aa34a224d481",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--控制回路性能评估及诊断-- 不存在于 --确认解析结果-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97bf-08c1-7e91-949d-026a93e4b160",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97bf-4fd0-7031-8ce6-6154a13db575",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97bf-4fd2-7bd3-a217-6a3fbddbefa7",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u8bc4\\u4f30\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97bf-4fd4-7560-aecd-ba986378ef50",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97bf-4fd7-7dc2-99b0-304688224d3f",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97bf-4fd9-7e22-89f3-16dc19004aac",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97bf-4fcc-7663-9ea3-ba5260b2d234",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路评估数据查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "性能评估报告，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97bf-4fcc-7663-9ea3-ba5260b2d234"
+      }
+    }
+  ]
+]

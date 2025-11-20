@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a974c-d77d-7580-9a1a-d7e2d6f40931",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a974c-d819-7e72-bcda-43bdff7f1759",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解常减压装置的能耗情况，但暂时不涉及分析瓶颈或优化问题。这可能包括装置的能耗总量、单位能耗、能源消耗结构等基本信息，用于整体掌握装置运行的能源使用状况。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a974c-df12-7482-b9fb-9c436c5708f6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "您的问题属于数据查询类问题。接下来将遵循标准流程，以确保高效地获取所需信息：\n\n1. 问题核心信息提取\n\n从您的问题中提取通用的关键要素，为后续查询提供明确的指导，具体包括：\n\n目标查询对象：常减压装置能耗数据\n\n时间范围：未明确指定，将默认为当前时间\n\n2. 校验查询对象存在性：如果查询对象存在，将直接执行查询并反馈结果；如果不存在，将判断是否支持数据补充，若不支持，则提示无数据；若支持，则进入下一步 “上传数据与解析”。\n\n3. 上传数据与解析：（仅在支持补充数据时执行），系统将提示您上传包含目标数据的文件，解析后反馈解析结果，需要您确认解析的准确性。\n\n4. 确认解析结果：如果解析无误，系统将基于文件中的有效数据进行查询；如果解析结果异常，系统将提示您修正文件并重新上传，直至解析通过。\n\n5. 执行查询与反馈：如果查询成功，系统将按“需返回的数据类型”整理查询结果。如果数据存在异常（如数值为负、波动过大），系统将同步提示“注意：部分数据可能存在异常，建议核对原始文件”。如果查询失败，系统将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和查询范围后重新尝试”，流程结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a974d-48d8-7db0-b0e5-6413ac1d084e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a974d-a94b-7601-935b-32bcbef8b447",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a974d-a94c-7911-aa83-3a989a8c8a47",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${valid} == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${valid} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a974d-a94d-7771-9381-e64000eb956d",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a974d-a948-7522-a6fa-3641176be42a",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "查询常减压装置能耗数据（非瓶颈识别）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

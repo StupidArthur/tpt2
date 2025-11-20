@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a974f-a11a-7e33-b58c-439a449971c8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a974f-a198-74a0-bc67-9b7d8f4587f7",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对气化炉的模型在稳态工况下进行模拟验证，并同时以趋势曲线和数据表格的形式输出关键参数，以便分析和评估模型的准确性与稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a974f-aa1f-7a23-9970-9d94dc6db27b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建气化炉设备的稳态工况时，需要考虑化工行业中的复杂动力学传递、多相流动、热力学平衡等特性之间的相互作用。\n\n我们将构建一个通用的气化炉动态工艺仿真模型，并启动该模型进行仿真计算，以监控仿真过程中相关设备参数值的变化。\n\n在仿真计算状态下，生成并执行气化炉的动态工艺模型，同时模拟生成设备参数值的变化趋势。\n\n此外，模拟生成的设备参数值将以趋势曲线和数据表格的形式展示。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a974f-b79b-7491-ad07-cf5dcd7f776e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a974f-c939-76f2-81f3-842757c794d1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a974f-ca51-7a73-84ef-de8a26ccf943",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a974f-cc66-78f3-92e0-793b4a360814",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a974f-cc66-78f3-92e0-794cda4082de",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a974f-cc65-7ab3-8fb2-a93ea59a91c2",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "气化炉模型稳态工况模拟验证，同步输出关键参数趋势曲线及数据表格",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a974f-cc65-7ab3-8fb2-a93ea59a91c2"
+      }
+    }
+  ]
+]

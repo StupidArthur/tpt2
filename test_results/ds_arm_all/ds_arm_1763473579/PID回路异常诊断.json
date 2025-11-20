@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97ad-9a12-7bf3-81a2-c8ea84eba477",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97ad-9cda-7f01-ab43-9f0a9c842f9e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对PID控制回路进行异常诊断，找出导致控制性能下降或不稳定的原因。这可能包括参数设置不当、传感器故障、执行机构问题或外部干扰等因素。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97ad-a17d-7680-9258-991aeec7e6fe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对PID回路进行异常诊断，可能是因为该回路出现了不稳定或性能下降的情况，需要找出具体原因并解决，以恢复正常的控制效果。\n\n首先，我需要通过回路信息查询功能定位到您所指定的回路。 \n\n接着将对您所关注的回路实施控制回路性能评估与诊断流程，提取其自控率数据、平稳率指标、综合性能评分以及回路等级参数等核心诊断信息，最终输出针对该回路的异常情况分析报告。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97ad-c58c-76d3-b5cb-f8a0e95757b9",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97ad-e8c7-7d50-b85d-9ce128d86d3a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97ad-e9b9-7623-a114-841419f731c4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97ad-ee2c-7a83-9ae1-70f245a17c12",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97ad-ee2c-7a83-9ae1-710366d9243a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97ad-ee2a-75b2-82a6-e792d6c20179",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "PID回路异常诊断",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97ad-ee2a-75b2-82a6-e792d6c20179"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9970-bd86-7d12-92b6-853c35082834",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9970-be22-7082-9171-bb103a89ff49",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对常减压装置中的换热网络进行清洗，以恢复其换热效率和设备运行状态。这可能包括清除换热器内部的结垢、沉积物或其他堵塞物，确保流体传热效果和系统稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9970-c4a0-7542-9193-a3bb70eebc48",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对换热器进行清洗，以提高换热网络的换热效果。用户可能是因为当前的换热效果不理想，导致装置需要消耗更多的能源来完成生产任务，从而增加了运营成本。用户希望通过物理方法、化学方法或机械方法等手段，对换热网络中的换热器进行清洗，以清除附着在换热器表面的污垢或沉积物，确保换热过程的效率和稳定性。\n\n首先，我将通过用户交互界面，提醒用户上传必要的数据信息，如原油性质、加工量、产品要求及换热网络的详细参数等。数据校验环节将确保数据的完整性和格式正确性，同时检查这些数据是否满足换热网络改造的基本需求。如果数据校验未通过，我将在上传文件中标记出错误的单元格，并附上修正建议，用户需根据这些提示调整数据后重新上传。\n\n一旦数据校验通过，我将基于用户提供的数据，进行换热器性能的详细评估。这包括对比设计参数与实际热效率，识别设计效能不足的换热器；分析运行数据，找出运行效率低下或超负荷的设备；以及评估公用工程信息，确定公用工程传热路径上的关键换热器。评估结果将以报告形式呈现，报告中会列出设备效率排名和优先级较高的改造对象。\n\n随后，我将请用户指定现场限制条件，考虑现场实际的工艺流程、安全要求或空间限制，设定哪些冷热物流之间不能换热：沿用上次限制条件，从历史对话记录中提取，直接沿用上一次设定的不能换热的冷热物流组合；重新指定限制条件，指定不能换热的冷热物流组合；不考虑现场限制，所有冷热物流之间，均可自由换热，不设置任何限制条件。\n\n如果不考虑现场限制条件，我将直接进行换热网络优化。通过增加新设备、调整流程等方法，我将提供一个包含以下内容的改造方案：(1) 优化后的换热网络结构图；(2) 改造前后的运行成本对比分析；(3) 换热器的保留与新增清单。\n\n如果选择沿用上次限制条件、重新指定限制条件，我将在设定的约束条件下进行改造，最终提供最佳的换热网络优化改造方案。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9971-266f-7871-b6de-28072ae7b4d1",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"指定现场限制条件\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"Redesign\", \"ability\": \"校验限制条件\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id7\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9971-5916-7e60-a73e-afd52e28f06d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9971-5a0c-7941-bda0-631856b3526f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9971-5bee-78e0-93b8-e4f4c493fa86",
+      "type": "branch",
+      "branch": "[{\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${branch_result} == 0\"}, {\"from\": \"id3\", \"to\": \"id6\", \"expression\": \"${branch_result} == 1\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9971-5bef-7913-8876-2ef46d127dc2",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9971-5bec-7082-8c70-6ad6dc68d256",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"指定现场限制条件\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"Redesign\",\"ability\":\"校验限制条件\",\"dep\":[\"id3\"]},{\"id\":\"id7\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"branch_result\\\")]) Eq 0\"},{\"from\":\"id3\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"branch_result\\\")]) Eq 1\"}]",
+      "name": "清洗常减压装置换热网络（非优化改造）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9971-5bec-7082-8c70-6ad6dc68d256"
+      }
+    }
+  ]
+]

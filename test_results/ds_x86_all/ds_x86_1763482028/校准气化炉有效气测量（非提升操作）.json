@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97d2-1f04-7c51-9959-309cef80b6fe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97d2-2077-7620-b5db-06800b26d94c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对气化炉的有效气测量系统进行校准，以提高其测量准确性。这可能包括检查传感器、比对数据、调整参数等操作，确保在非提升工况下测量结果可靠。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97d2-27c2-72e1-8deb-8e541f7aba72",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望校准气化炉的有效气测量值，确保分析结果的准确性。这通常涉及检查测量设备的校准状态，对比历史数据和标准值，识别测量偏差，并进行相应的调整，以获得更精确的测量结果。整个过程需注意，不能对气化炉的操作条件进行调整，以维持其正常运行状态。\n\n首先，我需要通过回路信息查询定位到气化炉有效气测量对应的回路，获取该回路的控制回路结构信息以及相关位号的配置情况。\n\n随后，我将调取最近的回路性能评估与诊断报告，从该评估报告中提取条件剔除回路的位号及对应剔除原因，同时也会获取处于开环状态的回路位号及其开环持续时间。\n\n最后，针对气化炉有效气测量回路开展多策略自适应整定。在整定过程中，如果发现控制回路的阀门存在长期卡限等异常情况，将无法准确识别过程对象特征，因此我将无法为您提供有效的PID参数。如果控制回路的MV或SV变化幅度过小，建议您选择合适的历史数据进行整定；在其他情况下，我将提供给您整定后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97d2-546f-7de2-872b-7f8d54f9f2e5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路数据有效性检测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97d2-92c0-7662-af9c-638bae8b6f5e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97d2-9439-73b2-a431-0963b98790a2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97d2-967e-7cc2-98b7-ccf909a5a790",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97d2-967e-7cc2-98b7-cd086b449018",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97d2-967c-7740-8968-41c370104c44",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "校准气化炉有效气测量（非提升操作）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97d2-967c-7740-8968-41c370104c44"
+      }
+    }
+  ]
+]

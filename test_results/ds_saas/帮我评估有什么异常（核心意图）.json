@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97c8-8a49-7082-8078-bc056d89e745",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97c8-8a4b-77a1-997a-974ae65e2dd1",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望评估当前系统或过程中是否存在异常情况，可能涉及数据趋势、设备运行状态或工艺参数的异常检测。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97c8-8c00-77f0-82ec-6e4c54c52ab7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对某个回路进行评估，以确定是否存在异常情况。这可能涉及到检查控制回路的稳定性、测量值的变化趋势以及是否符合预期的工艺条件，以确保生产过程的正常运行。\n\n首先，我需要从回路信息查询中找到你感兴趣的回路。\n\n接下来，我要检测一下数据，利用回路数据有效性检测，检测数据是否存在且符合要求。\n\n如果数据有效性检测不通过，則表示当前数据无效，則无法进行控制回路性能评估及诊断，需要检查数据情况。\n\n如果数据有效性检测通过，则进行控制回路性能评估及诊断，若回路评估等级为优和良，則表示该回路状况良好，无需处理。若回路评估等级为中和差，则需要进一步分析该回路的具体情况，查看该回路是否存在阀门饱和、阀门卡涩或仪表噪声太大等问题，并给出相应的处理建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97c8-963e-7013-8bc8-0be88fcce5c4",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路数据有效性检测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97c8-a93d-7300-ac17-efab3b8ac827",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97c8-a9ec-76d1-87f4-dfa2008051d8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97c8-aaa3-76d2-9a4c-34644a8f8363",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97c8-aaa6-7f80-9982-47d4d8300d3d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97c8-aa9e-7311-bd62-ff7ae5342784",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "帮我评估有什么异常（核心意图）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97c8-aa9e-7311-bd62-ff7ae5342784"
+      }
+    }
+  ]
+]

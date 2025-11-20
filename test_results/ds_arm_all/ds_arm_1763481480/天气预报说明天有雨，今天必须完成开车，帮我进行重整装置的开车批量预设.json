@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97ca-f988-70f3-b890-2770d30dd3f3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97ca-fa09-7b71-afed-ed3db80340f6",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要在可能受降雨影响的情况下，提前为重整装置设置好开车批量参数，以确保今日开车过程顺利并减少天气变化带来的不确定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97ca-fca3-7471-b277-50941253b369",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在明天雨天前完成重整装置的开车工作，由于时间紧迫，需要快速且顺利地完成装置开车。这不仅要求顺利完成开车任务，还要求装置运行状态达到最佳。用户期望对重整装置的开车过程进行快速且平稳的控制，因此，需要对开车过程中相关控制回路的参数进行批量预设，以确保开车操作的高效与稳定。\n\n装置开车阶段由于控制回路缺乏历史数据支撑常规参数整定，因此无法使用标准整定方法获取PID参数。我将对开车阶段的数据进行批量整定分析，在完成相应计算后，会为您提供适合的初始PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97cb-36c3-7043-80c6-f5bc21d35043",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97cb-53f0-7d50-af08-61a31f5d99da",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97cb-54c6-7a80-97b0-673c7b00048a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97cb-560c-74b2-b467-ef0d3d8e9ee8",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97cb-560c-74b2-b467-ef1b8c65f166",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97cb-560a-77b2-8542-6f3899a8f75e",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "天气预报说明天有雨，今天必须完成开车，帮我进行重整装置的开车批量预设",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97cb-560a-77b2-8542-6f3899a8f75e"
+      }
+    }
+  ]
+]

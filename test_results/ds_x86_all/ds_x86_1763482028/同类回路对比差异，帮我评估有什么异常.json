@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a980a-2e9f-78a2-94f4-506ac5933178",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a980a-2f40-71a2-a295-9359fe885ea0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想通过对比同类控制回路的运行情况，找出其中的差异并评估是否存在异常。这有助于识别性能偏差或潜在故障，从而进行针对性优化或排查。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a980a-343a-7b92-984f-53630eee4786",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对比分析两条相似的回路，以找出它们之间的差异，并通过评估这些差异来识别是否存在异常情况。这可能涉及到对回路的性能、参数设置或运行状态等方面进行详细对比，以便更好地理解两者的不同之处及潜在的问题。\n\n首先，我需要通过回路信息查询能力，查找并获取其中一条回路的最近的回路评估报告。 \n\n随后，我需要再次通过回路信息查询能力，查找并获取另一条回路的最近的回路评估报告。 \n\n最后，我会将这两份评估报告中的回路综合性能评分、综合评级以及建议内容进行对比分析，以识别出任何异常情况。如果发现异常，我会提供具体的对比结果，包括综合性能评分、综合评级和建议的差异。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a980a-511c-7190-924f-2bc46113c2e5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路评估数据查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"PID\", \"ability\": \"回路评估数据查询\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a980a-756a-7f40-8fd4-865564cef261",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a980a-756a-7f40-8fd4-86661172ee8a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--回路信息查询-- 不存在于 --回路评估数据查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a980a-79be-76b2-94cc-b458f522f954",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a980b-2a37-7c90-bbb9-b1df0365bcf8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a980b-2a38-7ab3-a392-920604cdcca7",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u8fd0\\u884c\\u5b9e\\u65f6\\u72b6\\u6001\\u8ba1\\u7b97\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u8bc4\\u4f30\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a980b-2a38-7ab3-a392-92117e95f109",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a980b-2a38-7ab3-a392-92255a145f2b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a980b-2a38-7ab3-a392-92319dfc7aff",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a980b-2a36-7273-8f75-ff48bec11e25",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路运行实时状态计算\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"PID\",\"ability\":\"回路评估数据查询\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "同类回路对比差异，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a980b-2a36-7273-8f75-ff48bec11e25"
+      }
+    }
+  ]
+]

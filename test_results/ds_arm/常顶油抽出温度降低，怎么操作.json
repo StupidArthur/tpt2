@@ -1,0 +1,258 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96ab-d56d-7471-888a-80bfbf28d7e7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96ab-d5e6-7ac0-b572-ff4edc85b54b",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您注意到常顶油抽出温度下降，可能希望了解如何调整操作以维持温度稳定。这可能涉及调节加热量、改变抽出流量或优化塔内操作参数，确保产品质量和系统平稳运行。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96ab-dbf1-7cf3-b6b2-c8dcacedf3c7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望降低常顶油的抽出温度，可以降低终馏点，对原油进行组分分离调整。用户需求的背后，可能是由于原料性质变化或下游需求的波动，导致用户需要频繁调整工况。传统上，这种调整依赖于操作人员的经验来调节关键工艺参数，但这种方法存在调整滞后、过度依赖个人经验、易发生过调或波动等问题，难以确保工况切换的快速和稳定。为了更精准、安全且高效地进行操作，我将采用智能化的方法来指导工况切换。\n\n首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成初始模板，再由用户根据装置实际情况，对相关变量进行确定与调整，后续用户基于此模板上传装置历史运行数据。\n\n在进行操作路径规划之前，需要先构建操作对产品质量影响的预测模型。我将基于TPT大模型的预测能力，通过整合生产过程中的时序数据以及质量分析数据，构建相关变量与产品质量的动态响应关系。这一方法不仅能显著减少对化验分析的依赖，有效降低成本；还能提前预警可能出现的质量偏差，帮助用户及时调整生产参数，确保产品质量符合要求，避免因产品不合格带来的加工损失。\n\n接下来，基于预测模型结果，我将根据您指定的目标控制范围，结合当前运行状态，自动寻找出关键调整变量分阶段调整的最短路径，指导用户从当前工况平滑过渡到目标工况。这种方法可以有效解决传统人工控制在非稳态过程中的问题，减少对操作人员经验的依赖，缩短调整时间，避免试凑操作，从而提高产品质量的稳定性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96ac-6ce0-7c11-ae64-447d271e1e5e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认关键变量\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"产品质量预测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"动态操作路径规划\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96ac-975b-7f93-9f59-8f5927d27a85",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96ac-975c-7840-9b5f-1269160ff709",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96ac-975c-7840-9b5f-127aeed584b1",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96ac-9759-7622-a386-e576ceb1f162",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"确认关键变量\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"产品质量预测\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"动态操作路径规划\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "常顶油抽出温度降低，怎么操作",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"industry\": \"石油化工\",\n  \"plant\": \"常减压装置\",\n  \"device\": \"\",\n  \"quality\": \"\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "自动重试中",
+          "type": "warn",
+          "description": "输入数据格式不符合要求，尝试重新生成",
+          "details": "```plaintext\nJSON Schema验证失败\n路径: /device\n模式: /properties/device/minLength\n详情: \"\" is shorter than 1 character\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 用户问题中明确提及的装置和质量指标\n    plant = \"常减压装置\"\n    quality = \"温度\"\n    \n    # 根据工艺背景知识推断设备名称\n    device = \"常顶油抽出塔\"\n    industry = \"石油化工\"\n    \n    # 组装输出数据\n    output = {\n        \"industry\": industry,\n        \"plant\": plant,\n        \"device\": device,\n        \"quality\": quality\n    }\n    \n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"industry\": \"石油化工\",\n  \"plant\": \"常减压装置\",\n  \"device\": \"常顶油抽出塔\",\n  \"quality\": \"温度\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "确认关键变量"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96ff-c051-7702-aeff-a10fc9460629",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96ff-c053-70b0-97f6-201d15de2a4a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您发现电解工序的电耗偏高，希望找到降低能耗的方法。这可能涉及优化电流效率、调整槽电压、改善槽温控制、检查电解槽运行状态或提升原料纯度等方面。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96ff-c2d0-7c20-8a76-d4c18552aa84",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户提到电解工序电耗高，希望进行优化。这是一个RTO操作优化问题，我会进行以下步骤：\n\n1. 首先，我将与您确认具体优化方向，同时了解是否已具备训练好的模型。若无，则引导您进入数据上传流程；若有，则直接进入配置方案流程。\n\n2. 在数据上传流程中，我会推荐适当的文件内容供您上传，并对上传后的数据进行自动化建模预处理，提取关键特征，为后续优化提供支持。\n\n3. 然后，进入确认建模信息阶段。基于历史数据和网络资源，我将生成优化方案，包括设定优化目标、确定优化变量、定义约束条件以及构建代理模型等。同时，我会邀请您进行二次确认，确保方案配置无误。\n\n4. 最后，将进入TPT推理计算阶段。根据确认的优化方案，我将进行数据预处理，然后利用代理模型的输入输出关系，进行模型微调训练。接着，将优化目标、变量、约束条件及代理模型一并送入优化算法中，计算推荐优化方案。完成优化后，我将提供电解工序的优化总结。\n\n5. 若在第一步确认过程中，您选择已有模型，则直接进入配置方案流程。在此流程中，我将提取所有需要配置的内容，确保您能够准确地完成在线配置，以保证数据的正确性。\n\n6. 完成配置方案流程后，将进入实时计算流程。此流程将根据您选择的模型实时计算，最终输出优化结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96ff-d4d8-7180-b12b-1e8792ae3440",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"RTO操作优化\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"RTO操作优化\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"RTO操作优化\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"RTO操作优化\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"RTO操作优化\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"RTO操作优化\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96ff-e411-7fe2-8c7c-5a98515cae5f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96ff-e499-7d13-9186-96fffe32bed2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96ff-e54b-7582-81e3-48a163f6773b",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96ff-e54e-7df2-9cef-19d941966083",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96ff-e547-74e3-9137-952bc9404aea",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"RTO操作优化\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"RTO操作优化\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"RTO操作优化\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"RTO操作优化\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"RTO操作优化\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"RTO操作优化\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "电解工序电耗高，怎么解决",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96ff-e547-74e3-9137-952bc9404aea"
+      }
+    }
+  ]
+]

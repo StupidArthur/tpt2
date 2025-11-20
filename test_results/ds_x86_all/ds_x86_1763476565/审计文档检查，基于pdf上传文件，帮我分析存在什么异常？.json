@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b4-8ea7-7122-a327-3894b6af9227",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b4-8f43-76b3-a511-95d21cecdf27",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您上传了一个PDF格式的审计文档，希望我能帮助检查其中是否存在异常内容或问题。这可能包括数据不一致、流程违规、记录缺失等方面。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b4-93d9-7571-ab41-6317802e7a54",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您上传了一份PDF文件，希望对其中的异常进行分析。为了准确识别文件中的异常，我将执行以下步骤：\n\n首先，我会要求您上传PDF文件的内容，以便我进行文件解析和分析。\n\n接着，我将对上传的文件进行解析，检查是否存在异常。如果解析过程中发现任何问题，如格式错误或内容不一致，我将提示您修正文件并重新上传。\n\n一旦文件解析成功，我将对文件中的数据进行分析，以识别任何异常。如果发现异常，我将详细列出异常的具体情况，包括异常的类型、位置和可能的原因。同时，我会提供相应的建议，帮助您解决这些异常。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b4-ad18-7db1-80f7-c6ee5d2af7d9",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b4-ce6a-7a83-b9d0-f6e82e355e38",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b4-ce6a-7a83-b9d0-f6fa41d6d4f8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--上传数据与解析-- 不存在于 --用户交互界面-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b4-ce6a-7a83-b9d0-f707cab9fed5",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b5-9f28-7c93-a11d-000783029985",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97b5-9f28-7c93-a11d-0012e7679b12",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u63a7\\u5236\\u56de\\u8def\\u6027\\u80fd\\u8bc4\\u4f30\\u53ca\\u8bca\\u65ad\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97b5-9f28-7c93-a11d-0023942a326a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97b5-9f28-7c93-a11d-0039c7852b95",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97b5-9f28-7c93-a11d-004174dba016",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b5-9f27-7c91-8852-7a10c1ea04b2",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "审计文档检查，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b5-9f27-7c91-8852-7a10c1ea04b2"
+      }
+    }
+  ]
+]

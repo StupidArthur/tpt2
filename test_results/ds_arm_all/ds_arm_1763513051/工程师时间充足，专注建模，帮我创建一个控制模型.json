@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99ea-6c9b-7170-9c27-95fb0eaa155e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99ea-6d1b-7890-8adb-209f85d275d3",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望创建一个控制模型，以便在时间充足的情况下，让工程师专注于建模工作，提升控制系统的性能和精度。这可能包括选择合适的模型结构、定义输入输出变量以及优化控制逻辑。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99ea-71c8-7480-8489-8df6b940cffb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您希望创建一个控制模型，鉴于控制模型通常需要对被控对象的动态特性进行精确辨识，以确保模型的准确性，这一过程往往需要较长时间。为了帮助您提高建模效率，我将首先生成一个通用模型，以供后续使用。\n\n首先，我将根据您提供的位号数据信息，生成一个相应的模型矩阵。\n\n接着，我会利用历史数据对模型进行辨识，以提升模型的精确度。辨识完成后，我将对模型进行仿真测试，确保其性能可靠。最后，我会将模型的数据保存起来，以便您后续调用。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99ea-a13e-7e22-8269-6d6b7db5e330",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99ea-c214-75c3-ac5d-1785295d7dab",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99ea-c2de-72f2-b6f8-83a3127982f2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99ea-c43a-7e70-81c2-0d8044415214",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a99ea-c43b-7d12-aa67-8fab441a7bbf",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99ea-c438-7650-9e41-134af3114ddc",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "工程师时间充足，专注建模，帮我创建一个控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a99ea-c438-7650-9e41-134af3114ddc"
+      }
+    }
+  ]
+]

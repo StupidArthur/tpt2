@@ -1,0 +1,258 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a77-2f7f-7d12-8137-627de2978489",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a77-30f0-7021-906e-de1490ee46ba",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想知道硫酸装置中进料水的流量数值，可能是为了监控工艺运行或优化生产参数。这通常涉及查看相关仪表读数或流程图中的流量显示。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a77-352a-7a83-9358-135b47dc92ad",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "您的问题属于数据查询类问题。接下来将按照统一流程处理，确保高效获取所需信息：\n\n1. 问题核心信息提取\n\n从您的问题中提取通用关键要素，为后续查询提供明确依据，具体包括\n\n目标查询对象：硫酸装置进料水的流量\n\n时间范围：未明确指定，将默认为当前时间\n\n2. 校验查询对象存在性：若存在，则直接执行查询并反馈结果；若不存在，则判断是否支持补充数据。如果不支持，则提示无数据；如果支持，则进入下一步 “上传数据与解析”。\n\n3. 上传数据与解析:（仅在支持补充数据时执行），提示您上传包含目标数据的文件，系统解析后将反馈解析结果，需确认解析结果的准确性。\n\n4. 确认解析结果：若解析无误，系统将基于文件中的有效数据进行查询；若解析结果有异常，将提示您修正文件并重新上传，直至解析通过。\n\n5. 执行查询与反馈：若查询成功，将按照“需返回的数据类型”整理结果。如果结果超出合理范围（例如数值为负、波动过大），将同步提示“注意：部分数据可能存在异常，建议核对原始文件”，并反馈给您。若查询失败，将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和查询范围后重新尝试”，流程结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a77-a5ca-7172-b879-104ca973b603",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a77-fcbe-77f0-b323-0a8de866c667",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a77-fcbe-77f0-b323-0a982a99e3f3",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${valid} == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${valid} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a77-fcbf-7961-b4e9-5ab2143d6c17",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a77-fcba-78b0-a69d-f8449f976f23",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "硫酸装置进料水的流量是多少（核心意图）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"硫酸装置进料水的流量是多少（核心意图）\",\n  \"userIndexNames\": [\n    \"硫酸装置进料水流量\"\n  ],\n  \"indexNames\": [\n    {\n      \"name\": \"硫酸装置进料水流量\"\n    }\n  ],\n  \"tagNames\": [],\n  \"alertNames\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "自动重试中",
+          "type": "warn",
+          "description": "输入数据格式不符合要求，尝试重新生成",
+          "details": "```plaintext\nJSON Schema验证失败\n路径: /indexNames/0\n模式: /properties/indexNames/items/type\n详情: {\"name\":\"硫酸装置进料水流量\"} is not of type \"string\"\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 用户输入信息\n    userinput = \"硫酸装置进料水的流量是多少（核心意图）\"\n    \n    # 从source中提取指标名称（符合x-source要求的字符串数组）\n    indexNames = [\"硫酸装置进料水流量\"]  # 选择与用户问题完全匹配的指标名称\n    \n    # 用户问题中提取的指标名称（已通过历史步骤正确提取）\n    userIndexNames = [\"硫酸装置进料水流量\"]\n    \n    # 其他无匹配数据的字段返回空数组\n    tagNames = []\n    alertNames = []\n\n    output = {\n        \"userinput\": userinput,\n        \"userIndexNames\": userIndexNames,\n        \"indexNames\": indexNames,\n        \"tagNames\": tagNames,\n        \"alertNames\": alertNames\n    }\n    \n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"硫酸装置进料水的流量是多少（核心意图）\",\n  \"userIndexNames\": [\n    \"硫酸装置进料水流量\"\n  ],\n  \"indexNames\": [\n    \"硫酸装置进料水流量\"\n  ],\n  \"tagNames\": [],\n  \"alertNames\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "查询请求分析"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

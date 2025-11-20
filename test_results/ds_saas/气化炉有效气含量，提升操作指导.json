@@ -1,0 +1,308 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9700-32a0-7282-a503-314a851b857b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9700-32a3-74a3-bbc0-30022ba37eac",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望提高气化炉产生的有效气含量，并寻求操作上的指导建议。这可能涉及调整气化炉的温度、压力、气化剂配比或进料速率等参数，以改善气化效率和气体成分。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9700-360e-7153-af6f-5490521d146d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望提升气化炉的有效气含量，鉴于气化炉涉及复杂的工业过程，包括燃烧、气化等多变量耦合的设备，可能需要采用先进控制技术来优化。因此，我将为用户制定一份气化炉的APC先进控制方案。\n\n首先，需要确认气化炉先进控制方案的应用范围和类型，并结合工艺资料及生产实际情况，确保方案贴合工艺特性及控制需求。\n\n基于确认的信息，参考APC的实际应用案例和公开资料，我将编制气化炉的先进控制方案文档，文档中会包括关键变量（被控变量CV、操作变量MV和干扰变量DV）的控制关系。但考虑到用户现场的变量可能与我提供的存在差异，我还需要用户确认控制器变量的具体信息。\n\n为了确保控制器结构的合理性，我需要用户分享相应变量的历史数据。基于这些数据，我将分析变量特性，检查控制逻辑的合理性，并给出优化建议，帮助用户做出决策。\n\n最后，我将根据用户确认的控制器结构调整方案内容，更新并输出相关文件。\n\n此外，我还可以利用这些数据进行模型辨识，为用户提供辨识结果报告及模型文件，方便后续的控制器组态工作。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9700-4281-79f3-95f7-5718bffb01bb",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案设计信息确认\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"控制方案检索生成\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"控制方案优化\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9700-4ee5-7fc2-b611-637f418dfcfc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9700-4ee7-79f1-9a42-3defa514bc86",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}, {\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9700-4ee9-7412-8232-29b35ae7ad36",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9700-4ee0-7d11-a652-f1c2818c79b0",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id4\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "气化炉有效气含量，提升操作指导",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"气化炉有效气含量，提升操作指导\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "控制方案设计信息确认"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T20:46:16.190",
+          "details": "json_data result={'id': 'chatcmpl-dbb7a2d382ed4b07af5d683f368a133d', 'object': 'chat.completion', 'created': 1763469972, 'model': 'qwen3', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'reasoning_content': '\\n好的，用户指令中提到了“气化炉有效气含量，提升操作指导”。首先，我需要确定用户提到的生产装置或设备范围。这里的关键词是“气化炉”，所以根据步骤1，我需要列出可能的气化炉类型。常见的气化炉有粉煤气化炉和水煤浆气化炉，这些都是核心设备，不需要包括阀门或储罐等细节。然后，按照步骤2，气化炉的可变数量属性是喷嘴个数。接下来，步骤3要求生成一个包含id、equipname和attribute的JSON结构。根据特殊条件判断，如果用户指令包含“气化炉”，应该直接输出预设的结构，包括粉煤气化炉、水煤浆气化炉和“其他”。每个设备的属性都是“喷嘴个数”，除了“其他”需要提示输入自定义名称。最后检查JSON格式是否正确，确保三个键存在且数量一致。用户可能需要优化气化炉的操作参数，比如调整喷嘴数量来提高有效气含量，所以正确的设备和属性信息对后续分析很重要。确认没有遗漏其他可能的气化炉类型，比如德士古气化炉，但根据常规分类，粉煤和水煤浆是主要的，所以暂时不考虑。最终输出符合要求的JSON即可。\\n', 'content': '\\n\\n{\"id\": [\"1\", \"2\", \"3\"],\"equipname\": [\"粉煤气化炉\", \"水煤浆气化炉\", \"其他\"],\"attribute\": [\"喷嘴个数\", \"喷嘴个数\", \"请输入自定义设备名称\"]}', 'tool_calls': []}, 'logprobs': None, 'finish_reason': 'stop', 'stop_reason': None}], 'usage': {'prompt_tokens': 574, 'total_tokens': 910, 'completion_tokens': 336, 'prompt_tokens_details': None}, 'prompt_logprobs': None}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T20:46:16.190",
+          "details": "tmp_content result=\n\n{\"id\": [\"1\", \"2\", \"3\"],\"equipname\": [\"粉煤气化炉\", \"水煤浆气化炉\", \"其他\"],\"attribute\": [\"喷嘴个数\", \"喷嘴个数\", \"请输入自定义设备名称\"]}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T20:46:16.190",
+          "details": "json_str数据信息={\"id\": [\"1\", \"2\", \"3\"],\"equipname\": [\"粉煤气化炉\", \"水煤浆气化炉\", \"其他\"],\"attribute\": [\"喷嘴个数\", \"喷嘴个数\", \"请输入自定义设备名称\"]}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T20:46:16.190",
+          "details": "data数据信息={'id': ['1', '2', '3'], 'equipname': ['粉煤气化炉', '水煤浆气化炉', '其他'], 'attribute': ['喷嘴个数', '喷嘴个数', '请输入自定义设备名称']}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T20:46:16.191",
+          "details": "default_data数据信息： [{'combinedField': '1', 'combinedField_1': 1, 'combinedField_2': 1}, {'combinedField': '1', 'combinedField_1': 1, 'combinedField_2': 1}, {'combinedField': '1', 'combinedField_1': 1, 'combinedField_2': 1}]"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "\n为了更好地完成您的任务，我需要与您确认一下任务的具体要求，以确保我们对控制方案的期望是一致的。\n        "
+      }
+    }
+  ]
+]

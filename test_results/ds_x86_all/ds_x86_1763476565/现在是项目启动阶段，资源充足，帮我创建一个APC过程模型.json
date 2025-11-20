@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a979e-6208-7821-bbe2-5e631b5be08e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a979e-62af-70b1-98fc-b956a42c0f85",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在项目启动阶段，利用当前充足的资源建立一个先进过程控制（APC）模型，以提升后续生产过程的控制精度和效率。这可能包括数据采集、模型结构设计和初步参数配置等工作。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a979e-6af6-7223-bbfb-08d42230f699",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，用户要求创建APC过程模型，这通常需要借助历史数据来完成，因为这些数据能帮助我们更好地理解过程的动态特性，从而为模型提供关键参数。首先，我将根据用户提供的位号数据信息，参考APC的实际应用案例和网络上的公开资料，来构建模型矩阵。\n\n接下来，我会让用户上传历史数据文件，对这些数据进行解析和评估，以确保它们适用于模型构建。如果数据不满足要求，我将在文件中标记出错误的部分，并给出修正建议，以便用户能够调整数据后重新上传。\n\n一旦数据通过验证，我将使用这些数据来更新模型矩阵，同时检查位号的属性，确保所有配置无误。随后，我将对模型进行仿真测试，以验证其准确性和可靠性。最后，我将提供模型的详细文件，以便用户可以将其直接应用于APC系统中。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a979e-87f6-7761-9d6a-6a2455ba77c6",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a979e-9f4f-72e1-9ef8-4a8c0fe9ccf4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a979e-a038-7852-8eb6-cb740ae9ff77",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a979e-a228-7443-aa4e-5692ec531a3a",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a979e-a228-7443-aa4e-56a0635be83f",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a979e-a226-7042-9a83-0a09f498b381",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "现在是项目启动阶段，资源充足，帮我创建一个APC过程模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a979e-a226-7042-9a83-0a09f498b381"
+      }
+    }
+  ]
+]

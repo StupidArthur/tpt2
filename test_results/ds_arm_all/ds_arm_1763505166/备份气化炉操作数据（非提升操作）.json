@@ -1,0 +1,173 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a993d-8c41-7b33-b4db-596594e9fdb6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a993d-8cb4-7b62-abaf-8b9706d0d4dc",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想备份气化炉的操作数据，但不包括提升操作的数据。这可能用于数据归档、分析或恢复操作记录，以便后续查看或优化工艺流程。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a993d-9075-7341-9028-14c84526204a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在不改变当前气化炉运行状态的情况下，实现操作数据的备份，以便于后续分析或应急处理时使用。这通常涉及到数据采集系统的设置，确保关键操作参数和变量能够被实时记录和保存。\n\n首先，我将通过用户交互界面，提示您确认主副回路，以便正确设置操作数据的备份范围和内容。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a993d-aa30-7732-817e-260de39d3d6c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a993d-bf3c-7523-9c89-8edecbb33f57",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a993d-c008-7510-98a5-02e2d4bda7d4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a993d-c17d-7961-8298-f0a33cc890a7",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a993d-c17d-7961-8298-f0b4a26ebc0d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a993d-c17b-7913-8c4a-453064a9dc37",
+      "json": "[{\"id\":\"id1\",\"tool\":\"builtin\",\"ability\":\"用户交互界面\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "备份气化炉操作数据（非提升操作）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a993d-c17b-7913-8c4a-453064a9dc37"
+      }
+    }
+  ]
+]

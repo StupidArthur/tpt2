@@ -1,0 +1,234 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9888-067f-74c1-8a49-2db62ec06401",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9888-06ea-77b1-b9d9-ef6461720a67",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解气化炉模型中与氧气进料相关的参数设置，但不涉及鲁棒性验证部分。这可能包括氧气流量、压力、温度等关键输入参数。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9888-0ba6-7ac1-8d5f-2dcae1a94258",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望获取气化炉模型中氧气进料参数的相关信息，可能用于流程分析、优化或调整，而非鲁棒性验证。这涉及到氧气进料的量、纯度、温度、压力等参数，用户需要这些数据来确保工艺过程的稳定性和效率。\n\n首先，我将根据用户提供的气化炉装置信息，进行装置与变量关系的确认，提取出氧气进料的参数信息。\n\n随后，我会基于历史数据对这些参数进行辨识，以生成模型矩阵。最后，将模型矩阵中的氧气进料参数及其相关值进行输出。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9888-37fa-79c3-ab40-1fac1c2416f3",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9888-607d-74d0-87cf-9d2e1951674e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9888-6153-7801-b612-94f376b969e1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": false,\n    \"reason\": [\n        {\n            \"constraint\": \"工具能力一致性\",\n            \"desc\": \"同一工具在不同节点下的能力描述必须一致或合理区分\",\n            \"notice\": \"如果不同节点的APC工具能力描述不同，需确保其用途和上下文逻辑一致\"\n        },\n        {\n            \"constraint\": \"分支完整性\",\n            \"desc\": \"每个分支必须以'general_tool'和'end'作为结束\",\n            \"notice\": \"需要确认每个分支都正确结束\"\n        }\n    ]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9888-706c-7461-a0f2-f4186551529c",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9888-d088-7531-b1d3-01a3ba819eba",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9888-d088-7531-b1d3-01b9a18235a9",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9888-d089-7c60-9533-723802eecefe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9888-d089-7c60-9533-724b98b6ec76",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9888-d08a-73f1-8332-855355cc4562",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9888-d086-7f23-92d0-9a2d3413a542",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "查询气化炉模型氧气进料参数（非鲁棒性验证）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9888-d086-7f23-92d0-9a2d3413a542"
+      }
+    }
+  ]
+]

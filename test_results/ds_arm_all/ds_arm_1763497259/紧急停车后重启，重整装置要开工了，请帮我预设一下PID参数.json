@@ -1,0 +1,213 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9916-25c1-7ae0-8e2c-3300a106031e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9916-2656-75e2-a22c-8c60751df2f3",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望重整装置在紧急停车后重新开工时，预先设置好PID参数，以便控制回路能够快速、稳定地恢复正常运行。这可能涉及到根据历史数据或经验，合理配置各控制回路的PID值，确保启动过程平稳，避免波动过大。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9916-2bed-7e50-b6fc-b5f85f243170",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在重整装置即将开工之际，能够提供一组预设的PID参数，以帮助装置顺利启动并稳定运行。这可能涉及到对装置控制回路的特性进行分析，选择合适的PID参数值，确保装置在启动阶段不会出现不稳定或过度振荡的情况。\n\n装置开车阶段，控制回路缺乏历史数据支撑常规参数整定，因此无法使用标准整定方法获取PID参数。我将对开车阶段的数据进行批量整定分析，在完成相应计算后，会为您提供适合初始阶段的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9916-555b-71b3-add8-bd1c0c4db2aa",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9916-69c9-74d2-ac5e-60d073789484",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9916-69c9-74d2-ac5e-60e073d3c7f9",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9916-69ca-7c91-b0c0-497d0b395a6a",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9916-69c7-7773-acbf-4aa8c7d9df23",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "紧急停车后重启，重整装置要开工了，请帮我预设一下PID参数",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "开车阶段参数批量整定"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9916-69c7-7773-acbf-4aa8c7d9df23",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "紧急停车后重启，重整装置要开工了，请帮我预设一下PID参数",
+      "metadata": {
+        "can_be_background": false
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n获取开车阶段所有回路的类型、装置、工艺段信息。分类后匹配经验库中相似回路，提取其历史相似参数作为起点，实现快速稳定开车控制。\n"
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请按文件模板要求上传装置的回路列表数据。上传成功后，点击相应文件名即可查看数据。",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n请按照文件模板上传装置的回路列表数据。我将根据回路类型、工艺特性等信息与装置经验库中的历史数据进行匹配，为当前所有回路提供一个合理的参数起点"
+      }
+    }
+  ]
+]

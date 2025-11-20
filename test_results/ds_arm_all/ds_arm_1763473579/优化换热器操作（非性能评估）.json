@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a976c-a5d1-7571-a821-e97660622cbc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a976c-a652-71f2-83df-b92c653b7eb9",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望优化换热器的操作，可能包括调整操作参数、改进控制策略或提升换热效率，以实现更稳定的运行和更好的工艺效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a976c-aa01-70e3-9124-de24d6db0502",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，用户希望优化换热器的操作，以提高能效。这可能涉及调整操作参数、优化运行状态或解决当前操作中的具体问题，旨在确保换热器性能更加高效和稳定。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，如物流数据、换热器参数等。这些数据将用于验证其完整性、格式正确性以及是否满足换热器操作优化的基本需求。如果数据校验未通过，我将在上传文件中标记错误单元格，并提供修正建议，用户需根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将基于用户提供的数据，进行换热器操作优化。通过分析换热器的运行数据，识别出运行效率低下的换热器，并生成一份详细的优化报告。该报告将列出设备效率低下的原因，以及针对每个换热器的具体优化措施，帮助用户采取有效行动，提升整体换热效率。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a976d-00af-7410-bfa2-515fb383bcd8",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a976d-216d-7550-b5ae-85eae5b13ca7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a976d-2241-7463-9fa3-ca6438e4b0bd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a976d-237f-74a0-9c3a-b6ebbf7d0ed8",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a976d-2380-7e01-9b6e-9992a58ca103",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a976d-237d-7ba2-b7b5-fded95559a6c",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "优化换热器操作（非性能评估）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a976d-237d-7ba2-b7b5-fded95559a6c"
+      }
+    }
+  ]
+]

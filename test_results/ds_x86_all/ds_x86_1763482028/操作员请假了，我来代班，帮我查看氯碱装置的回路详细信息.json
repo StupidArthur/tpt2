@@ -1,0 +1,218 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97fe-67d7-7ed2-be9b-a54754d60c86",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97fe-6942-7482-b36c-2f602b58c0de",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要查看氯碱装置的控制回路详细信息，以便在操作员请假期间顺利代班。这些信息可能包括回路名称、类型、设定值、实际值、输出信号以及当前运行状态等，有助于您了解和掌握装置的控制情况。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97fe-7061-7711-88cc-df9c7f425a62",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望查看氯碱装置的回路详细信息，可能是为了更好地了解装置运行状态、排查问题或进行日常维护，需要获取该装置各回路的具体参数、连接情况、运行状况等详细内容。\n\n您可以通过回路信息管理界面点击回路查看其详细信息。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97fe-7579-76d1-a44b-9c2aecf52e8f",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息管理\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97fe-8121-7b01-a763-a8247ea7a3f4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97fe-8122-75d2-ae61-c76bf3c62a84",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97fe-8122-75d2-ae61-c775612aca75",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97fe-8120-74e3-b0c5-1a5d7b2c866d",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息管理\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "操作员请假了，我来代班，帮我查看氯碱装置的回路详细信息",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"groupName\": \"氯碱装置\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路信息管理"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n为您打开统一管理界面，集中查看所有控制回路。快速获取类型、参数、状态、工艺特性等基本信息，检查配置与参数完整性，并支持分类整理和调整。"
+      }
+    }
+  ]
+]

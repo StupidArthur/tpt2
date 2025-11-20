@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9725-81aa-7021-85b3-13a11883c105",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9725-8218-72f3-b820-639e17f159f2",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望查看乙烯装置一部的控制回路详细信息，以便了解其当前状态或为后续分析、优化提供依据。这可能包括回路名称、类型、设定值、实际值、输出信号等参数。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9725-86fe-7ce2-a186-d686687f3261",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望查看乙烯装置一部的回路详细信息，可能是为了进一步了解装置运行状态、排查问题或进行维护等。这里，用户已通过回路信息查询系统中的最近对应回路数据完成回路巡检，需获取该回路当前的详细信息。\n\n首先，我要从回路信息查询中定位到乙烯装置一部，并获取该装置对应的所有回路名称。\n\n随后，通过回路信息查询功能，对乙烯装置一部的所有回路进行详细信息检索，包括回路名称、回路描述、PID参数、实际运行数值及设备健康状态等，并将这些数据以结构化形式呈现。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9725-b6a0-7471-8531-1777e1cfe9d0",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9725-df70-7631-ae57-bc956d1d5221",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9725-e043-77e2-abeb-45cb2a43a69e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9725-e18d-78e2-be5c-ed2fc4b29971",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9725-e18f-73f3-b1c2-30acb486cd3f",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9725-e18b-7fe0-8124-45d9b82f5745",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "昨天刚做完回路巡检，今天帮我查看乙烯装置一部的回路详细信息",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9725-e18b-7fe0-8124-45d9b82f5745"
+      }
+    }
+  ]
+]

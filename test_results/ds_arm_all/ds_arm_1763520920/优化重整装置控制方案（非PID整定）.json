@@ -1,0 +1,206 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a7e-9d91-7203-8752-a3bb5036b839",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a7e-9df5-71b3-b832-78dfd130386c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望优化重整装置的控制方案，可能涉及改进控制逻辑、增加先进控制策略（如模型预测控制、联锁优化等），以提升装置运行的稳定性、效率和安全性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a7e-a25e-74e1-b240-f4d866713977",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户希望我生成重整装置的控制方案，重整装置控制涉及复杂的工业过程，可能需要采用先进过程控制（APC）技术来提升效率和稳定性。因此，我将生成一份重整装置的APC先进控制方案。\n\n首先，需要明确重整装置先进控制方案的装置范围和类型，同时结合工艺资料和生产实际情况，确保方案能够准确反映工艺特点并满足控制需求。\n\n基于这些确认的信息，参考APC应用案例及公开资料，我将制定重整装置的APC先进控制方案文档，其中会详细列出关键变量（被控变量CV、操作变量MV和干扰变量DV）的控制关系。鉴于用户现场的变量可能与我提供的存在差异，我将请求用户核实控制器变量信息。\n\n为了确保控制器结构的合理性，我还需要用户分享相应变量的历史数据。通过分析这些数据，我将评估变量特性，检查控制逻辑的合理性，并给出优化建议，帮助用户做出更明智的决策。\n\n最终，我将根据用户确认后的控制器结构，更新控制方案的详细内容，并生成相关文件供用户使用。\n\n此外，我还可以利用这些历史数据进行模型辨识，为用户准备辨识结果报告及相关模型文件，以便于后续的控制器组态工作。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a7f-09a9-7e30-aad7-d491df0abe62",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案设计信息确认\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"控制方案检索生成\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"控制方案优化\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a7f-6525-7dd3-9489-4e208d97c129",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a7f-6525-7dd3-9489-4e30192d5945",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}, {\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a7f-6526-75f2-82c4-100abd21e64a",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a7f-6521-7f72-9c5a-84c625baa67b",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id4\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "优化重整装置控制方案（非PID整定）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"优化重整装置控制方案（非PID整定）\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "控制方案设计信息确认"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

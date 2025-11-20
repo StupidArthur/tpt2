@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9763-9f51-72b3-a89d-671d8b4e276b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9763-9fbc-7122-9124-fba28e9923f0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对系统进行定期性能监测，并希望评估是否存在异常情况。这可能包括检查关键参数的趋势、控制回路的表现或设备运行状态，以及时发现潜在问题并确保生产过程的稳定性和效率。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9763-a61f-7590-b017-35c5097f9423",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对设备或系统进行定期性能监测，以识别和评估任何异常情况。这可能涉及到监控关键性能指标（KPI），查找KPI的趋势和异常。用户可能需要得到建议，以便选择合适的监控KPI和评估方法，确保能及时发现并处理异常。\n\n首先，我将通过APC装置信息查询，确认APC下是否有已配置的装置。如果查询结果为空，我将提示未找到任何装置。\n\n如果存在已配置的装置，我将进行装置指标的实时数据查询，获取这些装置的运行状态总览表，从中筛选出运行状态为异常的装置。如果异常装置列表为空，我将提示没有装置存在异常。\n\n如果存在异常装置，我将根据每种装置的类型，进行基于历史数据的回路整定，提供相应的评估建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9763-c37e-73d0-b6f6-a7843e3293d5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC装置信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"装置指标实时指标数据查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"PID\", \"ability\": \"基于历史数据的回路整定\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9763-e76d-7a03-8f92-1b1bf88184bf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9763-e76d-7a03-8f92-1b2f124ee7b6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--基于历史数据的回路整定-- 不存在于 --装置指标实时指标数据查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9763-ec37-7b63-8f6c-9c48f2fb8089",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9764-9dad-7ba1-b987-73dc9f88aac2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9764-9dad-7ba1-b987-73e5d08a00d4",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u8bc4\\u4f30\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9764-9dad-7ba1-b987-73f5681054df",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9764-9dad-7ba1-b987-7407eadb4694",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9764-9dae-7f53-be85-be0c00815df2",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9764-9dac-7b13-8ab9-8eb030f53571",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路评估数据查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "定期性能监测需求，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9764-9dac-7b13-8ab9-8eb030f53571"
+      }
+    }
+  ]
+]

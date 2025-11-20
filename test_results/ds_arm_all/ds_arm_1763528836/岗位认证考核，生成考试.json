@@ -1,0 +1,141 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a8d-b8f2-7af2-a539-8b44113e8ff9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a8d-b979-74e1-95db-4c01d98cf29a",
+      "type": "json",
+      "json": "\n"
+    },
+    [
+      2,
+      "json"
+    ],
+    "[{\n                \"id\": \"id1\",\n                \"tool\": \"EXAM\",\n                \"ability\": \"考试题目生成\",\n                \"dep\": null\n        },\n        {\n                \"id\": \"id2\",\n                \"tool\": \"general_tool\",\n                \"ability\": \"end\",\n                \"dep\": [\"id1\"]\n        }\n]\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a8d-bf9e-7830-a902-7f20b955e525",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a8d-bf9d-7f91-93c3-22d530b80038",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"EXAM\",\"ability\":\"考试题目生成\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "岗位认证考核，生成考试",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"岗位认证考核，生成考试\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "考试题目生成"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

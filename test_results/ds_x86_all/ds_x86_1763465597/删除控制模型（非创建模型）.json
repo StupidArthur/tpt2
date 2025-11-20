@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96f9-35ca-7991-bc0e-d4d064733ea3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96f9-3748-76b0-a202-0a45c6302aa1",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望删除一个已有的控制模型（而不是创建模型），可能是为了替换、优化或清理系统中的冗余模型。需要确保删除操作不会影响当前的控制逻辑和系统运行。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96f9-3ee9-77c0-90fa-4abbe5e19f97",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望删除现有的控制模型，这可能是因为需要重新建立模型，或者是因为当前模型存在一些问题，比如性能不佳、参数错误等，希望通过删除来解决这些问题，为后续的控制优化或分析提供一个干净的起点。\n\n首先，我会从回路信息查询中查找所有已有的控制模型，以获取它们的列表。接着，我将通过用户交互界面，提供这个模型列表，让用户选择想要删除的模型名称。在用户做出选择后，我会根据所选的模型名称，执行删除操作，以移除选定的控制模型。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96f9-4d8c-7230-a864-e0a51024fa3b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"控制模型加载\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96f9-65b0-73c2-9809-9cc321d684cb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96f9-65b0-73c2-9809-9cd9f6d09892",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--控制模型加载-- 不存在于 --用户交互界面-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96f9-6a81-7093-a5fc-91d0fc58beb5",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96fa-1868-78b3-8229-8207f9d0c051",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96fa-1869-74a0-b297-aa541e4d9f4b",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"\\u8fa8\\u8bc6\\u6a21\\u578b\\u77e9\\u9635\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"\\u8fa8\\u8bc6\\u6a21\\u578b\\u6570\\u636e\", \"dep\": [\"id1\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96fa-1869-74a0-b297-aa6cdf05a98b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96fa-1869-74a0-b297-aa7586462438",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96fa-1869-74a0-b297-aa8411236a10",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96fa-1866-74f0-9c6e-96d30ad1e736",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "删除控制模型（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96fa-1866-74f0-9c6e-96d30ad1e736"
+      }
+    }
+  ]
+]

@@ -1,0 +1,206 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99fd-b556-78a1-a5dc-60b5de669840",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99fd-b5c7-7bc0-b62c-4b628ec7d862",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想查询硫酸装置进料水的流量情况，可能是为了监控工艺运行或排查异常。这涉及相关仪表读数或历史数据的调取。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99fd-b95e-73c1-9fef-10347a0d4241",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "您的问题属于数据查询类问题。接下来将按照既定流程处理，以确保快速准确地获取所需信息：\n\n1. 问题核心信息提取\n\n从您的问题中提取关键要素，以便后续查询，具体包括：\n\n目标查询对象：硫酸装置进料水流量\n\n时间范围：未明确指定，假设为当前或最近的数据\n\n2. 校验查询对象存在性：如果存在，则直接执行查询并反馈结果；如果不存在，则判断是否支持补充数据。如果不支持，则提示无数据；如果支持，则进入下一步 “上传数据与解析”。\n\n3. 上传数据与解析：（仅在支持补充数据时执行）提示您上传包含目标数据的文件，系统解析后将反馈解析结果，您需要确认解析结果的准确性。\n\n4. 确认解析结果：如果解析无误，系统将基于文件中的有效数据进行查询；如果解析结果有异常，系统将提示您修正文件并重新上传，直至解析通过。\n\n5. 执行查询与反馈：如果查询成功，将按照“需返回的数据类型”整理结果。若结果超出合理范围（例如数值为负、波动过大），系统会提示“注意：部分数据可能存在异常，建议核对原始文件”，并反馈给您。如果查询失败，系统将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和查询范围后重新尝试”，流程结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99fe-1cf0-7fb3-ab1d-e0ae454c2d39",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99fe-8133-7d23-81a8-4a317c1a92f9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99fe-8134-78c3-aff9-7badf4859cc2",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${valid} == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${valid} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99fe-8135-7810-8d22-8c940c65055e",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99fe-8130-7c52-9150-2fbb6c7f26e2",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "硫酸装置进料水流量，查一下",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"硫酸装置进料水流量，查一下\",\n  \"userIndexNames\": [\n    \"硫酸装置进料水流量\"\n  ],\n  \"indexNames\": [\n    \"硫酸装置进料水流量\"\n  ],\n  \"alertNames\": [],\n  \"tagNames\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "查询请求分析"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

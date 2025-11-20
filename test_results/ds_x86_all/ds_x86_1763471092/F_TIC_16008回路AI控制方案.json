@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9714-9c93-7713-ac96-d612150f6132",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9714-9d1b-7791-9e76-264cefd5ef35",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要为F_TIC_16008控制回路设计一个基于AI的控制方案，以提升温度控制的精度和响应速度。这可能包括使用机器学习算法或智能优化方法来替代或辅助传统的PID控制。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9714-a327-7842-a7a5-9e2a736340f5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户提问F_TIC16008回路控制太复杂，希望使用AI代替，实现自动运行调整。这是一个AI控制问题，我会进行以下步骤：\n\n1. 首先，我会理解用户的问题，进入AI控制补充信息流程，让用户补充信息，选择离线模型建立还是在线预测控制。\n\n2. 若用户选择离线模型建立，我会进入数据质量分析流程，对数据集质量进行评价；然后进入AI可控性评估，给出场景特征及复杂度描述，明确工艺对象能否进行AI控制；之后我会根据之前流程筛选出的所有数据，进行关键影响因素分析，给出所有位号的重要度排序；接下来我会进入工况识别与验证环节，给出训练集与验证集的划分，给出在验证集上的所有数据工况分类的精确度及图形展示；接下来根据用户选择，进入预测模型构建与验证阶段，该流程会给出模型的评价指标，同时也会给出后续在线部署的模型文件；最后进入控制器搭建及验证阶段，给出单步控制预测效果，控制量、方向性判断验证结果是否合理，同时也会给出模型部署的配置信息。\n\n3. 若用户选择在线预测控制，我会进入数据质量分析环节，该环节会对用户数据质量进行评价，同时也会给出后续数据处理建议；接下来进入回路运行情况分析环节，该环节会根据用户提供的数据，分析出回路的运行情况以及用户操作的模式；之后我会进入PID数据质量分析环节，该环节根据回路数据情况，评估数据是否适合进行PID整定；接下来进入PID回路运行情况分析环节，该环节根据回路数据情况，分析回路是否处于饱和、阀门是否卡涩以及是否存在仪表噪声太大等问题，为后续参数整定提供参考；若数据质量太差，无法进行参数整定，我会进入PID强化学习自整定环节，形成PID参数推荐轨迹；若数据质量一般，但存在一定模式，我会进入PID-AI在线自整定环节，该环节将基于之前环节的所有分析结果，进行PID-AI在线自整定。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9714-fa8c-72a2-a106-3b1f41a65995",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI控制补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"AI可控性评估\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"SPC\", \"ability\": \"PID数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"PID回路运行情况分析\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"SPC\", \"ability\": \"PID强化学习自整定\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"SPC\", \"ability\": \"PID-AI在线自整定\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id14\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id13\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9715-52c0-7810-8ddf-bf79ffba5068",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9715-52c0-7810-8ddf-bf80d2009987",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--PID数据质量分析-- 不存在于 --AI控制补充信息-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9715-56cf-7572-a02f-deddc46db4db",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9716-088b-73a3-9a25-e9dc413442b2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9716-088b-73a3-9a25-e9ece0aef9ac",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI\\u63a7\\u5236\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"\\u6570\\u636e\\u8d28\\u91cf\\u5206\\u6790\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"AI\\u53ef\\u63a7\\u6027\\u8bc4\\u4f30\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"\\u5173\\u952e\\u5f71\\u54cd\\u56e0\\u7d20\\u5206\\u6790\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"\\u5de5\\u51b5\\u8bc6\\u522b\\u4e0e\\u9a8c\\u8bc1\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"\\u9884\\u6d4b\\u6a21\\u578b\\u6784\\u5efa\\u4e0e\\u9a8c\\u8bc1\", \"dep\": [\"id5\"]}, {\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"\\u63a7\\u5236\\u5668\\u642d\\u5efa\\u53ca\\u9a8c\\u8bc1\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"SPC\", \"ability\": \"\\u5728\\u7ebf\\u5de5\\u51b5\\u8bc6\\u522b\", \"dep\": [\"id1\"]}, {\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"\\u5728\\u7ebf\\u9884\\u6d4b\", \"dep\": [\"id9\"]}, {\"id\": \"id11\", \"tool\": \"SPC\", \"ability\": \"\\u5728\\u7ebf\\u63a7\\u5236\", \"dep\": [\"id10\"]}, {\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9716-088c-77d2-b4a6-92f6e9589321",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9716-088c-77d2-b4a6-93046fda7afe",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id1\", \"to\": \"id9\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9716-088c-77d2-b4a6-9317e5fcb5b3",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9716-0889-7110-a3da-4478d1503545",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"AI控制补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"AI可控性评估\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"关键影响因素分析\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"SPC\",\"ability\":\"工况识别与验证\",\"dep\":[\"id4\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"预测模型构建与验证\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"SPC\",\"ability\":\"控制器搭建及验证\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"SPC\",\"ability\":\"在线工况识别\",\"dep\":[\"id1\"]},{\"id\":\"id10\",\"tool\":\"SPC\",\"ability\":\"在线预测\",\"dep\":[\"id9\"]},{\"id\":\"id11\",\"tool\":\"SPC\",\"ability\":\"在线控制\",\"dep\":[\"id10\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"}]",
+      "name": "F_TIC_16008回路AI控制方案",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9716-0889-7110-a3da-4478d1503545"
+      }
+    }
+  ]
+]

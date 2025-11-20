@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99a9-8f5a-7481-8232-7999fddc9d76",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99a9-8fe6-7bf0-9943-abd78633316e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一份PDF格式的审计文档，并请我帮您分析其中是否存在异常内容。这可能包括数据不一致、流程问题或其他潜在风险。请提供文件，我将协助您进行初步检查。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99a9-95df-7270-b8f5-90dc79ee4eda",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您上传了一份PDF文件，希望对其中的异常进行分析。为了准确识别文件中的异常，我将执行以下步骤：\n\n首先，我会对上传的PDF文件进行解析，提取出其中包含的数据信息。随后，我将对这些数据进行分析，检查是否存在异常情况，如数据超出合理范围、格式错误或逻辑矛盾等。如果发现任何异常，我将提供具体的异常位置和描述，以便您进一步处理。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99a9-a356-7443-bf46-7c7a8bc7e6f7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99a9-bffb-78a3-bb55-3ba642e1bd96",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99a9-c0e1-7ef2-9aaf-8b177e5a3d8b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99a9-c2ea-7ed2-a48f-285432993c93",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a99a9-c2ea-7ed2-a48f-286b2cbe5107",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99a9-c2e9-7000-a643-edb956eda876",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id2\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "审计文档检查，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a99a9-c2e9-7000-a643-edb956eda876"
+      }
+    }
+  ]
+]

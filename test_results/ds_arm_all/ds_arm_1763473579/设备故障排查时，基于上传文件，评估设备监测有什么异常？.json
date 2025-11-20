@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97a5-bd7b-74f2-bb9d-0f4837a0f7e9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97a5-bde7-72e2-b011-78c6d100e807",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您在进行设备故障排查时，上传了相关数据文件，并希望基于这些数据评估设备监测是否存在异常。这可能包括检查传感器数据、运行参数或历史趋势，以识别可能的故障征兆或不正常行为。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97a5-c36b-7e50-a02e-671a3a0d6899",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我需要让用户补充信息，通过页面提问的方式进行问题补齐。对于查询某指标异常类问题，通过页面提问的方式进行问题补齐。alarm_pred预测预警场景适用于用户问题中无法确定的信息进行问题补齐，如未明确指定预测目标、预测范围、预测周期等。同时，对问题中未明确的数据类型，如未明确是查询历史数据还是实时数据、是单个数据还是数据对比等，也会通过页面提问的方式补充完整。只有在用户补充完整所需信息后，才能进行下一步的统计分析。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97a5-ebbc-73f2-aafc-f56dab0ac4c4",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"配置方案\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id7\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97a6-4d4f-7681-ab80-ac95ad0898b8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97a6-4d50-71a0-a0b4-0f3685d48203",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--配置方案-- 不存在于 --确认建模信息-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97a6-4d50-71a0-a0b4-0f49d87caa70",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97a7-1590-7172-817c-dbc801ff3a63",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97a7-1591-7462-9d74-b61b913c3090",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\\u4e0e\\u6821\\u9a8c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u7f51\\u7edc\\u74f6\\u9888\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u5668\\u74f6\\u9888\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97a7-1592-7532-b12d-ede8fc6cab3f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97a7-1593-7c22-9e9b-984e07a64341",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97a7-1594-74c1-88e1-810feb7561c0",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97a7-158e-7531-8c50-69336dd9f9dc",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "设备故障排查时，基于上传文件，评估设备监测有什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97a7-158e-7531-8c50-69336dd9f9dc"
+      }
+    }
+  ]
+]

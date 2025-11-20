@@ -18,7 +18,7 @@
       1
     ],
     {
-      "id": "019a968b-4719-7432-a807-f6d47924c87d",
+      "id": "019a976a-a5e2-73f2-9d62-37e49d87c6a6",
       "type": "view",
       "view": {
         "format": "card",
@@ -34,7 +34,7 @@
       2
     ],
     {
-      "id": "019a968b-471b-7531-abed-c66388c3bdcf",
+      "id": "019a976a-a5e5-77e2-936e-2ed766f0fc0f",
       "type": "text",
       "text": "</think>\n\n\n\n"
     },
@@ -42,14 +42,14 @@
       2,
       "text"
     ],
-    "您希望对现有的APC（先进过程控制）模型参数进行调整，以优化控制效果或适应新的工况，而不涉及重新创建模型。这可能包括修改模型的输入输出范围、权重系数或其他相关配置参数。\n\n我将执行以下任务帮您解决。\n\n"
+    "您想对现有的APC（先进过程控制）模型参数进行调整，以优化控制效果或适应新的工况，而不是重新创建模型。这可能包括修改模型的预测范围、权重、约束条件等。\n\n我将执行以下任务帮您解决。\n\n"
   ],
   [
     [
       3
     ],
     {
-      "id": "019a968b-4a02-7972-a0e6-1a0b0b24ee55",
+      "id": "019a976a-a860-7c62-b283-e4bf2e1db432",
       "type": "view",
       "view": {
         "format": "card",
@@ -74,7 +74,7 @@
       4
     ],
     {
-      "id": "019a968b-4dce-7b53-884b-284cf470f600",
+      "id": "019a976a-aca2-79d2-b9bb-2a16eb2a0936",
       "type": "json",
       "json": "\n\n"
     },
@@ -89,7 +89,7 @@
       5
     ],
     {
-      "id": "019a968b-51b3-77f0-81f6-3bbb1667bbce",
+      "id": "019a976a-b08c-7813-813c-c75994ea6c7f",
       "type": "view",
       "view": {
         "format": "card",
@@ -106,7 +106,7 @@
       6
     ],
     {
-      "id": "019a968b-51b5-7d50-b51e-d3c4f7b9d855",
+      "id": "019a976a-b0fc-7921-990f-778808f4ae1a",
       "type": "view",
       "view": {
         "format": "card",
@@ -124,14 +124,14 @@
       "content",
       "details"
     ],
-    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
   ],
   [
     [
       7
     ],
     {
-      "id": "019a968b-52a1-7c31-b296-0b86d6d04b37",
+      "id": "019a976a-b1a6-7412-8216-94b81c35e6b0",
       "type": "branch",
       "branch": "null"
     }
@@ -141,7 +141,7 @@
       8
     ],
     {
-      "id": "019a968b-52a3-7032-847f-572e1f312c94",
+      "id": "019a976a-b1a8-7733-ba4f-312575753248",
       "type": "require_confirm",
       "require_confirm": "true"
     }
@@ -152,7 +152,7 @@
     ],
     {
       "type": "workflow",
-      "workflow": "019a968b-529d-7360-b0d5-981337c9fad0",
+      "workflow": "019a976a-b1a3-7a61-b4f8-6f9253b87652",
       "catalog": "prediction",
       "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":null}]",
       "branch": "[]",
@@ -167,7 +167,7 @@
     {
       "type": "execute_confirm",
       "execute_confirm": {
-        "workflow_id": "019a968b-529d-7360-b0d5-981337c9fad0"
+        "workflow_id": "019a976a-b1a3-7a61-b4f8-6f9253b87652"
       }
     }
   ]

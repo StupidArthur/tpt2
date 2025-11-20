@@ -1,0 +1,207 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9711-f6ff-72b3-9650-5bccc13773a8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9711-f789-7523-9ea9-c9ac2799c146",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要备份裂解炉过去产出的产物成分数据，这些数据是实际历史记录，不包括预测值。目的是为了保存真实的历史信息，便于后续分析或追溯。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9711-fb1a-73a2-af94-52b0ef4d25b9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您的请求属于数据查询类。接下来，我们将遵循标准流程，确保能够高效准确地获取所需信息：\n\n1. 提取问题核心信息\n\n从您的问题中提取出关键要素，以确保后续查询的准确性，具体要素包括：\n\n目标查询对象：裂解炉历史产物成分数据\n\n时间范围：未明确指定，假设为当前时间至过去一个月\n\n2. 校验查询对象的存在性：如果存在，将执行查询并提供反馈；如果不存在，将判断是否支持数据补充，若不支持，则告知无数据；若支持，则进入“上传数据与解析”步骤。\n\n3. 上传数据与解析：（仅在需要补充数据时执行）系统将提示您上传包含目标数据的文件，解析后提供解析结果，您需要确认这些结果。\n\n4. 确认解析结果：如果解析结果无误，系统将基于文件中的有效数据进行查询；如果解析结果异常，系统将提示您修正文件并重新上传，直至解析成功。\n\n5. 执行查询与反馈：查询成功后，系统将整理数据并反馈给您。如果数据中有异常情况（如数值超出正常范围），系统会同时提示“注意：部分数据可能存在异常，建议核对原始文件”。如果查询失败，系统将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和范围后重新尝试”，流程结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9712-6515-7f62-89aa-33c858fb8271",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9712-bac9-7210-97a1-fbb942f4ecff",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9712-baca-70d3-8d7c-c330a561e49a",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${valid} == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${valid} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9712-bacb-7d03-8d01-5bd9cd53197c",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9712-bac5-71c2-8315-3a2154effb0a",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "备份裂解炉历史产物成分数据（非预测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"备份裂解炉历史产物成分数据（非预测）\",\n  \"userIndexNames\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "自动重试中",
+          "type": "warn",
+          "description": "输入数据格式不符合要求，尝试重新生成",
+          "details": "```plaintext\nJSON Schema验证失败\n路径: /userIndexNames\n模式: /properties/userIndexNames/minItems\n详情: [] has less than 1 item\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

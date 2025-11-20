@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9760-c755-70a0-b292-3dccdbe699e5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9760-c7dd-7ae2-9ad2-22db37157b4d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过上传的PDF设备检测报告，了解设备是否存在异常情况。您需要对报告中的数据、趋势或诊断结果进行解读，以判断设备运行是否正常，是否需要进一步处理或维护。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9760-ce84-7c53-b7ff-f4bb93277fce",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我需要让用户通过页面上传数据文件，上传后系统会自动解析文件内容。我需要检查一下数据类型，确认数据属于设备检测报告类数据。\n\n若数据类型不符合要求，我会在上传文件中高亮错误单元格并添加修正批注，需要用户根据提示修改数据后重新上传。\n\n若数据类型符合要求，我需要对上传数据进行预处理，包括数据清洗和数据转换。数据清洗会去除空值、异常值和重复项，数据转换则将数据格式调整为分析所需格式。\n\n接着，我会使用TPT大模型对处理后的数据进行异常检测分析。利用自动化异常检测算法对数据进行分析，识别出异常数据并对其进行可视化展示。分析完成后，系统将自动生成异常检测报告，报告中会列出所有异常数据及其异常原因。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9760-eb6a-7a21-b63c-48b0c4a03d4a",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT模型微调\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT推理计算\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9761-1005-7a71-a1ad-3c0fd414aacf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9761-1006-7d52-8644-3a07ee50a70a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--TPT模型微调-- 不存在于 --确认解析结果-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9761-1243-76a2-826f-eb38829408dd",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9761-aad4-7631-8184-502bb0b06367",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9761-aad5-7ac2-bd1c-11dd472d853b",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"anomaly_detection\", \"ability\": \"\\u786e\\u8ba4\\u5efa\\u6a21\\u4fe1\\u606f\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT\\u6a21\\u578b\\u5fae\\u8c03\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT\\u63a8\\u7406\\u8ba1\\u7b97\", \"dep\": [\"id2\", \"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}, {\"id\": \"id7\", \"tool\": \"anomaly_detection\", \"ability\": \"\\u4e0a\\u4f20\\u9ad8\\u9891\\u6570\\u636e\", \"dep\": [\"id5\"]}, {\"id\": \"id8\", \"tool\": \"anomaly_detection\", \"ability\": \"\\u6545\\u969c\\u8bca\\u65ad\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9761-aad5-7ac2-bd1c-11e643b6a81c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9761-aad5-7ac2-bd1c-11f50f8772af",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${opt_model_selected} == false and ${is_contain_data}  == true\"}, {\"from\": \"id2\", \"to\": \"id5\", \"expression\": \"${opt_model_selected} == true and ${is_contain_data}  == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${diagnosis_flag} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${diagnosis_flag} == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9761-aad5-7ac2-bd1c-120c54034483",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9761-aad2-7623-9107-d3a47af12526",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"anomaly_detection\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"anomaly_detection\",\"ability\":\"TPT模型微调\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"anomaly_detection\",\"ability\":\"TPT推理计算\",\"dep\":[\"id2\",\"id4\"]},{\"id\":\"id7\",\"tool\":\"anomaly_detection\",\"ability\":\"上传高频数据\",\"dep\":[\"id5\"]},{\"id\":\"id8\",\"tool\":\"anomaly_detection\",\"ability\":\"故障诊断\",\"dep\":[\"id7\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false And Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id2\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true And Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"diagnosis_flag\\\")]) Eq true\"}]",
+      "name": "设备检测报告分析，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9761-aad2-7623-9107-d3a47af12526"
+      }
+    }
+  ]
+]

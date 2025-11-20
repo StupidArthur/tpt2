@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98f3-8f38-7e80-b616-0ce78dbdf160",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98f3-8fdf-7323-ab67-3cc4c4751a16",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望验证气化炉模型在氧气进料波动时的鲁棒性，并找出对这种波动最敏感的输出参数，以评估模型在扰动工况下的稳定性和可靠性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98f3-9530-7130-988e-96892436b124",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建气化炉模型鲁棒性验证，需考虑工艺波动的正常范围，选取氧气进料量上下限值作为工况设定依据，模拟氧气进料波动的极限场景，识别最敏感的出液面、汽包压力、炉膛温度、炉膛负压。\n\n建立气化炉装置的动态工艺仿真模型，加载设备参数的工艺值，模拟生成瞬时工况。\n\n选取设定工况，保持工艺条件不变，改变氧气进料量值，分别模拟生成瞬时工况。\n\n同时模拟生成各工况下的设备参数值，观察出液面、汽包压力、炉膛温度、炉膛负压等关键工艺参数的变化趋势，对比分析得出氧气进料波动时，对各设备参数的影响程度，从而识别出最敏感的设备参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98f3-b2e8-77a1-9df8-5ebd80ccba7b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98f3-c4a8-74f1-bb3b-b33a4080a43d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98f3-c599-7780-8606-f01aed9025b6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98f3-c7a0-7df0-bbb7-626c75845eda",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98f3-c7a0-7df0-bbb7-6270e22a73d2",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98f3-c79f-7823-a7eb-275d0292a18e",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "执行气化炉模型鲁棒性验证，模拟氧气进料波动工况，识别最敏感输出参数",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98f3-c79f-7823-a7eb-275d0292a18e"
+      }
+    }
+  ]
+]

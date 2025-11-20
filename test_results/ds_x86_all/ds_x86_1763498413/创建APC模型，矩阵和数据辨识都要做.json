@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98ef-c36b-7391-89a3-1776399b6e4e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98ef-c3ee-79a1-ac29-af0c970df80c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您计划建立一个先进过程控制（APC）模型，并希望通过矩阵构建和数据辨识来实现，以提升对生产过程的控制精度和优化能力。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98ef-c904-7971-a663-6bc9f5117793",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户要求创建APC模型，包括模型矩阵的建立和数据辨识。\n\n首先，我将根据用户提供的信息分析MV（操作变量）、DV（被控变量）和CV（干扰变量）之间的关系，生成相应的模型矩阵。\n\n接下来，我会检查用户提供的数据，确保数据的有效性和完整性，因为数据的质量直接影响到模型的辨识效果。如果数据存在质量问题，我将提示用户关于哪些数据点存在问题，并给出处理建议，用户需要根据这些提示修正数据后重新提交。\n\n如果数据没有问题，我将开始进行模型辨识，通过使用FIR模型辨识和子空间模型辨识两种技术，来获得操作变量、被控变量和干扰变量之间的模型关系，最终形成APC模型。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98ef-e316-72d2-b867-f38494601ebc",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98ef-fb1d-7b53-ba11-c69f94f38543",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98ef-fc05-75f2-8f8b-404d7c1e9f24",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98ef-fdfe-79b2-99c9-70b4c913feae",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98ef-fdfe-79b2-99c9-70ca46314c6e",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98ef-fdfd-7281-a537-71ceb442a901",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "创建APC模型，矩阵和数据辨识都要做",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98ef-fdfd-7281-a537-71ceb442a901"
+      }
+    }
+  ]
+]

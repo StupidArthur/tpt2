@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9806-cf85-7213-8cef-a35f2ca6961b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9806-d0df-7263-aeb6-5d1bb908fd3d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您有一个PDF文件，希望对其内容进行分析，找出其中的异常或问题。这可能涉及数据、流程、参数设置等方面，需要从中识别出不符合常规或预期的部分。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9806-d604-7b11-a4b6-9d9b734b1643",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您上传了一个PDF文件，接下来将对其中的异常情况进行分析。为了确保能够准确识别异常，我将按照以下步骤操作：\n\n首先，我会检查文件的内容，确认是否包含异常信息。如果检测到异常，我将提取这些异常信息；若未检测到异常，则会提示您文件中没有异常信息。\n\n接下来，如果提取到了异常信息，我将对这些异常信息进行详细分析，尝试找出导致异常的原因，并给出相应的优化建议。如果异常信息未能明确指出原因，我将尽可能地提供多种可能的解释和建议。\n\n最后，如果异常信息的来源是某个仪表或设备，我将建议您检查该仪表或设备的校准情况，因为这可能是导致异常的一个重要因素。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9806-ef27-7810-83cb-87f2a5dfe01c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": null}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9806-f52c-7981-ba0a-f99cc2f5803b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9806-f52d-7531-a8de-8b59d3e3a266",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "首个节点不允许为end"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9806-f6ee-7ff0-9e08-347337f58482",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9807-8994-7102-a5eb-c839933fad94",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9807-8994-7102-a5eb-c84265b13ccd",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u88c5\\u7f6e\\u8bc4\\u4f30\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9807-8994-7102-a5eb-c85f13b1c113",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9807-8994-7102-a5eb-c864bb55dbb8",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9807-8995-71e2-82cf-f5392b643869",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9807-8993-7983-b7d1-dffac5a91eba",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"装置评估数据查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "pdf文件，分析异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9807-8993-7983-b7d1-dffac5a91eba"
+      }
+    }
+  ]
+]

@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9941-2f76-7282-bfd9-a9cd3d398205",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9941-2fdd-72f1-87b0-bed2173ab902",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过人工智能技术优化锅炉的控制过程，提高运行效率和稳定性。这可能包括温度、压力、燃烧等方面的智能调节。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9941-32ca-7493-a8e4-034faac47128",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "当您希望实现锅炉的自动运行调整时，我们可以通过设计一个锅炉的具体控制方案来达成目标。一个有效的控制方案应当确保锅炉的BPCV（锅炉压力控制变量）能够迅速且平稳地跟踪到设定的目标值，同时保持锅炉的效率，即通过操作变量如燃料量和氧气含量的调整，使锅炉在各种工况下都能维持高效稳定的状态。\n\n首先，我需要确定是从在线模式还是离线模式获取锅炉数据。在线模式意味着锅炉数据可实时获取并进行分析处理，而离线模式则需先上传相关文件，通过选择系统运行的历史数据来完成数据获取。\n\n若选择在线模式，流程如下：首先，确定锅炉的具体类型，这一过程需要您提供关于锅炉的详细信息；接着，我会对BPCV（锅炉压力控制变量）、MV（操作变量，如燃料量和氧气含量）以及DV（干扰变量，影响锅炉运行但非直接控制的变量）进行确认，确保这些关键参数的准确性。\n\n随后，进入控制模型的微调或加载阶段。如果之前已有训练好的模型，将直接进行模型加载；若无，则先进行控制模型的微调，再进行模型加载。\n\n最后，执行控制算法，将所有确认的参数和模型结合，实现锅炉的自动运行调整，输出实时计算结果。\n\n若选择离线模式，流程则包括：首先，选择并上传文件以获取历史数据；接着，根据这些历史数据，对BPCV、MV和DV等关键变量进行确认，确保配置的准确性。\n\n完成变量确认后，进入控制模型的微调或加载阶段，操作方法与在线模式相同。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9941-b577-74f1-98d9-5ff87e1a5949",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"选择锅炉数据获取方式\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"boiler\", \"ability\": \"系统运行历史数据选择\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id14\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id13\"]},\n\n{\"id\": \"id15\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id14\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9942-6be3-7651-9377-c0e406ea2fd7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9942-6be4-7ef0-8d12-dfd4fc887967",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--控制算法执行-- 不存在于 --控制模型微调或加载-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9942-6be4-7ef0-8d12-dfe3d6f2ed42",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9942-eab3-7d62-ac22-ea79964ac425",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9942-eab3-7d62-ac22-ea8b5945aded",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"\\u9009\\u62e9\\u9505\\u7089\\u6570\\u636e\\u83b7\\u53d6\\u65b9\\u5f0f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u5b9a\\u9505\\u7089\\u7c7b\\u578b\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"\\u7cfb\\u7edf\\u8fd0\\u884c\\u5386\\u53f2\\u6570\\u636e\\u9009\\u62e9\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u88ab\\u63a7\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u64cd\\u4f5c\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u5176\\u5b83\\u5e72\\u6270\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id5\"]}, {\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u6a21\\u578b\\u5fae\\u8c03\\u6216\\u52a0\\u8f7d\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u6548\\u679c\\u8bc4\\u4f30\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]}, {\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u5b9a\\u9505\\u7089\\u7c7b\\u578b\", \"dep\": [\"id1\"]}, {\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u88ab\\u63a7\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id10\"]}, {\"id\": \"id12\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u64cd\\u4f5c\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id11\"]}, {\"id\": \"id13\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u5176\\u5b83\\u5e72\\u6270\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id12\"]}, {\"id\": \"id14\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u6a21\\u578b\\u52a0\\u8f7d\", \"dep\": [\"id13\"]}, {\"id\": \"id15\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u7b97\\u6cd5\\u6267\\u884c\", \"dep\": [\"id14\"]}, {\"id\": \"id16\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id15\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9942-eab4-7ab1-b26e-dcf8c430b6e1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9942-eab4-7ab1-b26e-dd075d61c574",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id11\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id3\", \"to\": \"id5\", \"expression\": \"${is_upload_file} == true\"}, {\"from\": \"id11\", \"to\": \"id12\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id11\", \"to\": \"id13\", \"expression\": \"${is_upload_file} == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9942-eab5-7963-83bd-6b511871c213",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9942-eaae-7fa3-bb47-a28b7cc21b2f",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"选择锅炉数据获取方式\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"boiler\",\"ability\":\"系统运行历史数据选择\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id4\",\"id3\"]},{\"id\":\"id6\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"boiler\",\"ability\":\"控制模型微调或加载\",\"dep\":[\"id6\"]},{\"id\":\"id8\",\"tool\":\"boiler\",\"ability\":\"控制效果评估\",\"dep\":[\"id7\"]},{\"id\":\"id10\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id11\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id10\",\"id2\"]},{\"id\":\"id12\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id11\"]},{\"id\":\"id13\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id12\",\"id11\"]},{\"id\":\"id14\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":[\"id13\"]},{\"id\":\"id15\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":[\"id14\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id11\",\"to\":\"id12\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id11\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"},{\"from\":\"id3\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"},{\"from\":\"id11\",\"to\":\"id13\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"}]",
+      "name": "锅炉AI控制（核心意图）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9942-eaae-7fa3-bb47-a28b7cc21b2f"
+      }
+    }
+  ]
+]

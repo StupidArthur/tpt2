@@ -1,0 +1,236 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9754-09a6-7451-8276-1ecb538d9e35",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9754-09a9-7ed1-b1ee-7021f0587e19",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您关注的是二级硫冷凝器出口H₂S浓度数据出现异常，并希望了解可能的原因以及未来是否会再次超出限值。这通常涉及对历史数据的趋势分析、工艺参数变化的关联判断，以及设备运行状态的评估，以识别潜在问题并预测风险。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9754-0d95-7ad1-9ef6-c3d9e04e5096",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对二级硫冷凝器出口的H2S浓度数据进行异常分析，并评估未来的超限风险。针对这一预测预警问题，我将按照以下步骤操作：\n\n1. 首先，我会理解用户的问题，进入补充信息流程，通过页面提问的方式获取用户问题中未明确的信息。同时，询问用户是否已经拥有训练好的模型，如果没有，则进入第二步的数据上传流程；如果有，则直接进入配置方案流程。\n\n2. 接着，在数据上传流程中，我会建议用户上传相关文件，并指导用户完成文件上传。上传完成后，我会对文件内容进行数据解析和评估。\n\n3. 然后，进入确认建模信息流程。我会利用历史数据库和网络搜索生成预警方案，推荐模型的输入位号、输出位号及模型配置等信息。同时，我会让用户再次确认这些配置，确保信息的准确性。\n\n4. 最后，进行TPT推理计算。根据确认的方案，我会先进行数据预处理，然后将处理后的数据输入自动化建模中进行微调训练。训练结果将以可视化形式展示，并通过调用训练好的模型进行推理，分析历史异常情况和未来可能出现的超限风险。如果发现异常或潜在风险，我将提供可能的原因分析及优化建议。\n\n5. 如果在第一步补充信息流程中，用户选择了已有模型，则直接进入配置方案流程。在此流程中，我会列出所有需要配置的项目，让用户在线完成配置，确保数据来源的准确性。\n\n6. 完成配置方案流程后，进入实时计算流程。该流程将根据用户选择的模型实时计算，最终输出预测预警结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9754-1f13-7583-816a-ea21f9f65b1d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9754-2dc8-7fe3-b2a0-7c6048d67e0d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9754-2dcb-78c1-b6d9-5088ffd463fa",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9754-2dcd-7b70-96ad-a5fe38fe271b",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9754-2dc2-7703-ad31-33c772787ae2",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "二级硫冷凝器出口H2S浓度数据异常分析及未来超限风险评估",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"task_type\": 1,\n  \"domain_knowledge\": {\n    \"industry\": \"化工\",\n    \"device_type\": \"二级硫冷凝器\"\n  },\n  \"task_objective_description\": \"分析二级硫冷凝器出口H2S浓度数据异常并进行未来超限风险评估\",\n  \"target_variables\": [\n    {\n      \"tag\": \"\",\n      \"description\": \"二级硫冷凝器出口H2S浓度\"\n    }\n  ],\n  \"user_specified_input_variables\": [],\n  \"prediction_input_time_period\": 20,\n  \"prediction_output_time_period\": 5\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "需要确认您的详细需求，请补充信息：",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "基于TPT的深度分析与智能识别，我已获取了问题的关键信息，现在请确认这些信息，以便更好的生成解决方案。"
+      }
+    }
+  ]
+]

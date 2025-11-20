@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96c1-4ef3-7d11-8499-6217ca1c523d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96c1-4f71-7561-85d9-7c68dc6423e7",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要为F_TIC_16008控制回路设计或了解一种基于人工智能的控制方案。这可能涉及使用AI算法（如神经网络或自适应控制）来替代或优化传统的控制策略，以提升温度控制的精度和响应速度。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96c1-5723-7172-b98e-bec1ce777ab6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户提问F_TIC16008回路控制太复杂，希望使用AI代替，实现自动运行调整。这是一个AI控制问题，我会进行以下步骤：\n\n1. 首先，我会理解用户的问题，进入AI控制补充信息流程，让用户补充信息，选择离线模型建立还是在线预测控制。\n\n2. 若用户选择离线模型建立，我会进入数据质量分析流程，对数据集质量进行评价；然后进入AI可控性评估，给出场景特征及复杂度描述，明确工艺对象能否进行AI控制；之后我会根据之前步骤的结果，进行关键影响因素分析，筛选出所有位号的重要度排序，给出排名及分析建议；接下来我会进入工况识别与验证环节，给出训练集与验证集的划分，给出在验证集上的所有数据工况分类的精确度及图形展示；接下来进入预测模型构建与验证阶段，会给出模型的评价指标及分析建议；最后进入控制器搭建及验证阶段，给出单步控制预测效果，控制量、方向性判断验证结果是否合理。\n\n3. 若用户选择在线预测控制，我会进入数据质量分析环节，与离线模型建立相同。\n\n4. 进入PID回路运行情况分析环节，对回路数据质量进行评价，对控制回路性能进行评估及诊断，给出综合评级及运维建议。\n\n5. 进入PID强化学习自整定阶段，形成PID参数推荐轨迹。\n\n6. 进入PID-AI在线自整定阶段，进行PID-AI在线自整定，我会将之前步骤形成PID参数推荐轨迹输入到AI自整定引擎中，开始在线自整定，优化控制回路的PID参数，实时更新控制回路参数，输出控制回路优化结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96c1-9c9c-7b52-af29-3563083d09f7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI控制补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"AI可控性评估\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"SPC\", \"ability\": \"PID回路运行情况分析\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"PID强化学习自整定\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"SPC\", \"ability\": \"PID-AI在线自整定\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96c1-e896-7f22-a13c-975ee1021fa6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96c1-e896-7f22-a13c-976977e20c6a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--PID回路运行情况分析-- 不存在于 --数据质量分析-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96c1-eac5-7771-9311-7a80e5064e7a",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96c2-7cf7-7623-9217-0d6182abf9d4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96c2-7cf8-7983-9052-dd25378c3033",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"\\u9009\\u62e9\\u9505\\u7089\\u6570\\u636e\\u83b7\\u53d6\\u65b9\\u5f0f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u5b9a\\u9505\\u7089\\u7c7b\\u578b\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"\\u7cfb\\u7edf\\u8fd0\\u884c\\u5386\\u53f2\\u6570\\u636e\\u9009\\u62e9\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u88ab\\u63a7\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u64cd\\u4f5c\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u5176\\u5b83\\u5e72\\u6270\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id5\"]}, {\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u6a21\\u578b\\u5fae\\u8c03\\u6216\\u52a0\\u8f7d\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u6548\\u679c\\u8bc4\\u4f30\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]}, {\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u5b9a\\u9505\\u7089\\u7c7b\\u578b\", \"dep\": [\"id1\"]}, {\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u88ab\\u63a7\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id10\"]}, {\"id\": \"id12\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u64cd\\u4f5c\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id11\"]}, {\"id\": \"id13\", \"tool\": \"boiler\", \"ability\": \"\\u786e\\u8ba4\\u5176\\u5b83\\u5e72\\u6270\\u53d8\\u91cf\\u4fe1\\u606f\", \"dep\": [\"id12\"]}, {\"id\": \"id14\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u6a21\\u578b\\u52a0\\u8f7d\", \"dep\": [\"id13\"]}, {\"id\": \"id15\", \"tool\": \"boiler\", \"ability\": \"\\u63a7\\u5236\\u7b97\\u6cd5\\u6267\\u884c\", \"dep\": [\"id14\"]}, {\"id\": \"id16\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id15\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96c2-7cf8-7983-9052-dd3375274164",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96c2-7cf8-7983-9052-dd49c82373a7",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id11\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id3\", \"to\": \"id5\", \"expression\": \"${is_upload_file} == true\"}, {\"from\": \"id11\", \"to\": \"id12\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id11\", \"to\": \"id13\", \"expression\": \"${is_upload_file} == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96c2-7cf9-7fc2-8a54-d20699a2196e",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96c2-7cf5-7573-8ad4-79d4083ab9a2",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"选择锅炉数据获取方式\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"boiler\",\"ability\":\"系统运行历史数据选择\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id4\",\"id3\"]},{\"id\":\"id6\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"boiler\",\"ability\":\"控制模型微调或加载\",\"dep\":[\"id6\"]},{\"id\":\"id8\",\"tool\":\"boiler\",\"ability\":\"控制效果评估\",\"dep\":[\"id7\"]},{\"id\":\"id10\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id11\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id10\",\"id2\"]},{\"id\":\"id12\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id11\"]},{\"id\":\"id13\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id12\",\"id11\"]},{\"id\":\"id14\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":[\"id13\"]},{\"id\":\"id15\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":[\"id14\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id11\",\"to\":\"id12\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id11\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"},{\"from\":\"id3\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"},{\"from\":\"id11\",\"to\":\"id13\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"}]",
+      "name": "F_TIC_16008回路AI控制方案",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96c2-7cf5-7573-8ad4-79d4083ab9a2"
+      }
+    }
+  ]
+]

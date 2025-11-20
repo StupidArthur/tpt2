@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96fe-d1cb-7913-928f-c9c0f85c3434",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96fe-d2a3-7d71-aa1e-e4cd35ee24bf",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解气化炉模型中氧气进料的相关参数，但不涉及鲁棒性验证方面的内容。这可能包括氧气流量、压力、温度等基础设定值或操作参数。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96fe-d826-73c1-9e7b-7c7866496c83",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望获取气化炉模型中氧气进料参数的相关信息，可能用于模型识别或状态评估，而非鲁棒性验证。这涉及获取氧气进料量、纯度、温度、压力等参数的规格及实时数据，以确保其符合工艺要求和操作标准。\n\n我将根据用户提供的模型信息，调取相应的模型配置文件，从文件中提取气化炉模型的氧气进料参数相关数据，随后将这些参数的位号信息及其具体值进行整理并输出。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96fe-e78f-7352-869f-305051b3388b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96fe-f34d-7c20-9832-18a40f9e5c8b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96fe-f43c-70f1-be64-045592fd433d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96fe-f685-7841-92b0-79d324430409",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96fe-f685-7841-92b0-79e6323d6724",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96fe-f684-78e1-b523-702f778f1251",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "查询气化炉模型氧气进料参数（非鲁棒性验证）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96fe-f684-78e1-b523-702f778f1251"
+      }
+    }
+  ]
+]

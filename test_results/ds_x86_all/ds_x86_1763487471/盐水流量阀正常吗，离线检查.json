@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9819-3f7c-77c2-825b-e6bb30bd7059",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9819-4005-7b63-91e2-0fed304a2901",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想检查盐水流量阀是否正常，可以通过离线方式查看其状态和性能，判断是否存在故障或需要维护。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9819-4456-7bf0-8c9b-98f74f13919c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望了解盐水流量阀是否正常，请求进行离线检查。这可能是因为用户怀疑阀门存在故障或性能问题，如流量不稳定、响应迟缓或关闭不严密等，需要通过离线检查来确认阀门的工作状态和性能是否符合要求。\n\n首先，我需要通过回路信息查询定位到描述为盐水流量阀的回路信息。\n\n随后需要调取该回路最近离线检查报告，从评估报告中定位回路健康度指标，将该指标与预设阈值进行对比分析，若指标数值超出正常范围，则判定阀门存在异常，将生成的具体异常原因分析同样进行展示。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9819-5cdb-7e40-8eab-5a2a460a36b2",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路评估数据查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9819-6f53-7aa0-83e6-0a8e28fe3956",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9819-70a0-7340-aa9b-3e0ea6021620",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9819-72ca-70f3-8c56-58c3642f210c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9819-72cb-7e81-a91c-08e16dded1a9",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9819-72c9-7dc0-b79f-04d9071604a9",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路评估数据查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "盐水流量阀正常吗，离线检查",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9819-72c9-7dc0-b79f-04d9071604a9"
+      }
+    }
+  ]
+]

@@ -1,0 +1,132 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9af6-87d4-7dc3-94a4-1649f357bf9c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9af6-8844-78c3-8c54-37ecbb9d3c30",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过上传的PDF维护记录分析其中是否存在异常情况，例如设备故障、操作失误或维护周期不规范等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9af6-8af0-7c41-9200-e1d5305d5a9e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我需要让用户通过页面上传数据文件，上传后系统会自动解析数据并提取异常分析所需的关键信息。如果解析过程遇到问题，系统会在文件中高亮显示错误部分并添加修正建议，用户需根据提示调整数据后重新上传。\n\n当解析成功后，系统将基于提取的数据进行异常分析，分析内容涵盖设备运行状态、工艺参数波动及异常事件等，最终生成包含异常点定位及改进建议的分析报告。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9af6-b1d1-7083-8417-c7a49c3c5385",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9af6-f836-76a2-95c0-f5460530e617",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9af6-f837-7d70-93cb-a96030517d23",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "首个节点不允许为end"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9af6-f8b9-7781-9cb2-00424d900d7f",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    }
+  ]
+]

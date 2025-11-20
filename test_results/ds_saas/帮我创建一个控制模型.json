@@ -18,7 +18,7 @@
       1
     ],
     {
-      "id": "019a968b-5eb8-70d3-9cfa-f00716f1d01d",
+      "id": "019a976e-3397-7881-a733-061ac8b06b1b",
       "type": "view",
       "view": {
         "format": "card",
@@ -34,7 +34,7 @@
       2
     ],
     {
-      "id": "019a968b-5eba-7123-8ea9-70b3b8a33dbc",
+      "id": "019a976e-3399-7f02-88d3-e5b40269c376",
       "type": "text",
       "text": "</think>\n\n\n\n"
     },
@@ -42,14 +42,14 @@
       2,
       "text"
     ],
-    "您需要创建一个控制模型来优化或实现某个工业过程的自动化控制，这可能包括选择合适的控制策略、搭建模型结构，并进行参数调试以满足控制目标。\n\n我将执行以下任务帮您解决。\n\n"
+    "您希望创建一个用于工业控制的模型，可能是为了优化某个生产过程或设备的运行。这可能包括选择合适的控制策略、搭建数学模型或使用仿真工具进行设计和测试。\n\n我将执行以下任务帮您解决。\n\n"
   ],
   [
     [
       3
     ],
     {
-      "id": "019a968b-60c7-7c53-bccc-b4977ba54498",
+      "id": "019a976e-35a9-7ce2-93e5-7aff7caeeee1",
       "type": "view",
       "view": {
         "format": "card",
@@ -74,7 +74,7 @@
       4
     ],
     {
-      "id": "019a968b-7323-7aa3-9256-8335ed893368",
+      "id": "019a976e-4828-72a1-91ac-d24df09ab30d",
       "type": "json",
       "json": "\n\n"
     },
@@ -89,7 +89,7 @@
       5
     ],
     {
-      "id": "019a968b-78b9-7480-9530-d4919df542fb",
+      "id": "019a976e-4dc7-7253-b9d4-754b950bba46",
       "type": "view",
       "view": {
         "format": "card",
@@ -106,7 +106,7 @@
       6
     ],
     {
-      "id": "019a968b-78bb-7e60-9b62-093f47c62802",
+      "id": "019a976e-4dc9-7c71-bd49-93dbf8ebc2cc",
       "type": "view",
       "view": {
         "format": "card",
@@ -131,7 +131,7 @@
       7
     ],
     {
-      "id": "019a968b-79a2-7c21-ae7c-b8c2ed62e011",
+      "id": "019a976e-4eab-76f1-a188-55b0633aa207",
       "type": "branch",
       "branch": "null"
     }
@@ -141,7 +141,7 @@
       8
     ],
     {
-      "id": "019a968b-79a4-7161-855e-02d91dff2ea4",
+      "id": "019a976e-4eae-7d81-8023-b4dec24ce4f0",
       "type": "require_confirm",
       "require_confirm": "true"
     }
@@ -152,7 +152,7 @@
     ],
     {
       "type": "workflow",
-      "workflow": "019a968b-799e-7d10-974a-2ded2f56aa9c",
+      "workflow": "019a976e-4ea7-7dd2-b396-41f910cd82f5",
       "catalog": "prediction",
       "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
       "branch": "[]",
@@ -167,7 +167,7 @@
     {
       "type": "execute_confirm",
       "execute_confirm": {
-        "workflow_id": "019a968b-799e-7d10-974a-2ded2f56aa9c"
+        "workflow_id": "019a976e-4ea7-7dd2-b396-41f910cd82f5"
       }
     }
   ]

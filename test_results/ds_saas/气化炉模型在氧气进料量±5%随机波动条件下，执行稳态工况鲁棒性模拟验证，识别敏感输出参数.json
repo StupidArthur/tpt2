@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a978c-a977-7853-9d81-eabf93588786",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a978c-a979-7a40-808f-0628c279609f",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望验证气化炉模型在氧气进料量存在±5%随机波动时的稳态工况鲁棒性，并找出对这些波动敏感的输出参数，以评估模型的稳定性和关键变量的变化趋势。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a978c-ac4f-70a1-a0b7-ae0dc4d8f6bf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "在模拟验证气化炉模型的稳态工况鲁棒性时，需评估氧气进料量在±5%范围内随机波动对各输出参数的影响，以识别哪些参数对此波动最为敏感。为此，我将首先基于您提供的模型配置信息，通过与历史数据库的对比，获取模型中设备参数值的平均值及波动范围。\n\n接下来，我会将设备参数值设定为这些平均值，并引入随机波动，以模拟氧气进料量的变化，同时保持其他条件不变。随后，通过调整工况，观察并记录各被控变量的响应情况，分析其变化趋势。这一过程将帮助我们筛选出对氧气进料量波动反应最敏感的输出变量。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a978c-b325-78a1-9f1b-2a2a7d1bb48b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"加载工况\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a978c-bc3e-7020-9559-c53af563166a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a978c-bc41-7163-b93c-3e7cad11b79d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--查看流程图-- 不存在于 --加载工况-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a978c-bc43-7a00-b641-17b7bb1d08ed",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a978d-4c7c-71a1-8932-e9b20403600a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a978d-4c7e-7802-97a9-a16ec7109117",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"\\u751f\\u6210\\u5de5\\u827a\\u6a21\\u578b\\u5e76\\u6267\\u884c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"\\u52a0\\u8f7d\\u5de5\\u51b5\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"\\u67e5\\u770b\\u6d41\\u7a0b\\u56fe\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a978d-4c80-7d42-8df1-02d65c34d61e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a978d-4c83-7ff1-a490-ed54f4586410",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a978d-4c85-7172-8d86-410f52134edf",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a978d-4c78-7f91-b670-96075b688e83",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "气化炉模型在氧气进料量±5%随机波动条件下，执行稳态工况鲁棒性模拟验证，识别敏感输出参数",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a978d-4c78-7f91-b670-96075b688e83"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a08-25be-7af1-842e-89ebb20fe332",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a08-2654-7d33-a6bb-5c4e9d746dbe",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您遇到控制效果不稳定的问题，可能是由于控制参数设置不当、过程扰动较大或测量信号存在噪声等原因导致。建议检查PID参数是否合理，确认是否有外部干扰或传感器故障，以找出影响控制稳定性的因素。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a08-2b50-7c31-b33b-61ba520d0372",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户提到控制效果不稳定，希望进行异常评估。这可能涉及到多个方面，包括控制回路的参数设置、传感器的准确性、执行器的响应情况以及外部干扰等。为了确保系统能够正常运行，需要对这些潜在因素进行逐一检查和分析。\n\n首先，我将通过回路信息查询来获取回路的描述、类型、PID参数、回路类型和量程信息。\n\n接着，我会查看最近的控制回路性能评估及诊断报告，检查该回路是否存在阀门饱和、阀门卡涩或传感器噪声过大的问题。如果发现这些问题，我将提供具体的运维建议，并建议您使用全设备智能感知平台PRIDE对设备进行更详细的检测。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a08-626a-7702-b16c-738352dfe3fd",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a08-809a-73b3-ac66-aff204bea162",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a08-8181-7480-9ee7-776c833bb8bb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a08-8325-7361-aa34-4020d5f2bb58",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9a08-8327-71f1-ae8b-6228eded957a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a08-8324-7511-b989-ba2ec3186ce1",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "控制效果不稳定，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9a08-8324-7511-b989-ba2ec3186ce1"
+      }
+    }
+  ]
+]

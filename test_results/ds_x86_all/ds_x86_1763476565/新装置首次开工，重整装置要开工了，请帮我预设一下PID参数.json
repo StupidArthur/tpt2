@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b5-e6c7-7823-830d-a555db01e82d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b5-e73a-7fc0-8ba1-dcce68e662fb",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您正在准备重整装置的首次开工，希望预先设置好PID参数，以确保控制系统的稳定性和响应性能。您可以参考类似装置的参数或使用经验法进行初步设定，后续再根据实际运行情况进行调整优化。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b5-efd6-7f33-9c6a-8cb62fb657ad",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对即将开工的新装置重整回路进行PID参数预设，这可能因为控制回路没有历史数据可供常规参数整定，所以无法使用标准整定方法获取PID值。我将对开车阶段参数进行批量整定，针对装置开工阶段的控制需求，提供适合的初始PID参数。\n\n首先，我需要从回路信息查询中定位到重整装置，并获取该装置所有回路的信息。\n\n接下来，会对这些回路进行开车阶段参数批量整定的处理，以得出预设的PID参数。最后，我会输出经过计算得出的PID参数值，完成对重整装置开工阶段控制回路的参数预设。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b6-043e-7263-bd31-c7d05e12308e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b6-1605-75a3-9d78-fd1f7ff580c6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b6-1605-75a3-9d78-fd2fc70e32a2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--开车阶段参数批量整定-- 不存在于 --回路信息查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b6-17bc-7072-997f-50a69c2a4e7d",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b6-ba40-7093-8ef0-f865a6df51c1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97b6-ba40-7093-8ef0-f87aeb640a3b",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u5f00\\u8f66\\u9636\\u6bb5\\u53c2\\u6570\\u6279\\u91cf\\u6574\\u5b9a\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97b6-ba40-7093-8ef0-f886f91ee04d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97b6-ba41-7121-aa59-540460596742",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97b6-ba41-7121-aa59-541b924fd291",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b6-ba3f-7830-8dbe-7dc8c4686105",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "新装置首次开工，重整装置要开工了，请帮我预设一下PID参数",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b6-ba3f-7830-8dbe-7dc8c4686105"
+      }
+    }
+  ]
+]

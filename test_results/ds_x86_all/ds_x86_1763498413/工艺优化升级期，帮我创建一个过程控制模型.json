@@ -1,0 +1,254 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98ec-c618-70c0-a42a-3ed261bf6977",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98ec-c7c7-76c3-ac8c-63a0ad8430dc",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您在工艺优化升级阶段需要建立一个过程控制模型，用于提升生产效率、稳定性和产品质量。这可能包括对关键变量的识别、控制策略的设计以及动态行为的模拟，为后续自动化控制提供依据。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98ec-ce4b-7e52-af73-ed82a6d5406a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "为了帮您建立过程控制模型，首先会基于您提供的位号数据信息，自动识别出MV（操作变量）、DV（干扰变量）和CV（被控变量），构建起模型矩阵。\n\n随后，将进行位号历史数据长度的校验，解析历史数据以自动确定数据的时间范围，同时对选定的数据进行预处理，排除异常值和超限值。接着，自动对数据进行切片处理，评估数据质量，选取质量最佳的数据段进行系统辨识。若数据质量不佳，则向前追溯一周重新选择数据，重复上述过程直至数据质量达标。如果重复尝试次数超出设定的上限（未设定则采用默认值），则会选择质量相对较高的数据段进行使用。\n\n接下来，使用符合要求的数据进行模型辨识，将采用子空间辨识算法，得到模型以及模型的评价指标。之后，对该模型矩阵进行仿真测试和质量评估，选择性能更优的模型进行整合，构建最终的过程控制模型。\n\n最后，更新原有的模型，展示新模型的详细信息，并确保模型数据得到妥善保存。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98ec-f477-77d3-9a74-c343270a4efa",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98ed-0c08-7573-91ad-8caaff9a2a2f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98ed-0c09-7622-b3aa-0d75b67a17b6",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98ed-0c09-7622-b3aa-0d8612734523",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98ed-0c07-76c3-a1e8-d947c79bd95d",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "工艺优化升级期，帮我创建一个过程控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"InputNames\": null,\n  \"OutputNames\": null,\n  \"algorithmCallFlag\": null,\n  \"endTime\": null,\n  \"modelName\": null,\n  \"modelStepRespPVsLength\": null,\n  \"mvQuantity\": null,\n  \"pvQuantity\": null,\n  \"runCycle\": null,\n  \"startTime\": null\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "辨识模型矩阵"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-19T05:44:40.851",
+          "details": "上传数据信息 result={'InputNames': None, 'OutputNames': None, 'algorithmCallFlag': None, 'endTime': None, 'modelName': None, 'modelStepRespPVsLength': None, 'mvQuantity': None, 'pvQuantity': None, 'runCycle': None, 'startTime': None}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-19T05:44:40.851",
+          "details": "page_data上传数据信息 result={'mvList': [], 'pvList': [], 'cvList': [], 'editType': '0', 'ID': 0}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "\n请在“变量信息编辑页面”新增并填写需要进行模型辨识的变量信息，包括变量名称（位号名）、变量类型与描述信息。\n                                            "
+      }
+    }
+  ]
+]

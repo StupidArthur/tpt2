@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96a9-8a0a-72d0-bd56-2e75ca8a488f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96a9-8a0d-7582-af71-ecef7f982f35",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过优化重整装置的APC（先进过程控制）系统，提高装置运行的平稳性和控制效果，使关键参数更稳定，减少波动，提升整体生产效率和安全性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96a9-8ca2-7131-bdcb-421a2d53a314",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对重整装置的APC控制进行优化，以提升装置的运行平稳性。可能当前的控制策略存在一些不足，导致装置运行不够稳定，用户希望通过调整APC参数或重新制定控制策略来解决这个问题，从而确保装置能够更稳定、更高效地运行。\n\n首先，需要确认重整装置APC控制优化的优化目标，即优化哪个控制器。首先需要提供待优化控制器的组态信息，包括控制器的结构矩阵、操作变量的PV（过程变量）、MV（操作变量）和CV（控制变量）的列表，以及相应的变量特征和约束条件。\n\n确认控制方案设计信息后，将基于提供的组态信息进行模型辨识，以获得辨识结果报告和模型文件。\n\n接着，根据模型文件和控制器结构，进行控制器优化计算，生成优化后的控制器文件，并提供优化前后的控制器对比报告。\n\n最后，通过APC控制器在线应用功能，完成控制器的重新加载，以更新后的控制器参数运行，从而提升装置的平稳性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96a9-9750-7881-9a2e-bfcc73fb2ef5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案设计信息确认\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"控制方案优化\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"APC控制器在线应用\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96a9-a0a9-7c30-8c1d-0f9af385759a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96a9-a0ab-7bd0-a989-a1590f94bf06",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--辨识模型数据-- 不存在于 --控制方案设计信息确认-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96a9-a11c-7893-9b5d-5eb201b22693",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96a9-ee32-7f30-9200-53835a2b5bd3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96a9-ee35-7590-ab52-8fd2e063b1b5",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u8bbe\\u8ba1\\u4fe1\\u606f\\u786e\\u8ba4\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u68c0\\u7d22\\u751f\\u6210\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u4f18\\u5316\", \"dep\": [\"id2\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"\\u8fa8\\u8bc6\\u6a21\\u578b\\u6570\\u636e\", \"dep\": [\"id4\"]}, {\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96a9-ee37-77a3-8bf7-20b11bddce39",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96a9-ee39-71b3-a11d-707927488aae",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}, {\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96a9-ee3b-7940-aa68-49af3d2fd05b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96a9-ee2d-7850-8f78-82b4210e8a80",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id4\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "重整装置APC控制优化，提升平稳性",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96a9-ee2d-7850-8f78-82b4210e8a80"
+      }
+    }
+  ]
+]

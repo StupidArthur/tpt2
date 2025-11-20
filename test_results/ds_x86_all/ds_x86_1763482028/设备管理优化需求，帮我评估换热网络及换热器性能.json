@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97de-798f-77f1-bb7c-2cb6d4d7855b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97de-7a26-7592-827e-31f361f3d7bc",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望优化设备管理，特别是对换热网络和换热器的性能进行评估，以提升能效、降低运行成本或延长设备寿命。这可能包括检查换热效率、分析结垢情况、评估操作参数是否合理等方面。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97de-8085-7f93-b43a-ee31d98b1b90",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，用户需要对换热网络及设备进行性能评估，这通常涉及对换热网络的夹点分析、换热设备的效能评估，以识别系统中的能量利用瓶颈和低效设备。\n\n首先，我将通过交互界面引导用户上传必要的数据资料，包括物料流数据、换热器参数等。系统会对上传的数据进行校验，确保其完整性和格式正确性，同时满足基本要求。如果数据校验未通过，我将在文件中标记出错误部分，并附上修正建议，用户需根据提示调整数据后重新上传。\n\n一旦数据校验通过，我将开始对整个换热网络进行评估，通过计算夹点温度来识别系统中的能量利用瓶颈，找出换热网络中不符合夹点规则的换热器（夹点之上不应设置任何冷公用工程、夹点之下不应设置任何热公用工程、不应有跨越夹点的传热），并生成夹点拓扑图，以便用户能直观地理解换热网络的结构及其存在的问题。\n\n最后，根据用户提供的数据类型，我将进行换热器性能评估：对比设计参数的热效率，找出设计效能不足的换热器；分析运行数据中的运行负荷和热效率，识别出运行效率低或超负荷的设备；通过公用工程信息，确定公用工程传热路径上的关键换热器。评估完成后，系统将生成一份报告，列出设备的效率排名及建议优先改造的换热器。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97de-bb7b-7792-ab3c-59b9e040ed8e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97de-d473-7cd3-90ab-28378325615f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97de-d553-7980-af5e-13fb2bad8b68",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97de-d72d-7d10-9140-5ec362507625",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97de-d72d-7d10-9140-5ed0e970ded6",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97de-d72c-7573-9324-1d36ea2da3eb",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "设备管理优化需求，帮我评估换热网络及换热器性能",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97de-d72c-7573-9324-1d36ea2da3eb"
+      }
+    }
+  ]
+]

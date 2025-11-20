@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a03-4d15-7b13-902b-79a09d5b5f2b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a03-4d84-7030-9c91-dee3fbed9216",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一个PDF文件，让您检查其中是否存在某些问题，可能是技术、流程或数据相关的问题。请确保文件内容清晰，以便进行有效分析。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a03-5142-7950-8f8f-58c6a310145c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户上传了一份PDF文件，希望了解文件中是否存在错误、问题或需要改进的地方。这些“问题”可能涉及内容准确性、格式规范、文字拼写、语法错误或信息组织等方面，用户请求对文件进行全面检查以确保质量。\n\n首先，我将通过用户交互界面提示您上传的文件类型，需要您确认是否是该文件。如果确认无误，我将进行解析并提供解析结果；若不一致，则会提示您上传正确的文件类型。\n\n一旦确认无误，我将对PDF文件进行解析。由于PDF文件的内容可能较为复杂，包括图片、表格、文字等多种元素，因此解析过程可能会出现一些异常。如果解析结果出现异常，我将对异常内容进行提示，并建议您修正文件后重新上传。\n\n如果解析结果没有问题，我将根据文件中的有效数据，提取出装置、回路及相应的位号信息，并进行相应的确认。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a03-a404-7221-9c00-9960683cd8ef",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a03-eda8-7cb2-8b7f-70cb7e9d885b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a03-eda9-7142-a9bf-cfc4aeb8edc5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--回路信息查询-- 不存在于 --用户交互界面-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a03-edaa-7c31-a468-51cedcf66ce3",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9a04-7629-7a03-be58-82c0a5507eb4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9a04-762a-7622-bbdc-3cdae0deb1cd",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u6570\\u636e\\u6709\\u6548\\u6027\\u68c0\\u6d4b\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"\\u57fa\\u4e8e\\u4e13\\u5bb6\\u7ecf\\u9a8c\\u7684\\u53c2\\u6570\\u6574\\u5b9a\", \"dep\": [\"id2\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"\\u63a7\\u5236\\u56de\\u8def\\u6027\\u80fd\\u8bc4\\u4f30\\u53ca\\u8bca\\u65ad\", \"dep\": [\"id2\"]}, {\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"\\u591a\\u7b56\\u7565\\u81ea\\u9002\\u5e94\\u6574\\u5b9a\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"\\u57fa\\u4e8e\\u56de\\u8def\\u6ce2\\u5f62\\u5224\\u65ad\\u7684\\u53c2\\u6570\\u8fed\\u4ee3\\u6574\\u5b9a\", \"dep\": [\"id6\"]}, {\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9a04-762a-7622-bbdc-3cee78a35e65",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9a04-762b-73d0-9703-f49fd52435d8",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9a04-762b-73d0-9703-f4aead221311",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a04-7624-7d80-a891-c253f2b38f84",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "上传pdf文件，看看有什么问题",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9a04-7624-7d80-a891-c253f2b38f84"
+      }
+    }
+  ]
+]

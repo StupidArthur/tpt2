@@ -1,0 +1,236 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9720-32d8-78b2-afc7-6ce311da3e09",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9720-3358-7ea1-905a-a352cfb71b58",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望评估常减压装置中可能造成能耗瓶颈的设备和环节，并寻求优化方案。这通常包括对加热炉、泵、压缩机、换热网络等关键设备进行能耗分析，查找运行效率低、热能损失大或能量匹配不合理的问题。解决方案可能涉及优化操作参数、加强设备维护、改进热集成设计或引入节能技术。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9720-3ebd-7bd1-a081-13f4cd84b137",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对常减压装置的能源瓶颈进行分析，并提供优化方案。这是一个RTO操作优化问题，我将按照以下步骤进行：\n\n1. 首先，我会详细了解用户的问题，通过页面提问的方式补充问题中未明确的信息。同时，询问用户是否已有可用的训练模型，如果没有，将进入数据上传步骤；如果有，则直接进入配置方案阶段。\n\n2. 然后，在数据上传阶段，我会建议用户上传相关文件，并指导文件的上传过程，之后对上传的文件进行数据解析和评估。\n\n3. 接着，我将进入确认建模信息阶段。基于历史数据库和网络搜索，生成优化方案，方案内容涵盖优化目标、优化变量、约束条件及代理模型的建立等。同时，我会请用户再次确认这些配置，确保信息的准确性。\n\n4. 最后，进入TPT推理计算阶段。依据上一步生成的优化方案，先进行数据预处理，再根据代理模型的输入输出，将数据送入自动化建模中进行模型的微调训练。将优化目标、优化变量、约束条件和代理模型等信息输入优化算法，进行优化计算推荐。得出优化结论后，进行优化总结。\n\n5. 若在第一步中，用户选择已有模型，则直接进入配置方案阶段，根据用户选定的模型，提取所有需要配置的细节，让用户在线完成配置，确保数据的准确来源。\n\n6. 完成配置方案后，进入实时计算阶段，根据用户选定的模型进行实时计算，最终输出优化结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9720-751e-7d33-af58-82fc5b9e82a6",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"RTO操作优化\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"RTO操作优化\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"RTO操作优化\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"RTO操作优化\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"RTO操作优化\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"RTO操作优化\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9720-a6bb-7312-9483-13638f8f43aa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9720-a6bb-7312-9483-137968fb30ba",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9720-a6bb-7312-9483-1384289005a2",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9720-a6b9-7b92-a4c0-56191b126155",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"RTO操作优化\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"RTO操作优化\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"RTO操作优化\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"RTO操作优化\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"RTO操作优化\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"RTO操作优化\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "常减压装置的设备和环节可能会造成用能瓶颈，请帮我评估一下并给出解决方案？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"task_type\": 0,\n  \"domain_knowledge\": {\n    \"device_type\": \"常减压装置\",\n    \"industry\": \"石油\"\n  },\n  \"task_objective_description\": \"评估常减压装置的用能瓶颈并给出解决方案\",\n  \"optObject\": {\n    \"description\": \"降低常减压装置能耗\",\n    \"symbol\": \"min\"\n  },\n  \"optVariables\": [],\n  \"constraint\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "需要确认您的详细需求，请补充信息：",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "基于TPT的深度分析与智能识别，我已获取了问题的关键信息。为进一步提升最终效果，请对以下关键信息进行确认，以便我们更高效地推进后续工作。"
+      }
+    }
+  ]
+]

@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9967-27d5-7721-9051-c1a6d8d0c630",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9967-2874-7153-865d-99176c18f677",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对盐水流量调节阀进行离线异常检测，以判断其在非运行状态下的性能是否正常，可能包括检查阀体、执行机构、信号反馈等部分是否存在故障或偏差。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9967-3116-75f0-bc67-8c8dc18cb915",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对盐水流量调节阀进行离线异常检测，以评估其运行状态是否存在异常。这可能涉及收集历史数据，通过检测算法对阀门的性能和健康状况进行分析，识别是否有卡涩、泄漏或其他操作异常的情况。\n\n首先，我会引导用户进入数据上传流程，上传与该阀门相关的历史数据以供评估。\n\n然后，进入检测算法执行阶段，通过调用算法对盐水流量调节阀的运行状态进行评估，判断是否存在异常。如果检测到异常，我将提供具体的原因分析，并给出相应的维护建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9967-3f87-74e1-9bbb-d34ed5fa4c12",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传离线数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"执行检测算法\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9967-50ab-7993-81d7-089430737444",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9967-50ab-7993-81d7-08aa7deb15f9",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9967-50ab-7993-81d7-08b926b27019",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9967-50aa-7b42-9b5f-178650bba7d4",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传离线数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"执行检测算法\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "执行盐水流量调节阀离线异常检测流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9967-50aa-7b42-9b5f-178650bba7d4"
+      }
+    }
+  ]
+]

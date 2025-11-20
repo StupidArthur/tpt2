@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9968-3b31-7fd1-8452-a41ec3a95a70",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9968-3bbd-7262-9dd0-838de2f7ffd6",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在新阀门投运前识别盐水流量调节阀是否存在异常，例如动作不灵活、泄漏或响应迟缓等问题，以确保其正常运行和控制效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9968-4230-7c31-ba67-f72ff8249bcc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对盐水流量调节阀进行异常检测，以确保阀门在新投运前的运行状态正常和安全。这可能涉及到检查阀门的开度、流量的稳定性以及是否存在振动或噪音等异常现象。\n\n首先，我将通过用户交互界面，引导用户上传与阀门相关的历史数据，以便进行评估。这些数据将帮助我们了解阀门的运行趋势和历史异常情况。\n\n随后，我将执行检测算法，调用特定算法对盐水流量调节阀的运行状态进行分析，判断是否存在异常。如果检测到异常，我将提供具体的异常原因分析，并给出相应的维护建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9968-569c-74e0-a9ee-47d8c7d12f5d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传离线数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"执行检测算法\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9968-686e-7202-9ccb-c34b9e1c93fb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9968-686e-7202-9ccb-c350e465e9a7",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9968-686e-7202-9ccb-c3686c0ee5f6",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9968-686d-7e42-aaf6-b29fdd6ec9f3",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传离线数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"执行检测算法\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "新阀门投运前，请帮我识别盐水流量调节阀有什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9968-686d-7e42-aaf6-b29fdd6ec9f3"
+      }
+    }
+  ]
+]

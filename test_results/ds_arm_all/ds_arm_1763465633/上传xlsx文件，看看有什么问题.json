@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a972e-dc75-7113-b5aa-a15f63dc425b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a972e-dcd9-77d1-a5ff-97d52bd8450f",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一个Excel文件（.xlsx格式），并请我帮忙检查其中是否存在异常或问题。这可能包括数据趋势分析、异常点识别、逻辑错误判断等，以帮助您更好地理解数据或排查潜在的工艺问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a972e-e2a6-7021-8557-156a7d11d405",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户上传了一个XLSX文件，希望对文件内容进行检查，以发现可能存在的问题，如数据错误、格式不正确或信息缺失等。用户请求的是对上传文件的通用数据审查。\n\n首先，我会要求用户上传包含需要检查数据的文件。系统在解析文件时，会提示用户解析结果，需要用户确认解析是否正确。\n\n如果用户确认解析无误，系统将根据文件中的有效数据进行相应的查询或分析，并反馈查询或分析的结果。如果系统发现解析结果有误，将提示用户修正文件并重新上传，直到解析通过。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a972f-181e-7fb2-bc9a-1d455b9338f7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a972f-4705-7690-9469-db316b5b0459",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a972f-47de-7f41-9665-bb038553abcd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a972f-4931-74e3-8445-0081412746e4",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a972f-4932-7ca0-9a9f-ba8023cb6ddc",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a972f-4930-7e43-a89a-314ca7d2782a",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "上传xlsx文件，看看有什么问题",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a972f-4930-7e43-a89a-314ca7d2782a"
+      }
+    }
+  ]
+]

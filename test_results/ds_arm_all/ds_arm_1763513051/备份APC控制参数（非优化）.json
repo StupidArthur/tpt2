@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9993-21ee-70b3-b3fd-95633f887c50",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9993-2271-7942-9c76-a6819cf09cae",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想备份APC（先进过程控制）系统的控制参数，但不包括优化相关的设置。这可能用于保存当前控制策略的状态，以便后续恢复或比较。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9993-2574-7a43-9006-9b75a81bb564",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望备份APC控制参数，这通常涉及收集控制器的模型参数、配置信息及当前运行状态，确保这些数据被妥善保存，以便在需要时能够恢复，保障控制系统的稳定性和数据安全。\n\n我将调用APC控制器信息查询，获取加载控制器列表，然后对每个控制器进行控制参数快照查询，最终生成并输出控制器参数快照数据。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9993-40f5-78f0-bde9-704860b3b267",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC控制器信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"控制器运行参数快照查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9993-6f8a-7410-b167-d97126b2dfe1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9993-705f-7652-a206-2d7e9857772c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9993-71b6-77b1-bd4e-914ab5d37f8c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9993-71b7-7a51-a5b6-03c20d8b301b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9993-71b5-7942-a178-a19b5beab7dc",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC控制器信息查询\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"控制器运行参数快照查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "备份APC控制参数（非优化）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9993-71b5-7942-a178-a19b5beab7dc"
+      }
+    }
+  ]
+]

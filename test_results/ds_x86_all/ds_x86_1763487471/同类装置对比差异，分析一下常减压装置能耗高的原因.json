@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a981d-6256-7803-b874-d245e3497f73",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a981d-62f6-73f0-a813-54eb42f69f51",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解常减压装置能耗较高的原因，并希望通过与同类装置的对比找出差异。这可能涉及加热炉热效率、操作参数设置、设备老化、能量回收利用不足等方面的问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a981d-699a-7c81-9abf-0d07559d0ca6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对常减压装置的能源消耗高的原因进行分析，这里需要注意的是，能耗不仅受设备性能影响，也与操作水平密切相关。因此，除了检查设备本身，还需要通过操作数据来评估操作的合理性，以找出能耗过高的原因。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，如原油数据、产品数据和能耗数据等。这些数据是进行能耗分析的基础，帮助我们了解能源在加工过程中的使用情况及可能的损耗点。\n\n接下来，我会对用户提供的数据进行校验，确保数据的完整性和格式正确，同时确认数据是否满足基本要求。如果数据校验未通过，我将在上传文件中标记出错误的单元格，并提供修正建议，用户需根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将对常减压装置的各个单元设备进行瓶颈分析，计算每个设备的有效能利用效率和损失比例。分析结束后，我会根据能量损失的程度对所有设备进行排序，找出有效能损失最严重的设备，帮助用户明确哪些环节最需要通过操作调整或设备改造来优化。\n\n最后，针对能量损失特别显著的设备，我将进行更为详细的关键因素分析，不仅考虑设备本身的性能，还结合操作条件，从多个角度深入探讨导致能量损失的具体原因。这样，用户不仅能获得设备改造的建议，也能通过操作调整来改善现有设备的能源利用效率。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a981d-9ff0-7a81-8de1-ccd9612acb40",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"选择改造目标\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"换热器改造\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a981d-d03d-7ea0-85c8-7519143ecbde",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a981d-d173-78e1-9a29-9a839f57434a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a981d-d3df-7333-aeff-482b63f8f548",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a981d-d3df-7333-aeff-48333e66f73d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a981d-d3de-7163-855e-1c21fb5d3de7",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"Redesign\",\"ability\":\"选择改造目标\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"Redesign\",\"ability\":\"换热器改造\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "同类装置对比差异，分析一下常减压装置能耗高的原因",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a981d-d3de-7163-855e-1c21fb5d3de7"
+      }
+    }
+  ]
+]

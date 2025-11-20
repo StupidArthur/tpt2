@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9735-7973-7e82-9594-c6f92f6428bd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9735-79db-75e1-9c0a-983c7b41ba10",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您遇到了PID控制回路的异常问题，希望得到帮助排查和解决。这可能包括控制不稳定、参数设置不当或测量信号异常等情况。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9735-7de5-74d2-ad93-9b68e5625adf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提到PID回路出现了异常，希望得到帮助来检查和解决这个问题。PID控制回路异常可能表现为控制不稳定、响应迟缓或输出波动等现象，用户期望通过调整参数或检查设备状态来恢复正常的控制功能。\n\n首先，我需要从回路信息查询中定位到该回路。 \n\n接着将对回路执行运行实时状态的分析，重点核查该回路是否触发了条件剔除机制或存在异常运行状态。如果确实存在条件剔除或异常情况，系统会提供具体的操作建议，同时终止对PID参数的整定流程。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9735-afdc-7910-8e71-d17d9618bc36",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路运行实时状态计算\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9735-d438-70e0-886e-03be4c6e4c11",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9735-d519-7071-8dee-c90caacef166",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9735-d6c4-7fe2-a6c5-5bc3a3efd052",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9735-d6c5-7d91-95d1-b23b2b45bd93",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9735-d6c2-7583-9dbb-ad7fbf52b518",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路运行实时状态计算\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "PID回路异常，帮我看看",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9735-d6c2-7583-9dbb-ad7fbf52b518"
+      }
+    }
+  ]
+]

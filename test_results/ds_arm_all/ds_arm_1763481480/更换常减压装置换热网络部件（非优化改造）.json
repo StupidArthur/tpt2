@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97cf-c1d5-79f0-8045-e97edd0c9efa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97cf-c256-7a52-a130-761efbefbc3d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您计划更换常减压装置中换热网络的某些部件，但不涉及整体优化或改造。这可能包括更换换热器、管道、阀门等设备，目的是恢复或提升换热系统的运行状态和效率。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97cf-c6d2-7d72-ad9b-c89ba2e64460",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望更换换热网络中的某个设备，这通常是因为现有设备存在故障或性能不佳，需要进行直接替换，以维持或提升换热网络的整体运行效果。在进行设备更换时，需要注意的是，换热器的参数，如流股匹配、换热面积等，应保持与原设计相似，确保设备可以顺利替换并正常运行。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，如物流数据、换热器参数等。接着，我会对这些数据进行校验，确保其完整、格式正确，并符合基本要求。如果数据校验未通过，我将在上传文件中标记错误部分，并提供修正建议，用户需根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将基于用户提供的数据，进行换热器的改造工作。在改造过程中，我将重点关注用户需要更换的换热器，确保这些换热器在改造后能够满足其特定的工艺要求和公用工程条件。最后，我将提供一份改造方案，该方案中将详细列出优化后的换热器清单，以及改造后的网络布局图。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97d0-19df-72a2-95ca-123128daa229",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"换热器改造\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97d0-3d78-7b10-803e-6a50eb545da1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97d0-3d79-7713-a2cf-baf8b351fefb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--换热器改造-- 不存在于 --上传数据与校验-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97d0-3d79-7713-a2cf-bb00192e9399",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97d0-bea2-7651-af85-6863b6fc258d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97d0-bea2-7651-af85-68714efddcd5",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\\u4e0e\\u6821\\u9a8c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u5668\\u74f6\\u9888\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u9009\\u62e9\\u6539\\u9020\\u76ee\\u6807\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"\\u6362\\u70ed\\u5668\\u6539\\u9020\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97d0-bea3-7d42-9195-d0cab5733dbc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97d0-bea3-7d42-9195-d0d1d1a91c2a",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97d0-bea4-7c20-8adb-17cbc361668b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97d0-be9f-7161-bddc-53806abbe087",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"选择改造目标\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"Redesign\",\"ability\":\"换热器改造\",\"dep\":[\"id3\"]}]",
+      "branch": "[]",
+      "name": "更换常减压装置换热网络部件（非优化改造）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97d0-be9f-7161-bddc-53806abbe087"
+      }
+    }
+  ]
+]

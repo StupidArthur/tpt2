@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9712-55f1-7c01-b9c9-40785bd3898f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9712-5661-71f3-ab70-58c762e4d288",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过APC（先进过程控制）优化常减压装置的操作，减少人工或常规控制频繁调整的次数，从而提高操作稳定性与效率。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9712-5b6f-71a2-ab8d-a0ab38f390cc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望通过预测控制技术来优化常减压装置的APC操作，降低操作频次。为此，可能需要提供一份常减压装置的先进控制技术方案，以帮助用户更深入地理解这一优化过程。首先，我需要确定优化的目标装置是常减压装置。然后，我将根据装置信息确认优化范围，并结合工艺资料和生产实际情况，生成一份优化方案，包括关键变量（被控变量CV、操作变量MV和干扰变量DV）的列表。由于用户没有指定是否需要立即整定这些变量，我将询问用户是否希望进行变量整定。如果用户选择不进行整定，我将提供优化方案；如果用户希望进行整定，我将在整定完成后输出PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9712-76ca-78b0-ba00-2d6b0382c914",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案设计信息确认\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"控制方案检索生成\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"控制方案优化\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9712-9510-7cc2-85e2-f0c74d7a9039",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9712-9603-7af0-857d-86ac094ab936",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9712-97fe-70f2-b572-1ad44369298e",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9712-97fe-70f2-b572-1aeacefae552",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9712-97fc-7870-8a7b-269dc19dbf3b",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "常减压装置APC优化，降低操作频次",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9712-97fc-7870-8a7b-269dc19dbf3b"
+      }
+    }
+  ]
+]

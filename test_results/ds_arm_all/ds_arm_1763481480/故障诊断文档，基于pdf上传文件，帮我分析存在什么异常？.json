@@ -1,0 +1,132 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9822-5d97-7d90-b3b6-ff27ec04b51b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9822-5e02-7d03-8599-20e8f924919e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过上传的PDF文档进行故障诊断分析，以识别其中存在的异常或问题。这可能包括查找设备故障原因、异常数据趋势或操作问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9822-628a-7161-bc0c-3c87b2236f1f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户通过上传的PDF文件来申请故障诊断分析，我将按照以下步骤进行操作：\n\n1. 首先，我会进入数据上传流程，指导用户上传包含故障信息的文件。\n\n2. 然后，我将进入数据解析阶段。系统会自动解析上传的文件内容，我需要用户确认解析结果的准确性。\n\n3. 如果用户发现解析结果有误，我将引导用户修正文件并重新上传，直到解析结果无误。\n\n4. 解析结果确认无误后，我将执行故障诊断分析。利用异常检测算法对上传的文件数据进行处理，检查是否存在异常情况。如若发现异常，我将提供具体的异常原因分析，并给出相应的优化建议。\n\n5. 如果未检测到任何异常，我将通知用户，说明数据未发现异常情况。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9822-a475-7801-8857-12927e537013",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT模型微调\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"anomaly_detection\", \"ability\": \"故障诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9822-f217-78c0-b60f-b5dc8d255c7d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9822-f218-7b53-87a3-b2d73cdb98b3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--确认解析结果-- 不存在于 --上传数据-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9822-f4ee-79a1-a445-e94bdb78b544",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    }
+  ]
+]

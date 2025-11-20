@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9751-925e-74b2-bfc6-b0904a0a699b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9751-9381-7420-bed4-32445aa0bf70",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您关注气化炉在氧气进料波动下的控制鲁棒性，并希望识别出对系统稳定性影响较大的敏感参数，以便优化控制策略或操作条件。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9751-98b0-76f2-a682-6284a36b531c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提到气化炉氧气进料波动，希望分析其对下游设备的影响环度，以确定哪些设备的控制参数较为敏感。这有助于评估气化炉在不同工况下的鲁棒性，确保其在波动环境中仍能保持稳定运行。\n\n首先，我需要通过回路信息查询功能查找描述为气化炉的控制回路信息。由于用户希望观察氧气进料波动下的鲁棒性，因此我会对气化炉的设定值增加10%的波动，并持续10分钟，以模拟氧气进料的波动情况。\n\n接下来，我将启动控制回路性能评估及诊断，选择合适的数据段，对波动前后的数据进行分析，对比设备的响应特性，以确定哪些设备对波动更为敏感。最终，我将提供对波动敏感的设备列表及其相关建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9751-b5c7-7183-b3a1-c7bb24f3dcba",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9751-c7fd-77d0-bb38-d7cd646573db",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9751-c92c-75e1-9e8a-a99a160d54b6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9751-ccb0-7ef1-8793-427383a28b5f",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9751-ccb0-7ef1-8793-428f877b8c3b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9751-ccaf-72b3-97b9-11addb367636",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "气化炉氧气进料波动，验证下鲁棒性，看哪些参数敏感",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9751-ccaf-72b3-97b9-11addb367636"
+      }
+    }
+  ]
+]

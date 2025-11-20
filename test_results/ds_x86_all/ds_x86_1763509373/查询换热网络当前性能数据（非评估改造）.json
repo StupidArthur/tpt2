@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9978-bdaf-7360-a2ed-77489779a232",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9978-be1e-7573-accb-e555bb759f30",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解当前换热网络的运行性能数据，例如热效率、温差、流量或能耗等，用于实时监控或分析，而不是用于评估改造方案。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9978-c325-7322-bdab-c0dcda59db32",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望获取换热网络当前的性能数据，这些数据可能涵盖换热器的运行效率、热效率、公用工程的消耗量以及负荷情况等，以便于对换热网络的性能进行分析和优化。\n\n首先，我将通过交互界面提示用户上传必要的数据信息，如物料流数据和换热器参数等。接着，我会对上传的数据进行校验，确保数据的完整性和格式正确，同时检查是否满足基本要求。如果数据校验未通过，我将在上传文件中高亮显示错误的单元格，并添加修正建议，用户需要根据这些提示修改数据后重新上传。\n\n一旦数据校验通过，我将提取数据中相关换热器的运行方向和公用工程信息，然后计算运行中每个换热器的热效率和公用工程的传热路径。最后，我将生成一份换热网络的性能报告，报告中会包含每个换热器的运行热效率和公用工程的传热路径。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9978-eab2-7e90-b40e-5dfd1cea064c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9978-fe40-7d70-a50b-1178dd93468d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9978-ff42-7f20-94d5-0c27b194478b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9979-0158-7793-93a3-007cd13aca21",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9979-0158-7793-93a3-008ff0110be4",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9979-0157-7d43-b274-96d2cea69fd3",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "查询换热网络当前性能数据（非评估改造）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9979-0157-7d43-b274-96d2cea69fd3"
+      }
+    }
+  ]
+]

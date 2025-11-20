@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9900-1acd-7dd0-b535-f3cab9d44308",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9900-1b49-7973-a65c-7540bf7e740c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要快速对一个包含工业数据的XLSX文件进行异常分析，可能是为了及时发现设备或工艺中的异常情况，以便采取相应措施。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9900-207b-7341-939d-ea757a2f0093",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对上传的XLSX文件中的数据进行异常分析，以识别和评估文件中包含的各类数据的异常情况。这可能涉及到数据的预处理、异常值检测、异常模式识别以及生成分析报告等步骤，以便用户能够更好地理解和利用这些数据。\n\n首先，我将通过用户交互界面提示您上传包含目标数据的文件。系统解析文件后，会显示解析结果，供您确认。如果解析结果无误，系统将基于文件中的有效数据进行异常分析。如果解析结果有异常，系统将提示您修正文件并重新上传，直至解析成功。\n\n解析成功后，系统将执行异常分析，并反馈分析结果。这些结果可能包括异常数据点的标记、异常程度的评估以及异常原因的初步判断。如果发现异常，系统还会建议您进一步检查数据来源或进行数据清洗。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9900-4069-7cc2-885d-c8156d40b8a8",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9900-5d68-7882-bbdf-3ab909c014c6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9900-5e53-7d03-a625-a6ff5b994c79",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9900-6064-70a0-a12b-83b37f35fccc",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9900-6064-70a0-a12b-83c549723bb5",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9900-6063-72c0-bf72-70bf3a8747b5",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id3\"]}]",
+      "branch": "[]",
+      "name": "xlsx文件，异常分析快点",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9900-6063-72c0-bf72-70bf3a8747b5"
+      }
+    }
+  ]
+]

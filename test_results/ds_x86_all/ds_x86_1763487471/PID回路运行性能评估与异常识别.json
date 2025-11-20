@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a985c-95bb-7da2-8281-452dd22aa4df",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a985c-9657-7d51-a2a7-9a35301338c3",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解如何评估PID控制回路的运行效果，并识别其中可能出现的异常情况。这通常包括分析控制精度、响应速度和稳定性，同时检查是否有参数失配或外部干扰等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a985c-9c2d-72a0-bcaa-6313792131af",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对PID回路的运行性能进行全面评估，并识别出可能存在的异常情况。这包括检查控制回路的稳定性、响应速度、控制精度等性能指标，以及诊断是否出现如阀门卡涩、传感器故障等问题，以便及时进行调整和维护。\n\n首先，我需要通过回路信息查询系统查找所需评估的回路，并获取其详细配置信息。 \n\n接下来，将对选定回路执行控制回路性能评估与异常诊断，检查该回路是否存在阀门饱和、阀门卡涩或传感器噪声过高等问题。如果发现异常，系统会给出具体的运维建议，同时推荐您通过全设备智能感知平台PRIDE对相关设备进行深度检测分析。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a985c-b544-7db3-9dc5-e3d14b50ede3",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a985c-c7ea-7361-a53d-0276c2088524",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a985c-c91d-7ae0-b750-b5c92f3e47cb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a985c-cb23-7541-a967-e96d900bf824",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a985c-cb23-7541-a967-e976d7e5b1fe",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a985c-cb22-7cb3-914c-b8823cb86580",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "PID回路运行性能评估与异常识别",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a985c-cb22-7cb3-914c-b8823cb86580"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98ac-de9d-7912-bd45-3efc13fb7765",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98ac-e017-7371-bc46-98ceaee1dcaf",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过上传的Excel文件对系统或设备的性能进行评估，并希望了解其中是否存在异常情况。您需要的是对数据的初步分析，识别出可能的异常点或趋势。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98ac-e509-7d83-b848-48b6b5ef6d0c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户上传了一个xlsx文件，请求基于该文件的内容进行性能评估，并识别其中可能存在的异常。这些异常可能包括数据的异常波动、不符合预期的趋势、错误的数据录入或潜在的系统性问题，用户希望得到具体的分析和改进建议。\n\n首先，我将通过上传数据与解析功能，指导用户上传包含目标数据的文件，解析后提供解析结果。接下来，我需要用户确认解析结果的准确性。\n\n如果用户确认解析结果无误，我将执行性能评估与反馈，深入分析数据中的异常情况，并提供详细的评估报告。如果用户发现解析结果有误，我将提示用户修正文件并重新上传，直至解析结果通过。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98ac-fbea-7a80-8d8d-5665adb46bcf",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98ad-1428-7e31-9795-17500a8be28a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98ad-150f-7703-b1fb-6ecc33dcdbee",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98ad-16f5-7440-b308-c5d3179ccc24",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98ad-16f5-7440-b308-c5ee9bde4121",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98ad-16f4-7cd0-b601-22d5b83aecd3",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "性能评估需求，基于xlsx上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98ad-16f4-7cd0-b601-22d5b83aecd3"
+      }
+    }
+  ]
+]

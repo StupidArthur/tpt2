@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97f7-dc44-73e2-8713-8cc122272dbb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97f7-dcc8-7530-acac-68ba274c9a10",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想在新煤种试用阶段，通过仿真验证气化炉模型在使用烟煤、褐煤和石油焦三种不同煤种进料时的稳态运行情况，并对结果进行对比分析，以评估模型适应性和煤种对气化过程的影响。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97f7-e550-7f53-bee4-8cdd6167fe32",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建模气化炉时，需要考虑化工行业中的复杂动力学传递、多相流动、热力学平衡等特性的相互影响。\n\n首先，我将根据您提供的煤种信息（烟煤、褐煤、石油焦）来构建气化炉的动态工艺仿真模型，并启动该模型进行独立仿真计算，以监控煤种变化对气化炉温度、压力及关键组分含量等核心工艺参数的具体影响。\n\n在仿真计算过程中，我会特别关注不同煤种切换时气化炉的负荷变化情况，评估其对工艺过程的扰动程度，从而帮助您判断气化炉模型对于煤种变化的适应性和稳定性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97f7-f959-73a3-b250-a5ceb466a02d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97f8-0546-7951-a3db-ac65e4ad175e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97f8-0647-7340-a788-0b33cc52e362",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97f8-088a-77c0-8611-9ef1ac8f0a5f",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97f8-088a-77c0-8611-9f0282ca774c",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97f8-0889-7cb3-887f-b2680909f5ea",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "新煤种试用阶段，在给定的三种不同煤种（烟煤、褐煤、石油焦）作为进料的前提下，分别模拟验证气化炉模型在仿真环境下的稳态工况，并对比分析验证结果",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97f8-0889-7cb3-887f-b2680909f5ea"
+      }
+    }
+  ]
+]

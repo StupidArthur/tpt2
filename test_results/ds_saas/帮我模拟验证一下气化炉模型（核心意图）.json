@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9786-2d29-75d3-903f-435655b7824f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9786-2d2b-7933-a1d8-db0bb4b444df",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对气化炉的模型进行模拟验证，以确认其在不同操作条件下的行为是否符合预期。这可能包括检查模型的动态响应、稳定性或关键参数的变化趋势。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9786-2f39-7c82-937e-d674ac07c603",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，仿真建模气化炉时，需考虑化工行业复杂的动力学传递、多相流动、热力学平衡等特性之间的相互作用。\n\n我们将构建一个通用的气化炉动态工艺仿真模型，并启动模型进行模拟仿真计算，以监测相关设备参数值的变化。\n\n在仿真计算过程中，生成工艺模型对气化炉内的物流参数进行模拟分析，同时模拟设备参数值的变化趋势。\n\n此外，我们还可以加载不同的工况，对比观察设备参数值的变化情况，以评估气化炉的运行状态和设备性能。\n\n最后，通过查看流程图，了解整个流程的结构和设备连接情况。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9786-35a3-7322-98f8-bcf696dd1cf4",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"加载工况\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9786-40b1-7db2-b1b2-b1c1414c770b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9786-4121-74f2-b1ec-eb47d2d44e63",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9786-41a5-7401-8b46-10601bc65211",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9786-41a8-7af3-9b3d-69163dd52b21",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9786-41a0-7e22-838d-3e92df15ae88",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "帮我模拟验证一下气化炉模型（核心意图）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9786-41a0-7e22-838d-3e92df15ae88"
+      }
+    }
+  ]
+]

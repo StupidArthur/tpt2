@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9820-f4c8-7b12-8d7f-83d326c287fe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9820-f52e-7bd1-8081-47929d2f04bc",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一个PDF格式的文件，并从中解析数据，之后对这些数据进行异常检测分析。这可能涉及识别数据模式、查找异常值或不符合预期的行为，以帮助改进流程或诊断问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9820-f9d4-7802-a517-d61ca884c867",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户上传了一份PDF格式的文件，这份文件中包含了需要进行数据解析和异常检测分析的内容。用户希望系统能够读取并解析这份PDF文件中的数据，然后对解析出的数据进行异常检测分析，以找出可能存在的异常点或模式。\n\n首先，我会让用户上传包含目标数据的文件。上传后，系统将对文件进行解析并提供解析结果，用户需要确认这些解析结果是否正确。\n\n如果用户发现解析结果有误，系统会提示用户修正文件并重新上传，直到解析结果无误。一旦解析结果确认无误，系统将根据文件中的有效数据进行异常检测分析，并反馈分析结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9821-2dbc-7eb2-bfe6-e174b19167c3",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9821-5bad-75f3-9b69-96c0bd6f4f42",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9821-5c7f-77e2-8de8-c7be8c542d41",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9821-5de0-7781-8540-cd3ae5bce928",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9821-5de0-7781-8540-cd474772491a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9821-5dde-7f52-8554-336b5e6575d4",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "PDF格式上传文件数据解析及异常检测分析",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9821-5dde-7f52-8554-336b5e6575d4"
+      }
+    }
+  ]
+]

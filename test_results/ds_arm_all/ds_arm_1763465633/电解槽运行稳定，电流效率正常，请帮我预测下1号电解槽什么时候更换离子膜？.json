@@ -1,0 +1,185 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a970f-c4c3-7273-ad32-e8691c5f8218",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a970f-c53b-7671-80f1-998a6bd775ed",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望预测1号电解槽下一次更换离子膜的时间，以便提前安排维护计划。这可能基于当前电解槽运行状态良好、电流效率正常的情况下，评估离子膜的使用寿命或剩余性能，从而给出合理的更换时间建议。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a970f-caea-7e13-b560-04d261696034",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我们识别到用户希望我们预测离子膜最佳换模时间，需要先确认该电解槽的相关参数，主要包括最近一次的换模日期、单元槽数量等。之后我会让用户上传数据，并且检测数据质量。数据应包含至少timeStamp、槽电流、单元槽电压、槽温、碱浓度五项数据。\n\n如数据质量太差，应返回”用户提供数据太差，请重新提供干净数据“；如果数据质量达标，，即可调用离子膜寿命预测算法。待算法执行完毕，我需要根据算法输出组装好答案，展示到前端界面。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a970f-fcd0-7dd3-8105-338c5ee039a8",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"离子膜寿命预测\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"离子膜寿命预测\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"离子膜寿命预测\", \"ability\": \"离子膜寿命预测\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9710-340f-7a73-bdfe-06febf79a19e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9710-3410-7940-abc7-d99b0fdce59b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9710-3410-7940-abc7-d9ab8fe15800",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9710-340d-7952-851b-d302154ac7c6",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"离子膜寿命预测\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"离子膜寿命预测\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"离子膜寿命预测\",\"ability\":\"离子膜寿命预测\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "电解槽运行稳定，电流效率正常，请帮我预测下1号电解槽什么时候更换离子膜？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "需要确认您的详细需求，请补充信息：",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "基于TPT的深度分析与智能识别，我已获取了问题的关键信息，现在请确认这些信息，以便更好的生成解决方案。"
+      }
+    }
+  ]
+]

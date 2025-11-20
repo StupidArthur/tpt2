@@ -1,0 +1,236 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9770-2a49-7142-9a46-cd5ad33ec029",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9770-2acf-7872-be00-b42afd55ceab",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解渣油泵的运行状态是否正常，可能需要检查其流量、压力、振动、温度等参数是否在正常范围内，以及是否存在异常声响或泄漏等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9770-3091-7763-92e7-afcd2a8bf298",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提问的是渣油泵，这是一台泵设备，您希望了解该设备是否存在异常。针对这一异常检测问题，我将采取以下步骤：\n\n1. 首先，我会进一步了解您的问题背景，通过页面上的提问来补充和完善您问题中未明确的信息。同时，也会询问您是否已经拥有训练好的模型用于异常检测。\n\n2. 然后，进入数据上传环节，我会建议您上传相关的文件，并帮助您解析和评估这些数据，确保它们适用于接下来的分析。\n\n3. 接着，进入建模信息确认阶段。根据我们的历史数据库和网络资源，我将生成一套异常检测方案，包括推荐的模型输入位号、输出目标和模型配置等信息。同时，我将请求您再次确认这些配置，确保一切设置无误。\n\n4. 之后，我们将进行TPT推理计算。根据确认的方案，我会先对数据进行预处理，然后将处理后的数据输入到自动化建模中进行模型微调训练。训练结果将以可视化形式展示，并使用训练好的模型进行推理计算。如果您在第一步中选择已有模型，则直接使用该模型进行推理计算。最后，我将展示异常区间，并对异常情况进行分析。\n\n5. 最后一步，我会邀请您选择具体的时间段进行故障诊断。如果需要更详细的诊断，我会指导您上传更高频率的数据，以便我们能够更准确地定位故障原因，并给出相应的优化建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9770-676c-74d1-93fa-a7b7b8da1a8b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"anomaly_detection\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT模型微调\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT推理计算\", \"dep\": [\"id2\", \"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"anomaly_detection\", \"ability\": \"上传高频数据\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"anomaly_detection\", \"ability\": \"故障诊断\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9770-9df2-7193-9712-0ad2ff5e1449",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9770-9df2-7193-9712-0ae1dc675248",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${opt_model_selected} == false and ${is_contain_data}  == true\"}, {\"from\": \"id2\", \"to\": \"id5\", \"expression\": \"${opt_model_selected} == true and ${is_contain_data}  == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${diagnosis_flag} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${diagnosis_flag} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9770-9df2-7193-9712-0afce12505c1",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9770-9def-7303-9a13-db33187a461e",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"anomaly_detection\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"anomaly_detection\",\"ability\":\"TPT模型微调\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"anomaly_detection\",\"ability\":\"TPT推理计算\",\"dep\":[\"id2\",\"id4\"]},{\"id\":\"id7\",\"tool\":\"anomaly_detection\",\"ability\":\"上传高频数据\",\"dep\":[\"id5\"]},{\"id\":\"id8\",\"tool\":\"anomaly_detection\",\"ability\":\"故障诊断\",\"dep\":[\"id7\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false And Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id2\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true And Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"diagnosis_flag\\\")]) Eq true\"}]",
+      "name": "请分析渣油泵是否正常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"task_type\": 4.0,\n  \"task_objective_description\": \"分析渣油泵是否正常\",\n  \"target_variables\": [\n    {\n      \"description\": \"渣油泵\",\n      \"tag\": \"\"\n    }\n  ]\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "需要确认您的详细需求，请补充信息：",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "基于TPT的深度分析与智能识别，我已获取了问题的关键信息，现在请确认这些信息，以便更好的生成解决方案。"
+      }
+    }
+  ]
+]

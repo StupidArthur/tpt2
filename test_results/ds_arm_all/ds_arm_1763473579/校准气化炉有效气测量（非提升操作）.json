@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a975b-684f-7cb3-90dc-ced7e700b836",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a975b-68b7-7250-9373-1347db827680",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对气化炉的有效气测量系统进行校准，以确保其测量数据准确可靠，这可能涉及检查和调整传感器或分析仪表的参数，但不包括提升操作。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a975b-6d3e-76d1-8a60-4233fa25f955",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望校准气化炉的有效气测量值，确保分析结果的准确性。这通常涉及检查测量设备的校准状态，对比不同设备间的测量数据，以识别并调整可能存在的偏差。用户特别强调了希望在非提升操作期间完成这一过程，以减少对生产活动的影响。\n\n首先，我需要通过回路信息查询来定位气化炉有效气测量的位号及其相关回路信息。\n\n随后，我会调取该回路的历史校准记录与最近的维护数据，以评估测量设备的校准状态和设备性能。\n\n接下来，我将使用控制性能评估诊断功能，获取该回路的自控率、平稳率、综合性能评分及回路等级，并据此提供进入脱氧盐水的氯浓度测量的评估建议。\n\n如果测量回路的当前校准状态或设备性能存在问题，我将推荐具体的校准操作或设备优化方案。同时，我将建议用户参考全设备智能感知平台PRIDE对设备进行深入检测，以获取更全面的设备健康状况分析和优化建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a975b-c262-7770-91d9-6447f1bb2673",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a975b-e69a-71d0-9bb6-9a68448acd8b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a975b-e804-7972-a71d-8e60aba90ab1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a975b-e981-7893-ac4e-88b7089a4742",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a975b-e982-79f3-ac15-d46e76e56b1a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a975b-e97f-7621-b978-c00e015483d8",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "校准气化炉有效气测量（非提升操作）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a975b-e97f-7621-b978-c00e015483d8"
+      }
+    }
+  ]
+]

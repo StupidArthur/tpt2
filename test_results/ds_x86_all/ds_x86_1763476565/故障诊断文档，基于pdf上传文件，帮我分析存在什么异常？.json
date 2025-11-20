@@ -1,0 +1,132 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b4-653b-7fe0-bd6b-a0d5bdcff874",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b4-65a2-7b82-b2bb-6382b05cd72d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一份PDF格式的故障诊断文档，由我帮助分析其中是否存在异常情况。这可能包括识别设备故障、运行偏差或数据异常等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b4-6a85-7d42-98e9-14f4d5392c2f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户通过上传的PDF文件来申请故障诊断分析，我将按照以下步骤进行处理：\n\n1. 首先，我会对上传的数据文件进行解析，提取出其中的关键参数信息，例如温度、压力、流量等数据，以便后续的诊断分析。\n\n2. 然后，我会对这些数据进行深入分析，检查是否存在异常情况。如果发现异常，将记录异常的具体位置，并尝试确定异常的原因。\n\n3. 最后，我将整理分析结果，输出异常的类型以及相应的处理建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b4-7d20-75d0-9688-a5c5b64a0ea7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"确认解析结果\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"执行检测算法\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"检测评分服务状态\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"查询考试成绩\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b4-ad5b-72b3-a5c9-7cb07653cd24",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b4-ad5b-72b3-a5c9-7cc71cde3d2f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--上传数据与解析-- 不存在于 --用户交互界面-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b4-b18d-7043-b67e-08d3b2796202",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    }
+  ]
+]

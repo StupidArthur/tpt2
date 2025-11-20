@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98ba-7043-7fd3-b9d5-0b99e2c25489",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98ba-70ac-70d2-93ae-f8549bcedde0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您关注的是在原料性质发生变化后，常减压装置出现能耗升高的问题。这可能与原料组分、粘度、密度等变化导致加热炉负荷增加、塔顶回流调整、操作参数变动等因素有关。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98ba-764e-7a12-bcbc-57214e1494b3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对常减压装置的能源消耗情况进行分析，识别出能效低的环节和用能设备。这不仅有助于用户了解当前的能源利用状况，还可以为后续的操作调整或设备改造提供依据，以实现更好的节能效果。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，包括原油数据、各物料数据以及能源消耗数据。这些数据是进行能耗分析的基础，确保其准确性和完整性至关重要。\n\n一旦数据上传完成，我将对这些数据进行校验，确保其完整性和格式正确，同时检查是否满足基本要求。如果数据校验未通过，我将在上传文件中标记出错误的单元格，并附上修正建议，以便用户根据提示修改数据后重新上传。\n\n如果数据校验通过，我将对常减压装置的各个单元进行瓶颈分析，计算每个单元的有效能利用效率和损失比例。通过这种分析，可以直观地了解哪些环节是有效能损失的关键点，从而为用户提供明确的优化方向，帮助其在操作调整或设备改造中优先考虑这些高损失的单元，以达到最佳的节能效果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98ba-d148-7832-8114-986b62e0e77d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98ba-edd7-72d3-8e3a-b3249c64cfe9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98ba-eeaa-75e2-b765-a26b51e19772",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98ba-f02b-7f21-8687-1153df282fd7",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98ba-f02c-77b3-a496-a3facb755cc5",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98ba-f029-7381-b5b0-48001a8f3075",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "原料性质变化后，分析一下常减压装置能耗高的原因",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98ba-f029-7381-b5b0-48001a8f3075"
+      }
+    }
+  ]
+]

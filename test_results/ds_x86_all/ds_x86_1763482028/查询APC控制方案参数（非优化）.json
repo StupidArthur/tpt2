@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b9-4a73-7b11-a4d3-4a9b19cd8c3e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b9-4adb-7e53-b88e-52d9ac690340",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解APC（先进过程控制）控制方案中的一些基本参数设置，而不是优化后的参数。这可能包括控制结构、输入输出变量、设定值范围或其他非优化相关的配置信息。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b9-50e2-7e91-9379-330f63fe2bb4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望获得APC控制方案的参数，这些参数通常涉及具体的控制策略、变量关系、模型配置等，以帮助用户更好地理解或优化当前的控制方案。因此，我将根据用户提供的装置和控制方案名称，检索并生成相应的APC控制方案文档，其中会详细列出所有相关的控制方案参数。\n\n首先，我会确认用户提供的装置和控制方案名称是否准确，如果确认无误，我将生成控制方案文档；若发现信息有误，我将提示用户未找到匹配的控制方案，并提供选项让用户选择是否继续生成文档，如果用户选择不继续，流程将结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b9-6686-7963-83e1-9ee8ba14c563",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案检索生成\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b9-72b6-7c52-b168-95db63ce6070",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b9-7376-72d1-82a1-b10348435f92",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b9-7565-7742-9777-66321573793d",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b9-7565-7742-9777-664521542a6a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b9-7564-77b3-9cd2-37af227328eb",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "查询APC控制方案参数（非优化）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b9-7564-77b3-9cd2-37af227328eb"
+      }
+    }
+  ]
+]

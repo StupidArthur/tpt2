@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99a0-f070-76c0-8758-3da9592d86e2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99a0-f0db-71d3-a24a-ce96b2d501e9",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望更新氯碱装置在检修后所有控制回路的信息，以确保控制系统准确反映当前设备状态，这可能包括回路参数、设定值、报警限值等的重新配置或校准。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99a0-f7aa-7b71-8ec8-e8ed8fe99818",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望完成氯碱装置检修后，更新该装置所有回路的信息。这可能包括调整或确认各回路的参数设置、检查回路状态、以及确保所有控制和安全系统都处于正常工作状态，以保障装置的安全稳定运行。\n\n首先，我会从回路信息查询中查找氯碱装置，并获取该装置所有回路的位号及描述信息。\n\n接下来，我会利用用户交互界面，弹出提示窗口，请求用户确认主副回路，以便我们能够准确地获取每个回路的配置情况。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99a1-095f-7e71-804e-559e7bbb800b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99a1-1aea-7540-92d0-359cdf928680",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99a1-1c05-7140-b5d1-5c23b3e66d06",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99a1-1dfb-7f63-a22f-dcdbbdcccdfa",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a99a1-1dfb-7f63-a22f-dce946b20677",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99a1-1dfa-7091-908d-0c78235f2c94",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"builtin\",\"ability\":\"用户交互界面\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "氯碱装置刚完成检修，请帮我更新氯碱装置的所有回路信息",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a99a1-1dfa-7091-908d-0c78235f2c94"
+      }
+    }
+  ]
+]

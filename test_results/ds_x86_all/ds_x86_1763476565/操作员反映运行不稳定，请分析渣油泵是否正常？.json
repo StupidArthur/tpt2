@@ -1,0 +1,254 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9771-b595-7291-be49-d505ea8586bc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9771-b60b-7371-b091-9e94ca50aec1",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您关注的是渣油泵在运行过程中可能出现的不稳定问题，可能是由于泵的机械状态、入口压力、流量波动或控制系统异常等因素引起的。您希望了解渣油泵是否处于正常工作状态，以及是否需要进一步检查或调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9771-bd8f-7951-8aa8-8c02ef9f7053",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户询问关于渣油泵的运行状态，希望了解该设备是否存在异常。这是一个异常检测问题，我将按照以下步骤进行：\n\n1. 首先，进入数据上传流程，我会指导用户上传与渣油泵相关的历史数据，以便进行评估。\n\n2. 然后，我将执行检测算法，对该设备的运行状态进行分析，确定是否有异常情况。如果检测到异常，我将提供具体的原因分析，并给出相应的维护建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9771-caf9-7203-8fa8-cdfc01691cf9",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传离线数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"执行检测算法\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9771-dd2c-7870-8207-9abdb3209280",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9771-dd2c-7870-8207-9ac111e6eab0",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9771-dd2c-7870-8207-9ad042b6adf4",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9771-dd2b-7b10-9d6e-612b51a439d4",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传离线数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"执行检测算法\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "操作员反映运行不稳定，请分析渣油泵是否正常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"detection_type\": \"pump\",\n  \"task_objective_description\": \"操作员反映运行不稳定，请分析渣油泵是否正常？\",\n  \"target_variables\": [\n    {\n      \"description\": \"渣油泵\"\n    }\n  ]\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传离线数据"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请上传数据集文件",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "\n已获取问题的关键变量，您必须上传以下类型的数据文件：\n| 序号 | 名称  | 序号 | 名称  |\n|------|-------|------|-------|\n| 1    | 测量值PV   | 3    | 设定值SV   |\n| 2    | 阀位值MV   | 4    | 自控模式MODE   |\n\n",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "\n已获取问题的关键变量，您必须上传以下类型的数据文件：\n| 序号 | 名称  | 序号 | 名称  |\n|------|-------|------|-------|\n| 1    | 测量值PV   | 3    | 设定值SV   |\n| 2    | 阀位值MV   | 4    | 自控模式MODE   |\n\n"
+      }
+    }
+  ]
+]

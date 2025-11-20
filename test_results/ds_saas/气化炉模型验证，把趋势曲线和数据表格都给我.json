@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9785-991a-75d0-8f4e-98c40c35dd0f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9785-991d-7840-a028-e1a087e5ec29",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要气化炉模型的验证结果，包括趋势曲线和数据表格，以便直观了解模型与实际运行数据的一致性，评估模型的准确性与可靠性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9785-9bac-7c50-a1a1-0bdf6c84ad76",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您希望进行气化炉模型的验证，并获取相关的趋势曲线和数据表格，以便分析模型的准确性和稳定性。这可能涉及到对比模型预测值与实际运行数据，检查是否存在显著差异。\n\n首先，我会尝试加载已有的气化炉模型，如果成功，将使用该模型进行仿真计算。如果未找到已有的模型，我将创建一个新的模型并执行。\n\n在仿真计算过程中，我会模拟设备参数值，这些参数值将依据您提供的数据文件中的相应值进行设置。接着，我将模拟生成工艺模型的瞬时数据，即生成模拟过程中的趋势曲线和数据表格。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9785-a199-7891-add8-0a01e19a58c0",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9785-acac-70b1-9011-a77aba2a4b77",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9785-acaf-7f13-9804-182f68440ec4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--生成工艺模型并执行-- 不存在于 --模拟设备参数值-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9785-ad22-7e61-a91a-6bbd6aa182be",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9786-0974-76b2-b550-b80ba13c2649",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9786-0976-7ea1-b717-e47d23996fcd",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"\\u751f\\u6210\\u5de5\\u827a\\u6a21\\u578b\\u5e76\\u6267\\u884c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"\\u52a0\\u8f7d\\u5de5\\u51b5\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"\\u67e5\\u770b\\u6d41\\u7a0b\\u56fe\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9786-0978-7e63-b07e-387da681dd2a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9786-097b-7440-bed5-6832b22b6460",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9786-097d-77a3-a261-186430749a64",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9786-0970-7702-8133-0795e3bce0f6",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "气化炉模型验证，把趋势曲线和数据表格都给我",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9786-0970-7702-8133-0795e3bce0f6"
+      }
+    }
+  ]
+]

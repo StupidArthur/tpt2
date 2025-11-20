@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a999a-18c9-7d01-8e6f-c36e0b46f9a3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a999a-194d-7023-8599-f130b28a430b",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想在氧气波动的工况下，验证气化炉模型的鲁棒性，即模型在输入扰动时仍能保持稳定和准确预测的能力。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a999a-1ed0-78a2-bd4d-6319a0d45ff1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，用户希望在氧气波动的条件下，对气化炉模型进行鲁棒性验证，以评估模型在处理动态变化和不确定性时的稳定性和性能表现。这通常涉及调整氧气流量或压力，观察气化炉模型输出的响应情况，确保模型能够在非稳态工况下仍能提供准确的预测和控制。\n\n首先，我会尝试查看流程图，以了解气化炉装置的流程。由于用户未指定具体的数据来源，我将通过点击按钮来获取数据，进而启动仿真计算。\n\n随后，我会模拟生成设备参数值，包括在氧气波动条件下的相关参数。在生成参数值时，我会考虑设定值的变化，以确保模拟数据的波动性。\n\n接下来，将采用控制策略，模拟生成的设备数据。通过对比模拟结果与实际数据的趋势，对气化炉模型的性能进行评估。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a999a-3d7d-7402-a56b-a309bd6551a2",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a999a-5ac8-7403-a757-ca5978ace8ed",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a999a-5ac9-7512-9534-6200c355b723",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--生成工艺模型并执行-- 不存在于 --查看流程图-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a999a-5d8f-7a42-a5b6-36573286d489",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a999b-2353-72f3-a713-a25723956880",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a999b-2353-72f3-a713-a26c6ea73b42",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u8bbe\\u8ba1\\u4fe1\\u606f\\u786e\\u8ba4\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u68c0\\u7d22\\u751f\\u6210\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u65b9\\u6848\\u4f18\\u5316\", \"dep\": [\"id2\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"APC\", \"ability\": \"\\u8fa8\\u8bc6\\u6a21\\u578b\\u6570\\u636e\", \"dep\": [\"id4\"]}, {\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a999b-2353-72f3-a713-a27f83cd3be1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a999b-2354-70c3-82ed-61685c2cd7bd",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${Isover} == false\"}, {\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${Isover} == true\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${Isover} == false\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a999b-2354-70c3-82ed-6174da7ca54b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a999b-2351-7eb0-a11f-c186110e3a3b",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制方案优化\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id4\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"Isover\\\")]) Eq false\"}]",
+      "name": "氧气波动条件下，气化炉模型鲁棒性验证一下",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a999b-2351-7eb0-a11f-c186110e3a3b"
+      }
+    }
+  ]
+]

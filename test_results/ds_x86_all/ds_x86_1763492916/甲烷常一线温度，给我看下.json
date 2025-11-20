@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98aa-02af-7e72-a852-e89d75ddbf69",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98aa-0326-7d01-91ef-eb95e9101c13",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想查看甲烷常一线的温度数据，可能是为了监控工艺状态或分析温度变化趋势。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98aa-067d-7b20-995f-147f65834164",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望查看甲烷常一线温度，这可能是因为该用户需要了解当前的温度状况，以便进行工艺调整或设备维护等操作，确保生产过程的正常运行和安全。\n\n我需要获取甲烷常一线温度的数据，这属于过程变量的监控，旨在观察其实时数据及历史趋势。\n\n第一步，我会在回路信息查询系统中定位到甲烷常一线温度的控制回路信息，进而获取该回路的温度设定值位号、温度测量值位号以及温度控制输出值位号。\n\n随后，将提取的温度测量值位号数据送入图形界面进行可视化呈现，同时在位号属性中提取对应的工艺上下限值，同步显示温度测量值的趋势走势。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98aa-22fa-7e51-b750-4feef4e371c5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98aa-2eb9-7de2-b0a1-737f167b4881",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98aa-2fc4-7440-903a-796ce4035254",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98aa-31d1-7be0-a394-fa0314bd45dc",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98aa-31d1-7be0-a394-fa295b01e0ff",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98aa-31d0-7102-a0ba-adaf45ed2e27",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "甲烷常一线温度，给我看下",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98aa-31d0-7102-a0ba-adaf45ed2e27"
+      }
+    }
+  ]
+]

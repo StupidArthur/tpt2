@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a990f-7559-7b33-9c8f-2420b648aaa2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a990f-75be-7df1-b50c-e0d42694d89e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对常顶油终馏点的测量设备进行校准，以确保其测量结果准确可靠，但此操作不涉及调整设备本身。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a990f-7b08-7f81-9d29-5410c6bcedc2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，用户希望校准常顶油终馏点的测量值，这可能涉及到调整仪表或测量设备的参数，以确保测量值更准确地反映实际的终馏点温度。这一步骤不涉及改变工艺条件或操作参数，仅是为了提升测量的精确度。\n\n首先，我需要通过回路信息查询来定位描述为常顶油终馏点的测量回路，进而获取该回路的设定值SV、实际值PV以及控制偏差情况。\n\n随后，依据测量回路校准标准，执行对应回路的校准操作。若发现测量值存在系统性偏差，且该偏差超出合理范围，我将提供具体校准建议以修正测量值。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a990f-9589-7d01-be86-15f5b09aa053",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a990f-a1b1-7c63-a476-5da22ee7d0aa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a990f-a2ba-7532-be20-52c3908a1dad",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a990f-a6e1-7350-bbff-c8d9f849a689",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a990f-a6e1-7350-bbff-c8eb2e2a9bf8",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a990f-a6e0-7532-9cc3-63cc06a8300b",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "校准常顶油终馏点测量（非调整操作）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a990f-a6e0-7532-9cc3-63cc06a8300b"
+      }
+    }
+  ]
+]

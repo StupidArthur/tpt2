@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a65-bcc3-7f23-8473-f23be99df71c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a65-bd2a-77f2-9162-68ff823cb408",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您已完成软硬件环境的调试并确认运行稳定，现在希望创建一个先进过程控制（APC）模型，以进一步提升系统的控制精度和稳定性。这通常涉及选择合适的建模方法、采集历史数据、配置模型参数等步骤。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a65-c2c0-7852-842f-2695ab749ccc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户已经完成了软硬件环境的调试，运行状态稳定，接下来希望基于此创建一个APC模型。鉴于用户未指定具体模型类型，我将采用一般控制策略，为用户生成一份标准的APC模型文件。\n\n首先，我将根据通用的工艺特点，分析并确认模型中的变量，包括MV（操作变量）、DV（干扰变量）和CV（被控变量），同时构建模型矩阵。\n\n随后，我将利用现有的历史数据进行模型辨识，通过开放式的辨识方法，生成模型及其特征。辨识完成后，我将展示模型的详细信息，包括模型矩阵和模型特征。\n\n最后，我将提供模型文件的下载链接，便于用户进一步使用。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a66-0531-7cf0-8752-4b9879b262ad",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a66-2653-7a71-846c-55b5f499fe4c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a66-2720-7fa3-8b18-695e8997f3c6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a66-2887-7622-b6e5-ab65325c8a77",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9a66-2888-7b70-8efb-ce547323d86a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a66-2885-7991-89db-b25308c02fa9",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "软硬件环境调试完成，运行稳定，帮我创建一个APC模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9a66-2885-7991-89db-b25308c02fa9"
+      }
+    }
+  ]
+]

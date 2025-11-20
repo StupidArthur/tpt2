@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9757-5b2c-7710-ac19-d75203233f66",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9757-5b2f-7af2-8320-6a68151aa0e5",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对二级硫冷凝器中的H₂S浓度测量仪表进行校准，以确保其测量数据准确可靠，不涉及当前异常情况的处理。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9757-5d45-7fc3-9b38-7c61e9f77dfa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望校准二级硫冷凝器H2S浓度测量仪表，确保其读数准确无误。这可能是因为当前的测量值存在偏差，影响了工艺控制的精确度，需要通过标准校准流程来调整仪表的灵敏度和准确性。\n\n首先，我需要通过交互界面提示您需要选择一条工艺管线上的测量仪表进行校准。随后，我会要求您提供该仪表的历史测量数据记录。\n\n接下来，我将对这些历史数据进行分析，计算出二级硫冷凝器H2S浓度测量仪表的校准系数。此步骤包括数据的预处理，以消除异常值和坏值的干扰，然后通过建立的数据模型来确定仪表的校准系数。\n\n最后，我将验证新校准系数的准确性，通过对比使用新系数后的测量值与实际值，确保H2S浓度的测量更加准确。如果验证成功，我将建议您更新仪表的配置信息，以应用新的校准系数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9757-67ef-7a52-9a87-ccfee619ed48",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": null}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9757-69a2-7813-a750-218309e5ef92",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9757-69a5-72b3-a0eb-93b7d242fa54",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "首个节点不允许为end"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9757-6a21-7540-be46-edd6d57699cc",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9757-cbed-7b01-8d68-56f9f6667692",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9757-cbf0-7563-b2d7-c502fb8c9944",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u8b66\\u95ee\\u9898\\u5b9a\\u4e49\\u4e0e\\u6807\\u51c6\\u5316\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"alarm_pred\", \"ability\": \"\\u79bb\\u7ebf\\u9884\\u8b66\\u6570\\u636e\\u9009\\u62e9\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u6d4b\\u9884\\u8b66\\u65b9\\u6848\\u5236\\u5b9a\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u8b66\\u6a21\\u578b\\u5fae\\u8c03\\u8bad\\u7ec3\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"alarm_pred\", \"ability\": \"\\u9884\\u6d4b\\u9884\\u8b66\\u7b97\\u6cd5\\u6267\\u884c\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9757-cbf2-7933-816c-995ef3406318",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9757-cbf4-7ce1-a5f7-15fa91d0ac08",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9757-cbf7-7140-a470-05b51950f944",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9757-cbe9-7e82-a791-40c243c3e031",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"alarm_pred\",\"ability\":\"预警问题定义与标准化\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"alarm_pred\",\"ability\":\"离线预警数据选择\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"alarm_pred\",\"ability\":\"预测预警方案制定\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"alarm_pred\",\"ability\":\"预警模型微调训练\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"alarm_pred\",\"ability\":\"预测预警算法执行\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "校准二级硫冷凝器H2S浓度测量仪表（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9757-cbe9-7e82-a791-40c243c3e031"
+      }
+    }
+  ]
+]

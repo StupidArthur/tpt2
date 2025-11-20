@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9756-cc80-7270-9297-ef8e017af239",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9756-cc82-7c40-9c57-778a3d7a5fe1",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望调整二级硫冷凝器中H₂S浓度报警的设定值，可能是为了更符合实际工艺需求或操作标准，不涉及异常检测逻辑的更改。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9756-ce8f-7832-a3c0-a10c5939d86b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望调整二级硫冷凝器H2S浓度的报警阈值，以优化工艺参数控制。这是一个涉及硫冷凝器H2S浓度的工艺参数优化需求，用户期望找到一个更优的控制策略。在此过程中，不仅需要考虑工艺的可行性，确保关键工艺指标的约束，还需要确保目标的实现能够提升实际效果。鉴于用户问题本身未明确优化方向，我将通过补充信息流程来确定具体需求。\n\n首先，我将理解用户的问题背景，通过页面提问的方式补充问题中未明确的信息。同时，询问用户是否已经拥有训练好的模型，如果没有，我们将进入数据上传流程；如果已有模型，则直接进入配置方案流程。\n\n在数据上传流程中，我会建议用户上传相关文件，并指导文件内容的选择，以确保数据的有效性和相关性。上传后，系统将自动解析文件并进行数据评估，以检查数据的完整性和格式是否正确，以及是否满足基本要求。如果数据校验未通过，系统将在原始文件中标记错误项并提供修正建议，用户需要根据提示修改数据并重新上传。\n\n如果数据校验通过，我们将进入确认建模信息阶段。基于历史数据和网络资源，我将生成优化方案，包括优化目标、优化变量、约束条件以及代理模型的构建等，并让用户再次确认，以确保配置无误。随后，这些数据将进入TPT推理计算阶段，通过模型的微调训练，生成优化建议。在得出优化结论后，我将向用户报告，提供优化后的二级硫冷凝器H2S浓度报警阈值。\n\n如果在补充信息流程中，用户选择已有模型，则直接进入配置方案流程。在此流程中，我将提取出所有需要配置的项目，让用户在线完成配置，确保数据的准确性和来源的可靠性。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9756-e3cc-7672-99a2-eca484bcd4c0",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"AI控制补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"确认解析结果\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"Redesign\", \"ability\": \"选择改造幅度\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9756-f2b7-7453-a900-be9f91b5ebfc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9756-f2b9-7031-8631-a28262e76ebb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--上传数据与解析-- 不存在于 --AI控制补充信息-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9756-f2bb-7a91-a7b0-9cef190bd999",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9757-4e90-7262-af2c-3f01067cd456",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9757-4e93-7c62-a447-51288ea85f5a",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u6570\\u636e\\u6709\\u6548\\u6027\\u68c0\\u6d4b\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"\\u57fa\\u4e8e\\u4e13\\u5bb6\\u7ecf\\u9a8c\\u7684\\u53c2\\u6570\\u6574\\u5b9a\", \"dep\": [\"id2\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"\\u63a7\\u5236\\u56de\\u8def\\u6027\\u80fd\\u8bc4\\u4f30\\u53ca\\u8bca\\u65ad\", \"dep\": [\"id2\"]}, {\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"\\u591a\\u7b56\\u7565\\u81ea\\u9002\\u5e94\\u6574\\u5b9a\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"\\u57fa\\u4e8e\\u56de\\u8def\\u6ce2\\u5f62\\u5224\\u65ad\\u7684\\u53c2\\u6570\\u8fed\\u4ee3\\u6574\\u5b9a\", \"dep\": [\"id6\"]}, {\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9757-4e95-7f83-8cab-837e18d871bd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9757-4e97-7c01-8fdb-f7fb4e2d79c6",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9757-4e99-7690-838d-3ea2f580feaa",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9757-4e8b-73e2-bf26-d14d9ee6d92c",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "修改二级硫冷凝器H2S浓度报警阈值（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9757-4e8b-73e2-bf26-d14d9ee6d92c"
+      }
+    }
+  ]
+]

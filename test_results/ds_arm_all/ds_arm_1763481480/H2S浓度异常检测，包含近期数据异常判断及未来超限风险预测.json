@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97fc-7c88-7740-8b77-330978b51635",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97fc-7cfa-7412-b8c9-3c59259f1b01",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望检测H2S浓度是否存在异常，并基于近期数据判断当前是否出现异常，同时预测未来是否有超出限值的风险。这有助于提前预警和保障生产安全。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97fc-80fa-7743-8d36-dc347be77ce0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您提到的H2S浓度异常检测需求，涵盖历史数据查询、近期数据异常分析及未来超限风险预测，属于多阶段检测问题。针对这一需求，我将按以下步骤操作：\n\n1. 首先，我会理解您的具体需求，通过补充信息流程来获取一些必要的细节，比如是否已有训练好的模型等。如果还没有，我们将进入数据上传环节；如果有现成的模型，则直接进入配置方案阶段。\n\n2. 在数据上传阶段，我会建议您上传相关的文件，并帮助您解析和评估这些数据，确保数据的准确性和可用性。\n\n3. 然后，我们会进入建模信息确认阶段。基于历史数据和网络资源，我会生成异常检测方案，包括推荐模型的输入位号、输出目标和模型配置等。同时，我将引导您进行二次确认，确保所有配置无误。\n\n4. 接下来，我们将进行TPT推理计算。根据确认的方案，我会先进行数据预处理，然后将处理后的数据输入自动化建模系统中进行模型微调训练。训练结果将以可视化形式展示，并使用训练好的模型进行推理，分析历史异常情况和未来可能出现的超限风险。一旦发现异常，我将提供详细的异常原因分析和优化建议。\n\n5. 如果在第一步您选择了已有模型，则直接进入配置方案阶段，我将提取模型所需的所有配置信息，让您在线配置，确保数据的准确来源。\n\n6. 完成配置方案后，进入实时计算阶段，根据您选择的模型进行实时计算，最终输出异常检测和超限风险预测的结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97fc-fc2b-7c12-89fa-fb53b21b219f",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"alarm_pred预测预警\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97fd-57c5-7503-85f7-f1cfdbda5077",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97fd-57c6-7272-ba16-5cb752feed3f",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97fd-57c7-7b71-86d2-1fe3a2f6ef07",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97fd-57c2-7541-8f1a-d4f472f8d31b",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

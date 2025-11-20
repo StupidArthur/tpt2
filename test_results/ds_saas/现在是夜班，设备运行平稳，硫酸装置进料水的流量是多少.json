@@ -1,0 +1,206 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b0-c04c-7441-89e0-9118925d4c9d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b0-c04f-78a2-8871-c7f15de1d168",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想知道当前夜班期间硫酸装置进料水的流量数值，以便监控或记录设备运行状态。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b0-c18b-7e62-b342-e5993332de65",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户询问的是在夜班期间，硫酸装置进料水的具体流量是多少。这是一个关于数据查询的问题，我将按照以下步骤来进行：\n\n1. 提取问题的核心信息\n\n从您的问题中拆解出通用的关键要素，以便为后续的查询提供明确的依据，具体包括：\n\n目标查询对象：硫酸装置进料水的流量\n\n时间范围：现在是夜班期间\n\n2. 校验查询对象的存在性：如果查询对象存在，将直接执行查询并反馈结果；如果不存在，将判断是否可以补充数据。如果不能补充数据，则会提示“无数据可查询”；如果可以补充数据，则进入下一步 “上传数据与解析”。\n\n3. 上传数据与解析：（仅在支持补充数据的情况下执行），提示您上传包含目标数据的文件，系统解析文件后将反馈解析结果，您需要确认解析结果的准确性。\n\n4. 确认解析结果：如果解析无误，系统将基于文件中的有效数据进行查询；如果解析结果异常，系统将提示您修正文件并重新上传，直至解析通过。\n\n5. 执行查询与反馈：如果查询成功，系统将根据“需返回的数据类型”整理查询结果。如果查询结果超出合理范围（例如数值异常高或低、波动过大等），系统会同时提示“注意：部分数据可能存在异常，建议核对原始文件”。如果查询失败，系统将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和范围后重新尝试”，流程结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b0-d474-7e23-9e1f-a9df7eaec7b4",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b0-e268-7762-a1f0-33d6ca92cc88",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b0-e26b-75e2-a19b-b1e453ae119a",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${valid} == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${valid} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b0-e26d-78a3-9d76-4cd978194180",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b0-e264-7c81-9551-6b111fab9be2",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "现在是夜班，设备运行平稳，硫酸装置进料水的流量是多少",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"indexNames\": [\n    \"1#硫酸装置_进料_水_流量\",\n    \"1#硫酸装置_水_进料_流量\",\n    \"1#硫酸装置进料水流量\",\n    \"1#硫酸装置水进料流量\"\n  ],\n  \"tagNames\": [],\n  \"alertNames\": [],\n  \"userIndexNames\": [\n    \"硫酸装置进料水的流量\"\n  ],\n  \"userinput\": \"现在是夜班，设备运行平稳，硫酸装置进料水的流量是多少\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "查询请求分析"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

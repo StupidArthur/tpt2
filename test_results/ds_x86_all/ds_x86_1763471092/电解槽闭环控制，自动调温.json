@@ -1,0 +1,224 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a972d-4d2b-77b3-a1d0-f81e17454221",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a972d-4dad-7790-87c2-8be5108f9186",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望实现电解槽的闭环控制，并通过自动调节温度来维持其稳定运行。这可能涉及温度传感器反馈和控制器的联动，以确保电解槽在设定温度下高效工作。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a972d-5368-7872-aa39-f18010ae7843",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，用户希望实现电解槽的闭环控制，以达到自动调温的效果。这可能涉及到使用传感器实时监测电解槽的温度，并通过控制器根据设定的温度目标自动调整加热或冷却的参数，确保温度稳定在目标范围内。\n\n首先，我需要确定用户选择的模式是在线模式还是离线模式。\n\n如果用户选择离线模式，我将指导用户上传必要的数据文件，如电解槽的运行历史数据。之后，我将对上传的数据进行解析和评估，确保数据的正确性和可用性。如果数据解析无误，我将开始与用户确认电解槽闭环控制的被控变量信息。\n\n接下来，我将与用户确认电解槽闭环控制的操作变量信息。\n\n然后，我将与用户确认其他可能影响控制效果的干扰变量信息。\n\n随后，我将根据用户提供的数据，进行控制模型的微调或加载预设模型。\n\n最后，我将利用微调或加载的模型进行控制算法的仿真测试，以评估算法的效果，确保在实际应用中能够实现稳定和准确的温度控制。\n\n如果用户选择在线模式，我将直接进入控制模型的加载阶段，根据之前确定的被控变量、操作变量和干扰变量信息，加载用户提供的模型。\n\n无论离线模式还是离线模式，加载模型后，我将执行控制算法，将所有配置方案信息整合后送入控制算法中运行，最终输出计算结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a972d-8c07-7bb2-a5fd-d469816f3118",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"选择锅炉数据获取方式\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"系统运行历史数据选择\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"boiler\", \"ability\": \"控制效果评估\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"控制模型加载\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a972d-d9f2-7961-a7e8-3622b28c4594",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a972d-d9f2-7961-a7e8-3637b24663cb",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id11\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id3\", \"to\": \"id5\", \"expression\": \"${is_upload_file} == true\"}, {\"from\": \"id11\", \"to\": \"id12\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id11\", \"to\": \"id13\", \"expression\": \"${is_upload_file} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a972d-d9f3-7081-a04b-e93af53fa3dc",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a972d-d9f0-7a81-8b13-41fb63bef808",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"选择锅炉数据获取方式\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"boiler\",\"ability\":\"系统运行历史数据选择\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id4\",\"id3\"]},{\"id\":\"id6\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"boiler\",\"ability\":\"控制模型微调或加载\",\"dep\":[\"id6\"]},{\"id\":\"id8\",\"tool\":\"boiler\",\"ability\":\"控制效果评估\",\"dep\":[\"id7\"]},{\"id\":\"id10\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":[\"id2\"]},{\"id\":\"id11\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":[\"id10\",\"id2\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id11\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"},{\"from\":\"id3\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"},{\"from\":\"id11\",\"to\":\"id13\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"}]",
+      "name": "电解槽闭环控制，自动调温",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_prompt\": \"电解槽闭环控制，自动调温\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "选择锅炉数据获取方式"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T21:36:07.035",
+          "details": "user_prompt = 电解槽闭环控制，自动调温"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

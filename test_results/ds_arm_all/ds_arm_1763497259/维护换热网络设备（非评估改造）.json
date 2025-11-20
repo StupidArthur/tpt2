@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98cc-e1ab-72e2-9c65-db4ac9a07045",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98cc-e22e-74a2-a43c-10d8d089b004",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对换热网络中的设备进行日常维护，以确保其正常运行和换热效率。这可能包括检查泄漏、清理结垢、维护密封件以及确保流体分配合理。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98cc-e716-77e2-b24d-844ceca909f0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望了解换热网络中设备的维护信息，这可能涵盖设备的维护手册、维护记录、维护计划或维护过程中的注意事项等，以确保换热网络的稳定运行和设备的长寿命。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，如换热器的基础数据、运行数据和维护记录等。接着，我会对这些数据进行校验，确保其完整性和格式正确，同时检查是否满足基本要求。如果数据校验未通过，我将在上传文件中标记错误的单元格，并提供修正建议，用户需要根据这些提示修改数据后重新上传。\n\n一旦数据校验通过，我将从用户提供的数据中提取换热器的运行数据，包括设备的运行状况、运行时间和维护历史等。随后，我会利用这些数据来维护换热器，具体步骤包括：分析运行数据以识别设备的状态，判断设备是否处于超负荷或异常运行状态；基于设备的维护周期和历史维护记录，预测未来的维护需求；最后，我将生成一份维护报告，报告中会列出设备的维护历史、当前的运行状态以及未来的维护计划。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98cd-3d72-7be1-a87b-c007bbf89e1b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98cd-6dad-77f3-86de-ce1dce09e422",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98cd-6e7e-7f81-945a-ef8f75e6c6b1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98cd-6fb5-7ab0-8454-80c4dbb334e2",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98cd-6fb6-76c3-b5dc-50c3cebe8fab",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98cd-6fb3-7101-bf18-4966c86a8f1d",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "维护换热网络设备（非评估改造）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98cd-6fb3-7101-bf18-4966c86a8f1d"
+      }
+    }
+  ]
+]

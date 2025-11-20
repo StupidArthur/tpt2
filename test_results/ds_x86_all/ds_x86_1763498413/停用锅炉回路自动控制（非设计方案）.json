@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98c8-1416-7073-be30-d30dbfbc62e6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98c8-14b1-7333-9e35-2ed1e286aa7e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望手动停用锅炉控制回路的自动控制功能，而不是通过设计变更的方式。这通常是为了应对特定运行状况或调试需求，需谨慎操作以避免影响系统稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98c8-1ad3-7201-a84f-95dbd5550336",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望停用锅炉回路的自动控制，这通常是为了进行维护、检查或调整控制参数，确保锅炉的安全运行或满足特定操作需求。\n\n我将调用控制算法执行，停用锅炉回路的自动控制。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98c8-1f80-75e3-90a0-e0cd826a7cdb",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98c8-2aeb-7953-8da8-a596821055f3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98c8-2aeb-7953-8da8-a5a8f71c7a6b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98c8-2aeb-7953-8da8-a5b5edf1be92",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98c8-2aea-75e2-9444-76ac7d09aefd",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "停用锅炉回路自动控制（非设计方案）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98c8-2aea-75e2-9444-76ac7d09aefd"
+      }
+    }
+  ]
+]

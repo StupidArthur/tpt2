@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96d1-5e29-7d11-bc1a-6be5fcce0b4f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96d1-5ea1-73f0-aa90-fe1fcfd90f0e",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想评估盐水流量调节阀的运行状态是否正常，可能需要通过分析其历史数据或当前表现，判断是否存在故障或性能下降的情况，以便及时维护或调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96d1-6432-7111-a972-aeea164b8939",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对盐水流量调节阀的运行状态进行离线评估，这通常涉及收集该阀门的历史运行数据，包括流量、开度、压力等参数，以及可能的维护记录和操作日志。基于这些数据，使用特定的算法对阀门的性能和健康状况进行分析，以判断是否存在异常或需要调整的地方。\n\n首先，我将通过交互界面引导用户上传与阀门相关的历史数据，用于评估。之后，我会对这些数据进行预处理，以确保数据的准确性和可用性，接着进入执行检测算法的步骤。\n\n在执行检测算法时，我将调用专门的算法来评估阀门的运行状态，检查是否有异常。如果发现异常，我将提供详细的异常原因分析，并给出相应的维护建议，帮助用户更好地了解阀门的状况并采取适当的措施。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96d1-b2c7-76b3-acc5-5f277a90a355",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传离线数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"执行检测算法\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96d1-d843-7b70-b0e3-d32a0cf725a3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96d1-d844-78d3-8567-ea114452d3df",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96d1-d845-79c2-82f0-de75374b6679",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96d1-d841-78d3-b278-ce14b1dd2d38",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传离线数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"执行检测算法\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "盐水流量调节阀运行状态离线评估",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96d1-d841-78d3-b278-ce14b1dd2d38"
+      }
+    }
+  ]
+]

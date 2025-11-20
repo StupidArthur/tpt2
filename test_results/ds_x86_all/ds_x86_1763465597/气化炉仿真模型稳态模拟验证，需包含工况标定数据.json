@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96fc-6191-7650-8f38-a4a61384d153",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96fc-6212-7f02-8843-13bbdb4ebec6",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要验证气化炉仿真模型的稳态模拟结果，并希望通过实际工况标定数据来确认模型的准确性。这有助于确保仿真模型能够真实反映气化炉在不同运行条件下的行为。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96fc-68e9-70e3-ace9-c30698840aea",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建模气化炉时，需构建一个包含不同标定数据的工况系统，以确保模型的稳定性和可靠性。这一过程包括以下步骤：\n\n首先，我将创建一个通用的气化炉仿真模型。\n\n接下来，会启动模型并运行至完成，以观察模型的初步表现。\n\n随后，根据您提供的数据文件，系统将对各个工况进行独立加载，分析每个工况下设备参数的变化情况，并对这些参数进行详细校对。\n\n最后，再次启动模型，进行工况切换的动态模拟，以验证模型在不同工况下的适应性和稳定性。这一系列操作旨在确保气化炉仿真模型不仅结构合理，而且在实际运行中能够准确反映设备的性能变化。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96fc-8125-7261-93af-24872bcb8468",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"加载工况\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96fc-a3e2-7cd1-8f10-4cdc4cef0323",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96fc-a3e3-7c43-85fd-0936633a54c9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--生成工艺模型并执行-- 不存在于 --模拟设备参数值-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96fc-a5af-7081-b34b-75d4a26f9311",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96fd-7d02-7172-b9f8-256a89a4550e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96fd-7d02-7172-b9f8-257453314bc9",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"\\u751f\\u6210\\u5de5\\u827a\\u6a21\\u578b\\u5e76\\u6267\\u884c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"\\u52a0\\u8f7d\\u5de5\\u51b5\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"\\u6a21\\u62df\\u8bbe\\u5907\\u53c2\\u6570\\u503c\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"\\u67e5\\u770b\\u6d41\\u7a0b\\u56fe\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96fd-7d03-7ea2-b8df-c0cc10a3a43a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96fd-7d03-7ea2-b8df-c0db70cf5e37",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96fd-7d04-71e1-8d65-7167e98a903a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96fd-7d01-7920-bb5c-f627f392176e",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "气化炉仿真模型稳态模拟验证，需包含工况标定数据",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96fd-7d01-7920-bb5c-f627f392176e"
+      }
+    }
+  ]
+]

@@ -1,0 +1,311 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a974f-85de-7a73-89c1-64b72e861e38",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a974f-8686-7a31-8929-9b20d781a4c7",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对加压精馏过程的模型在稳态条件下进行模拟验证，并生成一份仿真报告，以确认模型是否准确反映实际工况。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a974f-8cfd-74e2-93dc-4a1c3270cde6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建模加压精馏设备，需要考虑化工行业复杂的动力学传递，多相流动，热力学平衡等特性的耦合作用。\n\n我们将构建一个通用的加压精馏动态工艺仿真模型，并运行模型进行模拟生成仿真验证报告。\n\n模拟生成工艺模型仿真报告，报告中将包含设备参数值。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a974f-94f8-7be0-87f8-6648be674920",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a974f-a65f-7980-a40a-e22ebe46c9b1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a974f-a660-7280-b735-664de0981ce6",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a974f-a660-7280-b735-665645630e9f",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a974f-a65e-70d1-924b-b80b809a22a8",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "对加压精馏模型进行稳态工况模拟验证，生成仿真验证报告",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"extra_snapshot\": \"\",\n  \"running_model_tags\": [],\n  \"user_model\": [],\n  \"user_snapshot\": []\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "生成工艺模型并执行"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请稍作等待，正在创建工艺模型",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "init_begin": "2025-11-18 22:13:19"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "init_end": "2025-11-18 22:13:19"
+        }
+      }
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "debug",
+        "content": {
+          "apply_result": {
+            "result": 1,
+            "full_url": "http://otsgateway.indu:8181/applyOTSResource",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "payload": {
+              "sessionId": "019a974f-4a84-78a3-9955-b674aaf2af21"
+            }
+          }
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "",
+          "type": "tip",
+          "description": "创建工艺模型",
+          "content": "准备创建工艺模型",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请稍作等待，后续需要您进行相关信息确认",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ]
+]

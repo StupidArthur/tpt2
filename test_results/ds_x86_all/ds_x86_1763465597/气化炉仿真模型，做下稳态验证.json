@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96fc-c46d-7ee0-a6c1-f3684b67fa70",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96fc-c513-7b12-b634-8dde8d74e3fd",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对气化炉的仿真模型进行稳态验证，以确认模型在稳态工况下是否能准确反映实际气化炉的行为。这通常包括对比仿真结果与实际运行数据或设计参数，确保模型的可靠性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96fc-cc5a-7d80-a878-8be0d3ba7237",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "在进行气化炉仿真模型的稳态验证时，需确保仿真模型在不同操作条件和负荷变化下，气化炉的温度、压力、流量等关键参数保持稳定，以评估模型的稳态性能。\n\n首先，仿真模型的稳态验证要求仿真结果与实际工艺数据有良好的一致性，这不仅体现在单个参数上，还应包括多个变量之间的相互关系。\n\n我会先通过查询已有的仿真结果来获取气化炉的温度、压力、流量等关键参数，然后收集该装置在不同工况下的实际运行数据，包括温度、压力、流量等，对这些数据进行整理和分析，以评估仿真模型的稳态性能。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96fc-e215-7a50-854f-3cc52845155d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96fc-f379-7cf1-b069-099cc610bd50",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96fc-f466-7a93-9d01-d343cddd23be",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96fc-f682-7870-bf2f-8acbd7133b2a",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96fc-f682-7870-bf2f-8ad1e0f962e1",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96fc-f681-7bf1-93e2-d875842a9d2b",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "气化炉仿真模型，做下稳态验证",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96fc-f681-7bf1-93e2-d875842a9d2b"
+      }
+    }
+  ]
+]

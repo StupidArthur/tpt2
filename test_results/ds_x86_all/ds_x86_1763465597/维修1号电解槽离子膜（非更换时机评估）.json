@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96f3-4c08-78f2-8fa0-0f6bba38ef25",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96f3-4c7c-7860-b08f-a0bc6fae18d9",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对1号电解槽的离子膜进行维修处理，而非更换。这可能包括检查膜的完整性、清洁膜表面或修复轻微损坏，以恢复其正常运行性能。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96f3-51d6-7f61-b11c-6829362ebe16",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我们需要评估1号电解槽离子膜的当前状况。这涉及到获取该电解槽运行的关键数据，如电流密度、温度和压力等信息，这些数据将作为后续分析的基础。我将通过补充信息的流程来获取这些必要细节，同时询问您是否已拥有训练好的模型。若没有，我们将启动TPT推理计算，通过模型的微调训练来预测离子膜的最佳更换时间；若已有模型，则直接进行配置，根据既定的模型输入输出位号进行参数设置，确保信息的准确性后，即可进行实时计算并输出结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96f3-6712-78d3-b4e1-12821074c808",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"离子膜寿命预测\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"离子膜寿命预测\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"离子膜寿命预测\", \"ability\": \"离子膜寿命预测\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"离子膜寿命预测\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id6\", \"tool\": \"离子膜寿命预测\", \"ability\": \"实时计算\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96f3-9166-7233-84fa-ac923e6013c9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96f3-9166-7233-84fa-acab3382a5d8",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id5\", \"expression\": \"${opt_model_selected} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96f3-9167-7343-b186-0248e9e1d100",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96f3-9165-76d0-bf6a-5e9b85e2b054",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"离子膜寿命预测\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"离子膜寿命预测\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"离子膜寿命预测\",\"ability\":\"离子膜寿命预测\",\"dep\":[\"id2\"]},{\"id\":\"id5\",\"tool\":\"离子膜寿命预测\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id6\",\"tool\":\"离子膜寿命预测\",\"ability\":\"实时计算\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id1\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "维修1号电解槽离子膜（非更换时机评估）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96f3-9165-76d0-bf6a-5e9b85e2b054"
+      }
+    }
+  ]
+]

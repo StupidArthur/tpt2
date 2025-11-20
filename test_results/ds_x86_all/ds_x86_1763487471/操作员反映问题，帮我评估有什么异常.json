@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a985d-23bf-7c53-b419-3d2b74fc6e86",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a985d-2429-77f3-b6d7-013e68826cc6",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "操作员反映的问题可能涉及工艺参数异常、设备运行不稳定或控制效果不佳等情况。您希望对当前系统进行初步评估，找出潜在的异常点，以便及时处理并恢复正常生产。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a985d-29e5-7892-a0ca-553141f9440a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对当前操作或系统状态进行异常评估，可能是因为操作员发现了某些不寻常的情况，如设备运行不稳定、数据读数异常或控制系统出现故障，需要专业人员进行检查和分析，以确定具体的问题并提供解决方案。\n\n首先，我需要通过回路信息查询定位到您当前操作的回路。 \n\n随后将调取该回路最近性能评估与诊断报告，重点检查是否存在异常工况。若检测到阀门卡涩现象，则意味着存在显著的死区特征，当阀门需要改变运动方向时，其输出会暂时维持不变。但当控制器输出信号累积到临界值时，阀门位置会出现突变。这种行为不仅会导致阀门动作呈现明显滞后，还会使控制过程产生不稳定倾向。 \n\n此外，若发现存在持续振荡现象，则表明过程中存在较大程度的伪随机噪声干扰，此时需要采用回路波形分析技术以准确判定噪声来源（MV、CV或两者兼有）。 \n\n最后，针对识别出的异常工况，将通过多策略自适应整定方法进行深入分析和处理，以得出最终的优化建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a985d-5589-7d13-a2b3-0cc469abaf55",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a985d-6e36-79d2-ad1c-199bdf3575f0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a985d-6f90-7f63-ace7-e299b3b8e71e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a985d-7359-7aa2-b60e-d6a897191e00",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a985d-7359-7aa2-b60e-d6bd6bb0ad8b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a985d-7358-7750-bdc8-abe0241674ef",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "操作员反映问题，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a985d-7358-7750-bdc8-abe0241674ef"
+      }
+    }
+  ]
+]

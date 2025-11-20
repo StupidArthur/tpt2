@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98b5-8d82-7883-a0b7-5d80c301026c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98b5-8dfb-7bb1-a4c3-35080319c5e2",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望执行常减压装置的用能瓶颈识别流程，以找出能耗高的环节并进行优化，从而提高装置的能源利用效率。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98b5-91f6-7a03-b68f-f95cc0a50809",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我需要明确用户已知和需要未知的信息，通过页面提问的方式补充问题中未明确的信息。同时，询问用户是否已有训练好的模型，如果没有，则引导用户进入上传数据流程；如果有，则直接进入配置方案流程。\n\n在上传数据流程中，我会建议用户上传相关文件，并对上传的文件进行数据解析和评估。\n\n在确认建模信息阶段，我会根据历史数据库和网络搜索，生成确认用能瓶颈分析方案，包括设定优化目标、选择优化变量、确定约束条件，以及代理模型的构建和优化算法的选择。同时，我会让用户进行二次确认，确保配置信息的准确性。\n\n随后，进入TPT推理计算阶段，根据确认的方案，我将进行数据预处理，然后利用代理模型的输入输出关系，将数据送入自动化建模中进行模型微调训练。接着，将优化目标、优化变量、约束条件及代理模型等信息输入优化算法，进行优化计算，最终得出优化结论。在得出优化结论后，我会让用户选择是否保存模型。\n\n最后，在配置方案流程中，我会根据用户选择的模型，提取所有需要配置的内容，让用户在线配置，确保数据的准确来源。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98b5-faf4-7f01-9cc9-6250699dbed4",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"RTO操作优化\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"RTO操作优化\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"RTO操作优化\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"RTO操作优化\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"RTO操作优化\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"RTO操作优化\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98b6-5e75-7042-9fae-fb3b937da8c3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98b6-5f5f-72a0-8309-4d448dbf9fec",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98b6-6113-7cb3-af90-1760008d5748",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98b6-6114-7033-88c8-761f2578966a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98b6-6110-7880-9ec4-e6dac678535f",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"RTO操作优化\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"RTO操作优化\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"RTO操作优化\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"RTO操作优化\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"RTO操作优化\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"RTO操作优化\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "执行常减压装置用能瓶颈识别流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98b6-6110-7880-9ec4-e6dac678535f"
+      }
+    }
+  ]
+]

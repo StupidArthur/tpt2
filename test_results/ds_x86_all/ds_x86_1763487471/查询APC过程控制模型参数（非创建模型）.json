@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9844-98d5-7150-b09f-d75574bf0184",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9844-9949-7e63-8e0f-a8f06ca3062d",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想查看已有的APC过程控制模型的参数信息，而不是新建模型。这可能包括模型的输入输出变量、控制策略、约束条件等关键配置内容。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9844-9e9a-7f21-82b3-155f6e5c98c0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望查询APC过程控制模型的参数，而非创建新的模型，这可能涉及到获取当前模型的参数值、历史参数变更记录、未来参数调整建议等，以帮助评估和优化当前的控制策略。\n\n首先，我会进行APC控制器的信息查询，确认APC下是否存在指定的控制器。\n\n如果控制器存在，我将获取其运行参数的快照信息；若未找到，则会提示控制器不存在。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9844-ac8d-7e93-90f1-9f90c12777db",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC控制器信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"控制器运行参数快照查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9844-c460-7880-9723-eb62061969fb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9844-c54f-7822-9ecb-1c614333ffad",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9844-c75f-7090-9775-16cb313ffbd9",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9844-c75f-7090-9775-16d5e3a48fe5",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9844-c75e-7a62-8b28-ee95081c16fe",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC控制器信息查询\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"控制器运行参数快照查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "查询APC过程控制模型参数（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9844-c75e-7a62-8b28-ee95081c16fe"
+      }
+    }
+  ]
+]

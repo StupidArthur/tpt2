@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9af6-3927-7870-9420-4e33aab6b9de",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9af6-398f-7771-b3bb-a69b270baf08",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过上传的PDF文件快速了解其中存在的异常情况，需要对内容进行分析并给出明确的判断或建议，以便及时处理相关问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9af6-3cce-7e00-9371-6bcf64c0996e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户上传了一个PDF文件，希望对文件中的数据进行分析，以识别其中的异常情况。这可能涉及到数据的预处理、异常值的检测以及对异常结果的解释。为了帮助用户了解数据异常的具体位置和原因，我将执行以下步骤：\n\n首先，我会引导用户上传包含需要分析数据的PDF文件，并对上传的文件进行数据解析。\n\n接下来，我将进入数据异常检测流程。通过提问的方式，我将补充用户问题中未明确的信息，同时了解用户对异常检测的具体需求。随后，我将推荐合适的异常检测方案，并请用户再次确认，以确保配置无误。\n\n然后，我将进行TPT推理计算。这包括对上传的数据文件进行预处理，然后根据确认的方案，将数据送入自动化建模系统中进行微调训练。训练结果将以可视化形式展示，并使用训练好的模型进行推理计算，以发现数据中的异常点。如果检测到异常，我将提供异常原因分析及相应的优化建议。\n\n最后，我将展示异常检测的结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9af6-987f-71c0-9b2c-d308f099a763",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"在线工况识别\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"在线预测\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"SPC\", \"ability\": \"在线控制\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9af7-02db-7ef3-b94a-007ac999a778",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9af7-02dc-7311-98e1-1473df9f3191",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--数据质量分析-- 不存在于 --用户交互界面-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9af7-02dc-7311-98e1-148b019c88cc",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9af7-8e23-7c62-867c-fdc7394f6323",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9af7-8e24-7701-861e-fe22320e65ef",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC\\u8fd0\\u884c\\u65e5\\u5fd7\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9af7-8e25-70f1-8445-b1ec2825d26a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9af7-8e26-7ce1-86ab-41d7d1729c1e",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9af7-8e26-7ce1-86ab-41ee44382d20",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9af7-8e21-7650-b676-be2a3e243c4f",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC运行日志查询\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "分析需求迫切，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9af7-8e21-7650-b676-be2a3e243c4f"
+      }
+    }
+  ]
+]

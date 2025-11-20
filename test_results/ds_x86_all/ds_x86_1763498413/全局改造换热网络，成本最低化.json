@@ -1,0 +1,197 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98df-5a57-7881-a2e5-ec49004391ec",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98df-5ac2-7c32-b5fb-8514cc871ba8",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过全局改造换热网络来实现最低的成本，这可能包括优化换热器布局、提高热效率、减少能耗或材料费用，从而在满足工艺需求的同时降低整体运行和投资成本。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98df-6092-7800-ab27-0290f0d8c892",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您的请求明确了优化的方向，即对现有的换热网络进行全面改造，目标是实现成本的最小化。这可能涉及到重新设定现场限制条件，通过增加或移除换热器、调整流股的匹配关系等措施，对换热网络进行深层次的优化，以确保在满足生产工艺需求的同时，达到成本最低的目的。\n\n首先，我将通过用户界面引导您上传必要的数据资料，如物料流动数据和换热器参数等。数据上传后，系统会进行校验，确保数据的完整性和格式正确，同时检查是否满足全面改造的基本条件。如果数据校验未通过，系统会在原始文件中标记出错误的单元格，并附上修改建议，您需要根据这些提示修正数据后重新上传。\n\n一旦数据校验通过，您需要指定现场限制条件，考虑现场实际的工艺流程、安全要求或空间限制，设定哪些冷热物流之间不能换热：沿用上次限制条件，从历史对话记录中提取，直接沿用上一次设定的不能换热的冷热物流组合；重新指定限制条件，指定不能换热的冷热物流组合；不考虑现场限制，所有冷热物流之间，均可自由换热，不设置任何限制条件。\n\n若您选择了不考虑现场限制条件，系统将直接进入换热网络的优化阶段。通过引入新设备、重组流程等方法，系统将生成一个包含以下内容的改造方案：(1) 优化后的网络结构图；(2) 改造前后运行成本的详细对比；(3) 换热器的再利用与新增清单。\n\n如果选择沿用上次限制条件、重新指定限制条件，系统将在设定的约束条件下执行改造，最终输出一个成本最低的换热网络优化方案。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98df-aa28-73d0-8630-afcb3c3a229e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"指定现场限制条件\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"校验限制条件\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id6\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98df-d54b-7181-81d9-8c97be962231",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98df-d54b-7181-81d9-8ca9c1311fc0",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${branch_result} == 0\"}, {\"from\": \"id2\", \"to\": \"id5\", \"expression\": \"${branch_result} == 1\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98df-d54c-7811-8779-ed3cf54711f5",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98df-d54a-7091-ab28-84c955db6ba2",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"指定现场限制条件\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id2\"]},{\"id\":\"id5\",\"tool\":\"Redesign\",\"ability\":\"校验限制条件\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"branch_result\\\")]) Eq 0\"},{\"from\":\"id2\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"branch_result\\\")]) Eq 1\"}]",
+      "name": "全局改造换热网络，成本最低化",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传数据与校验"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "这个环节会先检测用户是否已经上传过数据，如果用户没有上传数据，则需要根据模版进行上传，如果已经上传了，则可以选择是否需要更新数据。上传数据后，我会对数据进行处理，计算换热器、流股的性质，并校验上传的数据是否满足用户的需求。"
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？"
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ]
+]

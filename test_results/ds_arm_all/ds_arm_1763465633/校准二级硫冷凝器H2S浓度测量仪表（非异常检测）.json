@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a970c-c380-7d60-a0bb-713af6795d95",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a970c-c410-7ff3-963d-8ee55b4b79e6",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对二级硫冷凝器中的H₂S浓度测量仪表进行校准，以确保其测量数据准确可靠。这可能涉及使用标准气体进行比对和调整，确保仪表在正常工况下能正确反映H₂S浓度。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a970c-c962-7600-8afd-2032c6af803f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对二级硫冷凝器的H2S浓度测量仪表进行校准，以确保其准确性和可靠性。这可能是因为当前的测量值存在偏差，影响了工艺控制和安全操作，需要通过校准来调整仪表的响应，使其符合标准值。\n\n首先，我会从回路信息查询中查找描述为“二级硫冷凝器H2S浓度测量仪表”的回路信息。\n\n接着，利用回路数据有效性检测，确认数据是否存在且符合要求。\n\n如果回路数据有效性检测未通过，说明当前数据无效，无法使用常规的数据校准方法。我将采用基于回路相关属性的参数整定方法，即基于专家经验的参数整定，提供优化后的PID参数。\n\n如果回路数据有效性检测通过，我将进行控制回路性能评估和诊断，检查阀门是否有卡涩现象，若阀门卡涩，则需要您谨慎考虑参数优化。\n\n最后，进行多策略自适应校准，如果控制回路的阀门存在长期卡限等异常情况，不建议进行校准，我将无法为您提供参数。如果控制回路的MV或SV变化幅度过小，建议您选择合适的历史数据再进行校准；在其他情况下，我会提供给您校准后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a970d-31f4-7793-bc7e-22c575fed022",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路数据有效性检测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a970d-a56e-7fb3-9304-deb5f159d156",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a970d-a56e-7fb3-9304-decf1dfa9dfd",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a970d-a56f-7aa3-884c-6e55cc889b5c",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a970d-a568-7581-8903-850cc0b2512e",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "校准二级硫冷凝器H2S浓度测量仪表（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

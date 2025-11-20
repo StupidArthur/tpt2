@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97a4-64ee-73b0-9ef9-27597e39d244",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97a4-6566-7143-ab4e-1a13728287b7",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您在调整了工艺参数后，希望利用气化炉的仿真模型进行稳态模拟，以评估调整后的系统表现，并通过工况标定验证模型的准确性与可靠性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97a4-6b39-7322-8b09-59a0ebdf06a4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建模气化炉时，需要综合考虑化工行业中的复杂动力学传递、多相流动、热力学平衡等特性之间的相互作用。\n\n首先，我会生成一个通用的气化炉动态工艺仿真模型，并启动模型进行执行，以检查气化炉装置在不同工况下的适应性和稳定性。\n\n随后，我将模拟生成设备参数值，涵盖设备的运行状态、设备参数的变化趋势以及关键设备的参数值。\n\n在仿真过程中，设备参数值可能会显示异常。若存在异常，我将分析前、后两个时间点的设备参数值，以确定异常参数值的变化趋势（上升或下降），并结合设备运行环境和工艺资料，生成设备异常分析报告，报告中将包含异常设备参数值的推荐设置范围。\n\n最后，我将生成气化炉装置的流程图，以便您查看流程的详细情况。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97a4-89c4-7851-a280-11170cb4ef62",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97a4-a0d3-7333-857c-bb5c311db1a5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97a4-a1b2-72e0-95df-a5beba7bb84f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97a4-a3bb-7b51-a74f-36ac60f0ec19",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97a4-a3bb-7b51-a74f-36b1ada4a94c",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97a4-a3ba-7783-8fcf-0014ba6fb421",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "工艺参数调整后，请对气化炉的仿真模型进行稳态模拟，并给出工况标定的验证报告",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97a4-a3ba-7783-8fcf-0014ba6fb421"
+      }
+    }
+  ]
+]

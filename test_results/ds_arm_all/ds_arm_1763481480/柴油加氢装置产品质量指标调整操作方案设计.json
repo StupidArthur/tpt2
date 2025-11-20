@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97bb-51a3-7060-82dd-4d68f788539f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97bb-520c-7e93-a3e0-8c2bd6be5919",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望设计一个操作方案来调整柴油加氢装置的产品质量指标，例如柴油的硫含量、闪点、密度等。这可能包括优化反应条件、调整进料参数或改进分馏操作，以满足新的产品质量要求或市场标准。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97bb-57da-70c3-8b69-521e199fdf4b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户要求调整柴油加氢产品的质量指标，目的是提升产品在特定市场中的竞争力。鉴于用户需求可能涉及频繁的工况切换及对产品质量的严格要求，这需要对关键工艺参数进行精准控制，因此我将制定一份操作方案，以指导用户如何通过操作来优化目标控制变量的设定值。首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成初始的操作路径。随后，进行操作路径的规划，最终提供《操作方案》，明确关键控制变量在操作过程中的调整方向，帮助用户实现工况调整的目标。\n\n首先，我会根据装置类型，对影响质量控制指标的相关变量进行调研，根据调研结果生成初始的操作路径。\n\n随后，进行操作路径规划，由于用户对控制效果有较高的要求，因此操作路径规划将考虑用户指定的约束条件，确保在操作过程中关键工艺参数不会超出设定的约束范围。同时，操作路径规划会追求关键控制变量的分阶段调整，确保每次调整都有明确的依据，从而提高操作的确定性和执行的可靠性。在完成规划后，将生成《操作方案》，该方案将详细列出关键控制变量在操作过程中的调整方向，指导用户如何通过操作来优化目标控制变量的设定值，最终帮助用户实现工况调整的目标。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97bb-b5a4-7a41-99cd-7d0705ed10c3",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认关键变量\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"动态操作路径规划\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97bb-d7cc-7543-a834-5a27b1f3539f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97bb-d7cd-7e11-952a-42a7dbaac24b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--动态操作路径规划-- 不存在于 --确认关键变量-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97bb-d84a-77e0-8fee-023830856a93",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97bc-945a-7c90-b5e5-00c27e8fc1e6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97bc-945c-7eb1-b6e4-ccfa74bac6f6",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u786e\\u8ba4\\u5173\\u952e\\u53d8\\u91cf\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u4ea7\\u54c1\\u8d28\\u91cf\\u9884\\u6d4b\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u52a8\\u6001\\u64cd\\u4f5c\\u8def\\u5f84\\u89c4\\u5212\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97bc-945c-7eb1-b6e4-cd090fd21efe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97bc-945d-7a11-b625-99963c0eb643",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97bc-945d-7a11-b625-99a79cc3e262",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97bc-9458-7d20-8693-9de5ed53fc99",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"确认关键变量\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"产品质量预测\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"动态操作路径规划\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "柴油加氢装置产品质量指标调整操作方案设计",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97bc-9458-7d20-8693-9de5ed53fc99"
+      }
+    }
+  ]
+]

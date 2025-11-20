@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96aa-58e3-78b1-9d17-1dddae327fe8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96aa-58e5-77a1-9222-1a9f47c5a1ba",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望暂时停用APC（先进过程控制）功能，但不涉及优化模块，可能是为了切换回常规控制策略或进行调试、维护等操作。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96aa-5ae8-75f3-ab2d-dd68727c38de",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望停用APC控制，但继续维持当前的控制参数和控制效果不变。为了确保控制回路在APC停用后仍能保持稳定运行，您需要提前准备好数字化手动切换的条件。这包括获取即将停用的APC控制器的模型信息，以便将这些模型数据转换成手动PID控制器可以使用的参数，从而实现控制回路的平稳过渡。\n\n首先，我会通过APC控制器信息查询来获取您想要停用的控制器的名称。\n\n接下来，使用APC控制器性能监控查询功能，我将帮助您查找该控制器下的所有控制变量（CV）和操作变量（MV），并记录下这些变量当前的手动或自动状态。\n\n然后，我将调用APC控制器模型数据查询，获取控制器的模型矩阵及相关参数。利用这些信息，我将为您计算出各个控制回路在切换到手动PID控制时所需的PID参数，以确保控制回路在参数调整后仍能保持稳定。\n\n最后，我将把所有这些PID参数整理成一个列表，提供给您，以便您能够根据需要调整并输入到相应的控制回路中。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96aa-67c9-7223-9b9d-7cba8aefc476",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC控制器信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"APC控制器性能监控查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"APC控制器模型数据查询\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96aa-7003-73e2-aeb3-784f55df3fcc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96aa-7007-7da0-920c-f442c0b48031",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--APC控制器性能监控查询-- 不存在于 --APC控制器信息查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96aa-7009-79c0-8113-d184462ccdac",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96aa-b596-7672-80d7-5add79b90ff8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96aa-b598-7603-a530-db2d2a04b63e",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC\\u88c5\\u7f6e\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"\\u88c5\\u7f6e\\u6307\\u6807\\u5b9e\\u65f6\\u6307\\u6807\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id1\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96aa-b59b-78f0-8cfb-4edcb9482014",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96aa-b59d-72c2-80e6-221bf6b54fec",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96aa-b59f-7e41-aecf-1d7e0cecddd9",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96aa-b592-7bf2-a3bb-8cae3f6569e4",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC装置信息查询\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"装置指标实时指标数据查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "停用APC控制（非优化）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96aa-b592-7bf2-a3bb-8cae3f6569e4"
+      }
+    }
+  ]
+]

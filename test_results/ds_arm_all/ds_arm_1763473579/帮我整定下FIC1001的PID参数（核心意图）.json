@@ -1,0 +1,427 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a979a-e809-7553-bc9f-bf815bb68cff",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a979a-e87c-7d73-99b9-ce3a80eba9bb",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对FIC1001的PID参数进行整定，以改善其控制效果，可能包括提高响应速度、减少超调或提升稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a979a-ec96-7711-8133-0c1e220ec380",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对FIC1001控制回路进行整定，以优化其控制性能。这可能涉及到调整PID参数，确保控制回路在不同工况下都能稳定、准确地控制流量。\n\n首先，我需要从回路信息查询中，获取回路描述、类型、PID参数、回路类型和回路量程信息。\n\n利用回路数据有效性检测，检测数据是否存在且符合要求。\n\n若回路数据有效性检测不通过，则认为当前数据无效，则不能使用常规的基于数据进行整定的方法。我将采用不依赖于数据模型，仅基于回路相关属性进行参数整定的方法，即基于专家经验的参数整定，给出优化后的PID参数。\n\n若回路数据有效性检测通过，则进行控制回路性能评估及诊断，检测阀门是否卡涩，若存在阀门卡涩则需要您谨慎进行参数优化。\n\n最后进行多策略自适应整定，若控制回路的阀门存在长期卡限等异常情况，则不建议进行整定，我将无法为您提供参数。若控制回路的MV或SV变化幅度过小，则建议您挑选合适的历史数据再整定；其他情况下我将提供给您整定后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a979b-4eff-7913-b9ed-96ac4162e659",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路数据有效性检测\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id7\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"PID\", \"ability\": \"基于回路波形判断的参数迭代整定\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a979b-ca06-7522-a7a6-151400f4e9d4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a979b-ca07-72d1-9aa7-48e297aa7d84",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id4\", \"expression\": \"${valid} == false\"}, {\"from\": \"id2\", \"to\": \"id6\", \"expression\": \"${valid} == true\"}, {\"from\": \"id6\", \"to\": \"id7\", \"expression\": \"${isValveOscillate} == false\"}, {\"from\": \"id6\", \"to\": \"id9\", \"expression\": \"${isValveOscillate} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a979b-ca08-7fc0-8d53-1918ea5dceab",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a979b-ca01-7931-935e-c099298047d7",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路数据有效性检测\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id2\"]},{\"id\":\"id7\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"PID\",\"ability\":\"基于回路波形判断的参数迭代整定\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id6\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq false\"},{\"from\":\"id6\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"isValveOscillate\\\")]) Eq true\"}]",
+      "name": "帮我整定下FIC1001的PID参数（核心意图）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"groupPath\": [],\n  \"loopName\": [\n    \"FIC1001\"\n  ],\n  \"loopDesc\": [],\n  \"advanceLoopType\": null,\n  \"queryingLoop\": true,\n  \"queryingList\": false,\n  \"needTagValue\": true,\n  \"queryingCascade\": false\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路信息查询"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n我需要先查询系统是否存在名为FIC1001的回路。若存在则检查设定值（SV）、测量值（PV）、阀位值（MV）、量程以及PID等详细参数。不存在则核对名称后新增。\n"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T23:36:18.572",
+          "details": "开始获取所有分组信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T23:36:18.585",
+          "details": "{\"code\":\"00000\",\"content\":{\"id\":1,\"idPath\":\"1\",\"groupName\":\"root\",\"groupPathName\":\"root\",\"orderNum\":0,\"hasLoop\":true,\"children\":[{\"id\":5915595879433312,\"idPath\":\"1|5915595879433312\",\"groupName\":\"某装置\",\"groupPathName\":\"root/某装置\",\"orderNum\":0,\"hasLoop\":true,\"children\":[]}]},\"isSuccess\":true,\"msg\":\"操作成功\",\"requestId\":null,\"success\":true}"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-18T23:36:18.623",
+          "details": "loopList length: 1"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "回路位号信息详细数据",
+          "type": "card",
+          "description": "",
+          "details": "\n回路FIC1001 去树脂塔一次盐水温度TIC1101，所属装置：root/某装置\n\n\n## 回路位号实时值\n\n|参数名称|位号名|实时值|\n| :----: | :----: | :----: |\n|测量值|FIC1001.PV|0.00|\n|设定值|FIC1001.SV|0.00|\n|阀位值|FIC1001.MV|0.00|\n|比例|FIC1001.PB|0.00|\n|积分|FIC1001.TI|0.00|\n|微分|FIC1001.TD|0.00|\n|阀位值量程上限|FIC1001.MVSCH|0.00|\n|阀位值量程下限|FIC1001.MVSCL|0.00|\n|设定值量程上限|FIC1001.SVSCH|0.00|\n|设定值量程下限|FIC1001.SVSCL|0.00|\n|是否串级|FIC1001.CAS|0|\n|控制模式|FIC1001.MODE|0|\n|正反作用|FIC1001.SWPN|0|\n|设定值限幅高限|FIC1001.MVH|0.00|\n|设定值限幅低限|FIC1001.MVL|0.00|\n|阀位值限幅高限|FIC1001.SVH|0.00|\n|阀位值限幅低限|FIC1001.SVL|0.00|\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n回路FIC1001为流量控制回路，所属装置为root/某装置。您可查看其详细信息，包括设定值（SV）、测量值（PV）、阀位值（MV）、量程以及PID等参数。\n"
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"queryLoopWithTagValueSingleResult\": {\n    \"id\": 5916090741312928,\n    \"loopName\": \"FIC1001\",\n    \"loopDescription\": \"去树脂塔一次盐水温度TIC1101\",\n    \"loopType\": 0,\n    \"groupPath\": \"root/某装置\",\n    \"groupName\": \"某装置\",\n    \"groupId\": 5915595879433312,\n    \"advanceLoopType\": 0,\n    \"cascadeLoopName\": null,\n    \"masterOrSlave\": false,\n    \"suggestTuningMethod\": 2,\n    \"currentPIDParam\": \"-/-/-\",\n    \"tags\": [\n      \"FIC1001.PV\",\n      \"FIC1001.SV\",\n      \"FIC1001.MV\",\n      \"FIC1001.PB\",\n      \"FIC1001.TI\",\n      \"FIC1001.TD\",\n      \"FIC1001.MVSCH\",\n      \"FIC1001.MVSCL\",\n      \"FIC1001.SVSCH\",\n      \"FIC1001.SVSCL\",\n      \"FIC1001.CAS\",\n      \"FIC1001.MODE\",\n      \"FIC1001.SWPN\",\n      \"FIC1001.MVH\",\n      \"FIC1001.MVL\",\n      \"FIC1001.SVH\",\n      \"FIC1001.SVL\"\n    ],\n    \"tagValues\": [\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    \"found\": null\n  },\n  \"resultField\": \"queryLoopWithTagValueSingleResult\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 获取历史步骤的输出数据，必须使用 get 方法\n    id1_data = input.get('id1', {})\n\n    # 获取历史步骤的输出数据中的字段值，必须使用 get 方法\n    query_result = id1_data.get('queryLoopWithTagValueSingleResult', {})\n    loop_id = query_result.get('id', 0)\n\n    # 如果json schema中定义的类型不匹配，应该进行类型转换\n    if not isinstance(loop_id, (int, float)):\n        loop_id = 0\n\n    # 组装输出数据\n    output = {\n        'loopId': loop_id,\n    }\n\n    # 返回输出数据\n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"loopId\": 5916090741312928\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "回路数据有效性检测"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "获取FIC1001基本信息后，检查其历史数据的完整性。",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n获取FIC1001基本信息后，检查其PV/SV/MV历史数据的完整性。数据完整则采用历史数据整定；无效则采用知识驱动（经验）提供初始PID参数。\n"
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "历史曲线预览页面",
+          "type": "page",
+          "details": "/xpt-tpt-pid/echartshistory?loopId=5916090741312928&type=view&startTime=1748377815000&endTime=1748476800000"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "#### \r\n\r\n\n该控制回路基于历史数据进行了参数整定。\n上一次计算得到的PID参数为： 比例(P)：250.00比例度 积分时间(I)：32.90秒 微分时间(D)：0.00秒\n"
+      }
+    }
+  ]
+]

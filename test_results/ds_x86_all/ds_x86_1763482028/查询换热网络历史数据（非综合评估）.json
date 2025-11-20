@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97de-1333-7f71-b989-ac34bea333e9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97de-13ca-7f30-a5df-002ed8e6986a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想查看换热网络的过往运行数据，可能是为了分析其历史性能或排查问题。这通常包括温度、流量、压力等参数的记录。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97de-1810-72c2-be92-05d85b5c869d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望查询换热网络的历史数据，了解其运行状况及变化趋势，以便进行更深入的分析和优化。这可能涉及多个设备和参数的数据，如温度、流量、压力等，时间范围从几天到几个月不等，具体需求需进一步确认。\n\n首先，我需要通过用户交互界面，提示用户需要上传相应的数据文件，并且指导用户如何上传数据文件。\n\n上传数据后，我需要对这些数据进行解析和校验，确保其完整性和格式正确性，以及符合查询的基本要求。如果数据校验不通过，我将在原文件中标记错误的单元格，并添加修正建议，用户需要根据这些提示修改数据文件并重新上传。\n\n如果数据校验通过，我需要用户确定查询的时间范围和数据类型。\n\n最后，我将根据用户查询的时间范围和数据类型，查询并输出相应的换热网络历史数据。如果查询结果中出现超出合理范围的数据（例如，温度异常低或流量为负值），我将同时生成这些数据的异常值报告，以便用户进一步分析和处理。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97de-42a2-7e02-81b3-0834112bfd92",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"指定现场限制条件\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97de-5bab-7e43-a993-14cc75d65c05",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97de-5c8a-7872-96b0-af216461db2a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97de-5e6a-7aa1-ac78-4b26344ac843",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97de-5e6b-77e0-8cc1-5966e17715c7",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97de-5e6a-7aa1-ac78-4b093167149d",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"指定现场限制条件\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "查询换热网络历史数据（非综合评估）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97de-5e6a-7aa1-ac78-4b093167149d"
+      }
+    }
+  ]
+]

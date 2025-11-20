@@ -1,0 +1,173 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a986c-beff-7e22-be1b-c5557afe1ca9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a986c-bf71-7b92-8e89-8d8a7f4d9926",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对盐水流量调节阀进行校准，以确保其在正常工况下能够准确响应控制信号，实现对盐水流量的精确调节。这可能包括检查阀门开度与实际流量之间的对应关系，并进行必要的调整。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a986c-c742-7b00-abf7-004c89021a35",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对盐水流量调节阀进行校准，确保其准确性和可靠性。这可能是因为当前的调节阀存在偏差或不准确的问题，影响了生产过程的稳定性和产品质量，用户希望通过校准来解决这些问题，提高调节阀的性能。\n\n首先，我需要通过用户交互界面，提醒用户确认主副回路的信息，确保调节阀在校准过程中能够被正确识别和调整。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a986c-d2b8-7e21-9848-470c167f4b23",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a986c-dea8-70b2-bbc4-b7e6d495eae8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a986c-df92-7fd0-b9bc-adfe9f1df1db",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a986c-e1c9-7ef0-9f46-8dd4f7c97f33",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a986c-e1c9-7ef0-9f46-8de6c640ec36",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a986c-e1c8-7433-9a2a-e142332f9f8b",
+      "json": "[{\"id\":\"id1\",\"tool\":\"builtin\",\"ability\":\"用户交互界面\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "校准盐水流量调节阀（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a986c-e1c8-7433-9a2a-e142332f9f8b"
+      }
+    }
+  ]
+]

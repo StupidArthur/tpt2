@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98af-9e38-7161-ab8a-c79010f57a8a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98af-9e9f-7782-b1d5-838bc4b8a9c7",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想对重整装置中的PID参数进行修改，但不是通过整定的方式。这可能是根据经验或已有数据，手动调整比例、积分、微分参数以改善控制效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98af-a440-7d32-8d45-f20895cd1fc2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对重整装置的PID参数进行修改，这可能是因为当前的参数设置不满足工艺要求或存在控制不稳定的情况，希望通过调整PID参数来改善装置的运行效率和稳定性，但用户明确表示不想进行自动整定，而是希望手动设置。\n\n首先，我会从回路信息查询中查找重整装置，以获取该装置各控制回路的位号及其当前的PID参数。接着，我会弹出用户界面，列出所有控制回路及其对应的PID参数，供用户确认主副回路并输入新的PID参数。完成参数修改后，我会更新回路信息，以反映最新的PID参数设置。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98af-b98e-7aa1-829d-cf5a46a99dc8",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98af-ca95-7af3-a955-2fe41f661c7a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98af-cbb6-7da2-9208-bf1332c5c6d2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98af-cdca-70f1-bc80-b886ba9c0326",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a98af-cdca-70f1-bc80-b8978b010816",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98af-cdc9-7c22-b977-1d973a5c6dbd",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"builtin\",\"ability\":\"用户交互界面\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "修改重整装置PID参数（非整定）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a98af-cdc9-7c22-b977-1d973a5c6dbd"
+      }
+    }
+  ]
+]

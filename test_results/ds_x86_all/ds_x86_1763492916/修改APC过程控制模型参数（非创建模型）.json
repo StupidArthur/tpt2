@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9898-15a2-7c31-9a81-da2007731621",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9898-1624-77a2-865b-f0aa6938aca0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想对现有的APC（先进过程控制）模型参数进行调整，以优化控制效果或适应新的工艺条件，而不是从头创建一个新的模型。这可能包括修改模型的输入输出范围、权重系数、响应时间等参数。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9898-1d7f-72d0-b89d-49e98a10c812",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户需要修改APC过程控制模型的参数，这通常是因为当前模型参数与实际工艺过程存在偏差，导致控制器性能不理想，希望通过调整这些参数来优化控制效果。首先，我将根据用户提供的模型名称，检索并获取该模型的矩阵信息，从中提取出MV（操纵变量）、CV（被控变量）和DV（扰动变量）的相关参数，以便用户能够基于这些信息进行模型参数的修改。\n\n随后，我将引导用户启动APC控制模型的修改工作，通过用户界面完成模型修改后的确认操作，以确保用户已正确更新了模型参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9898-3001-7641-95f1-3706c23167bd",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9898-3c4c-7a03-bc13-5aed8e62ec43",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9898-3d1e-70e1-a2a1-a3e7464f25f6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9898-3f14-77b2-856f-c1a8af66e16c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9898-3f14-77b2-856f-c1c0bd9bb264",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9898-3f14-77b2-856f-c18220436d7b",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "修改APC过程控制模型参数（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9898-3f14-77b2-856f-c18220436d7b"
+      }
+    }
+  ]
+]

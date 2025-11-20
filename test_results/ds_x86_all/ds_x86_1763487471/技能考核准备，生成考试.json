@@ -1,0 +1,141 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9813-32c8-7e52-878d-4b1ee525b605",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9813-334a-7ac2-a3b8-6690b32c4b12",
+      "type": "json",
+      "json": "\n"
+    },
+    [
+      2,
+      "json"
+    ],
+    "[{\n                \"id\": \"id1\",\n                \"tool\": \"EXAM\",\n                \"ability\": \"考试题目生成\",\n                \"dep\": null\n        },\n        {\n                \"id\": \"id2\",\n                \"tool\": \"general_tool\",\n                \"ability\": \"end\",\n                \"dep\": [\"id1\"]\n        }\n]\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9813-392d-7e61-b53d-521247daa6c6",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9813-392c-79d2-8b59-3d008fb824d8",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"EXAM\",\"ability\":\"考试题目生成\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "技能考核准备，生成考试",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"技能考核准备，生成考试\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "考试题目生成"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

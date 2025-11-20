@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b2-9343-7492-962f-073184d8d707",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b2-93b3-7200-9506-9d962ed3e79c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过上传的Excel文件制定维护计划，并希望了解文件中是否存在异常数据或问题。这可能包括设备状态、维护记录或时间安排等方面的异常。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b2-9842-72c3-a16a-e1fbf93e3585",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户通过上传xlsx文件，希望对其中的设备运行数据进行分析，以识别是否存在异常情况，如设备性能下降、运行不稳定或参数设置不当等，以便及时进行维护和调整。\n\n首先，我会让用户通过交互界面上传包含设备运行数据的文件。接着，系统将对上传的文件进行数据解析，提取出相关的目标变量和时间信息。\n\n如果数据解析成功，系统将基于文件中的有效数据进行异常分析。分析过程中，系统会利用TPT大模型进行推理计算，以评估设备的状态，识别潜在的异常情况，并生成相应的评估报告。若检测到异常，报告中会提供设备异常的原因分析及优化建议。\n\n如果数据解析未能成功，系统将提示用户，指出解析过程中发现的问题，并建议用户修正数据后重新上传文件，以便进行再次解析和分析。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b2-b820-70c1-a3b7-67508bef663a",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT推理计算\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b2-d59c-7951-944a-15315e75f026",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b2-d59c-7951-944a-1546319a6613",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--确认解析结果-- 不存在于 --上传数据-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b2-d6ff-7f42-bee8-7693f5600b79",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b3-896d-76d2-8b14-a0fb4d4a7adc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97b3-896d-76d2-8b14-a101d8ff4bb7",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC\\u88c5\\u7f6e\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"\\u88c5\\u7f6e\\u6307\\u6807\\u5b9e\\u65f6\\u6307\\u6807\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id1\"]}, {\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"\\u63a7\\u5236\\u5668\\u53d8\\u91cf\\u6307\\u6807\\u5386\\u53f2\\u6570\\u636e\\u67e5\\u8be2\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97b3-896e-7020-a588-4cecdfd6ffd2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97b3-896e-7020-a588-4cf99b2a327b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97b3-896e-7020-a588-4d04e27dc805",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b3-896c-7f50-b4b0-6f0cec16161a",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC装置信息查询\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"装置指标实时指标数据查询\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"APC\",\"ability\":\"控制器变量指标历史数据查询\",\"dep\":[\"id3\"]}]",
+      "branch": "[]",
+      "name": "维护计划制定，基于xlsx上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b3-896c-7f50-b4b0-6f0cec16161a"
+      }
+    }
+  ]
+]

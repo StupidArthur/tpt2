@@ -1,0 +1,291 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97a4-fff0-79d3-8916-7306660caf7c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97a5-005f-7161-b922-c576af671c8a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您刚完成仪表校验，确认数据准确后，想知道甲醇装置出料常一线的当前流量值。这可能是为了监控生产状态或后续操作调整做准备。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97a5-0461-7c70-9318-76eb6775422b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "您的问题是关于数据查询的。接下来，我们将遵循标准流程，确保能够高效地获取您所需的信息：\n\n1. 提取问题的核心信息\n\n从您的问题中识别出的关键要素包括：\n\n目标查询对象：甲烷装置出料常一线的流量\n\n时间范围：当前\n\n2. 校验查询对象的存在性：如果查询对象存在，将直接进行数据查询并提供反馈；如果不存在，系统将评估是否支持数据补充。如果不支持，会提示“无相关数据”；如果支持，将引导您进入数据上传步骤。\n\n3. 上传数据与解析：（仅在需要补充数据时执行）系统会提示您上传包含目标数据的文件，文件解析后，需要您确认解析的准确性。\n\n4. 确认解析结果：如果解析结果正确，系统将根据文件中的有效数据进行查询；如果发现异常，系统将提示您修正文件并重新上传，直至解析成功。\n\n5. 执行查询并反馈：查询成功后，系统将按照“需返回的数据类型”整理查询结果。如果数据存在异常（例如数值为负或波动过大），系统会同时提示“注意：部分数据可能存在异常，建议核对原始文件”。如果查询失败，系统将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和范围后重试”。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97a5-66eb-7ce3-b7fb-a4b807579cb3",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"查询请求分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"IDX\", \"ability\": \"确认解析结果\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97a5-c7f8-7811-ab3d-b4307a6b26d9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97a5-c7f9-7862-a781-fa4e9c0a72c8",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${valid} == true\"}, {\"from\": \"id5\", \"to\": \"id6\", \"expression\": \"${valid} == false\"}, {\"from\": \"id5\", \"to\": \"id7\", \"expression\": \"${valid} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97a5-c7fa-75c3-a30a-30a4858c7a11",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97a5-c7f5-7a51-9e0e-c2d1bfa379e7",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"IDX\",\"ability\":\"查询请求分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"IDX\",\"ability\":\"上传数据与解析\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"IDX\",\"ability\":\"确认解析结果\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"IDX\",\"ability\":\"执行查询与反馈\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"},{\"from\":\"id5\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"valid\\\")]) Eq true\"}]",
+      "name": "刚完成仪表校验，数据应该准确，甲烷装置出料常一线的流量是多少",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"刚完成仪表校验，数据应该准确，甲烷装置出料常一线的流量是多少\",\n  \"userIndexNames\": [\n    \"甲烷装置出料常一线的流量\"\n  ]\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "查询请求分析"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"valid\": false,\n  \"indexNames\": [],\n  \"userIndexNames\": [\n    \"甲烷装置出料常一线的流量\"\n  ],\n  \"userinput\": \"刚完成仪表校验，数据应该准确，甲烷装置出料常一线的流量是多少\",\n  \"sence\": \"\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "执行小结",
+          "type": "summary",
+          "details": "\n\n系统未能找到名称为“甲烷装置出料常一线的流量”的指标，请确认指标名称是否完整或存在其他表述方式。建议检查系统中指标的标准命名规则，或提供更多上下文信息以辅助定位。当前查询返回状态无效（valid: false），且无匹配指标名称。"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "转换函数",
+          "type": "code",
+          "details": "```python\n\ndef convert(input):\n    # 获取历史步骤的输出数据\n    id1_data = input.get('id1', {})\n    \n    # 提取用户输入和指标名称\n    user_input = id1_data.get('userinput', '')\n    user_indices = id1_data.get('userIndexNames', [])\n    \n    # 组装输出数据\n    output = {\n        'userinput': user_input,\n        'userIndexNames': user_indices\n    }\n    \n    return output\n\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"刚完成仪表校验，数据应该准确，甲烷装置出料常一线的流量是多少\",\n  \"userIndexNames\": [\n    \"甲烷装置出料常一线的流量\"\n  ]\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传数据与解析"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

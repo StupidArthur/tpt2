@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a988c-d0da-7e83-8f40-54771656046c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a988c-d13e-79e3-82a4-2ef0e9e25830",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在装置停车前，对PIDTEST131_4_copy1控制回路的PID参数进行整定并作为备用，以确保停车或后续开车过程中控制系统能够稳定运行。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a988c-d58e-77a3-9a8b-c3da4f292baf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在装置停车前，对PIDTEST131_4_copy1的PID参数进行整定，以备后续使用时能够确保控制回路的稳定性和效率。这可能涉及到收集当前参数的运行数据，分析其性能，然后调整PID参数以优化控制效果。\n\n装置停车前，用户希望对PIDTEST131_4_copy1的PID参数进行整定，以确保后续使用时控制回路的稳定性和效率。这可能涉及收集当前参数的运行数据，分析其性能，并调整PID参数以优化控制效果。\n\n首先，我需要从回路信息查询中，获取回路描述为PIDTEST131_4_copy1的回路信息。\n\n进行开车阶段参数批量整定，完成预整定后，将整定结果输出。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a988d-1115-7202-9b76-61f67e1ed1f6",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a988d-2f63-71c2-8a64-7be603eb761e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a988d-2f64-71a0-8601-e9583bc7e20b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a988d-2f64-71a0-8601-e9634bf10e29",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a988d-2f61-7133-acf1-9003953ff42f",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"开车阶段参数批量整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "装置停车前，帮我整定下PIDTEST131_4_copy1的PID参数备用",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ]
+]

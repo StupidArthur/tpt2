@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96cc-ba09-7863-984e-9cec68c50825",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96cc-ba82-7b11-b102-ffbd636424b9",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您在故障排查时关注盐水流量调节阀的运行状态，想确认其是否正常工作。这可能包括检查阀门开度是否响应控制信号、是否存在卡涩或泄漏等问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96cc-c162-72e0-9ccc-846b54fd3a14",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提问盐水流量调节阀，希望分析该阀门运行状态是否正常，业务背景可能为：阀门设备负责控制水盐溶液的流量，设备异常会导致溶液流量不稳定，影响生产过程的平稳运行。我需要执行以下步骤：\n\n首先，我将通过用户交互界面提示您上传该阀门的历史数据，以便进行评估。\n\n接着，我会引导您进入数据上传流程，推荐您上传相关文件，并帮助解析和评估这些数据，以更好地了解阀门的历史运行状况。\n\n随后，我将进入检测算法执行阶段，调用算法对阀门的运行状态进行分析，判断是否存在异常。如果检测到异常，我将提供具体的原因定位，并给出相应的维护建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96cc-d7a7-7350-8b19-2f3d47ca5db7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传离线数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"执行检测算法\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96cc-e975-7d73-b497-25023def6e1a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96cc-e975-7d73-b497-251250aa7e4b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96cc-e975-7d73-b497-252431be1b1d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96cc-e974-7600-a810-2c9b284378e3",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传离线数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"执行检测算法\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "故障排查时，请分析盐水流量调节阀是否正常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96cc-e974-7600-a810-2c9b284378e3"
+      }
+    }
+  ]
+]

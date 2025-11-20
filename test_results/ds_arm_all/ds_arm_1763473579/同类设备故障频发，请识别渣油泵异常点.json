@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9748-d073-7be2-b8fb-9c9963f5a8e8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9748-d0e0-73b3-b487-5996b5738fab",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望识别渣油泵的异常点，以解决同类设备故障频发的问题。这可能包括分析运行数据、识别不正常振动、温度或压力波动，找出潜在故障原因并提前预警。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9748-d6fa-7910-a9c3-eb73f59a31c1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户提到渣油泵，这是一款工业泵设备，您希望对其中的异常点进行分析。鉴于您未指定具体需要处理的数据段落，我将按照以下步骤进行：\n\n1. 首先，我会请求您上传相关的文件数据，以便我们能够了解渣油泵的历史运行情况。\n\n2. 然后，我将引导您确认建模所需的信息，同时，我将生成异常检测方案，并请您再次确认，确保所有配置无误。\n\n3. 接下来，我们将进行TPT推理计算。这一过程包括对数据进行预处理、模型的微调训练，以及利用训练好的模型进行推理计算。最后，我会展示计算结果，帮助您评估渣油泵的健康状况，并定位可能的异常原因。\n\n4. 如果发现异常，我将建议您上传更高频率的数据，以便我们能更准确地进行故障诊断，确定异常的具体来源，并提供相应的优化建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9749-1e37-7ad3-a863-7fd3f2cfe3ce",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"确认建模信息\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT模型微调\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"anomaly_detection\", \"ability\": \"上传高频数据\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id7\", \"tool\": \"anomaly_detection\", \"ability\": \"故障诊断\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9749-7d57-74b0-805b-4c420c9da075",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9749-7d58-7682-aa9e-563c52bb67c5",
+      "type": "branch",
+      "branch": "[{\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${diagnosis_flag} == false\"}, {\"from\": \"id4\", \"to\": \"id6\", \"expression\": \"${diagnosis_flag} == true\"}, {\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9749-7d58-7682-aa9e-564623c6c8a6",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9749-7d53-72e0-8fd6-529a011271b4",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"确认建模信息\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"anomaly_detection\",\"ability\":\"TPT模型微调\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"anomaly_detection\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"anomaly_detection\",\"ability\":\"上传高频数据\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"anomaly_detection\",\"ability\":\"故障诊断\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id4\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"diagnosis_flag\\\")]) Eq true\"}]",
+      "name": "同类设备故障频发，请识别渣油泵异常点",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9749-7d53-72e0-8fd6-529a011271b4"
+      }
+    }
+  ]
+]

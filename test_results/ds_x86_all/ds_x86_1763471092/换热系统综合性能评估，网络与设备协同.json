@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9737-08e4-72b3-b590-479fc3ebef4b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9737-0953-74d1-aba7-e90d23cc29ee",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您关注的是换热系统的整体性能评估，以及系统中网络与设备之间的协同工作情况。希望了解如何通过优化设备运行和网络通信，提升换热效率和系统稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9737-0e5d-7650-867b-c6deeb905296",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我需要对整个换热系统进行综合性能评估，这包括换热网络性能评估和换热器性能评估两部分。\n\n首先，确定现场换热系统的类型，如果用户没有明确指出，则通过现场摄像头拍摄的图像中识别换热器的类型，并手动获取换热器的参数。\n\n接下来，对换热网络进行夹点分析，以识别能量利用中的瓶颈，包括计算夹点温度，找出换热系统中不符合夹点规则的换热器（夹点之上不应设置任何冷公用工程、夹点之下不应设置任何热公用工程、不应有跨越夹点的传热），并生成换热系统的夹点拓扑图，以便用户能够直观地了解换热系统的情况。\n\n最后，进行换热器性能评估：评估换热器的性能，主要通过设计参数的热效率对比，找出设计效能低下的换热器；分析运行数据，识别运行效率低下或超负荷运行的设备；对公用工程信息进行排查，确定公用工程传热路径上的关键换热器，最终形成评估报告，报告中将列出设备效率排名和改造优先级较高的换热器。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9737-3c06-77f3-8f6f-42412e3a6f64",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9737-4ecc-7d90-a9b3-6b9b6b0791f1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9737-4f8f-7ef2-9121-5a764db89f98",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9737-5173-7e01-b562-ed16545d6cd6",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9737-5173-7e01-b562-ed26a9d30540",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9737-5172-76b2-954f-4e235d285deb",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "换热系统综合性能评估，网络与设备协同",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9737-5172-76b2-954f-4e235d285deb"
+      }
+    }
+  ]
+]

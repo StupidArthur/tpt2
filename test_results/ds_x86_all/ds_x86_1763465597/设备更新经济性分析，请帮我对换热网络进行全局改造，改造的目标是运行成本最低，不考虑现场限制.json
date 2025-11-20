@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96eb-7cf3-7c82-a28c-289228dd7c67",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96eb-7d5c-7a72-a88a-f8ddb7a38999",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过全局改造换热网络来实现运行成本最低的目标，并希望进行设备更新的经济性分析。您关注的是整体系统的节能优化和投资回报，不考虑现场安装和空间的限制。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96eb-82f1-7c82-9f61-44c442cc3088",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "您的请求是针对现有换热网络进行重构改造，目标是实现运行成本最低，且不考虑现场限制。这将涉及对换热网络的深度优化，可能包括新增或移除换热器、重新组织流股匹配关系等措施，确保在满足工艺要求的同时，达到成本最优的改造方案。\n\n首先，我会通过用户交互界面提示您上传必要的数据信息，如物流数据、换热器参数等。系统将对上传的数据进行校验，确保其完整性和格式正确，以及符合全局改造的基本要求。如果数据校验未通过，系统会在原文件中标记错误单元格并添加修改建议，您需要根据提示修正数据后重新上传。\n\n一旦数据校验通过，系统将启动换热网络优化流程。通过引入新设备、调整流程结构等方法，系统将提供一个包含以下内容的改造方案：(1) 优化后的网络结构图；(2) 改造前后的运行成本对比分析；(3) 换热器的利旧与新增清单。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96eb-aba2-76f1-b24e-11704d4d2377",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96eb-be68-7a30-a226-8d3935587f47",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96eb-bf35-7b60-b686-ec60d93d8041",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96eb-c11e-7a10-af81-685d530580ff",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96eb-c11e-7a10-af81-68643812f69a",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96eb-c11d-76b0-8aef-f47148b35692",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "设备更新经济性分析，请帮我对换热网络进行全局改造，改造的目标是运行成本最低，不考虑现场限制",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96eb-c11d-76b0-8aef-f47148b35692"
+      }
+    }
+  ]
+]

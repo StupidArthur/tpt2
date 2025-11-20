@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96f4-dd2f-7da2-8018-737771c80229",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96f4-dd95-72a0-8e53-505fbe40b612",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对裂解炉中乙炔（C₂H₂）含量的测量仪表进行校准，以确保其测量结果准确可靠。这通常是为了满足工艺控制和安全要求。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96f4-e308-7043-be5f-a93f6383b078",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对裂解炉C2H2含量测量仪表进行校准，确保其准确性和可靠性。这通常涉及将仪表的读数与已知标准值进行对比，调整仪表参数以减小误差，从而保证在工艺控制中能够有效监测C2H2含量。\n\n首先，我会从回路信息查询中查找描述为裂解炉C2H2含量测量仪表的回路信息。\n\n接着，利用控制回路性能评估及诊断功能，查看最近的回路实时报告，并记录该仪表的测量值、设定值和控制值。\n\n随后，通过多策略自适应整定功能，对控制回路进行测试，以确定仪表是否存在故障。如果发现故障，将输出“注意：测量仪表可能存在故障，建议检查并校准”的提示。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96f5-0191-7132-ae34-127bff1389ad",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96f5-1b9f-7e53-8d68-124469353bf6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96f5-1cba-7182-a64a-37dcaac68023",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96f5-1ea2-7181-8e56-47660db77025",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96f5-1ea2-7181-8e56-4773196a17d0",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96f5-1ea1-7970-962e-c653b372c5f8",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"控制回路性能评估及诊断\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "校准裂解炉C2H2含量测量仪表（非预测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96f5-1ea1-7970-962e-c653b372c5f8"
+      }
+    }
+  ]
+]

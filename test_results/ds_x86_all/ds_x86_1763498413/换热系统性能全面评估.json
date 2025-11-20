@@ -1,0 +1,197 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98d6-473b-7c21-9b5b-2f764c9e8d75",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98d6-47d6-7e80-b33a-9524af776640",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对换热系统进行全面的性能评估，可能包括换热效率、温控稳定性、能耗情况以及设备运行状态等方面，以找出潜在问题并提升系统整体运行效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98d6-4cba-7b23-8e1d-99b4f11a7747",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我需要对整个换热系统进行性能评估，以识别可能存在不合理的换热设备。通常采用夹点分析来评估当前换热网络是否符合夹点规则（夹点之上不应设置任何冷公用工程、夹点之下不应设置任何热公用工程、不应有跨越夹点的传热），找出能量利用的瓶颈。\n\n首先，我会通过用户界面提示您上传必需的数据，包括物流信息、换热器参数等。系统将进行数据校验，确保数据完整、格式正确且符合基本要求。如果数据校验未通过，我将在上传文件中标记错误单元格并添加修正建议，您需根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将采用夹点分析的方法来识别换热网络瓶颈，具体步骤包括：计算夹点温度，识别换热装置中不满足夹点规则的换热器，并生成换热装置的夹点拓扑图，以帮助您直观了解换热装置的结构及存在问题的换热器。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98d6-74da-79c3-8f37-0ad9e1aab1d5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98d6-879b-7181-b5a6-bd652e4d7317",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98d6-879b-7181-b5a6-bd7eb7c2cc92",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98d6-879c-7d20-ab97-f400eaa9c39b",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98d6-879a-7050-9c29-56b8ff71dc8f",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "换热系统性能全面评估",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传数据与校验"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "这个环节会先检测用户是否已经上传过数据，如果用户没有上传数据，则需要根据模版进行上传，如果已经上传了，则可以选择是否需要更新数据。上传数据后，我会对数据进行处理，计算换热器、流股的性质，并校验上传的数据是否满足用户的需求。"
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？"
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ]
+]

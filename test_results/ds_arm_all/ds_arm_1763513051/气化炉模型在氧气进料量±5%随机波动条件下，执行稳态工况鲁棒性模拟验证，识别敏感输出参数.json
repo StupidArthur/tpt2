@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99f0-d00e-7ca3-ba10-ab0cc8d7b836",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99f0-d07d-72f2-9bc1-0e6911c7089c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在气化炉模型中，模拟氧气进料量在±5%范围内随机波动的稳态工况，验证模型的鲁棒性，并找出对这种波动敏感的输出参数。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99f0-d4de-7080-9ee7-77bb4f4eb923",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建模预测控制技术将为您的气化炉装置提供更高级别的操作指导，这要求建立一个能够准确反映气化炉装置特性的动态工艺仿真模型。为了确保模型的可靠性和准确性，需要依据您提供的位号数据历史记录进行模型调整和优化。\n\n首先，我会分析数据集的质量，检查数据是否完整、格式正确且满足基本要求。如果数据集质量不佳，我会建议您使用更合适的数据进行训练。\n\n接下来，我将评估AI对气化炉装置的控制能力，分析数据集中的关键影响因素，最终确定数据集是否适用于AI控制。如果数据集不满足要求，我会提供一组数据，供您参考，以便对数据集进行进一步的分析和优化。\n\n随后，我将采用关键影响因素分析的方法，对所有筛选出的位号进行重要性排序，帮助您评估这些位号在控制过程中的表现，确保选择最有效的控制策略。\n\n之后，我将进行工况识别与验证，提供工况分类的精确度及图形展示，帮助您更好地理解装置的运行状态。\n\n接着，我将构建预测模型并进行验证，通过多次迭代调整模型参数，确保预测模型的准确性。最后，我会提供模型的训练结果，包括训练好的模型文件和详细的模型评估报告。\n\n此外，我还会搭建控制器并进行验证，通过预测模型进行实时的趋势预测，结合工况识别，进行实时的控制输出，以实现更精准的控制效果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99f1-49e5-7352-a76b-25c48dcae4ca",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"AI可控性评估\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99f1-a39f-7e82-988d-4557f1859573",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99f1-a49a-7e80-b36e-34a5edc18a9b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99f1-a648-70e1-9b70-270291458110",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a99f1-a649-7242-a7ce-3291fa066032",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99f1-a645-7d01-b3da-5d9baeec4034",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"AI可控性评估\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"关键影响因素分析\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"工况识别与验证\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"SPC\",\"ability\":\"预测模型构建与验证\",\"dep\":[\"id4\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"控制器搭建及验证\",\"dep\":[\"id5\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"}]",
+      "name": "气化炉模型在氧气进料量±5%随机波动条件下，执行稳态工况鲁棒性模拟验证，识别敏感输出参数",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a99f1-a645-7d01-b3da-5d9baeec4034"
+      }
+    }
+  ]
+]

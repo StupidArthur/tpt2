@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9908-b564-7ad2-8920-955886f42eb9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9908-b606-7b71-8953-23b7c731e77a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望构建一个针对G_LT_13001液位过程变量在大波动工况下的智能控制方案，以提升系统在异常波动时的稳定性与响应能力。这可能包括引入先进控制策略或优化现有控制逻辑。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9908-bcf9-7473-bc04-ed52e9755b36",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您希望构建G_LT_13001.PV的过程变量大波动工况智能控制方案。波动工况通常具有复杂性和不确定性，常规的控制策略可能难以有效应对，导致生产过程中的波动较大或控制滞后。为了实现更稳定的控制效果，我将按照以下步骤来设计智能控制方案：\n\n\n\n首先，需要明确控制对象和控制目标，同时确认控制变量和被控变量。在此基础上，我会结合G_LT_13001.PV的工艺特点和控制需求，制定出合理的控制方案。\n\n\n\n鉴于您的问题可能涉及具体的控制需求或工艺条件，我将首先通过交互界面获取更多信息，确保对您的需求有全面的理解。这些信息将帮助我评估控制方案的可行性，并提供优化建议，以确保所提出的方案能够满足实际的生产要求。\n\n\n\n最后，我将根据收集到的信息，生成详细的控制方案文档，其中会包含控制策略的说明、相关变量的列表以及推荐的控制器参数等关键内容。这不仅有助于指导后续的实施工作，还能为将来的控制优化提供参考依据。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9908-e5e6-74b1-a573-c7c877300079",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案设计信息确认\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"控制方案检索生成\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9908-f91c-7380-8740-5775f926e75f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9908-f9e8-7742-a34a-414f417a8bfc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9908-fbbf-7b83-af72-5e9cac2ca9d2",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9908-fbc0-7593-928b-90e76d24322b",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9908-fbbe-7260-a53f-0a92af8ad689",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"控制方案设计信息确认\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"APC\",\"ability\":\"控制方案检索生成\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "G_LT_13001.PV过程变量大波动工况智能控制方案构建",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9908-fbbe-7260-a53f-0a92af8ad689"
+      }
+    }
+  ]
+]

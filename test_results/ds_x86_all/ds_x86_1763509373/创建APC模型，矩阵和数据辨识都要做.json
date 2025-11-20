@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9996-5766-7712-8cc2-b5b89610d9fd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9996-580c-7102-bf71-b95be2257063",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望创建一个先进过程控制（APC）模型，并进行相关矩阵构建和数据辨识工作，以提升过程控制的精度和效率。这通常包括分析过程变量关系、收集和处理历史数据，以及建立用于预测和优化的数学模型。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9996-5fc0-7421-ac81-c7bebeb58965",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户要求创建APC模型，包括模型矩阵的建立和数据辨识。\n\n首先，我将根据用户提供的信息分析MV（操作变量）、DV（被控变量）和CV（干扰变量）之间的关系，生成相应的模型矩阵。\n\n接下来，我会检查用户提供的数据，确保数据的有效性和完整性，因为数据的质量直接影响到模型辨识的准确性。如果数据存在问题，我将提示用户数据异常，并提供具体的分析报告，指出哪些数据不可信以及为什么。在此阶段，我不会对数据进行任何修改，所有数据将保持原样。\n\n如果数据没有问题，我将开始进行模型辨识过程。这一过程涉及使用未加权和加权的数据来辨识两个模型，并对这些模型进行仿真测试，以评估它们的性能。最终，我将选择性能更优的模型进行进一步的优化和确认，确保生成的APC模型能够准确反映实际的工业过程。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9996-7f7a-7aa0-a342-f81bf5dc5e30",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9996-97b1-70f1-b1ac-1630f3f736ed",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9996-988f-7da1-b9dd-4018338509b7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9996-9bfb-7301-83f4-20069a300673",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9996-9c1f-7b23-bb5f-6161016d9ebd",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9996-9c1e-7eb1-bb46-5261e8542698",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "创建APC模型，矩阵和数据辨识都要做",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9996-9c1e-7eb1-bb46-5261e8542698"
+      }
+    }
+  ]
+]

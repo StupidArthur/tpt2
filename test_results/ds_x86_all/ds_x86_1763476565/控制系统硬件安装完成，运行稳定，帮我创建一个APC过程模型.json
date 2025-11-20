@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a979e-95d0-78c3-aee9-6b3a8c1e72de",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a979e-9667-7a62-b11b-e06a9452f245",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在控制系统硬件安装并稳定运行后，创建一个先进过程控制（APC）模型，用于提升生产过程的控制精度和优化效果。这通常涉及收集过程数据、选择建模方法（如机理模型或数据驱动模型），并进行模型训练与验证。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a979e-9e35-7ac1-98d3-22a8f5302fcd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户已经完成了控制系统硬件的安装和调试，确保设备运行稳定，现在希望基于此建立APC过程控制模型，以提升生产效率和系统稳定性。首先，我将根据用户提供的工艺资料和控制需求，分析确定模型中的变量，包括被控变量（CV）、操作变量（MV）和干扰变量（DV），并构建模型矩阵。\n\n接着，我会检查这些变量的历史数据长度，如果数据长度不足，将提示用户上传更多数据；如果数据长度足够，则对数据进行预处理，去除异常值和超出范围的值。随后，我将自动切片数据，评估数据质量，选择质量最优的数据段进行系统辨识。如果评估发现阀门或仪表存在故障，将显示故障分析表，同时使用质量较好的数据进行模型辨识。\n\n如果数据质量不佳但非故障原因，我将向前追溯一个月重新选择数据，重复上述过程，直至数据质量达到标准。如果重复次数超过预设上限（未设定则使用默认值），则不再重复，而是选择质量相对最佳的数据进行模型辨识。\n\n最后，我将利用符合要求的数据进行模型辨识，采用子空间辨识算法来生成模型及其评价指标。完成模型辨识后，我将更新原模型，展示新模型，并确保模型数据的安全存储。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a979e-cee7-7fa2-b4c6-976c77a018cd",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a979e-e7ba-7593-816b-8657a1a50254",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a979e-e88f-7f31-896c-c981cf7e906f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a979e-ea66-74a0-9dca-b6fdfcafaf9e",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a979e-ea66-74a0-9dca-b70cecb6d04d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a979e-ea64-7c02-91d1-4abb1d46bf7e",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "控制系统硬件安装完成，运行稳定，帮我创建一个APC过程模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a979e-ea64-7c02-91d1-4abb1d46bf7e"
+      }
+    }
+  ]
+]

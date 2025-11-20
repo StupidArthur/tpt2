@@ -47,6 +47,10 @@ class Config(object):
             self.set_user(user='arthur', pwd='arthur')
             self.set_host('10.16.11.45:31501')
             self.cookie = "_ga=GA1.1.739637345.1762146720; _ga_YFKNQX5E65=GS2.1.s1762218416$o5$g1$t1762218416$j60$l0$h0;"
+        elif env_name == 'arm':
+            self.set_user(user='arthur', pwd='arthur')
+            self.set_host('10.16.11.46:31501')
+            self.cookie = ''
 
 
 o_config = Config()

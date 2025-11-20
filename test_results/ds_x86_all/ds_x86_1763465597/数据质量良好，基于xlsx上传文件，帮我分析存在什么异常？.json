@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a970b-c300-79b3-8b42-0cda4481eea3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a970b-c3a5-7203-9943-65b743fc8e35",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一个数据质量良好的Excel文件（.xlsx格式），并让系统帮助分析其中是否存在异常数据或模式。这通常是为了识别潜在的问题点或非正常运行状态。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a970b-c8c1-7d73-a3bf-260287b8f701",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户上传了数据质量良好的xlsx文件，希望对这些数据进行分析，以发现其中可能存在的异常情况。这些异常可能是数据记录中的错误、不一致之处或与预期值显著偏离的值，用户期望通过分析来识别并解决这些问题。\n\n首先，我将从您上传的文件中提取出装置名称和待分析的位号。\n\n接下来，我会对这些数据进行数据质量分析，检查是否存在异常值、坏值或超出范围的情况。如果发现任何问题，系统会提供详细的异常位置信息，帮助您进一步审查和修正这些数据。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a970b-ddb1-7ce0-97c1-22b2f91404a0",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a970b-e989-79e2-be46-a12f55ef1022",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a970b-ea5d-7461-b165-8938d8ae9751",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a970b-ec44-7cd3-9083-aaefaf824388",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a970b-ec44-7cd3-9083-aaf18dc0d355",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a970b-ec43-7bc2-9911-e18b599fc560",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "数据质量良好，基于xlsx上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a970b-ec43-7bc2-9911-e18b599fc560"
+      }
+    }
+  ]
+]

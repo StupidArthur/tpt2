@@ -1,0 +1,132 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a985a-d95e-77b3-b2bf-7944d31941fe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a985a-d9c7-72d1-bae1-bd0ba3353688",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一份设备检测报告的PDF文件，由我帮您分析其中是否存在异常情况。这可能包括设备运行状态、故障代码、性能偏差等内容的解读，以便您快速了解设备是否有潜在问题或需要维护的地方。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a985a-e0ad-7f73-967a-94d9e9b31aac",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，首先，我需要让用户通过页面上传数据文件，上传后系统会自动解析文件内容。我需要检查一下数据类型，确认数据属于设备检测报告类数据。\n\n若数据类型不符合要求，我会在上传文件中高亮错误单元格并添加修正批注，需要用户根据提示修改数据后重新上传。\n\n若数据类型符合要求，我需要对上传数据进行预处理，包括数据清洗和数据转换。数据清洗会去除空值、异常值和重复项，数据转换则将数据格式调整为分析所需格式。\n\n接着，我会使用TPT大模型对处理后的数据进行异常检测分析。利用自动化异常检测算法对数据进行分析，识别出异常数据并对其进行可视化展示。分析完成后，系统将自动生成异常检测报告，报告中会列出所有异常数据及其异常原因。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a985a-fe0b-7c02-bdf5-4d5eab793e9a",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"确认解析结果\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT模型微调\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"anomaly_detection\", \"ability\": \"TPT推理计算\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a985b-22d3-7f30-b87c-a917f582b267",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a985b-22d3-7f30-b87c-a92414741149",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--TPT模型微调-- 不存在于 --确认解析结果-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a985b-22d3-7f30-b87c-a930fcbd1311",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    }
+  ]
+]

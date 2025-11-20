@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96d9-8cc3-7b21-8142-a2cb42e1d167",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96d9-8cc5-7331-ad95-f1fbabff45ef",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解盐水流量调节阀的相关参数，例如开度、流量系数、压力范围或控制特性等，用于日常监控或优化操作。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96d9-8eea-7850-9eb8-b7a8d26c89c0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户询问关于盐水流量调节阀的参数，希望了解该阀门的设定值、当前运行状态或相关性能指标，以便进行正常的工艺调整或监控，未提及异常检测需求。\n\n针对这一query，我将执行以下步骤：\n\n第一步，明确用户的具体需求，同时启动数据上传流程，推荐用户上传相关的文件内容，并指导用户如何执行文件上传操作。\n\n第二步，进入数据解析阶段。系统将对上传的文件进行数据解析，生成解析后的数据结果。\n\n第三步，需要用户确认解析结果的准确性。如果解析结果无误，系统将根据用户需求查询相应的盐水流量调节阀参数；若发现数据异常，系统将提示用户修正上传文件，并重新执行上传操作，直至数据解析通过。\n\n第四步，如果数据解析成功，系统将根据用户需求执行参数查询，最终将查询到的参数结果提供给用户。若查询过程中遇到超出合理范围的情况，系统会同步提示“注意：部分查询结果可能存在异常，建议核对原始数据”，并结束此次查询流程。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96d9-9a83-7ae1-b0b4-bcdc0a5469c6",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": null}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96d9-9c56-7052-a5ec-0f8cf5b82fc4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96d9-9c59-73d2-bc18-21d6eb1ce73a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "首个节点不允许为end"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96d9-9c5b-7f22-9fd4-38a8a8ca8178",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96d9-cf62-7772-8c6a-52afa376fc74",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a96d9-cf64-7e03-ae5a-a5fd4e321b3b",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"\\u56de\\u8def\\u4fe1\\u606f\\u67e5\\u8be2\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"\\u57fa\\u4e8e\\u4e13\\u5bb6\\u7ecf\\u9a8c\\u7684\\u53c2\\u6570\\u6574\\u5b9a\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a96d9-cf66-7892-9407-ce8735604d38",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a96d9-cf68-75c2-b9f0-8442327b625b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a96d9-cf6a-7923-aac7-3290488ccbc2",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96d9-cf5e-7213-9989-6d72806ede86",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"基于专家经验的参数整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "查询盐水流量调节阀参数（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96d9-cf5e-7213-9989-6d72806ede86"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97c9-5336-77d0-8991-4f56009b8981",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97c9-53c5-7863-bdd6-be5f2204b097",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想对新建的常减压装置进行能效评估，并分析其能耗高的可能原因。这可能包括加热炉热效率低、蒸汽使用不合理、热能回收不足、操作参数未优化或设备老化等因素。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97c9-585f-7e62-af33-9495d4d5ddc8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对新装置，如常减压装置，进行能效评估，分析能耗高的具体原因。这可能涉及到设备效率、操作条件、工艺流程等多个方面，以识别能耗瓶颈和优化空间。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，包括原油及各物料数据。这些数据将用于能效评估，帮助用户了解能源利用效率和消耗情况，找出可能的改进方向。\n\n数据校验环节将确保信息的完整性、格式正确性及符合基本要求。如果数据校验未通过，我将在上传文件中标记错误单元格，并提供修正建议，用户需根据提示调整数据后重新上传。\n\n一旦数据校验通过，我将对常减压装置的各个单元设备进行瓶颈分析，计算每个设备的有效能利用效率及损失比例。分析结束后，我将按照能量损失程度对设备进行排序，突出显示装置中有效能损失最显著的环节，为用户提供后续操作或改造的参考依据。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97c9-a3af-77e2-9022-aae9b1b02aea",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97c9-bdeb-7731-ad71-7c38d6974b62",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97c9-bea7-7e61-bd6c-558dab745b3c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97c9-bfe4-7a22-8f2c-10e881c263db",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97c9-bfe5-7e80-9ec4-7e330c76ff09",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97c9-bfe3-7253-81c4-563ed906ecb2",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "新装置能效评估，分析一下常减压装置能耗高的原因",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97c9-bfe3-7253-81c4-563ed906ecb2"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96df-638b-7ec0-a308-b5828003f37d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96df-6419-7172-9bdf-8d726be07034",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对现有的换热网络进行重新设计，并且希望尽快完成。这可能是因为当前系统存在能耗高、效率低或设备老化等问题，您希望通过优化换热流程、结构调整或设备更新来提高整体热效率和经济效益。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96df-6b1f-7000-b162-e4d9e5b334a4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望尽快重新设计换热网络，这可能需要考虑指定现场限制条件，通过增加或移除换热器、重新组织流股匹配关系等措施对换热网络进行改造，以提高系统性能。\n\n首先，我将通过交互界面引导用户上传必要的数据信息，如物流数据、换热器参数等。接着，我会对上传的数据进行校验，确保其完整性和格式正确，同时确认这些数据是否满足换热网络重新设计的基本要求。如果数据校验未通过，我将在上传文件中标记出错误的单元格，并附上修正建议，用户需根据这些提示调整数据后重新上传。\n\n一旦数据校验通过，我将立即启动换热网络优化工作。通过引入新设备、调整流程布局等方法，我将生成一个包含以下内容的改造方案：(1) 优化后的网络结构图；(2) 改造前后的运行成本对比分析；(3) 换热器的保留与新增清单。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96df-91f4-79c2-ab62-f4ec00b7cacd",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"指定现场限制条件\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96df-b7c8-7a43-a236-912bc2276a50",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96df-b8eb-73e0-aeee-37364513c313",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96df-baea-7843-b3b6-f8beba3bef20",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96df-baea-7843-b3b6-f8cba19b541e",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96df-bae9-7ac0-919d-618dd49e3140",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"Redesign\",\"ability\":\"指定现场限制条件\",\"dep\":[\"id1\"]},{\"id\":\"id5\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id4\"]}]",
+      "branch": "[]",
+      "name": "重新设计换热网络，快点",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96df-bae9-7ac0-919d-618dd49e3140"
+      }
+    }
+  ]
+]

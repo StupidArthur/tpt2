@@ -1,0 +1,188 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a8d-23b7-7ec0-b5ac-15103e1ba406",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a8d-241f-7c82-9238-54fb3efe9b4b",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想查找已有的考试题目，而不是让我生成新的题目。这可能是为了复习或准备考试，您需要获取真实或过往的试题内容。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a8d-280e-7903-8685-2ed3f53c171d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，您的问题属于知识查询类问题。接下来将按照既定流程处理，以确保快速准确地获取所需信息：\n\n1. 问题核心信息提取\n\n从您的问题中提取关键要素，以便后续查询，具体包括：\n\n目标查询对象：考试题目\n\n2. 校验查询对象存在性：如果查询对象存在，则直接执行查询并反馈结果；如果不存在，则判断是否支持补充数据。如果不支持，则提示“无相关数据”；如果支持，则进入下一步 “上传数据与解析”。\n\n3. 上传数据与解析：（仅在支持补充数据时执行）提示您上传包含目标数据的文件，系统解析后将反馈解析结果，您需要确认解析结果的准确性。\n\n4. 确认解析结果：如果解析无误，系统将基于文件中的有效数据进行查询；如果解析结果有异常，系统将提示您修正文件并重新上传，直至解析通过。\n\n5. 执行查询与反馈：如果查询成功，系统将根据“需返回的数据类型”整理查询结果。如果结果中存在超出合理范围的情况（例如数值为负、波动过大），系统将同步提示“注意：部分数据可能存在异常，建议核对原始文件”。如果查询失败，系统将提示“系统中未包含该目标查询对象的相关数据，请调整查询条件和范围后重新尝试”，流程结束。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a8d-8d87-7a81-92e1-42c7d5b317c5",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"检测评分服务状态\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"查询考试题目\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a8d-aadc-7bf3-8bfd-1c025ca0ee43",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a8d-aadd-7983-83fa-09f0463c3e3c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a8d-aadd-7983-83fa-0a028cc18af6",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a8d-aada-7153-a042-125b824163f5",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"检测评分服务状态\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"查询考试题目\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "查询考试题目（非生成）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "检测评分服务状态"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"state\": 0\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "获取工具失败",
+          "type": "error",
+          "description": "OTS/查询考试题目"
+        }
+      }
+    }
+  ]
+]

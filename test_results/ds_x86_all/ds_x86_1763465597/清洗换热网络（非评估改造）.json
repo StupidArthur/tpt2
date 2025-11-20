@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96dd-5f6f-7013-ba49-f0e98d882dc1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96dd-5fe8-7a33-b548-bb8444a648b9",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想对现有的换热网络进行清洗，以恢复其换热效率和设备性能。这通常是为了清除结垢、堵塞或腐蚀产物，提高系统运行的稳定性和节能效果。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96dd-6736-7613-b459-e1ffa00f3c0d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对换热网络进行清洗，以提升其运行效果。这可能是因为用户当前的换热网络面临着如换热效率低下、设备腐蚀严重或频繁出现故障等问题，这些问题都指向了换热器的性能衰减。清洗换热网络的过程旨在清除设备中的垢物、沉积物及微生物，从而恢复并保持其高效的换热性能和良好的工作状态。\n\n首先，我将通过用户交互界面，请求用户上传必要的数据信息，如物料数据和换热器参数等。这些数据将经过校验，以确保其完整性和格式正确，同时满足换热网络改造的基本要求。如果数据校验未通过，我将在上传的文件中标记出错误的单元格，并附上修正建议，用户需根据这些提示调整数据后重新上传。\n\n一旦数据校验通过，我将基于用户提供的数据，进行换热器性能的全面识别。这包括对设计参数进行热效率对比，找出设计效能较低的换热器；对服务数据进行负荷和热效率分析，识别出效率低下或超负荷运行的设备；以及对公用工程信息进行分析，确定公用工程传热路径上的关键换热器。最终，我将生成一份详细的评估报告，列出设备效率排名及优先级较高的换热器改造建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96dd-98ea-7390-ad7f-36f32f863ef1",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96dd-ac18-7983-a9e8-e5f248034fce",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96dd-ad0e-7001-96ab-3c0e44a1f924",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96dd-af31-7a02-a317-3a529d21df45",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96dd-af32-72d3-812a-ce5ca74b95ab",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96dd-af30-7f50-8bce-6994aeb0942e",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "清洗换热网络（非评估改造）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96dd-af30-7f50-8bce-6994aeb0942e"
+      }
+    }
+  ]
+]

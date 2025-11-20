@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a99ac-045c-74d2-85f3-b204c6939fde",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a99ac-04c0-7143-9e88-4942cb387c86",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要对设备或系统进行定期性能监测，并希望评估是否存在异常。这可能包括检查运行数据、趋势分析、对比历史表现，以识别潜在故障或性能下降的问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a99ac-09bd-7211-b9a8-fad848c8184c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对设备或系统进行定期性能监测，以识别和评估任何异常情况。这可能涉及到监控关键性能指标（KPI），如温度、压力、流量等，以便及时发现设备的异常运行或故障，从而进行预防性维护或调整，确保系统的稳定性和安全性。\n\n首先，我将通过APC装置信息查询来确认APC下是否有相关的装置。如果查询结果为空，我将告知用户未找到对应的装置；若查询结果不为空，我将进行装置指标的实时数据查询。\n\n接下来，如果装置存在，则会进行装置运行状态的总览，获取该装置的所有异常情况。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a99ac-2123-7990-ab69-7da4259e9986",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC装置信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"装置指标实时指标数据查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a99ac-3a51-7272-b2f3-433db9e91f8d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a99ac-3b29-7b20-9207-1eaf7b8b006d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a99ac-42f5-7381-89f9-4a0de46cdfaf",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a99ac-42f5-7381-89f9-4a2781b730ac",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a99ac-42f4-7592-ba9d-02fa0203f262",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC装置信息查询\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"装置指标实时指标数据查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "定期性能监测需求，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a99ac-42f4-7592-ba9d-02fa0203f262"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a976c-b4f5-76c2-9dcc-3e22cdf80f4d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a976c-b55c-75b3-8bda-c0c090642d7b",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想对换热器进行清洗，以去除可能影响换热效率的污垢或杂质。这通常是为了维持设备正常运行和换热效果，不属于性能评估范畴。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a976c-b91d-7703-9a88-017513c8f903",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户需要清洗换热器，希望了解该过程。换热器清洗通常分为两大类：水洗和酸洗。水洗，即对换热器进行简单的物理清洁或水力清洁；酸洗，则是通过化学药剂的作用去除换热器中的顽固污垢。\n\n首先，我将通过用户交互界面，提示用户上传必要的数据信息，如换热器的规格书、公用工程信息和运行数据等。这些数据是进行换热器清洗操作的重要基础，用户需要确保信息的准确性和完整性。\n\n数据上传后，我将进行数据校验，确保数据的完整性和格式正确，以及是否满足换热器清洗的基本要求。如果数据校验未通过，我将在上传文件中标记错误的单元格，并添加修正建议，用户需根据提示修改数据并重新上传。\n\n一旦数据校验通过，我将根据用户提供的数据，进行换热器清洗。在这一过程中，我将生成清洗报告，报告中会包含清洗前后的对比情况、不凝气和水的分析数据，以及针对后续操作的建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a976d-1838-7d93-9ba8-c17f77fdbe18",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a976d-3e56-7bd0-a95a-3c9dfb83c4a5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a976d-3f2e-77d3-b8dd-71ccef7e3aea",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a976d-407e-7772-ae4b-a8b84da9eda4",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a976d-407f-7523-839e-3ea7e8a668d4",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a976d-407c-7560-b470-b2fc8d122771",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "清洗换热器（非性能评估）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a976d-407c-7560-b470-b2fc8d122771"
+      }
+    }
+  ]
+]

@@ -1,0 +1,224 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a98ee-a784-7792-826a-f49cb399754d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a98ee-a825-7e93-ad91-5ead8dae35d1",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您已经完成了软件开发环境的配置，并确认运行正常，现在需要创建一个控制模型。您可能是希望基于该环境搭建一个用于工业过程控制的模型，例如PID控制或更复杂的算法模型，以实现对某个工艺参数的自动控制。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a98ee-af40-7182-907a-82a27439ed57",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户已经成功配置了软件开发环境并确认软件运行正常，现在希望我根据用户需求创建一个控制模型。这是一个通用的过程，用户可能需要这个模型来模拟和优化特定的控制场景，比如工业自动化中的温度、压力或流量控制等。\n\n首先，我需要用户确定数据获取方式，是在线模式还是离线模式。\n\n如果选择离线模式，我将进入确定锅炉类型步骤；如果选择在线模式，将直接进入系统运行历史数据选择步骤。\n\n接下来，根据用户选择的模式，我将进入相应的流程以完成控制模型的创建和优化。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a98ee-c1ab-7f43-8cc7-c915f5186b2e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"选择锅炉数据获取方式\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"系统运行历史数据选择\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"boiler\", \"ability\": \"控制效果评估\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"控制模型加载\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a98ef-0cba-7a92-8cbf-1d2ac90c39c4",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a98ef-0cba-7a92-8cbf-1d3561684515",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id11\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id3\", \"to\": \"id5\", \"expression\": \"${is_upload_file} == true\"}, {\"from\": \"id11\", \"to\": \"id12\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id11\", \"to\": \"id13\", \"expression\": \"${is_upload_file} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a98ef-0cba-7a92-8cbf-1d472fa1f4c2",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a98ef-0cb8-7882-a312-83cd5e5ab909",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"选择锅炉数据获取方式\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"boiler\",\"ability\":\"系统运行历史数据选择\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id4\",\"id3\"]},{\"id\":\"id6\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"boiler\",\"ability\":\"控制模型微调或加载\",\"dep\":[\"id6\"]},{\"id\":\"id8\",\"tool\":\"boiler\",\"ability\":\"控制效果评估\",\"dep\":[\"id7\"]},{\"id\":\"id10\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":[\"id3\"]},{\"id\":\"id11\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":[\"id10\",\"id2\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id11\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"},{\"from\":\"id3\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"},{\"from\":\"id11\",\"to\":\"id13\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"}]",
+      "name": "软件开发环境配置完成，运行正常，帮我创建一个控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_prompt\": \"软件开发环境配置完成，运行正常，帮我创建一个控制模型\\n\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "选择锅炉数据获取方式"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-19T05:46:52.103",
+          "details": "user_prompt = 软件开发环境配置完成，运行正常，帮我创建一个控制模型\n"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

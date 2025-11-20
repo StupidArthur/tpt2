@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96eb-68ce-7b13-8147-3bc6df8d36c5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96eb-68d0-7663-a4a7-33d470843677",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "你在重整装置开车前需要对多个PID参数进行非预设的批量修改，目的是根据当前装置状态或工艺要求，调整控制参数以确保开车过程平稳、安全。这通常涉及对多个控制回路进行统一或按规则调整参数，而不是使用系统默认值。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96eb-6cb9-7502-b85c-a1d8d55f284e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在重整装置开车前，将所有PID参数批量修改为非预设值，以优化初始运行状态或解决现有控制问题，这可能需要对多个控制回路进行统一调整，确保装置平稳启动。\n\n首先，我需要从回路信息查询中查找标注为重整装置的控制回路，并获取这些回路的位号及其预设的PID参数。\n\n接下来，利用自动整定结果查询功能，对即将开车的重整装置进行批量参数修改。由于用户未提供具体的PID参数值，我将使用默认的PID参数替代原预设值。同时，为了验证参数的合理性，我将对调整后的PID参数进行仿真测试，以检查是否存在冲突或异常情况。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96eb-7430-7bb2-896b-9f7af275678c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"自动整定结果查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96eb-7ac4-7190-9b95-446f264dec1d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96eb-7b98-73f1-8c1a-e91a03950940",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96eb-7c1d-7333-926e-c1e730e7386f",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96eb-7c20-7ba1-92cb-a18b7f9ce5ed",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96eb-7c19-79c0-b3bd-52daf63a6ce0",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"自动整定结果查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "重整装置开车前，PID参数批量修改（非预设）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96eb-7c19-79c0-b3bd-52daf63a6ce0"
+      }
+    }
+  ]
+]

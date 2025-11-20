@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a974d-6586-7970-882c-936cd8c84b54",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a974d-65f3-76c3-990f-589b17fff3f0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望了解常减压装置在同类装置中的能效水平，并找出可能的用能瓶颈，从而提出优化方案。这可能涉及对加热炉、泵、塔等关键设备的能耗分析，以及工艺流程中的热能回收、操作参数优化等方面。您需要一个简要的评估和可行的改进建议。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a974d-6f17-7491-a456-395358e7fa5d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对常减压装置的设备和环节进行用能瓶颈分析，以识别能量利用效率低下的环节。首先，我将通过用户交互界面，提示用户上传必要的数据信息，如原油和各物料的数据。这些数据将帮助我准确评估装置的能耗情况。在数据上传后，我会对数据进行校验，确保其完整性和格式正确性，以及满足基本要求。如果数据校验未通过，我将在上传文件中标记错误单元格，并提供修正建议，用户需根据提示修改数据后重新上传。\n\n一旦数据校验通过，我将对常减压装置的各个设备和环节进行详细分析，计算每个设备或环节的能效效率。分析结束后，我将按照能效效率的高低对所有设备和环节进行排序，确定装置中能效效率最低的环节，以便用户能够明确哪些环节存在用能瓶颈，从而进行针对性的优化。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a974d-b1d9-7042-84b7-c7b5d859199d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a974d-c9cb-78f2-bf2f-027c0c68807a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a974d-cac8-7cb1-8074-ea79ce984574",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a974d-cca1-77f3-b9cf-e35849686e09",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a974d-cca2-7580-a86f-403caf4fc239",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a974d-cc9f-7ae2-b640-738576d53af1",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"节能降耗瓶颈分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "同类装置能效对比，常减压装置的设备和环节可能会造成用能瓶颈，请帮我评估一下并给出解决方案？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a974d-cc9f-7ae2-b640-738576d53af1"
+      }
+    }
+  ]
+]

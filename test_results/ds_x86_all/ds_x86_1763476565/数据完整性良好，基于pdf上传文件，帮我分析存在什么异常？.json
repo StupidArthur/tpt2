@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b4-2be6-7d70-b46d-305658273404",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b4-2c50-7081-a466-e0cb1d282362",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您上传了一个PDF文件，希望基于其中的数据完整性良好的前提，分析是否存在异常情况。您可能需要检查数据中的趋势、波动或不一致之处，以识别潜在的问题或异常事件。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b4-320e-7080-96d2-7fac22b24157",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对上传的PDF文件中的数据进行分析，以识别其中的异常情况。这些异常可能包括数据的不一致性、异常值、错误记录等，用户期望通过分析这些数据异常来确保信息的准确性和可靠性。\n\n首先，我将从您上传的文件中提取出装置名称和待分析的位号。\n\n接下来，我会对这些数据进行数据质量分析，检查是否存在数据缺失或格式错误的情况。如果发现这些异常，我会在分析结果中高亮显示有问题的数据点，并提供相应的解析建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b4-43ff-71e1-91db-679d7fb2462e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b4-4f8d-7413-8f11-27a6e362da8e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b4-5067-7ec3-99f4-6efcbd9b6d95",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b4-5260-76f1-b37c-2f8185748863",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b4-5261-77f2-b812-eea70c2308a1",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b4-525f-7c23-91dc-767a96ad7e90",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "数据完整性良好，基于pdf上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b4-525f-7c23-91dc-767a96ad7e90"
+      }
+    }
+  ]
+]

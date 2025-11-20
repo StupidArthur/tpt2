@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96a9-b2d1-7e13-8b67-e9a1aabefcbe",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96a9-b341-7540-b5b8-eca95b9f3d66",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望备份一些考试题目，而不是让系统生成新的题目。这可能是因为您需要保存现有的题目用于后续使用或存档。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96a9-b6ab-7a12-b5d8-6506a660ad77",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，为了备份考试题目，我将执行以下步骤：\n\n首先，我会尝试查询考试成绩。如果查询成功，说明题目已存在，我将直接结束流程；如果查询失败，说明题目不存在，我将进入下一步“生成工艺模型并执行”。\n\n接着，我将开始生成工艺模型并执行，模拟生成设备参数值，同时模拟组织考试。考试结束后，我会再次尝试查询考试成绩，以获取并输出考试成绩。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96a9-d768-7ee2-882f-b2a6e6eb8431",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"检测评分服务状态\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"OTS\", \"ability\": \"加载工况\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"OTS\", \"ability\": \"查看流程图\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"OTS\", \"ability\": \"检测评分服务状态\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"OTS\", \"ability\": \"查询考试成绩\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96aa-2a83-7051-8d63-ac4bd5bcb4dc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96aa-2a84-7131-928a-1c0cd3eb0f40",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96aa-2a85-76a0-b502-0a1b6986272a",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96aa-2a81-7573-b214-73abe869cf61",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"检测评分服务状态\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"OTS\",\"ability\":\"加载工况\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"OTS\",\"ability\":\"查看流程图\",\"dep\":[\"id4\"]},{\"id\":\"id6\",\"tool\":\"OTS\",\"ability\":\"检测评分服务状态\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"OTS\",\"ability\":\"查询考试成绩\",\"dep\":[\"id6\"]}]",
+      "branch": "[]",
+      "name": "备份考试题目（非生成）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "检测评分服务状态"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输出参数",
+          "type": "output",
+          "details": "```json\n{\n  \"state\": 0\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

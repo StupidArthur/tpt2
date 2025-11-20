@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a983e-adb2-7683-8577-c22707098516",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a983e-ae30-7921-a5de-88619efe4588",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望调整二级硫冷凝器中H₂S浓度的报警阈值设置，但此操作不属于异常检测范畴，可能是为了更符合实际工艺需求或操作标准。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a983e-b376-7352-8778-9ef5a7228e96",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "您的请求属于基础的系统配置调整需求。为了准确设置二级硫冷凝器H2S浓度报警阈值，我将按照以下步骤进行：\n\n1. 首先，我会访问系统界面，提取当前二级硫冷凝器H2S浓度的报警阈值参数。\n\n2. 然后，根据您的具体要求，将该报警阈值调整到合适的数值。\n\n3. 最后，保存修改后的参数，确保设置生效。同时，我会记录新的报警阈值，以便后续查询或进一步调整。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a983e-c687-7e32-83bb-146cba87a50d",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": null}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a983e-cc8a-7eb3-945e-732dac206336",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a983e-cc8a-7eb3-945e-7336674308ad",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "首个节点不允许为end"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a983e-cc8a-7eb3-945e-734f06d24536",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a983f-9402-7581-96c8-68bceb405f2d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a983f-9402-7581-96c8-68ce5da804d9",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"alarm_pred\\u9884\\u6d4b\\u9884\\u8b66\", \"ability\": \"\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"alarm_pred\\u9884\\u6d4b\\u9884\\u8b66\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"alarm_pred\\u9884\\u6d4b\\u9884\\u8b66\", \"ability\": \"\\u786e\\u8ba4\\u5efa\\u6a21\\u4fe1\\u606f\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"alarm_pred\\u9884\\u6d4b\\u9884\\u8b66\", \"ability\": \"TPT\\u63a8\\u7406\\u8ba1\\u7b97\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"alarm_pred\\u9884\\u6d4b\\u9884\\u8b66\", \"ability\": \"\\u914d\\u7f6e\\u65b9\\u6848\", \"dep\": [\"id1\"]}, {\"id\": \"id7\", \"tool\": \"alarm_pred\\u9884\\u6d4b\\u9884\\u8b66\", \"ability\": \"\\u5b9e\\u65f6\\u8ba1\\u7b97\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a983f-9402-7581-96c8-68dabe187594",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a983f-9403-79e2-b0b4-8ef35e3939a1",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a983f-9403-79e2-b0b4-8f04d737d1aa",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a983f-9401-74e3-ad8a-5f00e23c7b57",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "修改二级硫冷凝器H2S浓度报警阈值（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a983f-9401-74e3-ad8a-5f00e23c7b57"
+      }
+    }
+  ]
+]

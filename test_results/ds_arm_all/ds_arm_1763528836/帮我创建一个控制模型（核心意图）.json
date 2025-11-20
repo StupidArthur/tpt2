@@ -1,0 +1,132 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9adb-c276-7a92-932c-903e59849b70",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9adb-c2e6-7e53-b366-721b125d9cc4",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您需要建立一个控制模型，可能是为了优化某个工艺过程的控制效果。这通常涉及确定控制目标、选择合适的控制策略（如PID、模型预测控制等），并根据实际系统特性进行参数设置和验证。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9adb-c80a-79a2-be5e-8ac95a52c947",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户要求创建一个控制模型，这涉及对装置中某个工艺过程的被控变量（如温度、压力、流量或液位）的控制。我会按照以下步骤来帮助您完成这一任务：\n\n\n\n首先，需要确定优化目标，即确认被控变量的信息。\n\n接着，需要确认操作变量和相关干扰变量的信息，以确保模型能够全面反映工艺过程的特性。\n\n随后，进入控制模型的微调或加载阶段，根据您的具体需求调整或使用现有模型。\n\n最后，对控制效果进行评估，确保算法的有效性，并对控制算法进行执行，以实现对工艺过程的实时控制。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9adb-f80e-7ad0-aa3a-d2f68a56be40",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"系统运行历史数据选择\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"控制效果评估\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"boiler\", \"ability\": \"控制模型加载\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9adc-74dd-75c3-8c29-87456b2cf15c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9adc-74de-7673-b97a-845f3854a417",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--控制模型加载-- 不存在于 --控制效果评估-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9adc-756f-7982-95b0-9a4f54d0ac37",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    }
+  ]
+]

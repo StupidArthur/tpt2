@@ -1,0 +1,141 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97c0-454b-7431-abb0-4f911ae4e3cd",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97c0-45d3-7672-9520-d4c23bc75203",
+      "type": "json",
+      "json": "\n"
+    },
+    [
+      2,
+      "json"
+    ],
+    "[{\n                \"id\": \"id1\",\n                \"tool\": \"EXAM\",\n                \"ability\": \"考试题目生成\",\n                \"dep\": null\n        },\n        {\n                \"id\": \"id2\",\n                \"tool\": \"general_tool\",\n                \"ability\": \"end\",\n                \"dep\": [\"id1\"]\n        }\n]\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97c0-4bc3-74b2-a7ea-d2b2f5a178dc",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97c0-4bc2-7170-bcd4-34e22bd7c94b",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"EXAM\",\"ability\":\"考试题目生成\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "新员工培训期，生成考试",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"新员工培训期，生成考试\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "考试题目生成"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

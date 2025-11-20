@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9715-8c0a-7c23-9bed-3c65efe0598a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9715-8c9f-7eb1-800a-0bbf9402d146",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在项目预算获批且时间充裕的情况下，创建一个用于过程控制的模型。这可能涉及选择合适的建模方法（如机理模型或数据驱动模型），收集必要的过程数据，并搭建可用于控制策略设计或优化的模型框架。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9715-92c8-7493-a33a-df74641b2474",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，用户希望创建一个过程控制模型，该模型具备以下特性：既可作为独立的控制单元运行，也能与其他控制设备实现控制层的互联互通。为了满足这一需求，我将首先基于用户提供的位号数据信息，自动识别出MV（操作变量）、DV（干扰变量）和CV（被控变量），并构建模型矩阵。\n\n接着，我将校验位号的历史数据长度，通过解析历史数据自动设定数据的时间范围，并对这些数据进行预处理，剔除异常值和超出限制的数值。随后，数据会被自动切片，以评估其质量，选择质量最优的数据段进行系统辨识。如果数据质量不满足要求，我将回溯一周的时间，重新选取数据段，重复这一过程直至找到合适的数据。一旦找到合适的数据，我将采用子空间辨识算法来生成模型及其评价指标。\n\n然后，我将使用这些模型数据进行仿真测试，以评估模型的性能，从中挑选出性能最佳的模型进行整合，最终形成一个完整的模型并将其参数优化，确保模型的准确性和实用性。\n\n最后，我将更新模型矩阵，展示新的模型，并确保所有模型数据被妥善保存。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9715-ed6f-7873-b273-9c62a8c0ebd7",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9716-241b-78b3-96e2-82bd0839c0b9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9716-2504-7192-87f7-327c9f78df4b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9716-26b0-7ec1-840e-9f3cd83db5fc",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9716-26b1-7523-8570-575b78ce5286",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9716-26ad-70b2-89fb-68866f5a00ec",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "项目预算获批，时间充裕，帮我创建一个过程控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9716-26ad-70b2-89fb-68866f5a00ec"
+      }
+    }
+  ]
+]

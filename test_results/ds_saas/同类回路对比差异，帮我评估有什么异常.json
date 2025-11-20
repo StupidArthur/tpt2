@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97c9-aeda-7253-ae78-f70154fde06a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97c9-aedc-7182-9809-38f9a61b4e01",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望将同类控制回路进行对比，找出它们之间的差异，并判断是否存在异常情况。这有助于识别性能偏差或潜在故障的回路，从而进行优化或排查问题。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97c9-b0e6-7f23-8241-6e92911aed45",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对比同一类回路中的差异，以评估是否存在异常情况。这可能涉及到多个控制回路的性能、参数设置或运行状态，用户期望通过对比找到那些表现不正常或与预期有偏差的回路。\n\n首先，我需要通过回路信息查询，获取同类回路的位号及对应的回路条数。\n\n接下来，对这些回路进行运行实时状态的计算，检查同类回路中是否存在手动比例过高或开环比例过高的情况。\n\n随后，我会调取回路评估的历史数据库，对比您所关注的回路在过去一个月内的综合性能评分，同时也会留意那些综合评级为差的回路，以及处于开环状态的回路。\n\n最后，我将整理出的异常回路信息提供给您，以便进一步分析和处理。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97c9-b973-7b31-bbd7-dbe4105440c2",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"回路运行实时状态计算\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"回路评估数据查询\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97c9-c117-7dc3-af7b-00f3abc78328",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97c9-c19b-7232-a8b4-f4963a8ab819",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97c9-c279-7a93-a617-e669ee594669",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97c9-c27b-7ad0-aa67-554ae2b2c6f9",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97c9-c275-7113-886e-067a0dcdc131",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"回路信息查询\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"回路运行实时状态计算\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"PID\",\"ability\":\"回路评估数据查询\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "同类回路对比差异，帮我评估有什么异常",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97c9-c275-7113-886e-067a0dcdc131"
+      }
+    }
+  ]
+]

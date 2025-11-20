@@ -1,0 +1,224 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9aab-5d72-72e2-a2d5-497e9cd6edbc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9aab-5de4-79e0-9b20-77e242f2ebef",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过AI技术提升操作员的技能水平，改善当前锅炉的运行效果，实现更高效、稳定的运行控制。这可能包括利用AI分析运行数据、提供优化建议或辅助操作员做出更精准的控制决策。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9aab-6306-7971-83c8-142986a67fbb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "好的，您希望利用AI技术改善锅炉的运行状态，实现更佳的控制效果。针对您的需求，我会执行以下步骤来设计具体的控制方案：\n\n\n\n首先，确定数据获取的方式，是采用在线模式还是离线模式。\n\n如果选择离线模式，我们将按照以下流程进行：\n\n1. 确定锅炉的具体类型，我会指导您填写或选择相关的锅炉参数。\n\n2. 进入系统运行的历史数据选择阶段，您需要上传历史数据文件，我将对这些文件进行解析和评估。\n\n3. 根据解析的历史数据，确认被控变量的信息。\n\n4. 继续根据历史数据，确认操作变量的信息。\n\n5. 同样基于历史数据，确认其他可能的干扰变量信息。\n\n6. 进入控制模型的微调或加载阶段，您可以选择微调现有模型或直接加载预设模型。\n\n7. 最后一步是控制效果的评估，以确保算法的有效性和可靠性。\n\n\n\n如果选择在线模式，流程将有所不同：\n\n1. 确定锅炉的类型，我会指导您完成相关参数的填写或选择。\n\n2. 请确认被控变量的具体信息。\n\n3. 请确认操作变量的具体信息。\n\n4. 请确认其他干扰变量的信息。\n\n5. 进入控制模型的加载阶段，根据前面确认的变量信息，使用您提供的模型配置参数文件来加载模型。\n\n6. 执行控制算法，将所有配置方案信息输入控制算法中，运行并计算最终的控制策略，随后输出计算结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9aab-dc4b-7352-982e-7b2ab8b35db2",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"选择锅炉数据获取方式\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"系统运行历史数据选择\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"boiler\", \"ability\": \"控制效果评估\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id14\", \"tool\": \"boiler\", \"ability\": \"控制模型加载\", \"dep\": [\"id13\"]},\n\n{\"id\": \"id15\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id14\"]},\n\n{\"id\": \"id16\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id15\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9aac-9433-7360-9988-5f61c0618a50",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9aac-9434-7402-94f7-82da0aa57bfa",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id11\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id3\", \"to\": \"id5\", \"expression\": \"${is_upload_file} == true\"}, {\"from\": \"id11\", \"to\": \"id12\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id11\", \"to\": \"id13\", \"expression\": \"${is_upload_file} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9aac-9434-7402-94f7-82e09ee45a53",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9aac-942e-7003-a7ac-164f9964def5",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"选择锅炉数据获取方式\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"boiler\",\"ability\":\"系统运行历史数据选择\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id4\",\"id3\"]},{\"id\":\"id6\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"boiler\",\"ability\":\"控制模型微调或加载\",\"dep\":[\"id6\"]},{\"id\":\"id8\",\"tool\":\"boiler\",\"ability\":\"控制效果评估\",\"dep\":[\"id7\"]},{\"id\":\"id10\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id11\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id10\",\"id2\"]},{\"id\":\"id12\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id11\"]},{\"id\":\"id13\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id12\",\"id11\"]},{\"id\":\"id14\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":[\"id13\"]},{\"id\":\"id15\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":[\"id14\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id11\",\"to\":\"id12\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id11\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"},{\"from\":\"id3\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"},{\"from\":\"id11\",\"to\":\"id13\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"}]",
+      "name": "操作员技能提升需求，当前锅炉运行效果不好，帮我用AI进行运行控制",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_prompt\": \"操作员技能提升需求，当前锅炉运行效果不好，帮我用AI进行运行控制\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "选择锅炉数据获取方式"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-19T13:53:22.661",
+          "details": "user_prompt = 操作员技能提升需求，当前锅炉运行效果不好，帮我用AI进行运行控制"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

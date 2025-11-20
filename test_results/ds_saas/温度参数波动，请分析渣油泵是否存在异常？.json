@@ -18,7 +18,7 @@
       1
     ],
     {
-      "id": "019a968a-00b3-72e1-8590-d8c3f4fad056",
+      "id": "019a96d5-5fff-79e1-9477-10523924402d",
       "type": "view",
       "view": {
         "format": "card",
@@ -34,7 +34,7 @@
       2
     ],
     {
-      "id": "019a968a-00b6-7390-be45-c570dd202e12",
+      "id": "019a96d5-6001-7202-a6fd-3b5ead7421e9",
       "type": "text",
       "text": "</think>\n\n\n\n"
     },
@@ -42,14 +42,14 @@
       2,
       "text"
     ],
-    "您注意到温度参数出现波动，并怀疑这可能是由于渣油泵运行异常引起的。您希望通过分析渣油泵的运行状态，判断是否存在故障或异常操作，从而找出温度波动的原因。\n\n我将执行以下任务帮您解决。\n\n"
+    "您关注的是温度参数波动是否与渣油泵运行异常有关。这可能意味着您希望了解泵的运行状态是否影响了温度稳定性，或者温度变化是否反映了泵的潜在故障。\n\n我将执行以下任务帮您解决。\n\n"
   ],
   [
     [
       3
     ],
     {
-      "id": "019a968a-02bf-7282-84dd-f6ec38abdaa1",
+      "id": "019a96d5-6291-7a03-910b-80cbf5c395c1",
       "type": "view",
       "view": {
         "format": "card",
@@ -74,7 +74,7 @@
       4
     ],
     {
-      "id": "019a968a-151c-7f51-add8-1cf8592089a9",
+      "id": "019a96d5-74bc-7f91-b656-b00531faafaf",
       "type": "json",
       "json": "\n\n"
     },
@@ -89,7 +89,7 @@
       5
     ],
     {
-      "id": "019a968a-2405-71b2-aa61-42cf4e221d76",
+      "id": "019a96d5-8384-78a3-a770-664f7d980f86",
       "type": "view",
       "view": {
         "format": "card",
@@ -106,7 +106,7 @@
       6
     ],
     {
-      "id": "019a968a-2407-78d2-a15f-1945a5e624cc",
+      "id": "019a96d5-8387-7cf2-8a52-e29faef24c2c",
       "type": "branch",
       "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
     }
@@ -116,7 +116,7 @@
       7
     ],
     {
-      "id": "019a968a-240a-7282-aa88-cbda4f4b34ae",
+      "id": "019a96d5-8389-7c50-b29f-6e522c7bce59",
       "type": "require_confirm",
       "require_confirm": "false"
     }
@@ -127,7 +127,7 @@
     ],
     {
       "type": "workflow",
-      "workflow": "019a968a-23fe-7c83-a303-a7317a307e5c",
+      "workflow": "019a96d5-837f-7843-a979-f14cb1bdc721",
       "catalog": "prediction",
       "json": "[{\"id\":\"id1\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"alarm_pred预测预警\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
       "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
@@ -180,7 +180,7 @@
         "content": {
           "title": "输入参数",
           "type": "input",
-          "details": "```json\n{\n  \"task_type\": 4,\n  \"domain_knowledge\": {\n    \"industry\": \"石油化工\",\n    \"device_type\": \"渣油泵\"\n  },\n  \"task_objective_description\": \"分析渣油泵是否存在异常\",\n  \"target_variables\": [\n    {\n      \"description\": \"温度参数\"\n    }\n  ],\n  \"user_specified_input_variables\": [],\n  \"prediction_input_time_period\": 20,\n  \"prediction_output_time_period\": 5\n}\n```"
+          "details": "```json\n{\n  \"task_type\": 4,\n  \"domain_knowledge\": {\n    \"industry\": \"石油化工\",\n    \"device_type\": \"渣油泵\"\n  },\n  \"task_objective_description\": \"分析渣油泵是否存在异常\",\n  \"target_variables\": [\n    {\n      \"tag\": \"\",\n      \"description\": \"温度参数\"\n    }\n  ],\n  \"user_specified_input_variables\": [],\n  \"prediction_input_time_period\": 20,\n  \"prediction_output_time_period\": 5\n}\n```"
         }
       },
       "hide_all": true

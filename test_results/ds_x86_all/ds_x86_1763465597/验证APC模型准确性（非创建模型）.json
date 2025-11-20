@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96fb-08f8-7061-8911-6c3663d0655a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96fb-099c-70e0-998f-7165b391ac21",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想验证现有的APC（先进过程控制）模型的准确性，可能是通过对比模型预测值与实际过程数据，检查模型在当前工况下的表现是否可靠。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96fb-0fd2-7c81-87f5-9415656daa03",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望验证APC模型的准确性，这涉及到对模型的预测或控制效果进行评估，确保模型能够准确地反映实际的工艺过程或控制需求。用户可能已经拥有一个APC模型，需要评估其性能，以确认模型是否适用于当前的控制环境或工艺条件。\n\n首先，我会根据您提供的模型名称来获取模型的输入输出变量及其相应的位号。随后，我将分析这些位号的历史数据，挑选出最近合适的时间段，对选定的数据进行预处理，以剔除异常值和超出限制的值。接着，我会将处理后的数据送入模型进行仿真测试，通过计算预测的准确性来评估模型的性能。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96fb-2779-7172-b3c9-6af49156710e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96fb-33b7-79d0-884b-b3a2bde7fe25",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96fb-348e-7010-ac1b-9392e85178d5",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96fb-3690-7613-8187-ed1d3279e3b8",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96fb-3690-7613-8187-ed29ad188002",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96fb-368f-7232-b8fe-20764f15031d",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "验证APC模型准确性（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96fb-368f-7232-b8fe-20764f15031d"
+      }
+    }
+  ]
+]

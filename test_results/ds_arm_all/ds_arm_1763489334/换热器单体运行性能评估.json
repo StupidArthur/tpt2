@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a985c-8497-74f2-9845-138378a45d0c",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a985c-84ff-7c63-b717-05b8ba7647fe",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想评估换热器在单体运行时的性能，可能包括换热效率、温度控制、压降等关键指标，以判断其是否达到设计要求或运行状态是否正常。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a985c-8ad0-7ab2-a6b2-b8541c296adc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户期望根据现有的数据（如设计参数、运行参数、公用工程信息）来评估换热器的单体运行性能，我将通过设计效率验证、运行状态诊断以及关键设备定位，来准确识别系统中效率低下或重要的换热器。\n\n首先，我将通过用户界面引导用户上传必需的数据，包括物料流动数据和换热器的具体参数等。系统会进行数据校验，确保数据的完整性和格式正确，同时满足换热器性能评估的基本需求。如果数据校验未通过，我将在上传的文件中标记出错误的单元格，并附上修正建议，用户需依据这些提示修改数据后再次上传。\n\n一旦数据校验通过，我将根据用户提供的数据，进行换热器性能评估工作：通过对比设计参数来检查热效率，找出设计效能不佳的换热器；通过分析运行数据，评估设备的运行负荷和热效率，以识别那些运行效率低或超出负荷的设备；同时，通过对公用工程信息的分析，确定在传热路径中起关键作用的换热器。最终，我将生成一份评估报告，报告中会列出设备的效率排名以及建议优先改造的换热器。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a985c-f39d-7221-868e-a3e73d7e4448",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a985d-1916-7bf1-833f-554ec01e809e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a985d-19f6-7070-91f8-12061e5c8c36",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a985d-1b52-7f01-859c-fecf1073d645",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a985d-1b53-7850-8732-23bcc7fee5a7",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a985d-1b50-77c3-9533-a7d0116ec760",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "换热器单体运行性能评估",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a985d-1b50-77c3-9533-a7d0116ec760"
+      }
+    }
+  ]
+]

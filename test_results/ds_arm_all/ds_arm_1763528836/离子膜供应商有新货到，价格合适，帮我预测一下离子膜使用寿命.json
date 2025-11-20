@@ -1,0 +1,149 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9ad4-3c94-7720-b56c-55a415272401",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9ad4-3d22-78f2-a9d1-a370f6629e68",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望了解新到离子膜的使用寿命，以便评估其性价比和使用价值。这可能涉及到根据历史数据、运行条件或供应商信息进行预测。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9ad4-4090-7bd2-af27-883f407f394f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我们识别到用户希望我们基于历史数据和当前运行状态，预测一下该电解槽离子膜最佳换模时间。这涉及到离子膜寿命预测，要先确认该电解槽的相关参数，主要包括最近一次的换模日期、单元槽数量等。  \n\n其次，我会让用户上传数据，包括至少换模历史、运行数据。我会对数据进行校验，若数据不满足要求，我会让用户补充数据并重新上传。\n\n若数据合格，即可调用离子膜寿命预测算法。算法会根据历史换模记录，识别每个单元槽的换模时间，然后根据运行数据进行综合评估，最终输出每个单元槽的换模建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9ad4-80de-7c80-af83-d760c6cc7e1f",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"离子膜寿命预测\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"离子膜寿命预测\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"离子膜寿命预测\", \"ability\": \"离子膜寿命预测\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9ad4-adea-79f3-bbab-84ba70bb89b0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9ad4-adec-7f41-9b21-3423a57bd2de",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9ad4-adec-7f41-9b21-3434370915b9",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9ad4-ade9-7b53-98ed-3886ce1a16a3",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"离子膜寿命预测\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"离子膜寿命预测\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"离子膜寿命预测\",\"ability\":\"离子膜寿命预测\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "离子膜供应商有新货到，价格合适，帮我预测一下离子膜使用寿命",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9ad4-ade9-7b53-98ed-3886ce1a16a3"
+      }
+    }
+  ]
+]

@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a991e-c218-7bb0-bd68-52a4f1b223f1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a991e-c2a3-7122-98c9-ebc419d38aa6",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望通过调整操作参数或条件，提高气化炉中有效气体（如CO、H₂）的含量，从而提升气化效率和经济效益。这可能涉及优化气化剂配比、温度、压力或原料配比等。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a991e-ca70-77a3-b519-29eea79bb0bf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提问气化炉有效气含量提升操作方案，希望得到的操作方案应包括关键操作变量的优化方向，以指导实际生产操作。首先，我需要通过用户交互界面，询问用户是否已拥有训练好的模型，若没有，则引导用户进入上传数据流程；若有，则直接进入配置方案流程。\n\n在上传数据流程中，我会推荐用户上传相关文件，需要用户上传的文件包括：气化炉装置的基础数据、历史运行数据以及最近一天的小时数据。上传后，我将对这些数据进行解析和评估，确保数据的质量和适用性。\n\n数据解析和评估通过后，我将基于这些数据进行操作方案的设计。首先，我会确定气化炉装置的有效气含量的优化目标，然后结合装置特点和工艺条件，建立具体的操作变量与目标之间的响应关系。接下来，对这些变量进行分析，识别出对有效气含量影响最大和最需要优化的变量，从而形成一套明确的操作路径，以提升有效气含量。最后，我会给出具体的操作建议，包括调整方向和优化策略，确保用户能够根据这些指导进行实际操作，从而达到提升有效气含量的目的。\n\n如果数据解析和评估未通过，我将提示用户数据存在问题，需要用户修正后重新上传。\n\n若用户选择已有模型，则直接进入配置方案流程，根据用户提供的模型，我会提取所有需要配置的参数和数据，让用户在线完成配置，确保数据的准确性和来源可靠性。\n\n完成配置方案流程后，进入实时计算流程，根据用户选择的模型进行实时计算，最终输出优化结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a991f-0702-7502-8b6b-e3438ca2e1cb",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认建模信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"TPT推理计算\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"实时计算\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id6\", \"tool\": \"Redesign\", \"ability\": \"数据质量分析\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"Redesign\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"Redesign\", \"ability\": \"工况识别与验证\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"Redesign\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"Redesign\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"Redesign\", \"ability\": \"在线工况识别\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"Redesign\", \"ability\": \"在线预测\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"Redesign\", \"ability\": \"在线控制\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id14\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id13\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a991f-5e00-7ad2-9102-155fb38f7b55",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a991f-5e00-7ad2-9102-156c28975e13",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--实时计算-- 不存在于 --TPT推理计算-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a991f-6147-7830-9889-aa1697f6779b",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9920-03e4-7b52-ba2c-f69606ddfe1e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9920-03e4-7b52-ba2c-f6ae7e968e99",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u786e\\u8ba4\\u5efa\\u6a21\\u4fe1\\u606f\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"TPT\\u63a8\\u7406\\u8ba1\\u7b97\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u914d\\u7f6e\\u65b9\\u6848\", \"dep\": [\"id1\"]}, {\"id\": \"id7\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u5b9e\\u65f6\\u8ba1\\u7b97\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9920-03e5-7ac2-b72d-fa38e2b94952",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9920-03e5-7ac2-b72d-fa4bac0c0e9f",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9920-03e5-7ac2-b72d-fa59b9673dc6",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9920-03e2-75e2-8ed4-17f9f2fa71d1",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"RTO操作优化\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"RTO操作优化\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"RTO操作优化\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"RTO操作优化\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"RTO操作优化\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"RTO操作优化\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "气化炉有效气含量提升操作方案制定",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9920-03e2-75e2-8ed4-17f9f2fa71d1"
+      }
+    }
+  ]
+]

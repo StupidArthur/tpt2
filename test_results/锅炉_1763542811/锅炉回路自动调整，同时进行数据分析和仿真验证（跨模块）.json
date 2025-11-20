@@ -1,0 +1,172 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9b5b-446f-7850-b743-df8c060cf29f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9b5b-44f5-7723-8d14-a7d6fb8cc6f6",
+      "type": "json",
+      "json": "\n"
+    },
+    [
+      2,
+      "json"
+    ],
+    "[\n    {\n            \"id\": \"id1\",\n            \"tool\": \"BI\",\n            \"ability\": \"文件内容分析\",\n            \"dep\": null\n    },\n    {\n            \"id\": \"id2\",\n            \"tool\": \"general_tool\",\n            \"ability\": \"end\",\n            \"dep\": [\"id1\"]\n    }\n]\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9b5b-4a1d-7b71-bbeb-51cee05a0639",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9b5b-4a1c-76b3-9ce6-d476adf3982f",
+      "json": "[{\"id\":\"id1\",\"tool\":\"BI\",\"ability\":\"文件内容分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "锅炉回路自动调整，同时进行数据分析和仿真验证（跨模块）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"userinput\": \"锅炉回路自动调整，同时进行数据分析和仿真验证（跨模块）\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "文件内容分析"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "调用工具失败",
+          "type": "error",
+          "details": "```plaintext\nPython执行失败: <class 'KeyError'>\n'\"BI\" process_chat_form not found'\n\n\n```"
+        }
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9b5b-4a30-73b3-9dda-e8800d683585",
+      "type": "workflow",
+      "workflow": "019a9b5b-4a1c-76b3-9ce6-d476adf3982f",
+      "json": "[{\"id\":\"id1\",\"tool\":\"BI\",\"ability\":\"文件内容分析\",\"dep\":null}]",
+      "branch": "[]",
+      "name": "锅炉回路自动调整，同时进行数据分析和仿真验证（跨模块）",
+      "metadata": {
+        "can_be_agent": false
+      }
+    }
+  ]
+]

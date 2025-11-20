@@ -1,0 +1,171 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b3-509f-7231-a2a9-cf389a7c6fc6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b3-5134-7b02-9019-22cb8548f326",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望针对G_LT_13001的过程变量（PV）在出现大波动时，构建一个智能控制方案，以提升系统在异常工况下的稳定性和控制效果。这可能包括引入先进控制策略或优化现有控制逻辑。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b3-572d-7310-b1bb-07f4d301d30b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您希望构建G_LT_13001.PV的过程变量大波动工况智能控制方案。波动工况通常具有复杂性和不确定性，常规的控制策略可能难以有效应对，导致生产过程中的波动较大或控制滞后。为了实现更精准的控制目标，我将采取以下步骤来设计AI控制方案：\n\n\n\n首先，我会详细了解您的需求，通过页面提问的方式获取更多关于G_LT_13001.PV波动工况智能控制方案所需的信息。同时，我会询问您是否已经拥有训练好的模型，如果没有，我们将进入数据上传与解析的步骤；如果已有模型，则直接进入配置方案的流程。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b3-930a-7ca3-96ff-a03c36905fa9",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI控制补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"AI可控性评估\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"SPC\", \"ability\": \"在线工况识别\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"在线预测\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"SPC\", \"ability\": \"在线控制\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"SPC\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id14\", \"tool\": \"SPC\", \"ability\": \"实时计算\", \"dep\": [\"id13\"]},\n\n{\"id\": \"id15\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id14\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b4-3d46-76e1-95ba-b71c9edf4074",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b4-3d46-76e1-95ba-b7263e600bad",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id1\", \"to\": \"id9\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b4-3d47-7ed2-abf6-bb98e4c9dad2",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b4-3d43-7613-af47-640f53be15cf",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"AI控制补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"AI可控性评估\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"关键影响因素分析\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"SPC\",\"ability\":\"工况识别与验证\",\"dep\":[\"id4\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"预测模型构建与验证\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"SPC\",\"ability\":\"控制器搭建及验证\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"SPC\",\"ability\":\"在线工况识别\",\"dep\":[\"id1\"]},{\"id\":\"id10\",\"tool\":\"SPC\",\"ability\":\"在线预测\",\"dep\":[\"id9\"]},{\"id\":\"id11\",\"tool\":\"SPC\",\"ability\":\"在线控制\",\"dep\":[\"id10\"]},{\"id\":\"id13\",\"tool\":\"SPC\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id14\",\"tool\":\"SPC\",\"ability\":\"实时计算\",\"dep\":[\"id13\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"}]",
+      "name": "G_LT_13001.PV过程变量大波动工况智能控制方案构建",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "AI控制补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "clientId",
+          "type": "string",
+          "details": "019a97b3-3c8b-7e10-bdac-cc9be4bbbbba"
+        }
+      }
+    }
+  ]
+]

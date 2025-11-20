@@ -1,0 +1,162 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96b4-5735-7530-96c6-85ee93193e00",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96b4-5737-71b2-a0bc-49b706332738",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望优化传统PID控制器的参数，以提升控制系统的响应速度和稳定性。这通常涉及调整比例、积分和微分系数，使其更适应实际工艺需求。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96b4-5943-7300-8462-1918e3f97302",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我需要让用户补充信息，选择离线还是在线模式。\n\n如果是离线模式，我需要用户上传数据文件，我需要从您上传的数据文件中，提取出装置中待优化的单回路相关信息，包括回路的性质（如压力、液位、流量、温度）、回路的PV（过程变量）、MV（操作变量）、SV（设定值）以及当前的PID参数。\n\n接下来，我会对这些数据进行数据质量分析，确保数据集的时间范围覆盖了您关注的投产初期阶段。如果数据集的时间段不满足要求，或者数据质量存在问题，比如缺少关键变量（PV、MV、SV）或PID参数，以及数据缺失严重导致评分不佳，我会在这一阶段提醒您补充或修正数据。\n\n如果数据质量符合要求，我将进行回路运行情况分析，分析被控变量的波动周期、波动范围，并评估波动的大小（波动较大或波动较小）。基于这些分析，我会推荐适合的PID参数，以帮助您优化回路控制。\n\n随后，我将采用拟人化算法进行参数迭代整定。拟人化算法通过AI智能分析技术，学习人工整定思维链，能够快速适应各种不同的工艺场景。在整定过程中，算法会根据您的需求，对控制回路的参数进行整定，以实现更好的控制效果。\n\n如果是在线模式，将直接进入多策略自适应整定，根据回路数据情况自动选择最适合数据特征的方式进行参数整定。若控制回路的阀门存在长期卡限等异常情况，则不建议进行整定，我将无法为您提供参数。若控制回路的MV或SV变化幅度过小，则建议您挑选合适的历史数据再整定；其他情况下我将提供给您整定后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96b4-6e0e-7cb0-9264-97d6fea13ce0",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"AI自整定补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"PID数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"PID\", \"ability\": \"PID回路运行情况分析\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"PID强化学习自整定\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"PID\", \"ability\": \"多策略自适应整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96b4-7b30-7202-ae5b-ac695ae4cb9b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96b4-7b33-7463-91db-db4282f5d3ba",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96b4-7b35-75f3-b072-42e7d98ae8e5",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96b4-7b2b-7b61-a5ef-dcd4de70665d",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"AI自整定补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"PID数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"PID\",\"ability\":\"PID回路运行情况分析\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"PID强化学习自整定\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"}]",
+      "name": "优化传统PID控制参数（非AI智能控制）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96b4-7b3a-7da2-8524-860b898a4335",
+      "type": "workflow",
+      "workflow": "019a96b4-7b2b-7b61-a5ef-dcd4de70665d",
+      "json": "[{\"id\":\"id1\",\"tool\":\"PID\",\"ability\":\"AI自整定补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"PID\",\"ability\":\"PID数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"PID\",\"ability\":\"PID回路运行情况分析\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"PID\",\"ability\":\"PID强化学习自整定\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"PID\",\"ability\":\"多策略自适应整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"}]",
+      "name": "优化传统PID控制参数（非AI智能控制）",
+      "metadata": {
+        "can_be_agent": true
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "error_text",
+      "error_text": "未找到工具 PID/AI自整定补充信息，无法执行"
+    }
+  ]
+]

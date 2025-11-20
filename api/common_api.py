@@ -103,7 +103,7 @@ async def i_create_conversation(token: str, title: str = "pid"):
     url = f"{o_config.https_header}/tpt-app/chat-tool-work/api/conversation"
     
     # Cookie包含基础部分和tpt-token
-    cookie = f"{o_config.cookie} tpt-token={token}"
+    cookie = f"{o_config.cookie}tpt-token={token}"
     
     headers = {
         "Cookie": cookie,
@@ -205,7 +205,7 @@ async def i_conversation_break(token: str, conversation_id: str):
     url = f"{o_config.https_header}/tpt-app/chat-tool-work/api/conversation/{conversation_id}/break"
     
     # Cookie包含基础部分和tpt-token
-    cookie = f"{o_config.cookie} tpt-token={token}"
+    cookie = f"{o_config.cookie}tpt-token={token}"
     
     headers = {
         "Cookie": cookie,
@@ -271,7 +271,7 @@ async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
     ws_url = f"{o_config.wss_header}/tpt-app/chat-tool-socket-work/api/conversation/{conversation_id}/stream"
     
     # Cookie包含基础部分和tpt-token
-    cookie = f"{o_config.cookie} tpt-token={token}"
+    cookie = f"{o_config.cookie}tpt-token={token}"
     
     # WebSocket headers
     headers = {

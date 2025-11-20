@@ -52,7 +52,7 @@ async def process_single_test_case(token: str, title: str, semaphore: asyncio.Se
                 result_data = await ws_conversation(token, conversation_id, text=title)
                 
                 # 确保目录存在
-                output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_results", "ds_x86")
+                output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_results", "ds_arm")
                 os.makedirs(output_dir, exist_ok=True)
                 
                 # 清理文件名，移除不允许的字符
@@ -73,7 +73,7 @@ async def process_single_test_case(token: str, title: str, semaphore: asyncio.Se
             return {"success": False, "title": title, "error": str(e)}
 
 
-async def main(max_concurrent: int = 5):
+async def main(max_concurrent: int = 1):
     """
     主函数
     
@@ -83,7 +83,7 @@ async def main(max_concurrent: int = 5):
     print(f"开始执行测试，并发数量: {max_concurrent}")
     
     # 测试登录
-    o_config.set_env('x86')
+    o_config.set_env('arm')
     
     login_result = await i_login()
     
@@ -130,5 +130,5 @@ async def main(max_concurrent: int = 5):
 
 if __name__ == "__main__":
     # 通过函数参数控制并发数量，例如：max_concurrent=10
-    asyncio.run(main(max_concurrent=5))
+    asyncio.run(main(max_concurrent=10))
 

@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a97b1-624a-76d2-9c7d-8fc7e7bcfc2e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a97b1-624c-7e10-a36e-b611ec1697d0",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您已完成监测数据上传，希望基于这些数据评估设备是否存在异常。这可能包括分析振动、温度、压力等参数，判断设备运行状态是否正常，识别潜在故障或性能下降的迹象。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a97b1-64c0-7262-b31f-d6e64e743a8d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户上传了已包含监测数据的文件，需要分析这些数据以识别设备的异常情况。如果数据无异常，设备运行状态良好；若数据出现异常，则需进一步判断是设备故障还是传感器故障，以便及时进行维护或调整。\n\n首先，我将对上传的文件进行数据解析，提取出设备和传感器的相关数据信息。\n\n接下来，需要对这些数据进行异常检测。由于用户未指定具体的时间段，我将对所有数据进行异常评估，生成评估报告，报告中会列出设备和传感器的异常情况及建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a97b1-69e6-7f72-a8f2-240181e4720b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"IDX\", \"ability\": \"上传数据与解析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"IDX\", \"ability\": \"执行查询与反馈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a97b1-6efc-71f1-a3aa-fc699d7d98de",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a97b1-6eff-7173-83f6-1939994ceaa6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--执行查询与反馈-- 不存在于 --上传数据与解析-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a97b1-6f89-77b1-ada8-56e2e97bfde3",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a97b1-e2e1-7270-9532-144b7d083ad8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a97b1-e2e3-78d3-b00f-7689b26f86e9",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\\u4e0e\\u6821\\u9a8c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u7f51\\u7edc\\u74f6\\u9888\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u5668\\u74f6\\u9888\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a97b1-e2e5-7d52-aa83-9a94eccaf84e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a97b1-e2e7-7562-84b1-1197863f920f",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a97b1-e2e9-7573-ad9f-440db7f2dfbc",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a97b1-e2dd-7703-bc9b-17cd7cf23d6a",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热网络瓶颈\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "监测数据已上传完成，基于上传文件，评估设备监测有什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a97b1-e2dd-7703-bc9b-17cd7cf23d6a"
+      }
+    }
+  ]
+]

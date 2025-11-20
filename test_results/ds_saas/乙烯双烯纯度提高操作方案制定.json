@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96c8-0633-71e0-9f0a-81b77c7aa8f9",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96c8-0635-75d1-bcc0-ee79afc61ae8",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望制定一个操作方案来提高乙烯双烯的纯度，这可能涉及优化反应条件、调整分离工艺参数或改进操作流程，以提升产品质量。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96c8-0839-7cc3-85fc-921fa47a8fe3",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望制定一份乙烯双烯纯度提高的操作方案。在这个过程中，我们不仅要关注当前的生产效率，还要努力改善质量，这意味着可能需要对现有的工艺条件进行调整。用户的需求促使我们不仅要提供简单的数据优化，还要确保工艺的优化能够切实可行。因此，我将采取以下步骤来确保提供一个既有效又实用的优化方案：\n\n\n\n首先，我会明确用户的具体需求，通过补充信息的流程来获取用户问题中未明确的关键信息。这包括了解用户当前的生产状况和需要解决的问题，以及通过页面提问来收集用户的意见，从而帮助我们更好地定义优化的目标。同时，我还会询问用户是否已经拥有训练好的模型，如果没有，我们将进入数据上传的步骤；如果已有模型，则直接进入配置方案的阶段。\n\n\n\n在数据上传的阶段，我会建议用户上传相关的生产数据，并指导用户如何选择合适的文件。上传后，我将对文件内容进行解析和评估，以确保数据的准确性和可用性。如果数据存在异常或不符合要求，我将及时通知用户并提供修正建议，以便用户能够根据提示调整数据并重新上传。\n\n\n\n接下来，进入确认建模信息的阶段。基于历史数据库和网络资源，我将生成优化方案，其中包括优化目标、优化变量、约束条件以及代理模型的构建等。同时，我会让用户再次确认这些信息，以确保所有配置都是用户期望的，从而避免因误解用户需求而导致的优化偏差。\n\n\n\n最后，进入TPT推理计算阶段。根据之前确认的优化方案，我将先对数据进行预处理，然后利用代理模型的输入输出关系，将数据送入自动化建模系统中进行模型的微调训练。通过优化算法，结合优化目标、变量、约束条件和代理模型，我将计算出优化建议。在得出优化结论后，我将为用户总结优化结果，并提供具体的调整建议，以帮助用户提高产品质量。\n\n\n\n如果在最初的补充信息流程中，用户选择了已有模型，则直接进入配置方案阶段。在这个阶段，我会提取出所有需要配置的项目，让用户在线完成配置，以确保所有数据的准确性和来源。配置完成后，进入实时计算阶段，根据用户选择的模型进行实时计算，最终输出优化结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96c8-233e-7161-a2f9-d90ab8b94d84",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"RTO操作优化\", \"ability\": \"补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"RTO操作优化\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"RTO操作优化\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"RTO操作优化\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"RTO操作优化\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"RTO操作优化\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96c8-327f-7290-bbdc-dc60b786fc76",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96c8-32ee-72d3-b219-8b5e5aa15c92",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96c8-336f-7062-91c9-3885ffbeffb5",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a96c8-3372-7252-85a1-ce3ac127cfa5",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96c8-336b-7b62-b48d-1b0762506697",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"RTO操作优化\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"RTO操作优化\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"RTO操作优化\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"RTO操作优化\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"RTO操作优化\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"RTO操作优化\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "乙烯双烯纯度提高操作方案制定",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a96c8-336b-7b62-b48d-1b0762506697"
+      }
+    }
+  ]
+]

@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9994-410b-7aa3-9db1-b6f1ab44c246",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9994-41aa-72a1-901a-ee40e01ef4b4",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想通过矩阵辨识的方法建立一个基础的控制模型，可能是为了更准确地描述系统动态特性，从而提升控制效果。这种方法常用于多变量系统的建模与分析。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9994-46ab-76a2-b377-78a168ed1b73",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，为了创建基础控制模型，首先会依据您提供的位号数据信息，自动识别出MV（操作变量）、DV（干扰变量）和CV（被控变量），构建起模型矩阵。\n\n接着，将检查该矩阵的合理性，若发现矩阵结构存在问题，或存在奇异矩阵的情况，会给出相应的提示，说明矩阵配置有误及无法使用的原因。\n\n如果模型矩阵没有问题，将进行位号历史数据长度的校验。由于您没有指定具体的时间段，因此默认使用当前时间至一个月前的数据。如果数据段内缺少历史数据，将使用全部可用的数据，并对这些数据进行预处理，剔除异常值和坏值。\n\n随后，对数据进行自动切片，评估数据质量，选取质量最佳的数据用于系统辨识。若数据质量不佳，将向前追溯一个月重新选取数据，重复此过程直至找到质量合格的数据。如果尝试次数超过预设值（若未设定，则使用默认上限），则选择质量相对较高的数据进行使用。\n\n接着，使用符合要求的数据进行模型辨识，将采用子空间辨识算法，得到模型以及模型的评价指标。\n\n最后，对模型矩阵进行仿真测试和质量评估，选择性能更优的模型进行整合，构建最终的基础控制模型。\n\n完成上述步骤后，将更新原有的模型，展示新模型，并确保模型的数据被妥善存储。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9994-7c42-7ae1-bdfb-1dfd12c3711c",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9994-946b-7d80-89dd-2ad195839279",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9994-9547-75d2-a084-6b15d6738627",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9994-97c8-7710-92d5-541feee7cedd",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9994-97c9-7201-aad1-af99363bc092",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9994-97c7-74c0-92f9-2de6a759589e",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "矩阵辨识方式创建基础控制模型",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9994-97c7-74c0-92f9-2de6a759589e"
+      }
+    }
+  ]
+]

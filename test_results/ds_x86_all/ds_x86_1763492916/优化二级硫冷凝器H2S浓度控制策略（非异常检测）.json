@@ -1,0 +1,224 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9891-fedb-77c3-a0e9-9e99b6a42ec0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9891-ff45-7763-bc79-616693810c76",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望优化二级硫冷凝器中H₂S浓度的控制策略，以提高控制效果和系统稳定性。这可能包括改进控制逻辑、调整控制参数或引入更先进的控制方法，从而在正常操作条件下实现H₂S浓度的精准控制。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9892-071d-7d23-a423-99e9694a7ecf",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户提问二级硫冷凝器H2S浓度控制策略优化，希望得到装置的控制策略生成。这是一个锅炉装置控制问题，我会进行以下步骤：\n\n第一步，选择锅炉数据获取方式，需要用户选择工作模式为在线模式还是离线模式。\n\n如果是离线模式，我需要用户提供系统运行历史数据文件，我需要指导用户上传文件，并对上传的文件进行数据解析和数据评估。\n\n如果解析和评估结果不好，我需要用户重新上传数据文件，如果解析和评估结果成功，我根据上传的数据文件，进行确定锅炉类型。\n\n第二步，需要用户确定锅炉类型，我会根据用户选择的锅炉类型，进行系统运行历史数据选择。\n\n第三步，根据历史数据，对被控变量信息进行确认，需要用户确认被控变量信息。\n\n第四步，根据历史数据，对操作变量信息进行确认，需要用户确认操作变量信息。\n\n第五步，根据历史数据，对其他干扰变量信息进行确认，需要用户确认其他干扰变量信息。\n\n第六步，进行控制模型微调或加载，根据用户选择，进行模型微调或加载。\n\n第七步，进行控制效果评估，根据用户选择的模型，进行控制效果评估。\n\n如果是在线模式，我需要用户确定锅炉类型，我会根据用户选择的锅炉类型，进行确定锅炉类型。\n\n第二步，根据确定的锅炉类型，根据历史数据，对被控变量信息进行确认，需要用户确认被控变量信息。\n\n第三步，根据确定的锅炉类型，根据历史数据，对操作变量信息进行确认，需要用户确认操作变量信息。\n\n第四步，根据确定的锅炉类型，根据历史数据，对其他干扰变量信息进行确认，需要用户确认其他干扰变量信息。\n\n第五步，进行控制模型加载，根据用户选择的模型，进行控制模型加载。\n\n第六步，进行控制算法执行，根据用户选择的模型，进行控制算法执行。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9892-4fe4-71b3-bb4f-f5091674443a",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"boiler\", \"ability\": \"选择锅炉数据获取方式\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"boiler\", \"ability\": \"系统运行历史数据选择\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"boiler\", \"ability\": \"控制模型微调或加载\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"boiler\", \"ability\": \"控制效果评估\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]},\n\n{\"id\": \"id9\", \"tool\": \"boiler\", \"ability\": \"确定锅炉类型\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id10\", \"tool\": \"boiler\", \"ability\": \"确认被控变量信息\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"boiler\", \"ability\": \"确认操作变量信息\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"boiler\", \"ability\": \"确认其它干扰变量信息\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"boiler\", \"ability\": \"控制模型加载\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id14\", \"tool\": \"boiler\", \"ability\": \"控制算法执行\", \"dep\": [\"id13\"]},\n\n{\"id\": \"id15\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id14\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9892-aca7-7a73-8c37-c833cee69900",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9892-aca7-7a73-8c37-c84a7d99bc77",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id2\", \"to\": \"id11\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id3\", \"to\": \"id4\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id3\", \"to\": \"id5\", \"expression\": \"${is_upload_file} == true\"}, {\"from\": \"id11\", \"to\": \"id12\", \"expression\": \"${is_upload_file} == false\"}, {\"from\": \"id11\", \"to\": \"id13\", \"expression\": \"${is_upload_file} == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9892-aca7-7a73-8c37-c8533ba367eb",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9892-aca4-7023-a97f-868b15e90863",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"boiler\",\"ability\":\"选择锅炉数据获取方式\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"boiler\",\"ability\":\"系统运行历史数据选择\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id4\",\"id3\"]},{\"id\":\"id6\",\"tool\":\"boiler\",\"ability\":\"控制模型微调或加载\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"boiler\",\"ability\":\"控制效果评估\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"boiler\",\"ability\":\"确定锅炉类型\",\"dep\":[\"id1\"]},{\"id\":\"id10\",\"tool\":\"boiler\",\"ability\":\"确认被控变量信息\",\"dep\":[\"id9\"]},{\"id\":\"id11\",\"tool\":\"boiler\",\"ability\":\"确认操作变量信息\",\"dep\":[\"id10\",\"id2\"]},{\"id\":\"id12\",\"tool\":\"boiler\",\"ability\":\"确认其它干扰变量信息\",\"dep\":[\"id11\"]},{\"id\":\"id13\",\"tool\":\"boiler\",\"ability\":\"控制模型加载\",\"dep\":[\"id12\",\"id11\"]},{\"id\":\"id14\",\"tool\":\"boiler\",\"ability\":\"控制算法执行\",\"dep\":[\"id13\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id3\",\"to\":\"id4\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id11\",\"to\":\"id12\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id11\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"},{\"from\":\"id3\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"},{\"from\":\"id11\",\"to\":\"id13\",\"expression\":\"Variable([String(\\\"is_upload_file\\\")]) Eq true\"}]",
+      "name": "优化二级硫冷凝器H2S浓度控制策略（非异常检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"user_prompt\": \"优化二级硫冷凝器H2S浓度控制策略（非异常检测）\"\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "选择锅炉数据获取方式"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "日志",
+          "type": "log",
+          "description": "[info] 2025-11-19T04:06:00.084",
+          "details": "user_prompt = 优化二级硫冷凝器H2S浓度控制策略（非异常检测）"
+        }
+      },
+      "hide_all": true
+    }
+  ]
+]

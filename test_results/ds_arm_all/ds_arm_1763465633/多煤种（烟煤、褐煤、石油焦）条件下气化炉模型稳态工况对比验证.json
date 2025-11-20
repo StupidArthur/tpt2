@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a971c-59b5-7983-873d-5e06f8ca1233",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a971c-5a2a-7c43-a699-e5695478ed30",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在多种煤炭（如烟煤、褐煤和石油焦）作为原料的条件下，对气化炉的稳态运行情况进行建模和对比验证，以评估不同煤种对气化炉性能的影响。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a971c-5fc3-7c10-957d-59a2122bf047",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "仿真建气化炉模型时，需要考虑不同类型的煤（如烟煤、褐煤、石油焦）作为原料，由于这些煤种的物理化学性质差异显著，因此需要对气化炉模型在多煤种条件下进行稳态工况对比验证，以确保模型的普适性和准确性。这一过程可能涉及调整模型参数，进行多次仿真计算，对比分析仿真结果与实际数据或预期性能，从而验证模型在不同工况下的稳定性和可靠性。\n\n首先，我会选择一个通用的气化炉设备模型，点击生成设备模型并执行，以检查该模型是否已存在。如果设备模型存在，将直接使用；如果不存在，则会创建新的模型并执行。\n\n接下来，我会模拟不同设备参数值，针对烟煤、褐煤、石油焦等不同煤种，生成相应的仿真计算图表，以便对比分析。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a971c-a4de-7e32-8f9c-8f4dcc7b2065",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"生成工艺模型并执行\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"模拟设备参数值\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a971c-c808-7540-b901-04cf1ffbb6d0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a971c-c8e7-7ce0-871b-268d796460a0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a971c-ca75-70e0-ba9c-77c487f3bdd3",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a971c-ca77-7171-8624-d3e079480a7d",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a971c-ca74-7bf1-abcf-c394c2d9fbb9",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"生成工艺模型并执行\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"模拟设备参数值\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "多煤种（烟煤、褐煤、石油焦）条件下气化炉模型稳态工况对比验证",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a971c-ca74-7bf1-abcf-c394c2d9fbb9"
+      }
+    }
+  ]
+]

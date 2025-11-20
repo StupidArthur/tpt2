@@ -1,0 +1,152 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9912-01df-7ae2-8140-d8cc54ca7e77",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9912-024f-7cf2-aade-59ef37729dcc",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望上传一个Excel文件，用于分析技术改造前的数据中是否存在异常情况，如数据波动异常、趋势突变或超出正常范围的数值等。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9912-060e-7293-9dd3-77028bb1151b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户通过上传xlsx文件，希望对文件中的数据进行分析，以发现其中存在的异常情况。这可能涉及到数据的完整性、准确性、一致性等方面的检查，以帮助用户识别数据中的问题。\n\n首先，我会让用户上传包含目标数据的文件，然后对文件进行解析，提供解析结果，以便用户确认。\n\n如果解析结果无误，系统将基于文件中的有效数据进行异常分析。如果发现异常，将提供异常数据的详细信息，并建议用户修正。如果解析结果有误，系统将提示用户修正文件并重新上传，直到解析成功。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9912-2f73-7c31-893c-3c717a75d879",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"general_tool\", \"ability\": \"用户交互界面\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"数据质量分析\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"AI可控性评估\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"关键影响因素分析\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"SPC\", \"ability\": \"工况识别与验证\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"预测模型构建与验证\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id11\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id12\", \"tool\": \"SPC\", \"ability\": \"控制器搭建及验证\", \"dep\": [\"id10\"]},\n\n{\"id\": \"id13\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id14\", \"tool\": \"SPC\", \"ability\": \"在线工况识别\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id15\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id14\"]},\n\n{\"id\": \"id16\", \"tool\": \"SPC\", \"ability\": \"在线预测\", \"dep\": [\"id14\"]},\n\n{\"id\": \"id17\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id16\"]},\n\n{\"id\": \"id18\", \"tool\": \"SPC\", \"ability\": \"在线控制\", \"dep\": [\"id16\"]},\n\n{\"id\": \"id19\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id18\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9913-1ab4-7973-9621-c19e6b39c299",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9913-1ab5-7c92-bf75-5c03e78f9cd4",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${data_score}"
+    },
+    [
+      6,
+      "branch"
+    ],
+    "<5\"}]"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9913-1ab5-7c92-bf75-5c1844620032",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9913-1ab1-72c0-af2a-4e471ce5f1f8",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"builtin\",\"ability\":\"用户交互界面\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"AI可控性评估\",\"dep\":[\"id2\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"关键影响因素分析\",\"dep\":[\"id4\"]},{\"id\":\"id8\",\"tool\":\"SPC\",\"ability\":\"工况识别与验证\",\"dep\":[\"id6\"]},{\"id\":\"id10\",\"tool\":\"SPC\",\"ability\":\"预测模型构建与验证\",\"dep\":[\"id8\"]},{\"id\":\"id12\",\"tool\":\"SPC\",\"ability\":\"控制器搭建及验证\",\"dep\":[\"id10\"]},{\"id\":\"id14\",\"tool\":\"SPC\",\"ability\":\"在线工况识别\",\"dep\":[\"id12\"]},{\"id\":\"id16\",\"tool\":\"SPC\",\"ability\":\"在线预测\",\"dep\":[\"id14\"]},{\"id\":\"id18\",\"tool\":\"SPC\",\"ability\":\"在线控制\",\"dep\":[\"id16\"]}]",
+      "branch": "[]",
+      "name": "技术改造前，基于xlsx上传文件，帮我分析存在什么异常？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "error_text",
+      "error_text": "未找到工具 builtin/用户交互界面，无法执行"
+    }
+  ]
+]

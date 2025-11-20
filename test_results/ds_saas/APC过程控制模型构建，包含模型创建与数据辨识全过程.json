@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9768-835d-7e61-af77-85e768ec29a8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9768-835f-70c1-b009-feb17292eb5a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望构建一个APC（先进过程控制）模型，涵盖从模型创建到数据辨识的完整流程。这通常包括选择合适的建模方法、收集和预处理过程数据、建立动态关系模型，并通过辨识优化模型参数，以实现对复杂工业过程的精确控制。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9768-86a2-75c3-9329-0d435b2fe3a2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "为了用户能够创建过程控制模型，我将指导完成模型创建与数据辨识的全过程。首先，根据提供的位号数据信息，我将进行位号数据校验，确保位号的准确性和可用性。如果位号数据校验未通过，我将在上传的Excel文件中标记出错误的位号，并附上修正建议，以便用户根据提示调整位号数据后重新上传。\n\n一旦位号数据校验通过，我将启动位号数据的自动标注程序，依据用户提供的位号数据及其相应的作用（MV、CV或DV），自动识别出MV、CV和DV对应的位号，并获取这些位号的历史数据。随后，我将对这些数据进行预处理，包括数据切片和数据评估，以确保数据的质量和适用性。\n\n接下来，我将使用满足要求的数据进行模型辨识，通过采用FIR模型辨识和子空间模型辨识两种技术，来构建模型矩阵模型和子空间模型。完成模型辨识后，我将对生成的模型进行仿真测试和质量评估，挑选出评价较高的模型进行整合，最终形成一个优化的模型。\n\n最后，我将更新原有的模型，展示新构建的模型，并将模型数据进行存储，以备后续的控制器组态和优化控制方案设计使用。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9768-943a-7960-93c1-be935053d67b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"辨识模型矩阵\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9768-9be4-7121-8a5f-3fe8b1b1d1fc",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9768-9c58-78f0-a115-78ef470be737",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\":[]\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9768-9d0d-76e3-801d-3f4c3ac3eb21",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${identEndFlag} == '2'\"}, {\"from\": \"id1\", \"to\": \"id3\", \"expression\": \"${identEndFlag} == '1'\"}]"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9768-9d0f-7612-936a-983c225ff407",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9768-9d09-7240-b154-333ffb48c7e5",
+      "catalog": "prediction",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"辨识模型矩阵\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"辨识模型数据\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"identEndFlag\\\")]) Eq \\\"1\\\"\"}]",
+      "name": "APC过程控制模型构建，包含模型创建与数据辨识全过程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9768-9d09-7240-b154-333ffb48c7e5"
+      }
+    }
+  ]
+]

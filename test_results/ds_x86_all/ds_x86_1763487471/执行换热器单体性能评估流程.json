@@ -1,0 +1,197 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a982f-a25d-71d0-a7c4-71f50bff092d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a982f-a2c8-7351-994e-2ec1bf12d835",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望执行换热器的单体性能评估流程，以了解其在当前工况下的换热效率和运行状态。这可能包括收集运行数据、分析换热能力、判断是否存在结垢或泄漏等问题，从而为优化操作或维护提供依据。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a982f-aa54-7690-9d8f-9d52ac1df083",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "首先，我需要让用户上传数据，包括物流数据、换热器参数和公用工程信息。之后，我需要对这些数据进行校验，确保数据的完整性、格式正确以及符合换热器单体性能评估的基本要求。如果数据校验不通过，我将在原上传文件中高亮错误单元格，并添加修正批注，用户需要根据提示修改数据并重新上传。\n\n如果数据校验通过，我将根据用户提供的数据类型，进行换热器性能评估：对设计参数进行热效率比较，找出设计效能低的换热器；对运行数据进行运行负荷和运行热效率分析，识别效率低下或超负荷运行的设备；对于公用工程信息，我将确定公用工程传热路径上的关键换热器，最终生成评估报告，包含设备效率排名和改造优先级较高的换热器。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a982f-c84c-7fc0-92a2-d990d399b4ab",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"上传数据与校验\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a982f-dae3-7473-a081-304561ab4d4d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a982f-dae3-7473-a081-3058c4aea51c",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a982f-dae4-7752-9d81-3672926a957b",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a982f-dae2-79c1-90f6-b4daaf9fe59c",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "执行换热器单体性能评估流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传数据与校验"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "这个环节会先检测用户是否已经上传过数据，如果用户没有上传数据，则需要根据模版进行上传，如果已经上传了，则可以选择是否需要更新数据。上传数据后，我会对数据进行处理，计算换热器、流股的性质，并校验上传的数据是否满足用户的需求。"
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？"
+      }
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "检测到历史输入信息存在，请问您是否需要更新换热网络设计信息及运行数据？",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ]
+]

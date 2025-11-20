@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9779-bba8-7312-8c7e-3784c14b522b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9779-bbaa-75a2-927d-d5963a4c9e4c",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望提升现有APC（先进过程控制）模型的性能，可能包括调整模型参数、改进输入输出变量选择或优化模型与实际过程的匹配度，以提高控制效果和系统稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9779-be8a-7c93-a2f3-41bccac18a5e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望优化APC模型的性能，具体步骤如下：\n\n首先，我将基于历史数据和生产实际情况，重新调整模型的MV（操作变量）、CV（控制变量）和DV（干扰变量）关系，确保模型结构更加合理。\n\n接着，对调整后的模型进行数据辨识，评估变量质量，挑选出性能最佳的模型版本进行部署和使用。\n\n最后，更新APC控制器模型，利用新的模型进行组态替换，完成优化流程。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9779-c261-7a33-a21a-80852b0a981b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"控制方案设计信息确认\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"APC\", \"ability\": \"控制方案优化\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"辨识模型数据\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"APC\", \"ability\": \"控制器运行参数快照查询\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"APC\", \"ability\": \"APC控制器在线应用\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9779-cd6c-7381-9e9c-5f1258f9e410",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9779-cd6f-7751-8c8b-068effee2953",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--控制方案优化-- 不存在于 --控制方案设计信息确认-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9779-ce02-7bb2-9774-cfcaf4ad9417",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a977a-5175-7722-b577-e16c4982bd0a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a977a-5178-7de0-b200-09e24dec02dc",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\\u4e0e\\u6821\\u9a8c\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u8bc6\\u522b\\u6362\\u70ed\\u5668\\u74f6\\u9888\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u9009\\u62e9\\u6539\\u9020\\u76ee\\u6807\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"\\u6307\\u5b9a\\u73b0\\u573a\\u9650\\u5236\\u6761\\u4ef6\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"\\u6362\\u70ed\\u7f51\\u7edc\\u6539\\u9020\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id5\"]}, {\"id\": \"id7\", \"tool\": \"Redesign\", \"ability\": \"\\u6821\\u9a8c\\u9650\\u5236\\u6761\\u4ef6\", \"dep\": [\"id4\"]}, {\"id\": \"id8\", \"tool\": \"Redesign\", \"ability\": \"\\u6362\\u70ed\\u7f51\\u7edc\\u6539\\u9020\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id8\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a977a-517a-7a43-a9ad-fee6b3f3fd84",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a977a-517c-7751-863d-dadb6df02710",
+      "type": "branch",
+      "branch": "[{\"from\": \"id4\", \"to\": \"id5\", \"expression\": \"${branch_result} == 0\"}, {\"from\": \"id4\", \"to\": \"id7\", \"expression\": \"${branch_result} == 1\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a977a-517e-7342-999b-8c06e3a06664",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a977a-5171-7be2-b6ca-ef251971f60b",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"上传数据与校验\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"识别换热器瓶颈\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"选择改造目标\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"Redesign\",\"ability\":\"指定现场限制条件\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id4\"]},{\"id\":\"id7\",\"tool\":\"Redesign\",\"ability\":\"校验限制条件\",\"dep\":[\"id4\"]},{\"id\":\"id8\",\"tool\":\"Redesign\",\"ability\":\"换热网络改造\",\"dep\":[\"id7\"]}]",
+      "branch": "[{\"from\":\"id4\",\"to\":\"id5\",\"expression\":\"Variable([String(\\\"branch_result\\\")]) Eq 0\"},{\"from\":\"id4\",\"to\":\"id7\",\"expression\":\"Variable([String(\\\"branch_result\\\")]) Eq 1\"}]",
+      "name": "优化APC模型性能（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a977a-5171-7be2-b6ca-ef251971f60b"
+      }
+    }
+  ]
+]

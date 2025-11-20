@@ -1,0 +1,254 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96da-0a93-79b1-87f0-ac465918ad85",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96da-0a96-7172-a7f5-0455f227af75",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望对盐水流量调节阀进行在线监测，以实时了解其运行状态和性能，确保调节阀在正常工况下稳定控制流量，而不影响生产过程的连续性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96da-0ca3-7bf3-8a76-c076583cfcb8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对盐水流量调节阀进行在线监测，以评估其运行状态是否存在异常。这是一个针对阀门设备的异常检测问题，我将按照以下步骤进行：\n\n1. 首先，引导用户进入数据上传流程，以便上传与该阀门相关的历叐数据，用于后续的评估分析。\n\n2. 然后，进入执行检测算法阶段，通过调用特定算法对盐水流量调节阀的运行状态进行评估，判断是否有异常情况。如果检测到异常，我将提供具体的原因分析，并给出相应的维护操作建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96da-1265-78d0-9ba2-067033bacbde",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"anomaly_detection\", \"ability\": \"上传离线数据\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"anomaly_detection\", \"ability\": \"执行检测算法\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96da-17b2-7d02-9149-d1e049b6acb0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96da-17b4-7502-b690-9705c10d068b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96da-17b6-73d0-8ef0-331769bcad59",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96da-17ae-78d3-afb0-f89f319c7d3d",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"anomaly_detection\",\"ability\":\"上传离线数据\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"anomaly_detection\",\"ability\":\"执行检测算法\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "在线监测盐水流量调节阀（非离线检测）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "后续可能需要您进行交互操作，请稍作等待",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考过程",
+          "type": "think",
+          "description": "正在提取输入参数"
+        }
+      }
+    }
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "输入参数",
+          "type": "input",
+          "details": "```json\n{\n  \"detection_type\": \"valve\",\n  \"task_objective_description\": \"在线监测盐水流量调节阀（非离线检测）\",\n  \"target_variables\": [\n    {\n      \"description\": \"盐水流量调节阀\"\n    }\n  ]\n}\n```"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "上传离线数据"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "请上传数据集文件",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "tip",
+        "content": {
+          "type": "default",
+          "title": "",
+          "content": "\n已获取问题的关键变量，您必须上传以下类型的数据文件：\n| 序号 | 名称  | 序号 | 名称  |\n|------|-------|------|-------|\n| 1    | 测量值PV   | 3    | 设定值SV   |\n| 2    | 阀位值MV   | 4    | 自控模式MODE   |\n\n",
+          "description": "",
+          "details": ""
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "markdown",
+        "content": "\n已获取问题的关键变量，您必须上传以下类型的数据文件：\n| 序号 | 名称  | 序号 | 名称  |\n|------|-------|------|-------|\n| 1    | 测量值PV   | 3    | 设定值SV   |\n| 2    | 阀位值MV   | 4    | 自控模式MODE   |\n\n"
+      }
+    }
+  ]
+]

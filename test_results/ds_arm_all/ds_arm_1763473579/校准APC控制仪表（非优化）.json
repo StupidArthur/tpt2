@@ -1,0 +1,132 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9738-b841-7ed2-a3f3-1758103407e8",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9738-b8c1-7ef0-bf0c-d4446dae11b9",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想对APC控制仪表进行校准，以确保其测量和控制的准确性。这可能包括检查传感器、调整零点和量程，或验证控制信号的响应。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9738-bc60-7c00-a29d-3a7a7ec5959a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对APC控制仪表进行校准，以确保其测量和控制的准确性。这可能涉及到检查仪表的校准状态，调整仪表参数，或进行实际的校准操作，以满足工艺要求和提高生产效率。\n\n首先，我将通过APC装置信息查询来确认APC下是否有控制仪表。如果查询结果为空，我将返回未找到指定控制仪表的信息；若查询结果存在，则继续下一步。\n\n接下来，我将对控制仪表进行实时的性能指标数据查询，获取控制仪表的历史指标数据。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9738-e6b3-7453-ad45-a00d933d32ae",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC装置信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"控制器实时指标数据查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9739-1590-7823-82ba-1e1c9a9fcd50",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9739-1591-7162-8f1a-1b2a9b2b4bde",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--控制器实时指标数据查询-- 不存在于 --APC装置信息查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9739-1591-7162-8f1a-1b3345e1fd4b",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    }
+  ]
+]

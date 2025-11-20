@@ -1,0 +1,171 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a96b3-40b6-7122-8ba6-6b896a979fde",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a96b3-40b8-7d02-bf59-b65eee4c733a",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您想了解F_TIC_16008控制回路中采用AI进行控制的方案，可能是希望通过智能算法提升温度控制的精度和响应速度，替代或优化传统的PID控制方式。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a96b3-438f-7330-bebd-d89fa4c6a713",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望实现F_TIC_16008回路的自动控制，即AI控制。这是一个建模预测控制问题，我将按照以下步骤来处理：\n\n1. 首先，我会理解用户的需求，进入补充信息流程，通过页面提问的方式获取用户问题中未明确的信息。同时，询问用户是否已有训练好的模型，如果没有，则进入第二步的数据上传流程；如果有，则直接进入配置方案流程。\n\n2. 接着，进入数据上传流程，我会为用户推荐上传文件的内容，引导用户上传文件，并对上传后的文件进行数据解析和评估。\n\n3. 然后，我会进入确认建模信息流程。根据历史数据库和网络搜索，我会推荐模型的输入位号和输出位号，并让用户进行二次确认，确保配置的准确性。\n\n4. 最后，进入TPT推理计算流程，根据用户上传的文档，我将进行数据预处理，然后根据模型的输入输出，将数据送入自动化建模中进行微调训练。我会将训练结果以可视化形式展示，并对预测结果进行总结。\n\n5. 如果在第一步补充信息流程中用户选择了已有模型，则直接进入配置方案流程，根据用户选择的模型，我会提取所有需要配置的内容，让用户在线配置，确保数据来源的准确性。\n\n6. 完成配置方案流程后，进入实时计算流程，该流程根据用户选择的模型进行实时计算，输出预测结果。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a96b3-5340-7182-a4a2-c0799b60099b",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI控制补充信息\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"上传数据\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"确认建模信息\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"TPT推理计算\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"配置方案\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"实时计算\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a96b3-61b9-7bc0-ab92-97f00813f754",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "高"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a96b3-61bb-7813-a4d5-3a02599bf8dc",
+      "type": "branch",
+      "branch": "[{\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a96b3-61bd-7d21-a241-45c66616aeaf",
+      "type": "require_confirm",
+      "require_confirm": "false"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a96b3-61b5-7df1-9f9f-a2a2dbd73b84",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"AI控制补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"SPC\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"}]",
+      "name": "F_TIC_16008回路AI控制方案",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "正在执行",
+          "type": "execute",
+          "description": "AI控制补充信息"
+        }
+      },
+      "hide_all": true
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "clientId",
+          "type": "string",
+          "details": "019a96b3-3f64-7ad1-b358-f36d0bb20a29"
+        }
+      }
+    }
+  ]
+]

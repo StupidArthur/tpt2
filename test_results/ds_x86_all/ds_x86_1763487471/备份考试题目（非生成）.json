@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9813-1612-7543-986d-5ce3d41a222a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9813-1682-7f30-8b68-d7f3e36f4d13",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望将考试题目进行备份，以防止数据丢失或便于后续使用。这可能包括将题目保存到安全的位置或以其他方式存储。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9813-1b34-7951-a5fd-35d87cb703f1",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，您的请求是查询考试题目，我们将遵循以下步骤来操作：\n\n1. 首先，我会理解您的需求，进入查询流程。\n\n2. 然后，我将引导您上传包含目标数据的文件，系统会进行解析并反馈解析结果，以确保数据的准确性。\n\n3. 接下来，您需要确认解析结果。如果解析无误，系统将基于文件中的有效数据进行查询；如果解析结果有异常，系统会提示您修正文件并重新上传，直至解析通过。\n\n4. 最后，一旦解析成功，我将执行查询并提供给您所需的结果。如果查询过程中出现任何问题，如未找到相关数据，我会及时通知您。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9813-334d-77a3-bf48-70b038c863d6",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"OTS\", \"ability\": \"检测评分服务状态\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"OTS\", \"ability\": \"查询考试成绩\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9813-43a1-7700-b402-deec3c5965aa",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9813-4471-7690-bc14-f963e1cdeaf7",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9813-468b-7ed3-a1d7-fe0729575d8b",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9813-468b-7ed3-a1d7-fe171a7e4ec8",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9813-468a-7412-800a-8a817ee6f7d4",
+      "catalog": "simulation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"OTS\",\"ability\":\"检测评分服务状态\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"OTS\",\"ability\":\"查询考试成绩\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "备份考试题目（非生成）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9813-468a-7412-800a-8a817ee6f7d4"
+      }
+    }
+  ]
+]

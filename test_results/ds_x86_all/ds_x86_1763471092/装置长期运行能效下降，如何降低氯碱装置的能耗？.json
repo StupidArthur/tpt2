@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a972b-b08d-7230-83eb-6c2fd53a5b37",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a972b-b0fd-7911-aaa6-214709ac2faf",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望提升氯碱装置的能效，降低长期运行中的能耗。这可能涉及优化工艺参数、检查设备运行状态、减少热能损失或提高能源回收利用率等方面。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a972b-ba29-7871-9382-1caccaf6a047",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户提到氯碱装置的能效随时间下降，希望了解如何降低能耗。鉴于装置涉及复杂的工业过程，优化路径可能包括选取合适操作条件、设备改造或应用先进控制技术等。我将首先通过设计操作路径来评估不同工艺参数对能耗的影响，从而识别出关键调整变量。\n\n接下来，我将借助AI分析技术，通过数据收集与模型构建，对氯碱装置的加工过程进行深度观察，确保预测模型能够准确反映装置的动态特性和复杂相互作用。随后，基于该模型进行操作方案设计，通过数字仿真验证控制策略的可行性与有效性，最终形成优化方案以指导实际操作。\n\n此外，用户还可以通过操作路径规划进一步探索，利用现有数据资源构建操作对能耗影响的预测模型。该模型结合了生产负荷、原料性质及产品需求等变量与能耗指标之间的关联，能够有效解析异常能耗现象，定位能耗过高的具体环节，并通过操作条件的优化提供明确的调整建议，从而实现精准节能。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a972b-dcff-7ff2-9080-d692d0b20b85",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"节能降耗瓶颈分析\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]},\n\n{\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"选择改造目标\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id6\", \"tool\": \"Redesign\", \"ability\": \"换热器改造\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"Redesign\", \"ability\": \"指定现场限制条件\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id9\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"Redesign\", \"ability\": \"校验限制条件\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id12\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id12\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a972c-2d39-70b2-adee-13016759b286",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a972c-2d39-70b2-adee-131932063de6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--识别换热器瓶颈-- 不存在于 --节能降耗瓶颈分析-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a972c-2d39-70b2-adee-1328543e52a0",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a972c-e22e-7fe3-b6a4-b06dd76d650d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a972c-e22e-7fe3-b6a4-b07a683949fb",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u4e0a\\u4f20\\u6570\\u636e\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u786e\\u8ba4\\u5efa\\u6a21\\u4fe1\\u606f\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"TPT\\u63a8\\u7406\\u8ba1\\u7b97\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u914d\\u7f6e\\u65b9\\u6848\", \"dep\": [\"id1\"]}, {\"id\": \"id7\", \"tool\": \"RTO\\u64cd\\u4f5c\\u4f18\\u5316\", \"ability\": \"\\u5b9e\\u65f6\\u8ba1\\u7b97\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a972c-e22f-7a31-a706-16591e5a8b70",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a972c-e22f-7a31-a706-1667a0f209aa",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${opt_model_selected} == false\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${opt_model_selected} == true\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a972c-e22f-7a31-a706-167017322035",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a972c-e22c-7a63-8e82-eaef03197992",
+      "catalog": "optimization",
+      "json": "[{\"id\":\"id1\",\"tool\":\"RTO操作优化\",\"ability\":\"补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"RTO操作优化\",\"ability\":\"上传数据\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"RTO操作优化\",\"ability\":\"确认建模信息\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"RTO操作优化\",\"ability\":\"TPT推理计算\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"RTO操作优化\",\"ability\":\"配置方案\",\"dep\":[\"id1\"]},{\"id\":\"id7\",\"tool\":\"RTO操作优化\",\"ability\":\"实时计算\",\"dep\":[\"id6\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq false\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"opt_model_selected\\\")]) Eq true\"}]",
+      "name": "装置长期运行能效下降，如何降低氯碱装置的能耗？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a972c-e22c-7a63-8e82-eaef03197992"
+      }
+    }
+  ]
+]

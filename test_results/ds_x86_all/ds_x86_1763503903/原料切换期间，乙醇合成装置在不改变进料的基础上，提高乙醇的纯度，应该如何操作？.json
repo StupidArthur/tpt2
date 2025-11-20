@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9910-4187-71a0-9a3f-011cfb9bd620",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9910-41ef-7b30-b77f-4a71b275cc39",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望在原料切换期间，不改变进料量的前提下提高乙醇合成装置的产品纯度。这可能涉及优化反应条件，如温度、压力或催化剂活性，同时加强分离提纯过程的控制，确保乙醇质量达标。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9910-49e2-7273-a0fe-8391bb595d0a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望在不改变进料量的情况下，通过操作提高乙醇纯度。这可能涉及调整工艺条件，如温度、压力或催化剂的使用，以优化反应过程，增加产品纯度，同时保持进料量的稳定。用户需要具体的调整建议来实现这一目标。\n\n首先，我需要让用户确定操作的范围是否考虑下游设备。因为从宏观上讲，下游设备的异常同样会导致上游设备出现波动。其次，需要用户给出具体装置类型（如苯酚/丙酮装置、丙烯酸装置、脂肪胺装置、乙二醇装置），以收集装置相关TIC、PIC、LIC、FIC等位置的公用工程信息，后续组态操作会用到。\n\n接下来，我会根据用户提供的装置类型，从后台调取相应装置的工艺资料，通过调研生成装置工艺流程图，并在流程图中定位到关键工艺节点。随后，将对这些工艺节点进行关键变量分析，通过关键变量分析可以筛选出关键工艺指标以及对这些指标有显著影响的工艺参数。同时，对筛选出的工艺参数进行工程信息调研，最终形成装置工艺情况调研报告，为后续的操作路径规划提供依据。\n\n然后，我会让用户确定具体优化目标。比如，用户希望提高产品质量，则需要关注质量指标的提升方向。质量指标可能涉及浓度、色泽、纯度等多个维度，因此，用户需要明确目标指标的优化方向，即希望提升、保持还是不考虑浓度/色泽/纯度等指标。\n\n接下来，我会请用户确认具体优化幅度。比如，用户希望装置提效，但是由于原料性质变化，可能需要用户在不考虑公用工程消耗的前提下，进行装置优化。其次，用户可能希望在保证装置运行安全的前提下，提升装置的负荷。因此，需要用户确定具体优化幅度。\n\n在用户确定具体优化幅度后，我将根据用户需求开展操作路径规划，为用户提供优化建议。操作路径规划过程中，需要关注工艺参数的调整顺序及调整幅度，避免用户在操作过程中出现跑料、窜料等异常情况，同时保证装置运行的安全性与稳定性。最后，我会输出操作路径规划报告，报告中将包含优化操作路径、关键工艺指标预测表，辅助用户进行装置优化决策。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9910-a257-7a11-9b04-5adeb0264154",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"确认现场限制条件\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id5\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id4\"]},\n\n{\"id\": \"id6\", \"tool\": \"Redesign\", \"ability\": \"换热器改造\", \"dep\": [\"id5\"]},\n\n{\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]},\n\n{\"id\": \"id8\", \"tool\": \"Redesign\", \"ability\": \"选择改造目标\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id9\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id10\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id9\"]},\n\n{\"id\": \"id11\", \"tool\": \"Redesign\", \"ability\": \"选择改造幅度\", \"dep\": [\"id8\"]},\n\n{\"id\": \"id12\", \"tool\": \"Redesign\", \"ability\": \"换热网络改造\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id13\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id12\"]},\n\n{\"id\": \"id14\", \"tool\": \"Redesign\", \"ability\": \"识别换热网络瓶颈\", \"dep\": [\"id11\"]},\n\n{\"id\": \"id15\", \"tool\": \"Redesign\", \"ability\": \"识别换热器瓶颈\", \"dep\": [\"id14\"]},\n\n{\"id\": \"id16\", \"tool\": \"Redesign\", \"ability\": \"换热器改造\", \"dep\": [\"id15\"]},\n\n{\"id\": \"id17\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id16\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9911-0a85-7a61-be9b-8295a92c989b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9911-0a85-7a61-be9b-82a51ecab0b0",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "不存在此能力节点:确认现场限制条件"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9911-0cb5-70c1-bf21-b0040dd6229a",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9911-d3b0-7491-a477-5dae33a7d903",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9911-d3b0-7491-a477-5db12defb608",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"Redesign\", \"ability\": \"\\u786e\\u8ba4\\u5173\\u952e\\u53d8\\u91cf\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"Redesign\", \"ability\": \"\\u4ea7\\u54c1\\u8d28\\u91cf\\u9884\\u6d4b\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"Redesign\", \"ability\": \"\\u52a8\\u6001\\u64cd\\u4f5c\\u8def\\u5f84\\u89c4\\u5212\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9911-d3b1-7882-898e-ee212800973a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9911-d3b1-7882-898e-ee3bcf2f4129",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9911-d3b1-7882-898e-ee440cfc198c",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9911-d3ae-7822-9cd4-36c4abc460e8",
+      "catalog": "evaluation",
+      "json": "[{\"id\":\"id1\",\"tool\":\"Redesign\",\"ability\":\"确认关键变量\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"Redesign\",\"ability\":\"产品质量预测\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"Redesign\",\"ability\":\"动态操作路径规划\",\"dep\":[\"id2\"]}]",
+      "branch": "[]",
+      "name": "原料切换期间，乙醇合成装置在不改变进料的基础上，提高乙醇的纯度，应该如何操作？",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9911-d3ae-7822-9cd4-36c4abc460e8"
+      }
+    }
+  ]
+]

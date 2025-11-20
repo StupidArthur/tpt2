@@ -1,0 +1,174 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9a60-1d24-7682-8bca-d92dbd5ffba6",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9a60-1d89-76d3-bbce-c745e0330495",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望提升现有APC过程控制模型的性能，可能包括调整模型参数、改善输入输出变量选择或优化模型响应，以提高控制精度和系统稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9a60-2226-7df3-8869-9fa30ae5e9a2",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望优化APC过程控制模型的性能，这通常需要评估当前模型的性能，识别存在的问题，并对模型进行调整或优化，以提高其在实际过程控制中的效果和效率。优化过程可能涉及多个方面，包括模型参数的调整、结构的改进，以及与实际过程的更好匹配等。\n\n首先，我将通过APC装置信息查询来确认APC下是否有已有的过程控制模型。如果查询结果为空，我将告知您未找到相关的模型信息；若找到对应的模型，我将使用APC控制模型性能监控查询功能。\n\n如果确认模型存在，我将调用APC控制器性能监控查询，以获取该模型的性能监控详情；若模型不存在，我将直接向您反馈这一情况。\n\n接下来，我将基于查询到的信息，对APC过程控制模型的性能进行评估，并提出优化的具体建议。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9a60-691f-7661-9387-714eb106d6fa",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"APC\", \"ability\": \"APC装置信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"APC\", \"ability\": \"APC控制器性能监控查询\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id4\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id3\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9a60-9eab-7ab2-8a2f-0dfc699dbf53",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9a60-9f89-7f10-9002-cbd4ffbcb74a",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      6,
+      "view",
+      "content",
+      "details"
+    ],
+    "```json\n{\n    \"aggregate\": true,\n    \"reason\": []\n}\n```"
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9a60-a0df-75d1-9a34-088935d47c3e",
+      "type": "branch",
+      "branch": "null"
+    }
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9a60-a0e0-72f3-a547-14160da732b2",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9a60-a0dd-7b82-8e11-1f2862293a25",
+      "catalog": "statistics",
+      "json": "[{\"id\":\"id1\",\"tool\":\"APC\",\"ability\":\"APC装置信息查询\",\"dep\":null},{\"id\":\"id3\",\"tool\":\"APC\",\"ability\":\"APC控制器性能监控查询\",\"dep\":[\"id1\"]}]",
+      "branch": "[]",
+      "name": "优化APC过程控制模型性能（非创建模型）",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9a60-a0dd-7b82-8e11-1f2862293a25"
+      }
+    }
+  ]
+]

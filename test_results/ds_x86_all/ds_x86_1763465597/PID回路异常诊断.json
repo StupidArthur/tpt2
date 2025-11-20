@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a970f-e131-7772-9cca-68a341f0845f",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a970f-e199-70f1-84cb-69c7cafffa84",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您遇到了PID控制回路的异常问题，希望通过诊断找出原因并进行修复。这可能包括检查参数设置、传感器信号、执行机构响应或系统干扰等因素，以恢复控制系统的正常运行。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a970f-e9a5-7772-922e-b90b3abd9360",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "嗯，好的，用户希望对PID回路进行异常诊断，可能是因为该回路出现了不稳定或性能下降的情况，需要找出具体原因并解决，以恢复正常的控制效果。\n\n首先，我需要通过回路信息查询功能定位到您所指的回路，并获取该回路在最近的实时运行状态数据。 \n\n接下来，将对您关注的回路执行控制性能评估与异常诊断流程，主要检查该回路是否出现了阀门饱和、阀门卡涩或PID参数配置不当等异常情况。如果检测到上述问题，系统会给出相应的运维建议，同时推荐您通过全设备智能感知平台PRIDE对回路进行基于专家经验的参数整定，以获取优化后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9710-00d5-7653-b309-84c2c755ca47",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"控制回路性能评估及诊断\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id4\", \"tool\": \"PID\", \"ability\": \"基于专家经验的参数整定\", \"dep\": [\"id2\"]},\n\n{\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9710-1fd6-7f20-ac85-93e552b92a4e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9710-1fd7-7211-aebc-84993c7ae60d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--基于专家经验的参数整定-- 不存在于 --控制回路性能评估及诊断-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9710-2392-72d1-9d14-d1bb36989e97",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9710-fd2e-7651-ab0c-9f48fbca0c42",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9710-fd2f-7c53-8f4a-ca6e3b66b3c3",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI\\u63a7\\u5236\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"\\u6570\\u636e\\u8d28\\u91cf\\u5206\\u6790\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"AI\\u53ef\\u63a7\\u6027\\u8bc4\\u4f30\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"\\u5173\\u952e\\u5f71\\u54cd\\u56e0\\u7d20\\u5206\\u6790\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"SPC\", \"ability\": \"\\u5de5\\u51b5\\u8bc6\\u522b\\u4e0e\\u9a8c\\u8bc1\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"\\u9884\\u6d4b\\u6a21\\u578b\\u6784\\u5efa\\u4e0e\\u9a8c\\u8bc1\", \"dep\": [\"id5\"]}, {\"id\": \"id7\", \"tool\": \"SPC\", \"ability\": \"\\u63a7\\u5236\\u5668\\u642d\\u5efa\\u53ca\\u9a8c\\u8bc1\", \"dep\": [\"id6\"]}, {\"id\": \"id8\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id7\"]}, {\"id\": \"id9\", \"tool\": \"SPC\", \"ability\": \"\\u5728\\u7ebf\\u5de5\\u51b5\\u8bc6\\u522b\", \"dep\": [\"id1\"]}, {\"id\": \"id10\", \"tool\": \"SPC\", \"ability\": \"\\u5728\\u7ebf\\u9884\\u6d4b\", \"dep\": [\"id9\"]}, {\"id\": \"id11\", \"tool\": \"SPC\", \"ability\": \"\\u5728\\u7ebf\\u63a7\\u5236\", \"dep\": [\"id10\"]}, {\"id\": \"id12\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id11\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9710-fd2f-7c53-8f4a-ca7b4fd749ff",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9710-fd2f-7c53-8f4a-ca8948045178",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id1\", \"to\": \"id9\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9710-fd2f-7c53-8f4a-ca9da40d3922",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9710-fd2d-71d3-995e-77f41dbbf871",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"AI控制补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"AI可控性评估\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"关键影响因素分析\",\"dep\":[\"id3\"]},{\"id\":\"id5\",\"tool\":\"SPC\",\"ability\":\"工况识别与验证\",\"dep\":[\"id4\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"预测模型构建与验证\",\"dep\":[\"id5\"]},{\"id\":\"id7\",\"tool\":\"SPC\",\"ability\":\"控制器搭建及验证\",\"dep\":[\"id6\"]},{\"id\":\"id9\",\"tool\":\"SPC\",\"ability\":\"在线工况识别\",\"dep\":[\"id1\"]},{\"id\":\"id10\",\"tool\":\"SPC\",\"ability\":\"在线预测\",\"dep\":[\"id9\"]},{\"id\":\"id11\",\"tool\":\"SPC\",\"ability\":\"在线控制\",\"dep\":[\"id10\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id9\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"}]",
+      "name": "PID回路异常诊断",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9710-fd2d-71d3-995e-77f41dbbf871"
+      }
+    }
+  ]
+]

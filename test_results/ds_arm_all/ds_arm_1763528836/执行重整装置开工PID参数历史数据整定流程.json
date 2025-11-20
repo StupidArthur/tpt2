@@ -1,0 +1,227 @@
+[
+  [
+    [
+      0
+    ],
+    {
+      "type": "text",
+      "text": ""
+    },
+    [
+      0,
+      "text"
+    ],
+    "\n\n"
+  ],
+  [
+    [
+      1
+    ],
+    {
+      "id": "019a9af7-64bc-7441-b652-ed8157ed101e",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "😄已接收到您的问题~",
+          "type": "title"
+        }
+      }
+    }
+  ],
+  [
+    [
+      2
+    ],
+    {
+      "id": "019a9af7-652c-7780-8030-cae9f0aec8ee",
+      "type": "text",
+      "text": "</think>\n\n\n\n"
+    },
+    [
+      2,
+      "text"
+    ],
+    "您希望根据重整装置开工阶段的历史数据，对相关PID参数进行整定优化，以提升装置启动过程中的控制效果和稳定性。\n\n我将执行以下任务帮您解决。\n\n"
+  ],
+  [
+    [
+      3
+    ],
+    {
+      "id": "019a9af7-68d7-77b2-ab13-28fa97a87e80",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n\n"
+        }
+      }
+    },
+    [
+      3,
+      "view",
+      "content",
+      "details"
+    ],
+    "用户希望对重整装置的开工PID参数进行历史数据整定，这可能涉及到对装置启动过程中的控制参数进行分析和调整，以确保装置能够平稳、高效地运行。用户可能需要具体的参数调整建议或历史数据的处理方法。\n\n首先，我需要从回路信息查询中找到重整装置，并获取该装置所有回路的信息。\n\n接着，通过开车阶段参数批量整定功能，对重整装置所有控制回路的PID参数进行历史数据的自动整定。由于用户没有指定具体的开车阶段，我将使用默认的开车阶段参数来完成整定过程，并提供整定后的PID参数。\n\n"
+  ],
+  [
+    [
+      4
+    ],
+    {
+      "id": "019a9af7-a017-77c0-b2ac-665bd623cc8e",
+      "type": "json",
+      "json": "\n\n"
+    },
+    [
+      4,
+      "json"
+    ],
+    "[{\"id\": \"id1\", \"tool\": \"PID\", \"ability\": \"回路信息查询\", \"dep\": null},\n\n{\"id\": \"id2\", \"tool\": \"PID\", \"ability\": \"开车阶段参数批量整定\", \"dep\": [\"id1\"]},\n\n{\"id\": \"id3\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id2\"]}]\n\n"
+  ],
+  [
+    [
+      5
+    ],
+    {
+      "id": "019a9af7-cf6b-7f71-8f39-9cf0de860b7d",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "置信度",
+          "type": "confidence",
+          "description": "低"
+        }
+      }
+    }
+  ],
+  [
+    [
+      6
+    ],
+    {
+      "id": "019a9af7-cf6b-7f71-8f39-9d072610e277",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "verify_think",
+          "description": "验证结果",
+          "details": "能力:--开车阶段参数批量整定-- 不存在于 --回路信息查询-- 的可能能力节点下"
+        }
+      }
+    }
+  ],
+  [
+    [
+      7
+    ],
+    {
+      "id": "019a9af7-d14c-7351-9d85-89bf2af2d2e2",
+      "type": "text",
+      "text": "由于当前的工作流验证未通过，我将检索我的记忆库\n\n"
+    },
+    [
+      7,
+      "text"
+    ],
+    "记忆库检索完毕！我将结合记忆和您的问题重新生成工作流"
+  ],
+  [
+    [
+      8
+    ],
+    {
+      "id": "019a9af8-759b-7ca0-958b-f13f3ebd8fbb",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "思考结果",
+          "type": "think",
+          "description": "针对您的问题已找到解决方案",
+          "details": "\n"
+        }
+      }
+    }
+  ],
+  [
+    [
+      9
+    ],
+    {
+      "id": "019a9af8-759c-7e00-a91b-9a1b9c9f6f57",
+      "type": "json",
+      "json": "\n[{\"id\": \"id1\", \"tool\": \"SPC\", \"ability\": \"AI\\u81ea\\u6574\\u5b9a\\u8865\\u5145\\u4fe1\\u606f\", \"dep\": null}, {\"id\": \"id2\", \"tool\": \"SPC\", \"ability\": \"PID\\u6570\\u636e\\u8d28\\u91cf\\u5206\\u6790\", \"dep\": [\"id1\"]}, {\"id\": \"id3\", \"tool\": \"SPC\", \"ability\": \"PID\\u56de\\u8def\\u8fd0\\u884c\\u60c5\\u51b5\\u5206\\u6790\", \"dep\": [\"id2\"]}, {\"id\": \"id4\", \"tool\": \"SPC\", \"ability\": \"PID\\u5f3a\\u5316\\u5b66\\u4e60\\u81ea\\u6574\\u5b9a\", \"dep\": [\"id3\"]}, {\"id\": \"id5\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id4\"]}, {\"id\": \"id6\", \"tool\": \"SPC\", \"ability\": \"PID-AI\\u5728\\u7ebf\\u81ea\\u6574\\u5b9a\", \"dep\": [\"id1\"]}, {\"id\": \"id7\", \"tool\": \"general_tool\", \"ability\": \"end\", \"dep\": [\"id6\"]}]\n"
+    }
+  ],
+  [
+    [
+      10
+    ],
+    {
+      "id": "019a9af8-759c-7e00-a91b-9a21a46d940b",
+      "type": "view",
+      "view": {
+        "format": "card",
+        "content": {
+          "title": "验证结果",
+          "type": "verify",
+          "content": "{\"title\": \"已完成工作流输出，请在右侧进行查看，并完成手动确认\", \"subtitle\": \"\", \"status\": true}"
+        }
+      }
+    }
+  ],
+  [
+    [
+      11
+    ],
+    {
+      "id": "019a9af8-759c-7e00-a91b-9a3cd31b1619",
+      "type": "branch",
+      "branch": "[{\"from\": \"id1\", \"to\": \"id2\", \"expression\": \"${run_mode} == \\\"offline\\\"\"}, {\"from\": \"id1\", \"to\": \"id6\", \"expression\": \"${run_mode} == \\\"online\\\"\"}, {\"from\": \"id2\", \"to\": \"id3\", \"expression\": \"${is_contain_data}  == true\"}]"
+    }
+  ],
+  [
+    [
+      12
+    ],
+    {
+      "id": "019a9af8-759d-7e93-94b8-bf437855c0c4",
+      "type": "require_confirm",
+      "require_confirm": "true"
+    }
+  ],
+  [
+    [
+      13
+    ],
+    {
+      "type": "workflow",
+      "workflow": "019a9af8-7598-79a0-8fa5-48b1a603b037",
+      "catalog": "control",
+      "json": "[{\"id\":\"id1\",\"tool\":\"SPC\",\"ability\":\"AI自整定补充信息\",\"dep\":null},{\"id\":\"id2\",\"tool\":\"SPC\",\"ability\":\"PID数据质量分析\",\"dep\":[\"id1\"]},{\"id\":\"id3\",\"tool\":\"SPC\",\"ability\":\"PID回路运行情况分析\",\"dep\":[\"id2\"]},{\"id\":\"id4\",\"tool\":\"SPC\",\"ability\":\"PID强化学习自整定\",\"dep\":[\"id3\"]},{\"id\":\"id6\",\"tool\":\"SPC\",\"ability\":\"PID-AI在线自整定\",\"dep\":[\"id1\"]}]",
+      "branch": "[{\"from\":\"id1\",\"to\":\"id2\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"offline\\\"\"},{\"from\":\"id2\",\"to\":\"id3\",\"expression\":\"Variable([String(\\\"is_contain_data\\\")]) Eq true\"},{\"from\":\"id1\",\"to\":\"id6\",\"expression\":\"Variable([String(\\\"run_mode\\\")]) Eq \\\"online\\\"\"}]",
+      "name": "执行重整装置开工PID参数历史数据整定流程",
+      "metadata": null
+    }
+  ],
+  [
+    [
+      14
+    ],
+    {
+      "type": "execute_confirm",
+      "execute_confirm": {
+        "workflow_id": "019a9af8-7598-79a0-8fa5-48b1a603b037"
+      }
+    }
+  ]
+]
