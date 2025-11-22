@@ -29,20 +29,10 @@ def sanitize_filename(filename: str) -> str:
 from test_data.ds.loader import all_sentences
 # from display.all_workflow_pic_sentences import all_sentences
 
-# test_cases = all_sentences()
-test_cases = [
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-"H2S浓度异常检测，包含近期数据异常判断及未来超限风险预测",
-]
+test_cases = all_sentences()
+# test_cases = ["""
+# PID回路整定
+# """]
 
 async def main():
     """主函数"""
@@ -61,7 +51,7 @@ async def main():
             for title in test_cases:
 
                 # 确保目录存在
-                output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_results", "ds_saas")
+                output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_results", "ds_saas_1")
                 os.makedirs(output_dir, exist_ok=True)
                 # 清理文件名，移除不允许的字符
                 safe_filename = sanitize_filename(title)

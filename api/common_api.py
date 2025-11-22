@@ -265,7 +265,7 @@ async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
     # 状态跟踪
     has_workflow = False
     last_message_time = None
-    message_timeout = 10  # 10秒超时
+    message_timeout = 60  # 60秒超时
     
     # WebSocket URL
     ws_url = f"{o_config.wss_header}/tpt-app/chat-tool-socket-work/api/conversation/{conversation_id}/stream"

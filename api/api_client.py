@@ -263,7 +263,7 @@ async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
     # 状态跟踪
     has_workflow = False
     last_message_time = None
-    message_timeout = 10  # 10秒超时
+    message_timeout = 60  # 60秒超时
     
     # WebSocket URL
     ws_url = f"wss://tpt.supcon.com/tpt-app/chat-tool-socket-work/api/conversation/{conversation_id}/stream"
@@ -299,7 +299,8 @@ async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
                 "parent_id": None,
                 "type": "user_input",
                 "use_deep_explore": False,
-                "user_locale": "zh-CN"
+                "user_locale": "zh-CN",
+                "work_files": []
             }
             
             await ws.send(json.dumps(message_payload))

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow流程图</title>
+    <!-- X6图形库 -->
+    <script src="https://unpkg.com/@antv/x6@latest/dist/x6.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        /* X6图形容器样式 */
+        .work-chat-flow-conetnt {
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            background: white;
+            overflow: hidden;
+        }
+        
+        /* 工作流节点样式 */
+        .work-chat-flow-block {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            min-width: 200px;
+            height: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .work-chat-flow-block:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            border-color: #40a9ff;
+        }
+        
+        .work-chat-flow-block-light {
+            background: #fafafa;
+        }
+        
+        .work-chat-flow-block-default {
+            border-color: #d9d9d9;
+        }
+        
+        .step-icon {
+            margin-right: 8px;
+            font-size: 16px;
+            color: #1890ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+        }
+        
+        .step-name {
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* 图标字体样式（使用Unicode字符代替） */
+        .iconfont {
+            font-family: 'iconfont', Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+        }
+        
+        .icon-login::before {
+            content: "🚀";
+        }
+        
+        .icon-code::before {
+            content: "⚙️";
+        }
+        
+        .icon-logout::before {
+            content: "✓";
+        }
+        
+        /* X6 SVG样式 */
+        .x6-graph {
+            position: relative;
+        }
+        
+        .x6-graph-background {
+            fill: #fafafa;
+        }
+        
+        .x6-graph-grid {
+            fill: none;
+            stroke: #e8e8e8;
+            stroke-width: 1;
+        }
+        
+        .x6-graph-svg {
+            display: block;
+        }
+        
+        /* 节点样式 */
+        .x6-node {
+            cursor: pointer;
+        }
+        
+        .x6-node:hover {
+            opacity: 0.8;
+        }
+        
+        /* 边样式 */
+        .x6-edge path {
+            transition: stroke 0.3s;
+        }
+        
+        .x6-edge:hover path {
+            stroke: #40a9ff !important;
+            stroke-width: 3 !important;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .work-chat-flow-conetnt {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>工作流流程图</h1>
+        <div class="work-chat-flow-conetnt x6-graph" style="width: 760px; height: 820px;">
+            <div class="x6-graph-background"></div>
+            <div class="x6-graph-grid"></div>
+            <svg width="100%" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink" class="x6-graph-svg">
+                <defs>
+                    <marker refX="-1" id="marker-v108-1362944015" overflow="visible" orient="auto" markerUnits="userSpaceOnUse">
+                        <path stroke="#A2B1C3" fill="#A2B1C3" transform="rotate(180)" d="M 0 0 L 6 -3 L 4.5 0 L 6 3 Z"></path>
+                    </marker>
+                </defs>
+                <g class="x6-graph-svg-viewport" transform="matrix(1,0,0,1,40,40)">
+                    <g class="x6-graph-svg-primer"></g>
+                    <g class="x6-graph-svg-stage">
+                        <!-- 节点 id1 -->
+                        <g data-cell-id="id1" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,0)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id1">
+                                            <div class="step-icon"><i class="iconfont icon-login"></i></div>
+                                            <div class="step-name">节能降耗瓶颈分析</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id2 -->
+                        <g data-cell-id="id2" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,100)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id2">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">上传数据与校验</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id3 -->
+                        <g data-cell-id="id3" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,200)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id3">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">选择改造目标</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id4 -->
+                        <g data-cell-id="id4" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,300)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id4">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">选择改造幅度</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id5 -->
+                        <g data-cell-id="id5" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,400)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id5">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">识别换热器瓶颈</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id6 -->
+                        <g data-cell-id="id6" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,500)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id6">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">换热器改造</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id7 -->
+                        <g data-cell-id="id7" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(0,600)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id7">
+                                            <div class="step-icon"><i class="iconfont icon-logout"></i></div>
+                                            <div class="step-name">end</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id8 -->
+                        <g data-cell-id="id8" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(240,400)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id8">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">指定现场限制条件</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id9 -->
+                        <g data-cell-id="id9" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(240,500)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id9">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">换热网络改造</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id10 -->
+                        <g data-cell-id="id10" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(240,600)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id10">
+                                            <div class="step-icon"><i class="iconfont icon-logout"></i></div>
+                                            <div class="step-name">end</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id11 -->
+                        <g data-cell-id="id11" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(480,500)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id11">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">校验限制条件</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id12 -->
+                        <g data-cell-id="id12" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(480,600)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id12">
+                                            <div class="step-icon"><i class="iconfont icon-code"></i></div>
+                                            <div class="step-name">换热网络改造</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 节点 id13 -->
+                        <g data-cell-id="id13" data-shape="work-chat-flow-block" class="x6-cell x6-node x6-node-immovable" transform="translate(480,700)">
+                            <foreignObject width="200" height="40">
+                                <body xmlns="http://www.w3.org/1999/xhtml" fill="#979797" stroke="#979797" stroke-width="1" rx="6" ry="6" width="200" height="40" style="width: 100%; height: 100%; background: transparent;">
+                                    <div style="width: 100%; height: 100%;">
+                                        <div class="work-chat-flow-block work-chat-flow-block-light work-chat-flow-block-default" node-id="id13">
+                                            <div class="step-icon"><i class="iconfont icon-logout"></i></div>
+                                            <div class="step-name">end</div>
+                                        </div>
+                                    </div>
+                                </body>
+                            </foreignObject>
+                        </g>
+                        
+                        <!-- 边：id1 -> id2 -->
+                        <g data-cell-id="edge-id1-id2" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 100 40 L 100 98"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 100 40 L 100 98" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id2 -> id3 -->
+                        <g data-cell-id="edge-id2-id3" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 100 140 L 100 198"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 100 140 L 100 198" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id3 -> id4 -->
+                        <g data-cell-id="edge-id3-id4" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 100 240 L 100 298"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 100 240 L 100 298" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id4 -> id5 -->
+                        <g data-cell-id="edge-id4-id5" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 100 340 L 100 398"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 100 340 L 100 398" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id5 -> id6 -->
+                        <g data-cell-id="edge-id5-id6" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 100 440 L 100 498"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 100 440 L 100 498" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id6 -> id7 -->
+                        <g data-cell-id="edge-id6-id7" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 100 540 L 100 598"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 100 540 L 100 598" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id4 -> id8 (分支) -->
+                        <g data-cell-id="edge-id4-id8" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 200 320 L 220 320 L 220 420 L 238 420"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 200 320 L 220 320 L 220 420 L 238 420" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id8 -> id9 -->
+                        <g data-cell-id="edge-id8-id9" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 340 440 L 340 498"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 340 440 L 340 498" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id9 -> id10 -->
+                        <g data-cell-id="edge-id9-id10" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 340 540 L 340 598"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 340 540 L 340 598" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id8 -> id11 (分支) -->
+                        <g data-cell-id="edge-id8-id11" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 440 420 L 460 420 L 460 520 L 478 520"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 440 420 L 460 420 L 460 520 L 478 520" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id11 -> id12 -->
+                        <g data-cell-id="edge-id11-id12" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 580 540 L 580 598"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 580 540 L 580 598" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                        
+                        <!-- 边：id12 -> id13 -->
+                        <g data-cell-id="edge-id12-id13" data-shape="edge" class="x6-cell x6-edge">
+                            <path fill="none" cursor="pointer" stroke="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 580 640 L 580 698"></path>
+                            <path fill="none" pointer-events="none" stroke-linejoin="round" stroke="#A2B1C3" stroke-width="2" d="M 580 640 L 580 698" marker-end="url(#marker-v108-1362944015)"></path>
+                        </g>
+                    </g>
+                    <g class="x6-graph-svg-decorator"></g>
+                    <g class="x6-graph-svg-overlay"></g>
+                </g>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>

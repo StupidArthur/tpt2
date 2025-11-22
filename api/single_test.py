@@ -264,7 +264,7 @@ async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
     # 状态跟踪
     has_workflow = False
     last_message_time = None
-    message_timeout = 10  # 10秒超时
+    message_timeout = 60  # 60秒超时
     
     # WebSocket URL
     ws_url = f"wss://tpt.supcon.com/tpt-app/chat-tool-socket-work/api/conversation/{conversation_id}/stream"
@@ -320,7 +320,7 @@ async def ws_conversation(token: str, conversation_id: str, text: str = "pid"):
                     if last_message_time:
                         elapsed = time.time() - last_message_time
                         if elapsed >= message_timeout:
-                            print(f"\n⚠ 10秒内未收到新消息，超时退出")
+                            print(f"\n⚠ {message_timeout}秒内未收到新消息，超时退出")
                             break
                     
                     try:
