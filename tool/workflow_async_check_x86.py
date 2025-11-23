@@ -331,7 +331,7 @@ async def main(max_concurrent: int = MAX_CONCURRENT, platform: str = 'arm'):
 if __name__ == "__main__":
     # 直接设置参数
     max_concurrent = 10  # 最大并发数量
-    platform = 'arm'     # 平台类型：'arm' 或 'x86'
-    
+    platform = 'x86'     # 平台类型：'arm' 或 'x86'
+
     asyncio.run(main(max_concurrent=max_concurrent, platform=platform))
 

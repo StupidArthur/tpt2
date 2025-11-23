@@ -234,3 +234,11 @@ class Driver4(object):
 
     def scroll_to_target_element(self, start: WebElement, end: WebElement):
         self.action.move_to_element(start).click().scroll_to_element(end).move_to_element(end).perform()
+
+
+
+if __name__ == "__main__":
+    d = Driver4()
+    driver_path = "f:\\chrome144\\chromedriver.exe"
+    d.open("http://10.16.11.45:31501/tpt-app/#/home/chat/main", driver_path)
+    input()

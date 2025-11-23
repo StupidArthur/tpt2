@@ -213,6 +213,7 @@ class WorkflowDB:
     def get_next_id(self, catalog: str) -> str:
         """
         获取下一个可用的ID（文件名）
+        优先使用被删除的ID（检查数据库和文件系统）
         
         Args:
             catalog: 分类名称
@@ -220,23 +221,46 @@ class WorkflowDB:
         Returns:
             下一个ID，格式为{catalog}_{number}.png
         """
-        workflows = self.get_workflows_by_catalog(catalog)
-        if not workflows:
-            return f"{catalog}_1.png"
+        import os
         
-        # 提取所有数字并找到最大值
-        max_num = 0
-        for wf in workflows:
+        # 1. 获取数据库中已存在的workflow
+        workflows = self.get_workflows_by_catalog(catalog)
+        existing_ids = {wf['id'] for wf in workflows}
+        
+        # 2. 获取文件系统中已存在的截图文件
+        picture_dir = os.path.join(os.path.dirname(__file__), "picture")
+        catalog_dir = os.path.join(picture_dir, catalog)
+        file_ids = set()
+        if os.path.exists(catalog_dir):
+            for filename in os.listdir(catalog_dir):
+                if filename.startswith(f"{catalog}_") and filename.endswith('.png'):
+                    file_ids.add(filename)
+        
+        # 3. 找出所有已使用的ID（数据库或文件系统中存在的）
+        used_ids = existing_ids | file_ids
+        
+        # 4. 提取所有已使用的数字
+        used_numbers = set()
+        for workflow_id in used_ids:
             try:
                 # 从id中提取数字，如control_1.png -> 1
-                filename = wf['id']
-                if filename.endswith('.png'):
-                    num_str = filename.replace(f"{catalog}_", "").replace(".png", "")
-                    num = int(num_str)
-                    max_num = max(max_num, num)
+                num_str = workflow_id.replace(f"{catalog}_", "").replace(".png", "")
+                num = int(num_str)
+                used_numbers.add(num)
             except:
                 continue
         
+        # 5. 找到最小的可用数字（从1开始查找第一个未使用的）
+        if not used_numbers:
+            return f"{catalog}_1.png"
+        
+        max_num = max(used_numbers)
+        # 查找1到max_num之间的第一个空缺
+        for num in range(1, max_num + 1):
+            if num not in used_numbers:
+                return f"{catalog}_{num}.png"
+        
+        # 如果没有空缺，返回max_num + 1
         return f"{catalog}_{max_num + 1}.png"
     
     def export_to_csv(self, output_path: str = None) -> str:
@@ -391,20 +415,24 @@ if __name__ == "__main__":
     # 测试代码
     db = WorkflowDB()
     
-    # 迁移数据
-    print("开始从name_map.txt迁移数据...")
-    count = db.migrate_from_name_map()
-    print(f"成功迁移 {count} 条记录")
-    
-    # 导出为CSV和TXT
-    csv_path = db.export_to_csv()
-    txt_path = db.export_to_txt()
-    print(f"已导出CSV到: {csv_path}")
-    print(f"已导出TXT到: {txt_path}")
-    
-    # 测试查询
-    print("\n测试查询功能:")
-    print(f"总记录数: {len(db.get_all_workflows())}")
-    print(f"control分类记录数: {len(db.get_workflows_by_catalog('control'))}")
-    print(f"statistics分类记录数: {len(db.get_workflows_by_catalog('statistics'))}")
+    # # 迁移数据
+    # print("开始从name_map.txt迁移数据...")
+    # count = db.migrate_from_name_map()
+    # print(f"成功迁移 {count} 条记录")
+    #
+    # # 导出为CSV和TXT
+    # csv_path = db.export_to_csv()
+    # txt_path = db.export_to_txt()
+    # print(f"已导出CSV到: {csv_path}")
+    # print(f"已导出TXT到: {txt_path}")
+    #
+    # # 测试查询
+    # print("\n测试查询功能:")
+    # print(f"总记录数: {len(db.get_all_workflows())}")
+    # print(f"control分类记录数: {len(db.get_workflows_by_catalog('control'))}")
+    # print(f"statistics分类记录数: {len(db.get_workflows_by_catalog('statistics'))}")
+
+    _ = """"""
+
+    print(db.get_workflow_by_json(_))
 
